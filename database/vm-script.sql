@@ -88,6 +88,42 @@ CREATE TABLE dbo.Users(
  	CONSTRAINT UQ_Users_Email UNIQUE(Email) 
 )
 GO
+/****** Object:  Table dbo.Role ******/
+CCREATE TABLE dbo.Role(
+	Role_Title nvarchar(45) NOT NULL,
+	Role_Description nvarchar(max) NULL,
+ 	CONSTRAINT PK_Role PRIMARY KEY (Role_Title),
+ 	CONSTRAINT UQ_Role_RoleTitle UNIQUE(Role_Title)
+)
+GO
+/****** Object:  Table dbo.Groups ******/
+CREATE TABLE dbo.Groups ( 
+	ID int IDENTITY(1,1) NOT NULL,
+    Group_Title nvarchar(45) NOT NULL,  
+    CONSTRAINT PK_Group PRIMARY KEY (ID),
+    CONSTRAINT UQ_Group_GroupTitle UNIQUE(Group_Title)
+)
+GO
+/****** Object:  Table dbo.Group_Role ******/
+CREATE TABLE dbo.Group_Role (  
+	GroupID int NOT NULL,  
+	Role_Title nvarchar(45) NOT NULL,  
+    CONSTRAINT FK_GroupRole_Group FOREIGN KEY (GroupID) REFERENCES dbo.Groups(ID)
+    	ON UPDATE CASCADE ON DELETE CASCADE,
+    CONSTRAINT FK_GroupRole_RoleTitle FOREIGN KEY (Role_Title) REFERENCES dbo.Role(Role_Title)
+    	ON UPDATE CASCADE ON DELETE CASCADE
+) 
+GO
+/****** Object:  Table dbo.User_Group ******/
+CREATE TABLE dbo.User_Group (  
+	UserId int NOT NULL,  
+	GroupID int NOT NULL,
+	CONSTRAINT FK_UserGroup_User FOREIGN KEY (UserID) REFERENCES dbo.Users(ID)
+    	ON UPDATE CASCADE ON DELETE CASCADE,
+    CONSTRAINT FK_UserGroup_Group FOREIGN KEY (GroupID) REFERENCES dbo.Groups(ID)
+    	ON UPDATE CASCADE ON DELETE CASCADE
+)
+GO
 /****** Object:  Table dbo.User_Profile_Angel ******/
 SET ANSI_NULLS ON
 GO
