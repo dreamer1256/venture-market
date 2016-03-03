@@ -1,0 +1,1 @@
+Data Source=(local)\;Initial Catalog=Venture_Market;Integrated Security=True
