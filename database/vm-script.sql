@@ -107,6 +107,7 @@ CREATE TABLE dbo.User_Profile_Angel(
 	Twitter nvarchar(45) NULL,
  	CONSTRAINT PK_User_Profile_Angel PRIMARY KEY(ID) ,
  	CONSTRAINT FK_UserProfileAngel_Users FOREIGN KEY(UserID) REFERENCES dbo.Users(ID)
+ 		ON UPDATE CASCADE ON DELETE CASCADE
 )
 GO
 /****** Object:  Table dbo.Industry_Interests_List ******/
@@ -129,8 +130,10 @@ GO
 CREATE TABLE dbo.Angel_Interests(
 	InterestID int NOT NULL,
 	AngelID int NOT NULL,
-	CONSTRAINT FK_AngelInterests_UserProfileAngel FOREIGN KEY(AngelID) REFERENCES dbo.User_Profile_Angel(ID),
+	CONSTRAINT FK_AngelInterests_UserProfileAngel FOREIGN KEY(AngelID) REFERENCES dbo.User_Profile_Angel(ID)
+		ON UPDATE CASCADE ON DELETE CASCADE,
     CONSTRAINT FK_AngelInterests_IndustryInterestsList FOREIGN KEY(InterestID) REFERENCES dbo.Industry_Interests_List(ID)
+    	ON UPDATE CASCADE ON DELETE CASCADE,
 )
 GO
 /****** Object:  Table dbo.Business_Incubator ******/
@@ -180,9 +183,12 @@ CREATE TABLE dbo.Startup(
 	IncubatorID int NULL,
 	Development_StageID int NOT NULL,
  	CONSTRAINT PK_Startup PRIMARY KEY(ID) ,
- 	CONSTRAINT FK_Startup_BusinessIncubator FOREIGN KEY(Development_StageID) REFERENCES dbo.Business_Incubator(ID),
- 	CONSTRAINT FK_Startup_DevelopmentStage FOREIGN KEY(IncubatorID) REFERENCES dbo.Development_Stage(ID),
- 	CONSTRAINT FK_Startup_Startup FOREIGN KEY(Competitors) REFERENCES dbo.Startup(ID),
+ 	CONSTRAINT FK_Startup_BusinessIncubator FOREIGN KEY(Development_StageID) REFERENCES dbo.Business_Incubator(ID)
+ 		ON UPDATE CASCADE ON DELETE CASCADE,
+ 	CONSTRAINT FK_Startup_DevelopmentStage FOREIGN KEY(IncubatorID) REFERENCES dbo.Development_Stage(ID)
+ 		ON UPDATE CASCADE ON DELETE SET NULL,
+ 	CONSTRAINT FK_Startup_Startup FOREIGN KEY(Competitors) REFERENCES dbo.Startup(ID)
+ 		ON UPDATE NO ACTION ON DELETE  NO ACTION,
  	CONSTRAINT UQ_Startap_Title UNIQUE (Title) 
 ) 
 GO
@@ -216,8 +222,10 @@ CREATE TABLE dbo.Investment_Manager(
 	LName nvarchar(45) NOT NULL,
 	Geo_Inerests nvarchar(45) NULL,
  	CONSTRAINT PK_Investment_Manager PRIMARY KEY(ID) ,
- 	CONSTRAINT FK_InvestmentManager_Users FOREIGN KEY(UserID) REFERENCES dbo.Users(ID),
- 	CONSTRAINT FK_InvestmentManager_InvestmentCompany FOREIGN KEY(Investment_CompanyID) REFERENCES dbo.Investment_Company(ID) 
+ 	CONSTRAINT FK_InvestmentManager_Users FOREIGN KEY(UserID) REFERENCES dbo.Users(ID)
+ 		ON UPDATE CASCADE ON DELETE CASCADE,
+ 	CONSTRAINT FK_InvestmentManager_InvestmentCompany FOREIGN KEY(Investment_CompanyID) REFERENCES dbo.Investment_Company(ID)
+ 		ON UPDATE CASCADE ON DELETE SET NULL, 
 )
 GO
 /****** Object:  Table dbo.Application ******/
@@ -232,8 +240,10 @@ CREATE TABLE dbo.Application(
 	State nvarchar(45) NOT NULL,
 	Application_Round int NOT NULL,
  	CONSTRAINT PK_Application PRIMARY KEY(ID) ,
- 	CONSTRAINT FK_Application_InvestmentManager FOREIGN KEY(ManagerID) REFERENCES dbo.Investment_Manager(ID),
+ 	CONSTRAINT FK_Application_InvestmentManager FOREIGN KEY(ManagerID) REFERENCES dbo.Investment_Manager(ID)
+ 		ON UPDATE CASCADE ON DELETE SET NULL,
  	CONSTRAINT FK_Application_Startup FOREIGN KEY(StartupID) REFERENCES dbo.Startup(ID)
+ 		ON UPDATE CASCADE ON DELETE CASCADE
 )
 GO
 /****** Object:  Table dbo.Round_Of_Funding ******/
@@ -247,7 +257,8 @@ CREATE TABLE dbo.Round_Of_Funding(
 	Title nvarchar(45) NOT NULL,
 	Total_Investment decimal(10, 0) NULL,
  	CONSTRAINT PK_Round_Of_Funding PRIMARY KEY(ID) ,
- 	CONSTRAINT FK_RoundOfFunding_Startup FOREIGN KEY(StartupID) REFERENCES dbo.Startup(ID),
+ 	CONSTRAINT FK_RoundOfFunding_Startup FOREIGN KEY(StartupID) REFERENCES dbo.Startup(ID)
+ 		ON UPDATE CASCADE ON DELETE CASCADE,
  	CONSTRAINT UQ_RoundOfFunding_Title UNIQUE(Title) 
 )
 GO
@@ -261,9 +272,12 @@ CREATE TABLE dbo.Round_Investor(
 	RoundID int NOT NULL,
 	AngelID int NULL,
  	CONSTRAINT PK_Round_Investor PRIMARY KEY(RoundID) ,
- 	CONSTRAINT FK_RoundInvestor_InvestmentCompany FOREIGN KEY(CompanyID) REFERENCES dbo.Investment_Company(ID),
- 	CONSTRAINT FK_RoundInvestor_RoundOfFunding FOREIGN KEY(RoundID) REFERENCES dbo.Round_Of_Funding(ID),
- 	CONSTRAINT FK_RoundInvestor_UserProfileAngel FOREIGN KEY(AngelID) REFERENCES dbo.User_Profile_Angel(ID) 
+ 	CONSTRAINT FK_RoundInvestor_InvestmentCompany FOREIGN KEY(CompanyID) REFERENCES dbo.Investment_Company(ID)
+ 		ON UPDATE CASCADE ON DELETE SET NULL,
+ 	CONSTRAINT FK_RoundInvestor_RoundOfFunding FOREIGN KEY(RoundID) REFERENCES dbo.Round_Of_Funding(ID)
+ 		ON UPDATE CASCADE ON DELETE CASCADE,
+ 	CONSTRAINT FK_RoundInvestor_UserProfileAngel FOREIGN KEY(AngelID) REFERENCES dbo.User_Profile_Angel(ID)
+ 		ON UPDATE CASCADE ON DELETE SET NULL 
 )
 GO
 /****** Object:  Table dbo.Startup_Members ******/
@@ -286,8 +300,10 @@ CREATE TABLE dbo.Startup_Members(
 	Twitter nvarchar(45) NULL,
 	About nvarchar(max) NULL,
  	CONSTRAINT PK_Startup_Members PRIMARY KEY(ID) ,
- 	CONSTRAINT FK_StartupMembers_Startup FOREIGN KEY(StartupID) REFERENCES dbo.Startup(ID),
- 	CONSTRAINT FK_StartupMembers_Users FOREIGN KEY(UserID) REFERENCES dbo.Users(ID) 
+ 	CONSTRAINT FK_StartupMembers_Startup FOREIGN KEY(StartupID) REFERENCES dbo.Startup(ID)
+ 		ON UPDATE CASCADE ON DELETE CASCADE,
+ 	CONSTRAINT FK_StartupMembers_Users FOREIGN KEY(UserID) REFERENCES dbo.Users(ID)
+ 		ON UPDATE CASCADE ON DELETE CASCADE 
 )
 GO
 
