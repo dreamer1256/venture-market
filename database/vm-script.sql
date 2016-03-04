@@ -89,7 +89,7 @@ CREATE TABLE dbo.Users(
 )
 GO
 /****** Object:  Table dbo.Role ******/
-CCREATE TABLE dbo.Role(
+CREATE TABLE dbo.Role (
 	Role_Title nvarchar(45) NOT NULL,
 	Role_Description nvarchar(max) NULL,
  	CONSTRAINT PK_Role PRIMARY KEY (Role_Title),
@@ -294,8 +294,7 @@ CREATE TABLE dbo.Round_Of_Funding(
 	Total_Investment decimal(10, 0) NULL,
  	CONSTRAINT PK_Round_Of_Funding PRIMARY KEY(ID) ,
  	CONSTRAINT FK_RoundOfFunding_Startup FOREIGN KEY(StartupID) REFERENCES dbo.Startup(ID)
- 		ON UPDATE CASCADE ON DELETE CASCADE,
- 	CONSTRAINT UQ_RoundOfFunding_Title UNIQUE(Title) 
+ 		ON UPDATE CASCADE ON DELETE CASCADE
 )
 GO
 /****** Object:  Table dbo.Round_Investor ******/
