@@ -83,6 +83,8 @@ CREATE TABLE dbo.Users(
 	Email nvarchar(45) NOT NULL,
 	Password nvarchar(45) NOT NULL,
 	Accaunt_Pic image NULL,
+	FName nvarchar(45) NOT NULL,
+	LName nvarchar(45) NOT NULL,
  	CONSTRAINT PK_Users PRIMARY KEY(ID) ,
  	CONSTRAINT UQ_Users_Username UNIQUE(Username),
  	CONSTRAINT UQ_Users_Email UNIQUE(Email) 
@@ -90,50 +92,33 @@ CREATE TABLE dbo.Users(
 GO
 /****** Object:  Table dbo.Role ******/
 CREATE TABLE dbo.Role (
+	ID int IDENTITY(1,1) NOT NULL,
 	Role_Title nvarchar(45) NOT NULL,
 	Role_Description nvarchar(max) NULL,
- 	CONSTRAINT PK_Role PRIMARY KEY (Role_Title),
+ 	CONSTRAINT PK_Role PRIMARY KEY (ID),
  	CONSTRAINT UQ_Role_RoleTitle UNIQUE(Role_Title)
 )
 GO
-/****** Object:  Table dbo.Groups ******/
-CREATE TABLE dbo.Groups ( 
+
+/****** Object:  Table dbo.UserRole ******/
+CREATE TABLE dbo.User_Role (  
 	ID int IDENTITY(1,1) NOT NULL,
-    Group_Title nvarchar(45) NOT NULL,  
-    CONSTRAINT PK_Group PRIMARY KEY (ID),
-    CONSTRAINT UQ_Group_GroupTitle UNIQUE(Group_Title)
-)
-GO
-/****** Object:  Table dbo.Group_Role ******/
-CREATE TABLE dbo.Group_Role (  
-	GroupID int NOT NULL,  
-	Role_Title nvarchar(45) NOT NULL,  
-    CONSTRAINT FK_GroupRole_Group FOREIGN KEY (GroupID) REFERENCES dbo.Groups(ID)
-    	ON UPDATE CASCADE ON DELETE CASCADE,
-    CONSTRAINT FK_GroupRole_RoleTitle FOREIGN KEY (Role_Title) REFERENCES dbo.Role(Role_Title)
-    	ON UPDATE CASCADE ON DELETE CASCADE
-) 
-GO
-/****** Object:  Table dbo.User_Group ******/
-CREATE TABLE dbo.User_Group (  
 	UserId int NOT NULL,  
-	GroupID int NOT NULL,
-	CONSTRAINT FK_UserGroup_User FOREIGN KEY (UserID) REFERENCES dbo.Users(ID)
+	RoleID int NOT NULL,
+	CONSTRAINT FK_UserRole_User FOREIGN KEY (UserID) REFERENCES dbo.Users(ID)
     	ON UPDATE CASCADE ON DELETE CASCADE,
-    CONSTRAINT FK_UserGroup_Group FOREIGN KEY (GroupID) REFERENCES dbo.Groups(ID)
+    CONSTRAINT FK_UserRole_Role FOREIGN KEY (RoleID) REFERENCES dbo.Role(ID)
     	ON UPDATE CASCADE ON DELETE CASCADE
 )
 GO
-/****** Object:  Table dbo.User_Profile_Angel ******/
+/****** Object:  Table dbo.AngelInvestor ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE dbo.User_Profile_Angel(
+CREATE TABLE dbo.AngelInvestor(
 	ID int IDENTITY(1,1) NOT NULL,
 	UserID int NOT NULL,
-	FName nvarchar(45) NOT NULL,
-	LName nvarchar(45) NOT NULL,
 	Investment_Experience nvarchar(max) NULL,
 	Min_Amount decimal(10, 0) NULL,
 	Max_amount decimal(10, 0) NULL,
@@ -141,8 +126,8 @@ CREATE TABLE dbo.User_Profile_Angel(
 	Phone nvarchar(45) NULL,
 	Skype nvarchar(45) NULL,
 	Twitter nvarchar(45) NULL,
- 	CONSTRAINT PK_User_Profile_Angel PRIMARY KEY(ID) ,
- 	CONSTRAINT FK_UserProfileAngel_Users FOREIGN KEY(UserID) REFERENCES dbo.Users(ID)
+ 	CONSTRAINT PK_AngelInvestor PRIMARY KEY(ID) ,
+ 	CONSTRAINT FK_AngelInvestor_Users FOREIGN KEY(UserID) REFERENCES dbo.Users(ID)
  		ON UPDATE CASCADE ON DELETE CASCADE
 )
 GO
@@ -166,7 +151,7 @@ GO
 CREATE TABLE dbo.Angel_Interests(
 	InterestID int NOT NULL,
 	AngelID int NOT NULL,
-	CONSTRAINT FK_AngelInterests_UserProfileAngel FOREIGN KEY(AngelID) REFERENCES dbo.User_Profile_Angel(ID)
+	CONSTRAINT FK_AngelInterests_UserProfileAngel FOREIGN KEY(AngelID) REFERENCES dbo.AngelInvestor(ID)
 		ON UPDATE CASCADE ON DELETE CASCADE,
     CONSTRAINT FK_AngelInterests_IndustryInterestsList FOREIGN KEY(InterestID) REFERENCES dbo.Industry_Interests_List(ID)
     	ON UPDATE CASCADE ON DELETE CASCADE,
@@ -254,8 +239,6 @@ CREATE TABLE dbo.Investment_Manager(
 	ID int IDENTITY(1,1) NOT NULL,
 	Investment_CompanyID int NULL,
 	UserID int NOT NULL,
-	FName nvarchar(45) NOT NULL,
-	LName nvarchar(45) NOT NULL,
 	Geo_Inerests nvarchar(45) NULL,
  	CONSTRAINT PK_Investment_Manager PRIMARY KEY(ID) ,
  	CONSTRAINT FK_InvestmentManager_Users FOREIGN KEY(UserID) REFERENCES dbo.Users(ID)
@@ -311,7 +294,7 @@ CREATE TABLE dbo.Round_Investor(
  		ON UPDATE CASCADE ON DELETE SET NULL,
  	CONSTRAINT FK_RoundInvestor_RoundOfFunding FOREIGN KEY(RoundID) REFERENCES dbo.Round_Of_Funding(ID)
  		ON UPDATE CASCADE ON DELETE CASCADE,
- 	CONSTRAINT FK_RoundInvestor_UserProfileAngel FOREIGN KEY(AngelID) REFERENCES dbo.User_Profile_Angel(ID)
+ 	CONSTRAINT FK_RoundInvestor_UserProfileAngel FOREIGN KEY(AngelID) REFERENCES dbo.AngelInvestor(ID)
  		ON UPDATE CASCADE ON DELETE SET NULL 
 )
 GO
@@ -324,8 +307,6 @@ CREATE TABLE dbo.Startup_Members(
 	ID int IDENTITY(1,1) NOT NULL,
 	StartupID int NOT NULL,
 	UserID int NOT NULL,
-	FName nvarchar(45) NOT NULL,
-	LName nvarchar(45) NOT NULL,
 	Short_Resume nvarchar(max) NULL,
 	Country nvarchar(45) NOT NULL,
 	Address nvarchar(45) NULL,
