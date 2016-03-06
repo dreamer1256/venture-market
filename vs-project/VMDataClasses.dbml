@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Venture_Market" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=LIGHTSIDE\;Initial Catalog=Venture_Market;Integrated Security=True" SettingsObjectName="code.Properties.Settings" SettingsPropertyName="Venture_MarketConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Angel_Interests" Member="Angel_Interests">
+    <Type Name="Angel_Interest">
+      <Column Name="InterestID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AngelID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="AngelInvestor_Angel_Interest" Member="AngelInvestor" ThisKey="AngelID" OtherKey="ID" Type="AngelInvestor" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="Industry_Interests_List_Angel_Interest" Member="Industry_Interests_List" ThisKey="InterestID" OtherKey="ID" Type="Industry_Interests_List" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AngelInvestor" Member="AngelInvestors">
+    <Type Name="AngelInvestor">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Investment_Experience" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Min_Amount" Type="System.Decimal" DbType="Decimal(10,0)" CanBeNull="true" />
+      <Column Name="Max_amount" Type="System.Decimal" DbType="Decimal(10,0)" CanBeNull="true" />
+      <Column Name="Geo_Inerests" Type="System.String" DbType="NVarChar(45)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="NVarChar(45)" CanBeNull="true" />
+      <Column Name="Skype" Type="System.String" DbType="NVarChar(45)" CanBeNull="true" />
+      <Column Name="Twitter" Type="System.String" DbType="NVarChar(45)" CanBeNull="true" />
+      <Association Name="AngelInvestor_Angel_Interest" Member="Angel_Interests" ThisKey="ID" OtherKey="AngelID" Type="Angel_Interest" />
+      <Association Name="AngelInvestor_Round_Investor" Member="Round_Investors" ThisKey="ID" OtherKey="AngelID" Type="Round_Investor" />
+      <Association Name="User_AngelInvestor" Member="User" ThisKey="UserID" OtherKey="ID" Type="User" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Application" Member="Applications">
+    <Type Name="Application">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ManagerID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StartupID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="State" Type="System.String" DbType="NVarChar(45) NOT NULL" CanBeNull="false" />
+      <Column Name="Application_Round" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Investment_Manager_Application" Member="Investment_Manager" ThisKey="ManagerID" OtherKey="ID" Type="Investment_Manager" IsForeignKey="true" DeleteRule="SET NULL" />
+      <Association Name="Startup_Application" Member="Startup" ThisKey="StartupID" OtherKey="ID" Type="Startup" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Business_Incubator" Member="Business_Incubators">
+    <Type Name="Business_Incubator">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Number_Of_Seats" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Website" Type="System.String" DbType="NVarChar(63)" CanBeNull="true" />
+      <Association Name="Business_Incubator_Startup" Member="Startups" ThisKey="ID" OtherKey="Development_StageID" Type="Startup" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Development_Stage" Member="Development_Stages">
+    <Type Name="Development_Stage">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Stage" Type="System.String" DbType="NVarChar(45) NOT NULL" CanBeNull="false" />
+      <Association Name="Development_Stage_Startup" Member="Startups" ThisKey="ID" OtherKey="IncubatorID" Type="Startup" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Industry_Interests_List" Member="Industry_Interests_Lists">
+    <Type Name="Industry_Interests_List">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(45)" CanBeNull="true" />
+      <Association Name="Industry_Interests_List_Angel_Interest" Member="Angel_Interests" ThisKey="ID" OtherKey="InterestID" Type="Angel_Interest" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Investment_Company" Member="Investment_Companies">
+    <Type Name="Investment_Company">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Website" Type="System.String" DbType="NVarChar(63)" CanBeNull="true" />
+      <Column Name="Foundation_Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Office_Address" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="CEO" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Association Name="Investment_Company_Investment_Manager" Member="Investment_Managers" ThisKey="ID" OtherKey="Investment_CompanyID" Type="Investment_Manager" />
+      <Association Name="Investment_Company_Round_Investor" Member="Round_Investors" ThisKey="ID" OtherKey="CompanyID" Type="Round_Investor" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Investment_Manager" Member="Investment_Managers">
+    <Type Name="Investment_Manager">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Investment_CompanyID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Geo_Inerests" Type="System.String" DbType="NVarChar(45)" CanBeNull="true" />
+      <Association Name="Investment_Manager_Application" Member="Applications" ThisKey="ID" OtherKey="ManagerID" Type="Application" />
+      <Association Name="Investment_Company_Investment_Manager" Member="Investment_Company" ThisKey="Investment_CompanyID" OtherKey="ID" Type="Investment_Company" IsForeignKey="true" DeleteRule="SET NULL" />
+      <Association Name="User_Investment_Manager" Member="User" ThisKey="UserID" OtherKey="ID" Type="User" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Role" Member="Roles">
+    <Type Name="Role">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Role_Title" Type="System.String" DbType="NVarChar(45) NOT NULL" CanBeNull="false" />
+      <Column Name="Role_Description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="Role_User_Role" Member="User_Roles" ThisKey="ID" OtherKey="RoleID" Type="User_Role" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Round_Investor" Member="Round_Investors">
+    <Type Name="Round_Investor">
+      <Column Name="CompanyID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RoundID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AngelID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Investment_Company_Round_Investor" Member="Investment_Company" ThisKey="CompanyID" OtherKey="ID" Type="Investment_Company" IsForeignKey="true" DeleteRule="SET NULL" />
+      <Association Name="AngelInvestor_Round_Investor" Member="AngelInvestor" ThisKey="AngelID" OtherKey="ID" Type="AngelInvestor" IsForeignKey="true" DeleteRule="SET NULL" />
+      <Association Name="Round_Of_Funding_Round_Investor" Member="Round_Of_Funding" ThisKey="RoundID" OtherKey="ID" Type="Round_Of_Funding" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Round_Of_Funding" Member="Round_Of_Fundings">
+    <Type Name="Round_Of_Funding">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="StartupID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(45) NOT NULL" CanBeNull="false" />
+      <Column Name="Total_Investment" Type="System.Decimal" DbType="Decimal(10,0)" CanBeNull="true" />
+      <Association Name="Round_Of_Funding_Round_Investor" Member="Round_Investor" ThisKey="ID" OtherKey="RoundID" Type="Round_Investor" Cardinality="One" />
+      <Association Name="Startup_Round_Of_Funding" Member="Startup" ThisKey="StartupID" OtherKey="ID" Type="Startup" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Startup" Member="Startups">
+    <Type Name="Startup">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(45) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Business_Model" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Competitors" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Marketing_Strategy" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Total_Investment" Type="System.Decimal" DbType="Decimal(10,0)" CanBeNull="true" />
+      <Column Name="Website" Type="System.String" DbType="NVarChar(63)" CanBeNull="true" />
+      <Column Name="Foundation_Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Twitter" Type="System.String" DbType="NVarChar(63)" CanBeNull="true" />
+      <Column Name="CEO" Type="System.String" DbType="NVarChar(45)" CanBeNull="true" />
+      <Column Name="IncubatorID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Development_StageID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Startup_Application" Member="Applications" ThisKey="ID" OtherKey="StartupID" Type="Application" />
+      <Association Name="Startup_Round_Of_Funding" Member="Round_Of_Fundings" ThisKey="ID" OtherKey="StartupID" Type="Round_Of_Funding" />
+      <Association Name="Startup_Startup" Member="Startups" ThisKey="ID" OtherKey="Competitors" Type="Startup" />
+      <Association Name="Startup_Startup_Member" Member="Startup_Members" ThisKey="ID" OtherKey="StartupID" Type="Startup_Member" />
+      <Association Name="Business_Incubator_Startup" Member="Business_Incubator" ThisKey="Development_StageID" OtherKey="ID" Type="Business_Incubator" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="Development_Stage_Startup" Member="Development_Stage" ThisKey="IncubatorID" OtherKey="ID" Type="Development_Stage" IsForeignKey="true" DeleteRule="SET NULL" />
+      <Association Name="Startup_Startup" Member="Startup1" ThisKey="Competitors" OtherKey="ID" Type="Startup" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Startup_Members" Member="Startup_Members">
+    <Type Name="Startup_Member">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="StartupID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Short_Resume" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Country" Type="System.String" DbType="NVarChar(45) NOT NULL" CanBeNull="false" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(45)" CanBeNull="true" />
+      <Column Name="Is_CEO" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Phone" Type="System.String" DbType="NVarChar(45)" CanBeNull="true" />
+      <Column Name="Skype" Type="System.String" DbType="NVarChar(45)" CanBeNull="true" />
+      <Column Name="Twitter" Type="System.String" DbType="NVarChar(45)" CanBeNull="true" />
+      <Column Name="About" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="Startup_Startup_Member" Member="Startup" ThisKey="StartupID" OtherKey="ID" Type="Startup" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="User_Startup_Member" Member="User" ThisKey="UserID" OtherKey="ID" Type="User" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.User_Role" Member="User_Roles">
+    <Type Name="User_Role">
+      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RoleID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Role_User_Role" Member="Role" ThisKey="RoleID" OtherKey="ID" Type="Role" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="User_User_Role" Member="User" ThisKey="UserId" OtherKey="ID" Type="User" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Users" Member="Users">
+    <Type Name="User">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Username" Type="System.String" DbType="NVarChar(45) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(45) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(45) NOT NULL" CanBeNull="false" />
+      <Column Name="Accaunt_Pic" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="FName" Type="System.String" DbType="NVarChar(45) NOT NULL" CanBeNull="false" />
+      <Column Name="LName" Type="System.String" DbType="NVarChar(45) NOT NULL" CanBeNull="false" />
+      <Association Name="User_AngelInvestor" Member="AngelInvestors" ThisKey="ID" OtherKey="UserID" Type="AngelInvestor" />
+      <Association Name="User_Investment_Manager" Member="Investment_Managers" ThisKey="ID" OtherKey="UserID" Type="Investment_Manager" />
+      <Association Name="User_Startup_Member" Member="Startup_Members" ThisKey="ID" OtherKey="UserID" Type="Startup_Member" />
+      <Association Name="User_User_Role" Member="User_Roles" ThisKey="ID" OtherKey="UserId" Type="User_Role" />
+    </Type>
+  </Table>
+</Database>

@@ -8,22 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace code
+namespace code.RegisterForms
 {
-    
-    public partial class SignInForm : Form
+    public partial class Signup_CompanyMember : Form
     {
-        public SignInForm()
+        public Signup_CompanyMember()
         {
             InitializeComponent();
-        }
-
-        private void btnTop_Login_Click(object sender, EventArgs e)
-        {
-            LoginForm lf = new LoginForm();
-            lf.Show();
-            this.Hide();
-            
         }
     }
 }

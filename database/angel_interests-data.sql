@@ -15,6 +15,3 @@ INSERT Angel_Interests(InterestID, AngelID) Values
 (6, 6),
 (1, 6),
 (4, 6)
-
-
-

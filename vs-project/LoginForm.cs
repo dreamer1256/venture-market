@@ -13,7 +13,9 @@ namespace code
 {
     public partial class LoginForm : Form
     {
-        public bool is_SigninWindowExist;
+        DataClasses1DataContext vmDB;
+
+        //public bool is_SigninWindowExist;
         public LoginForm()
         {
             InitializeComponent();
@@ -23,16 +25,8 @@ namespace code
         {
             btnTop_Login.Enabled = true;
             btnTop_Signup.Enabled = false;
-            if (is_SigninWindowExist)
-            {
-
-            }
-            else {
-                SignInForm sf = new SignInForm();
-                sf.Show();
-                is_SigninWindowExist = true;
-            }
-            
+            SignInForm sf = new SignInForm();
+            sf.Show();
             this.Hide();
         }
 
@@ -43,35 +37,75 @@ namespace code
 
         private void btn_Login_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(@"Data Source=(local)\;" +
-                "Initial Catalog=Venture_Market;Integrated Security=True;");
-            SqlDataAdapter sda = new SqlDataAdapter("SELECT Count(*) FROM Users WHERE Username='" +
-                txt_Username.Text + "' and Password='" + txt_Password.Text + "'", con);
+            string userName = txt_Username.Text;
+            string password = txt_Password.Text;
 
-            DataTable dt = new DataTable();
-            sda.Fill(dt);
-            if (dt.Rows[0][0].ToString() == "1")
+            if(IsValidUser(userName, password))
             {
-                Console.WriteLine(dt.ToString());
+                vmDB = new DataClasses1DataContext();
+                
+                User user = vmDB.Users.Single(u => u.Username.Equals(userName));
+                int userID = user.ID;
+                User_Role userRole = vmDB.User_Roles.Single(r => r.UserId == userID);
+                int roleID = userRole.RoleID;
+                switch(roleID)
+                {
+                    case (int)URoles.Role.AnglInvestor:
+                        UserProfile.AngInvstrMmbrProfile aimp = new UserProfile.AngInvstrMmbrProfile(user);
+                        aimp.Show();
+                        break;
+                    case (int)URoles.Role.InvCompanyMember:
+                        UserProfile.InvCompanyMmbrProfile icmp = new UserProfile.InvCompanyMmbrProfile(user);
+                        icmp.Show();
+                        break;
+                    case (int)URoles.Role.StartupCEO:
+                        UserProfile.StartupCEOMmbrProfile scmp = new UserProfile.StartupCEOMmbrProfile(user);
+                        scmp.Show();
+                        break;
+                    case (int)URoles.Role.InvestManager:
+                        UserProfile.InvManagerMmbrProfile immp = new UserProfile.InvManagerMmbrProfile(user);
+                        immp.Show();
+                        break;
+                    case (int)URoles.Role.StartupMember:
+                        UserProfile.StartupMmbrProfile smp = new UserProfile.StartupMmbrProfile(user);
+                        smp.Show();
+                        break;
+                    case (int)URoles.Role.Admin:
+                        UserProfile.AdminProfile ap = new UserProfile.AdminProfile(user);
+                        break;
+                }
+
                 this.Hide();
-                UserProfile up = new UserProfile(txt_Username.Text);
-                up.Show();
             }
             else
             {
                 MessageBox.Show("Please enter a valid username and password!");
             }
         }
-
+    
         private void btnTop_Login_Click(object sender, EventArgs e)
         {   
             btnTop_Signup.Enabled = true;
             btnTop_Login.Enabled = false;
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
+        public bool IsValidUser(string userName, string passWord)
+         {
+            vmDB = new DataClasses1DataContext();
+            var userResults = from u in vmDB.Users
+                               where u.Username == userName
+                               && u.Password == passWord
+                               select u;
+            return Enumerable.Count(userResults) == 1;
+         }
 
+
+        /*public User GetUser(string userName)
+        {
+            vmDB = new DataClasses1DataContext();
+            User user = vmDB.Users.Single(u, u.UserName=>userName);
+            return user;
         }
+        */
     }
 }
