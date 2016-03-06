@@ -150,6 +150,12 @@
     <EmbeddedResource Include="UserProfile\InvCompanyMmbrProfile.resx">
       <DependentUpon>InvCompanyMmbrProfile.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserProfile\InvManagerMmbrProfile.resx">
+      <DependentUpon>InvManagerMmbrProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserProfile\StartupCEOMmbrProfile.resx">
+      <DependentUpon>StartupCEOMmbrProfile.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserProfile\StartupMmbrProfile.resx">
       <DependentUpon>StartupMmbrProfile.cs</DependentUpon>
     </EmbeddedResource>

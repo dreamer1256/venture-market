@@ -14,10 +14,11 @@ namespace code.RegisterForms
     {
         private DataClasses1DataContext vmDB;
         private int userID;
-        public Signup_StartupMember(int newUserID)
+        private User user;
+        public Signup_StartupMember(User user)
         {
             InitializeComponent();
-            userID = newUserID;
+            userID = user.ID;
             
             // Отримання наз стартапів, які вже є у системі
             vmDB = new DataClasses1DataContext();
@@ -36,15 +37,18 @@ namespace code.RegisterForms
             ur.UserId = userID;
             sm.UserID = userID;
             if (chckBx_IsCEO.Checked == true)
-            {
+            {   sm.Is_CEO = true;
                 ur.RoleID = (int)URoles.Role.StartupCEO;  // роль керівника стартапу
                 vmDB.User_Roles.InsertOnSubmit(ur);
-                sm.Is_CEO = true;
+                UserProfile.StartupCEOMmbrProfile scpm = new UserProfile.StartupCEOMmbrProfile(user);
+                scpm.Show();
             }
             else
             {
-                ur.RoleID = (int)URoles.Role.StartupMember; // роль учасника стартапу
                 sm.Is_CEO = false;
+                ur.RoleID = (int)URoles.Role.StartupMember; // роль учасника стартапу
+                UserProfile.StartupMmbrProfile smp = new UserProfile.StartupMmbrProfile(user);
+                smp.Show();
             }
 
             // Присвоїти учаснику ID стартапу залежно від вибору в полі comboBox

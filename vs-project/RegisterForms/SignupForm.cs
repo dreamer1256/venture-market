@@ -13,7 +13,7 @@ namespace code
     public partial class SignInForm : Form
     {
         private DataClasses1DataContext vmDB;
-        private int newUserID = 0;
+        private User user;
 
         private RadioButton radioBtn = new RadioButton();
         public SignInForm()
@@ -43,7 +43,7 @@ namespace code
        
             if(qry.Count() == 0)
             {
-                User user = new User();
+                user = new User();
                 user.Username = txt_Username.Text;
                 user.Password = txt_Password.Text;
                 user.Email = txt_Email.Text;
@@ -53,7 +53,6 @@ namespace code
                 vmDB.SubmitChanges();
                 pnl_Sign_Role.Show();
                 pnl_Sign1.Hide();
-                newUserID = user.ID;
             }
             else
             {
@@ -73,11 +72,9 @@ namespace code
             {
                 vmDB = new DataClasses1DataContext();
                 RegisterForms.Signup_AngelInv s_ai = new RegisterForms.Signup_AngelInv();
-                AngelInvestor ai = new AngelInvestor();
-                ai.UserID = newUserID;
-                vmDB.AngelInvestors.InsertOnSubmit(ai);
-                vmDB.SubmitChanges();
                 s_ai.Show();
+                this.Hide();
+
             }
             else
             if (rdBttn_InvManager.Checked == true)
@@ -91,7 +88,7 @@ namespace code
             if (rdBttn_Startuper.Checked == true)
             {
                 vmDB = new DataClasses1DataContext();
-                RegisterForms.Signup_StartupMember s_sm = new RegisterForms.Signup_StartupMember(newUserID);
+                RegisterForms.Signup_StartupMember s_sm = new RegisterForms.Signup_StartupMember(user);
                 s_sm.Show();
                 this.Hide();
             }
