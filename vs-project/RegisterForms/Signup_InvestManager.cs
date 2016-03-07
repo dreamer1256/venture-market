@@ -12,29 +12,35 @@ namespace code.RegisterForms
 {
     public partial class Signup_InvestManager : Form
     {
-        //private int newUserID = 0;
-        public Signup_InvestManager()
+        private DataClasses1DataContext vmDB;
+        private User user;
+        public Signup_InvestManager(User user)
         {
             InitializeComponent();
-            //this.newUserID = newUserID;
+            this.user = user;
+            vmDB = new DataClasses1DataContext();
+            var company = from c in vmDB.Investment_Companies
+                     select c.Title;
+            foreach (var c in company)
+                cmbBx_Company.Items.Add(c);
         }
 
         private void btn_Finish_Click(object sender, EventArgs e)
         {
-            /*
-            DataClasses1DataContext vmDB = new DataClasses1DataContext();
-            var qry = from m in vmDB.AngelInvestors
-                     
-                      select m;
-            
-                Investment_Manager manager = new Investment_Manager();
-
-                manager.UserID = newUserID;
-                manager.Investment_CompanyID = 2;
-                //manager.Geo_Inerests = 
-                vmDB.Investment_Managers.InsertOnSubmit(manager);
-                vmDB.SubmitChanges();
-           */
+            vmDB = new DataClasses1DataContext();
+            Investment_Manager im = new Investment_Manager();
+            User_Role ur = new User_Role();
+            ur.UserId = user.ID;
+            ur.RoleID = (int)URoles.Role.InvestManager;
+            im.UserID = user.ID;
+            Investment_Company company = vmDB.Investment_Companies.Single(c => c.Title == cmbBx_Company.Text);
+            im.Investment_CompanyID = company.ID;
+            im.Geo_Inerests = txt_GeoInterests.Text;
+            vmDB.Investment_Managers.InsertOnSubmit(im);
+            vmDB.SubmitChanges();
+            this.Hide();
+            UserProfile.InvCompanyMmbrProfile icmp = new UserProfile.InvCompanyMmbrProfile(user);
+            icmp.Show();
         }
     }
 }

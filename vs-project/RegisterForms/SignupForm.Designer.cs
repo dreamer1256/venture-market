@@ -319,7 +319,6 @@
             this.label4.Size = new System.Drawing.Size(261, 25);
             this.label4.TabIndex = 4;
             this.label4.Text = "Please select  your role";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // SignInForm
             // 

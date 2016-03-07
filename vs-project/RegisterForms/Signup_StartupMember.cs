@@ -13,12 +13,11 @@ namespace code.RegisterForms
     public partial class Signup_StartupMember : Form
     {
         private DataClasses1DataContext vmDB;
-        private int userID;
         private User user;
         public Signup_StartupMember(User user)
         {
             InitializeComponent();
-            userID = user.ID;
+            this.user = user;
             
             // Отримання наз стартапів, які вже є у системі
             vmDB = new DataClasses1DataContext();
@@ -34,8 +33,8 @@ namespace code.RegisterForms
             vmDB = new DataClasses1DataContext();
             Startup_Member sm = new Startup_Member();
             User_Role ur = new User_Role();
-            ur.UserId = userID;
-            sm.UserID = userID;
+            ur.UserId = user.ID;
+            sm.UserID = user.ID;
             if (chckBx_IsCEO.Checked == true)
             {   sm.Is_CEO = true;
                 ur.RoleID = (int)URoles.Role.StartupCEO;  // роль керівника стартапу

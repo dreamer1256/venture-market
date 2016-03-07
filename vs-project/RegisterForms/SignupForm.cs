@@ -71,7 +71,7 @@ namespace code
             if (rdBttn_AngelInvestor.Checked == true)
             {
                 vmDB = new DataClasses1DataContext();
-                RegisterForms.Signup_AngelInv s_ai = new RegisterForms.Signup_AngelInv();
+                RegisterForms.Signup_AngelInv s_ai = new RegisterForms.Signup_AngelInv(user);
                 s_ai.Show();
                 this.Hide();
 
@@ -80,7 +80,7 @@ namespace code
             if (rdBttn_InvManager.Checked == true)
             {
                 vmDB = new DataClasses1DataContext();
-                RegisterForms.Signup_InvestManager s_im = new RegisterForms.Signup_InvestManager();                
+                RegisterForms.Signup_InvestManager s_im = new RegisterForms.Signup_InvestManager(user);                
                 s_im.Show();
                 this.Hide();
             }
@@ -105,11 +105,5 @@ namespace code
                 MessageBox.Show("Error!");
 
         }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-        
     }
 }
