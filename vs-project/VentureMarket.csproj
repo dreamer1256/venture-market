@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4DEA3755-22A6-42EA-9D92-8111F23664D5}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>code</RootNamespace>
+    <AssemblyName>code</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="RolesEnum.cs" />
+    <Compile Include="UserProfile\AdminProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserProfile\AdminProfile.Designer.cs">
+      <DependentUpon>AdminProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserProfile\AngInvstrMmbrProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserProfile\AngInvstrMmbrProfile.Designer.cs">
+      <DependentUpon>AngInvstrMmbrProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserProfile\InvCompanyMmbrProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserProfile\InvCompanyMmbrProfile.Designer.cs">
+      <DependentUpon>InvCompanyMmbrProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserProfile\InvManagerMmbrProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserProfile\InvManagerMmbrProfile.Designer.cs">
+      <DependentUpon>InvManagerMmbrProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserProfile\StartupCEOMmbrProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserProfile\StartupCEOMmbrProfile.Designer.cs">
+      <DependentUpon>StartupCEOMmbrProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserProfile\StartupMmbrProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserProfile\StartupMmbrProfile.Designer.cs">
+      <DependentUpon>StartupMmbrProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VMDataClasses.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VMDataClasses.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegisterForms\Signup_AngelInv.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegisterForms\Signup_AngelInv.Designer.cs">
+      <DependentUpon>Signup_AngelInv.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegisterForms\Signup_CompanyMember.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegisterForms\Signup_CompanyMember.Designer.cs">
+      <DependentUpon>Signup_CompanyMember.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegisterForms\Signup_InvestManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegisterForms\Signup_InvestManager.Designer.cs">
+      <DependentUpon>Signup_InvestManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegisterForms\SignupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegisterForms\SignupForm.Designer.cs">
+      <DependentUpon>SignupForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegisterForms\Signup_StartupMember.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegisterForms\Signup_StartupMember.Designer.cs">
+      <DependentUpon>Signup_StartupMember.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Venture_MarketDataSet.cs">
+      <DependentUpon>Venture_MarketDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Venture_MarketDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Venture_MarketDataSet.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="UserProfile\AdminProfile.resx">
+      <DependentUpon>AdminProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserProfile\AngInvstrMmbrProfile.resx">
+      <DependentUpon>AngInvstrMmbrProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserProfile\InvCompanyMmbrProfile.resx">
+      <DependentUpon>InvCompanyMmbrProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserProfile\InvManagerMmbrProfile.resx">
+      <DependentUpon>InvManagerMmbrProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserProfile\StartupCEOMmbrProfile.resx">
+      <DependentUpon>StartupCEOMmbrProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserProfile\StartupMmbrProfile.resx">
+      <DependentUpon>StartupMmbrProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="VMDataClasses.dbml.layout">
+      <DependentUpon>VMDataClasses.dbml</DependentUpon>
+    </None>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="RegisterForms\Signup_AngelInv.resx">
+      <DependentUpon>Signup_AngelInv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegisterForms\Signup_CompanyMember.resx">
+      <DependentUpon>Signup_CompanyMember.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegisterForms\Signup_InvestManager.resx">
+      <DependentUpon>Signup_InvestManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegisterForms\SignupForm.resx">
+      <DependentUpon>SignupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegisterForms\Signup_StartupMember.resx">
+      <DependentUpon>Signup_StartupMember.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="VMDataClasses.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>VMDataClasses.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Venture_MarketDataSet.xsc">
+      <DependentUpon>Venture_MarketDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Venture_MarketDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Venture_MarketDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Venture_MarketDataSet.xss">
+      <DependentUpon>Venture_MarketDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
