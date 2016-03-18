@@ -75,6 +75,7 @@
             this.pnl_Sign1.Controls.Add(this.label3);
             this.pnl_Sign1.Controls.Add(this.label2);
             this.pnl_Sign1.Controls.Add(this.label1);
+            this.pnl_Sign1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.pnl_Sign1.Location = new System.Drawing.Point(82, 75);
             this.pnl_Sign1.Name = "pnl_Sign1";
             this.pnl_Sign1.Size = new System.Drawing.Size(520, 313);
@@ -82,6 +83,8 @@
             // 
             // btn_NextToURoles
             // 
+            this.btn_NextToURoles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_NextToURoles.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btn_NextToURoles.Location = new System.Drawing.Point(213, 256);
             this.btn_NextToURoles.Name = "btn_NextToURoles";
             this.btn_NextToURoles.Size = new System.Drawing.Size(100, 38);
@@ -93,96 +96,102 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(311, 180);
+            this.label8.Location = new System.Drawing.Point(289, 180);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(42, 13);
+            this.label8.Size = new System.Drawing.Size(56, 17);
             this.label8.TabIndex = 13;
             this.label8.Text = "Confirm";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(300, 120);
+            this.label7.Location = new System.Drawing.Point(289, 120);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(53, 13);
+            this.label7.Size = new System.Drawing.Size(66, 17);
             this.label7.TabIndex = 12;
             this.label7.Text = "Password";
             // 
             // txt_PasswordConfirm
             // 
+            this.txt_PasswordConfirm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
             this.txt_PasswordConfirm.Location = new System.Drawing.Point(361, 177);
             this.txt_PasswordConfirm.Name = "txt_PasswordConfirm";
-            this.txt_PasswordConfirm.Size = new System.Drawing.Size(136, 20);
+            this.txt_PasswordConfirm.Size = new System.Drawing.Size(136, 25);
             this.txt_PasswordConfirm.TabIndex = 11;
             // 
             // txt_Password
             // 
+            this.txt_Password.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
             this.txt_Password.Location = new System.Drawing.Point(361, 117);
             this.txt_Password.Name = "txt_Password";
-            this.txt_Password.Size = new System.Drawing.Size(136, 20);
+            this.txt_Password.Size = new System.Drawing.Size(136, 25);
             this.txt_Password.TabIndex = 10;
             // 
             // txt_Email
             // 
+            this.txt_Email.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
             this.txt_Email.Location = new System.Drawing.Point(361, 49);
             this.txt_Email.Name = "txt_Email";
-            this.txt_Email.Size = new System.Drawing.Size(136, 20);
+            this.txt_Email.Size = new System.Drawing.Size(136, 25);
             this.txt_Email.TabIndex = 9;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(321, 52);
+            this.label6.Location = new System.Drawing.Point(289, 52);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(32, 13);
+            this.label6.Size = new System.Drawing.Size(40, 17);
             this.label6.TabIndex = 8;
             this.label6.Text = "Email";
             // 
             // txt_LName
             // 
+            this.txt_LName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
             this.txt_LName.Location = new System.Drawing.Point(90, 177);
             this.txt_LName.Name = "txt_LName";
-            this.txt_LName.Size = new System.Drawing.Size(136, 20);
+            this.txt_LName.Size = new System.Drawing.Size(136, 25);
             this.txt_LName.TabIndex = 5;
             // 
             // txt_FName
             // 
+            this.txt_FName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
             this.txt_FName.Location = new System.Drawing.Point(90, 117);
             this.txt_FName.Name = "txt_FName";
-            this.txt_FName.Size = new System.Drawing.Size(136, 20);
+            this.txt_FName.Size = new System.Drawing.Size(136, 25);
             this.txt_FName.TabIndex = 4;
             // 
             // txt_Username
             // 
+            this.txt_Username.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
             this.txt_Username.Location = new System.Drawing.Point(90, 49);
             this.txt_Username.Name = "txt_Username";
-            this.txt_Username.Size = new System.Drawing.Size(136, 20);
+            this.txt_Username.Size = new System.Drawing.Size(136, 25);
             this.txt_Username.TabIndex = 3;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(32, 180);
+            this.label3.Location = new System.Drawing.Point(15, 180);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 13);
+            this.label3.Size = new System.Drawing.Size(72, 17);
             this.label3.TabIndex = 2;
             this.label3.Text = "Last Name";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(32, 120);
+            this.label2.Location = new System.Drawing.Point(15, 120);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 13);
+            this.label2.Size = new System.Drawing.Size(74, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "First Name";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(32, 52);
+            this.label1.Location = new System.Drawing.Point(15, 52);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 13);
+            this.label1.Size = new System.Drawing.Size(69, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Username";
             // 
@@ -203,7 +212,7 @@
             // 
             // btnTop_Login
             // 
-            this.btnTop_Login.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnTop_Login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTop_Login.Location = new System.Drawing.Point(3, 3);
             this.btnTop_Login.Name = "btnTop_Login";
             this.btnTop_Login.Size = new System.Drawing.Size(76, 27);
@@ -215,7 +224,7 @@
             // btnTop_Signup
             // 
             this.btnTop_Signup.Enabled = false;
-            this.btnTop_Signup.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnTop_Signup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTop_Signup.Location = new System.Drawing.Point(85, 3);
             this.btnTop_Signup.Name = "btnTop_Signup";
             this.btnTop_Signup.Size = new System.Drawing.Size(75, 27);
@@ -292,6 +301,7 @@
             // 
             // btn_NextToSpec
             // 
+            this.btn_NextToSpec.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_NextToSpec.Location = new System.Drawing.Point(275, 256);
             this.btn_NextToSpec.Name = "btn_NextToSpec";
             this.btn_NextToSpec.Size = new System.Drawing.Size(75, 36);
@@ -302,6 +312,7 @@
             // 
             // btn_BackToSign1
             // 
+            this.btn_BackToSign1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_BackToSign1.Location = new System.Drawing.Point(173, 256);
             this.btn_BackToSign1.Name = "btn_BackToSign1";
             this.btn_BackToSign1.Size = new System.Drawing.Size(75, 36);
@@ -324,11 +335,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
             this.ClientSize = new System.Drawing.Size(684, 462);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.pnl_Sign1);
             this.Controls.Add(this.pnl_Sign_Role);
+            this.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.Name = "SignInForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sign In - Venture Market";

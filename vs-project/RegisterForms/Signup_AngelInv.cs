@@ -36,6 +36,7 @@ namespace code.RegisterForms
             ai.Max_amount = Convert.ToDecimal(txt_MaxAmount.Text);
             ai.Min_Amount = Convert.ToDecimal(txt_MinAmount.Text);
             vmDB.AngelInvestors.InsertOnSubmit(ai);
+            vmDB.User_Roles.InsertOnSubmit(ur);
             vmDB.SubmitChanges();
             UserProfile.AngInvstrMmbrProfile aimp = new UserProfile.AngInvstrMmbrProfile(user);
             aimp.Show();

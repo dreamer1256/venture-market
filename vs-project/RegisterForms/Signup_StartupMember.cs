@@ -14,6 +14,8 @@ namespace code.RegisterForms
     {
         private DataClasses1DataContext vmDB;
         private User user;
+        bool isCEO = false;
+
         public Signup_StartupMember(User user)
         {
             InitializeComponent();
@@ -21,9 +23,9 @@ namespace code.RegisterForms
             
             // Отримання наз стартапів, які вже є у системі
             vmDB = new DataClasses1DataContext();
-            var ur = from u in vmDB.Startups
-                     select u.Title;
-            foreach (var s in ur)
+        
+            var st = vmDB.Startups.Select(s => s.Title);
+            foreach (var s in st)
                 cmbBx_Startups.Items.Add(s);
         }
 
@@ -35,19 +37,17 @@ namespace code.RegisterForms
             User_Role ur = new User_Role();
             ur.UserId = user.ID;
             sm.UserID = user.ID;
-            if (chckBx_IsCEO.Checked == true)
-            {   sm.Is_CEO = true;
+
+            isCEO = chckBx_IsCEO.Checked;
+            if (isCEO)
+            {
+                sm.Is_CEO = true;
                 ur.RoleID = (int)URoles.Role.StartupCEO;  // роль керівника стартапу
-                vmDB.User_Roles.InsertOnSubmit(ur);
-                UserProfile.StartupCEOMmbrProfile scpm = new UserProfile.StartupCEOMmbrProfile(user);
-                scpm.Show();
             }
             else
             {
                 sm.Is_CEO = false;
                 ur.RoleID = (int)URoles.Role.StartupMember; // роль учасника стартапу
-                UserProfile.StartupMmbrProfile smp = new UserProfile.StartupMmbrProfile(user);
-                smp.Show();
             }
 
             // Присвоїти учаснику ID стартапу залежно від вибору в полі comboBox
@@ -63,6 +63,16 @@ namespace code.RegisterForms
             vmDB.Startup_Members.InsertOnSubmit(sm);
             vmDB.User_Roles.InsertOnSubmit(ur);
             vmDB.SubmitChanges();
+            if(isCEO)
+            {
+                UserProfile.StartupCEOMmbrProfile scpm = new UserProfile.StartupCEOMmbrProfile(user);
+                scpm.Show();
+            }
+            else
+            {
+                UserProfile.StartupMmbrProfile smp = new UserProfile.StartupMmbrProfile(user);
+                smp.Show();
+            }
             this.Hide();
         }
 

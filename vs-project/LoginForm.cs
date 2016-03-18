@@ -14,16 +14,15 @@ namespace code
     public partial class LoginForm : Form
     {
         DataClasses1DataContext vmDB;
-
-        //public bool is_SigninWindowExist;
+        
         public LoginForm()
         {
             InitializeComponent();
+            AcceptButton = btn_Login;
         }
 
         private void btnTop_Signup_Click(object sender, EventArgs e)
         {
-            btnTop_Login.Enabled = true;
             btnTop_Signup.Enabled = false;
             SignInForm sf = new SignInForm();
             sf.Show();
@@ -86,26 +85,14 @@ namespace code
         private void btnTop_Login_Click(object sender, EventArgs e)
         {   
             btnTop_Signup.Enabled = true;
-            btnTop_Login.Enabled = false;
         }
 
         public bool IsValidUser(string userName, string passWord)
          {
             vmDB = new DataClasses1DataContext();
-            var userResults = from u in vmDB.Users
-                               where u.Username == userName
-                               && u.Password == passWord
-                               select u;
-            return Enumerable.Count(userResults) == 1;
+            var userResult = vmDB.Users.Where(u => u.Username == userName && u.Password == passWord)
+                .Select(u => u);
+            return Enumerable.Count(userResult) == 1;
          }
-
-
-        /*public User GetUser(string userName)
-        {
-            vmDB = new DataClasses1DataContext();
-            User user = vmDB.Users.Single(u, u.UserName=>userName);
-            return user;
-        }
-        */
     }
 }
