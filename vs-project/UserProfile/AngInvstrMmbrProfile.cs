@@ -13,6 +13,7 @@ namespace code.UserProfile
     public partial class AngInvstrMmbrProfile : Form
     {
         User user;
+        Image MemForImage;
         int ind = 0;
         DataClasses1DataContext vmDB = new DataClasses1DataContext();
         //Startup startup;
@@ -23,6 +24,7 @@ namespace code.UserProfile
             DataClasses1DataContext vmDB = new DataClasses1DataContext();
             var angel = user.AngelInvestors.SingleOrDefault(u => u.UserID == user.ID);
             pnl_startups.Hide();
+            pnl_edit.Hide();
             lbl_name.Text = string.Format("{0} {1}", user.FName, user.LName);
             lbl_phone.Text = string.Format("Phone: {0}", angel.Phone);
             lbl_email.Text = string.Format("Email: {0}", user.Email);
@@ -56,13 +58,15 @@ namespace code.UserProfile
             ind = 0;
             listView1.Items.Clear();
             pnl_startups.Hide();
+            pnl_edit.Hide();
             pnl_profile.Show();
         }
 
         private void startupslist_Click(object sender, EventArgs e)
         {
-            if(ind == 1) { listView1.Items.Clear(); }
+            if (ind == 1) { listView1.Items.Clear(); }
             pnl_profile.Hide();
+            pnl_edit.Hide();
             pnl_startups.Show();
             string arr = null;
             string dll = "sdsdds";
@@ -71,15 +75,31 @@ namespace code.UserProfile
 
                       join t in vmDB.Business_Incubators on p.IncubatorID equals t.ID
 
-                      select new { starname = p.Title, businame = t.Title, idb = p.IncubatorID });
+                      select new { starname = p.Title, businame = t.Title });
+
+            var strartupsByCompany = new Dictionary<string, List<string>>();
             foreach (var group in jr)
             {
-                arr = group.businame;
-                ListViewGroup csharp_group = new ListViewGroup(arr);
-                listView1.Groups.Add(csharp_group);
-                var itm = new ListViewItem { Text = group.starname, Group = csharp_group };
-                listView1.Items.Add(itm);
+                if (!strartupsByCompany.ContainsKey(group.businame))
+                {
+                    strartupsByCompany.Add(group.businame, new List<string>());
+                }
+
+                strartupsByCompany[group.businame].Add(group.starname);
             }
+
+            foreach (var startups in strartupsByCompany)
+            {
+                ListViewGroup csharp_group = new ListViewGroup(startups.Key);
+                listView1.Groups.Add(csharp_group);
+
+                foreach (var startup in startups.Value)
+                {
+                    var itm = new ListViewItem { Text = startup, Group = csharp_group };
+                    listView1.Items.Add(itm);
+                }
+            }
+
             ind = 1;
         }
 
@@ -120,6 +140,46 @@ namespace code.UserProfile
 
         private void listView1_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            LoadImage();
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            pnl_startups.Hide();
+            pnl_profile.Hide();
+            pnl_edit.Show();
+        }
+        private void LoadImage()
+        {
+
+            // директория, которая будет выбрана как начальная в окне для выбора файла 
+            openFileDialog1.InitialDirectory = "c:";
+            // устанавливаем формат файлов для загрузки - jpg 
+                openFileDialog1.Filter = "image (JPEG,PNG) files (*.jpg)|*.jpg|*.png)|*.png|All files (*.*)|*.*";
+
+            // если открытие окна выбора файла завершилось выбором файла и нажатием кнопки ОК 
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+
+                try // безопасная попытка 
+                {
+                    // пытаемся загрузить файл с именем openFileDialog1.FileName - выбранный пользователем файл. 
+                    MemForImage = Image.FromFile(openFileDialog1.FileName);
+                    // устанавливаем картинку в поле элемента PictureBox 
+                    pictureBox1.Image = MemForImage;
+                }
+                catch (Exception ex) // если попытка загрузки не удалась 
+                {
+                    // выводим сообщение с причиной ошибки 
+                    MessageBox.Show("Не удалось загрузить файл: " + ex.Message);
+                }
+
+            }
 
         }
     }

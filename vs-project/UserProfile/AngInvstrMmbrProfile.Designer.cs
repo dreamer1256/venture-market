@@ -32,9 +32,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.IMG = new System.Windows.Forms.Label();
             this.lbl_name = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.lbl_imin = new System.Windows.Forms.Label();
@@ -51,20 +49,27 @@
             this.startupslist = new System.Windows.Forms.Button();
             this.pnl_startups = new System.Windows.Forms.Panel();
             this.listView1 = new System.Windows.Forms.ListView();
-            this.starname = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label2 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.lbl_iexperience = new System.Windows.Forms.Label();
             this.pnl_profile = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.pnl_edit = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel7.SuspendLayout();
             this.pnl_startups.SuspendLayout();
             this.panel4.SuspendLayout();
             this.pnl_profile.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.pnl_edit.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -100,23 +105,12 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel2.Controls.Add(this.IMG);
-            this.panel2.Controls.Add(this.lbl_name);
             this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.Controls.Add(this.lbl_name);
             this.panel2.Location = new System.Drawing.Point(5, 46);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(173, 178);
             this.panel2.TabIndex = 1;
-            // 
-            // IMG
-            // 
-            this.IMG.AutoSize = true;
-            this.IMG.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.IMG.Location = new System.Drawing.Point(55, 65);
-            this.IMG.Name = "IMG";
-            this.IMG.Size = new System.Drawing.Size(57, 29);
-            this.IMG.TabIndex = 2;
-            this.IMG.Text = "IMG";
             // 
             // lbl_name
             // 
@@ -126,15 +120,6 @@
             this.lbl_name.Size = new System.Drawing.Size(35, 13);
             this.lbl_name.TabIndex = 1;
             this.lbl_name.Text = "label2";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.pictureBox1.Location = new System.Drawing.Point(10, 10);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(152, 137);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // panel3
             // 
@@ -285,8 +270,6 @@
             // 
             // listView1
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.starname});
             this.listView1.GridLines = true;
             this.listView1.Location = new System.Drawing.Point(15, 45);
             this.listView1.Name = "listView1";
@@ -296,11 +279,6 @@
             this.listView1.View = System.Windows.Forms.View.Tile;
             this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             this.listView1.Click += new System.EventHandler(this.listView1_Click);
-            // 
-            // starname
-            // 
-            this.starname.Text = "starname";
-            this.starname.Width = 200;
             // 
             // label2
             // 
@@ -342,16 +320,69 @@
             this.pnl_profile.Size = new System.Drawing.Size(437, 278);
             this.pnl_profile.TabIndex = 4;
             // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel5.Controls.Add(this.button2);
+            this.panel5.Location = new System.Drawing.Point(6, 330);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(172, 38);
+            this.panel5.TabIndex = 8;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(49, 7);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 0;
+            this.button2.Text = "Edit profile";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
+            // pnl_edit
+            // 
+            this.pnl_edit.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pnl_edit.Controls.Add(this.button3);
+            this.pnl_edit.Location = new System.Drawing.Point(183, 46);
+            this.pnl_edit.Name = "pnl_edit";
+            this.pnl_edit.Size = new System.Drawing.Size(589, 193);
+            this.pnl_edit.TabIndex = 9;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(14, 10);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 0;
+            this.button3.Text = "Load Image";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(14, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(137, 132);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // AngInvstrMmbrProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.pnl_startups);
+            this.Controls.Add(this.pnl_edit);
+            this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.pnl_startups);
             this.Controls.Add(this.pnl_profile);
             this.Name = "AngInvstrMmbrProfile";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -362,7 +393,6 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel6.ResumeLayout(false);
@@ -372,6 +402,9 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.pnl_profile.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.pnl_edit.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -383,7 +416,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lbl_name;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label lbl_phone;
         private System.Windows.Forms.Label lbl_skype;
@@ -404,7 +436,11 @@
         private System.Windows.Forms.Panel pnl_profile;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.ColumnHeader starname;
-        private System.Windows.Forms.Label IMG;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Panel pnl_edit;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
