@@ -37,18 +37,23 @@
             // 
             // btn_Finish
             // 
-            this.btn_Finish.Location = new System.Drawing.Point(304, 312);
+            this.btn_Finish.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Finish.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Finish.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.btn_Finish.Location = new System.Drawing.Point(470, 397);
             this.btn_Finish.Name = "btn_Finish";
-            this.btn_Finish.Size = new System.Drawing.Size(75, 52);
+            this.btn_Finish.Size = new System.Drawing.Size(75, 36);
             this.btn_Finish.TabIndex = 0;
             this.btn_Finish.Text = "Finish";
-            this.btn_Finish.UseVisualStyleBackColor = true;
+            this.btn_Finish.UseVisualStyleBackColor = false;
             this.btn_Finish.Click += new System.EventHandler(this.btn_Finish_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(108, 141);
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label1.Location = new System.Drawing.Point(324, 249);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(63, 26);
             this.label1.TabIndex = 1;
@@ -57,7 +62,7 @@
             // cmbBx_Company
             // 
             this.cmbBx_Company.FormattingEnabled = true;
-            this.cmbBx_Company.Location = new System.Drawing.Point(203, 146);
+            this.cmbBx_Company.Location = new System.Drawing.Point(419, 254);
             this.cmbBx_Company.Name = "cmbBx_Company";
             this.cmbBx_Company.Size = new System.Drawing.Size(248, 21);
             this.cmbBx_Company.TabIndex = 2;
@@ -65,7 +70,9 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(111, 251);
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label2.Location = new System.Drawing.Point(327, 314);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(62, 26);
             this.label2.TabIndex = 3;
@@ -73,7 +80,7 @@
             // 
             // txt_GeoInterests
             // 
-            this.txt_GeoInterests.Location = new System.Drawing.Point(203, 248);
+            this.txt_GeoInterests.Location = new System.Drawing.Point(419, 311);
             this.txt_GeoInterests.Name = "txt_GeoInterests";
             this.txt_GeoInterests.Size = new System.Drawing.Size(248, 20);
             this.txt_GeoInterests.TabIndex = 4;
@@ -82,7 +89,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(684, 462);
+            this.BackgroundImage = global::code.Properties.Resources.LOGIN;
+            this.ClientSize = new System.Drawing.Size(999, 602);
             this.Controls.Add(this.txt_GeoInterests);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cmbBx_Company);
