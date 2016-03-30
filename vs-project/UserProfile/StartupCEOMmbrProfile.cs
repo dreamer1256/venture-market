@@ -166,10 +166,18 @@ namespace code.UserProfile
         /// </summary>
         private void ShowJoinErrorMessage()
         {
-            lbl_JoinError.Text = "Your startup are located in the "
-                        + startupCEO.Startup.Business_Incubator.Title + " business incubator."
-                        + "\nYou can\'t join a new incubator now.";
+            int incID = (int)startupCEO.Startup.IncubatorID;
+            string incubator = vmDB.Business_Incubators.Single(i => i.ID == incID).Title;
+            lbl_JoinError.Text = "Your startup are located in the " + incubator 
+                + " business incubator." + "\nYou can\'t join a new incubator now.";
             lbl_JoinError.Show();
+        }
+
+        private void btn_Logout_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            LoginForm icmp = new LoginForm();
+            icmp.Show();
         }
     }
 }

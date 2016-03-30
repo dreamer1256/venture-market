@@ -22,7 +22,7 @@ namespace code.UserProfile
             InitializeComponent();
             this.user = user;
             DataClasses1DataContext vmDB = new DataClasses1DataContext();
-            var angel = user.AngelInvestors.SingleOrDefault(u => u.UserID == user.ID);
+            AngelInvestor angel = vmDB.AngelInvestors.Single(u => u.UserID == user.ID);
             pnl_startups.Hide();
             pnl_edit.Hide();
             lbl_name.Text = string.Format("{0} {1}", user.FName, user.LName);

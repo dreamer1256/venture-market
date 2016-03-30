@@ -64,6 +64,7 @@
             this.btn_Join = new System.Windows.Forms.Button();
             this.lbl_JoinError = new System.Windows.Forms.Label();
             this.pnl_Incubators = new System.Windows.Forms.Panel();
+            this.btn_Logout = new System.Windows.Forms.Button();
             this.pnl_Profile.SuspendLayout();
             this.pnl_Visitors.SuspendLayout();
             this.pnl_GeneralInfo.SuspendLayout();
@@ -72,6 +73,7 @@
             this.pnl_Navigation.SuspendLayout();
             this.pnl_Logo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel2.SuspendLayout();
             this.pnl_Incubators.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -402,6 +404,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
+            this.panel2.Controls.Add(this.btn_Logout);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
@@ -504,6 +507,22 @@
             this.pnl_Incubators.Size = new System.Drawing.Size(820, 526);
             this.pnl_Incubators.TabIndex = 3;
             // 
+            // btn_Logout
+            // 
+            this.btn_Logout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(48)))));
+            this.btn_Logout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Logout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(48)))));
+            this.btn_Logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Logout.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btn_Logout.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_Logout.Location = new System.Drawing.Point(897, 0);
+            this.btn_Logout.Name = "btn_Logout";
+            this.btn_Logout.Size = new System.Drawing.Size(87, 28);
+            this.btn_Logout.TabIndex = 0;
+            this.btn_Logout.Text = "Logout";
+            this.btn_Logout.UseVisualStyleBackColor = false;
+            this.btn_Logout.Click += new System.EventHandler(this.btn_Logout_Click);
+            // 
             // StartupCEOMmbrProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -530,6 +549,7 @@
             this.pnl_Logo.ResumeLayout(false);
             this.pnl_Logo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel2.ResumeLayout(false);
             this.pnl_Incubators.ResumeLayout(false);
             this.pnl_Incubators.PerformLayout();
             this.ResumeLayout(false);
@@ -573,5 +593,6 @@
         private System.Windows.Forms.Button btn_Join;
         private System.Windows.Forms.Label lbl_JoinError;
         private System.Windows.Forms.Panel pnl_Incubators;
+        private System.Windows.Forms.Button btn_Logout;
     }
 }

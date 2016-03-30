@@ -43,11 +43,9 @@ namespace code
             {
                 vmDB = new DataClasses1DataContext();
                 
-                User user = vmDB.Users.Single(u => u.Username.Equals(userName));
-                int userID = user.ID;
-                User_Role userRole = vmDB.User_Roles.Single(r => r.UserId == userID);
-                int roleID = userRole.RoleID;
-                switch(roleID)
+                var user = vmDB.Users.Single(u => u.Username.Equals(userName));
+                User_Role userRole = vmDB.User_Roles.Single(r => r.UserId == user.ID);
+                switch(userRole.RoleID)
                 {
                     case (int)URoles.Role.AnglInvestor:
                         UserProfile.AngInvstrMmbrProfile aimp = new UserProfile.AngInvstrMmbrProfile(user);
