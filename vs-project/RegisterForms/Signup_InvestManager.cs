@@ -37,9 +37,10 @@ namespace code.RegisterForms
             im.Investment_CompanyID = company.ID;
             im.Geo_Inerests = txt_GeoInterests.Text;
             vmDB.Investment_Managers.InsertOnSubmit(im);
+            vmDB.User_Roles.InsertOnSubmit(ur);
             vmDB.SubmitChanges();
             this.Hide();
-            UserProfile.InvCompanyMmbrProfile icmp = new UserProfile.InvCompanyMmbrProfile(user);
+            UserProfile.InvManagerMmbrProfile icmp = new UserProfile.InvManagerMmbrProfile(user);
             icmp.Show();
         }
     }
