@@ -65,7 +65,7 @@ namespace code.UserProfile
                       select s;
             foreach (var s in snm)
             {
-                if (s.State.ToString() == "considered")
+                if ((s.State.ToString() == "considered") | (s.State.ToString() == "no state"))
                 {
                     arr[0] = s.Startup.Title;
                     arr[1] = s.Investment_Manager.User.LName + " " + s.Investment_Manager.User.FName;
@@ -96,15 +96,12 @@ namespace code.UserProfile
                 lbl_startap_title.Text = string.Format("Startup: {0}", str.Title);
                 lbl_startap_strategy.Text = string.Format("Marketing Strategy:  {0}", str.Marketing_Strategy);
                 lbl_startap_model.Text = string.Format(   "Business Model:       {0}", str.Business_Model);
-
-               textBox1.Text = string.Format("{0}", str.Description);
+                textBox1.Text = string.Format("{0}", str.Description);
 
                 pnl_page_view.Hide();
                 pnl_contact_inf.Hide();
                 pnl_aplication.Hide();
                 pnl_startup.Show();
-
-              
             }
         }
         //Button to display charts
@@ -142,7 +139,6 @@ namespace code.UserProfile
                     var item = listView2.Items[i];
                     if (item.Text.ToLower().Contains(txt_box_search.Text.ToLower()))
                     {
-
                         item.BackColor = Color.LightGreen;
                     }
                     else
@@ -157,7 +153,22 @@ namespace code.UserProfile
                 }
             }
         }
-        
+        private void btm_finance_Click(object sender, EventArgs e)
+        {
+            Startup sp = vmDB.Startups.Single(u => u.Title == listView2.SelectedItems[0].Text);
+            Application app = vmDB.Applications.Single(u => u.StartupID == sp.ID);
+            app.State = "test";
+            
+            decimal invamount = Decimal.Parse(txt_amount.Text);
+            decimal old_amount = Decimal.Parse(sp.Total_Investment.ToString());
+            int old_app_round = app.Application_Round;
+            decimal tmp = invamount + old_amount;
+            int tmp2 = old_app_round + 1;
+
+            sp.Total_Investment = tmp;
+            app.Application_Round = tmp2 + 1;
+            vmDB.SubmitChanges();
+        }
         private void panel5_Paint(object sender, PaintEventArgs e)
         {
 
@@ -212,12 +223,6 @@ namespace code.UserProfile
 
         }
 
-        private void btm_finance_Click(object sender, EventArgs e)
-        {
-            Startup sp = vmDB.Startups.Single(u => u.Title == listView2.SelectedItems[0].Text);
-            Application app = vmDB.Applications.Single(u => u.StartupID == sp.ID);
-            app.State = "test";
-            vmDB.SubmitChanges();
-        }
+
     } }
 
