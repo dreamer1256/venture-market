@@ -20,7 +20,7 @@ namespace code.UserProfile
             InitializeComponent();
             this.user = user;
 
-            var maneger = user.Investment_Managers.SingleOrDefault(u => u.UserID == user.ID);
+            var maneger = vmDB.Investment_Managers.Single(u => u.UserID == user.ID);
             pnl_aplication.Hide();
             pnl_charts.Hide();
             pnl_startup.Hide();

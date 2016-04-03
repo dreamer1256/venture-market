@@ -159,6 +159,7 @@
     <EmbeddedResource Include="UserProfile\StartupMmbrProfile.resx">
       <DependentUpon>StartupMmbrProfile.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
     <None Include="VMDataClasses.dbml.layout">
       <DependentUpon>VMDataClasses.dbml</DependentUpon>
     </None>

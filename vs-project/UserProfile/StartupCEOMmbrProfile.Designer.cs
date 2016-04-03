@@ -30,6 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StartupCEOMmbrProfile));
             this.pnl_Profile = new System.Windows.Forms.Panel();
+            this.pnl_About = new System.Windows.Forms.Panel();
+            this.rchTxtBx_About = new System.Windows.Forms.RichTextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.pnl_Visitors = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.pnl_Chart = new System.Windows.Forms.Panel();
@@ -44,12 +47,9 @@
             this.lbl_City = new System.Windows.Forms.Label();
             this.lbl_Country = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.pnl_About = new System.Windows.Forms.Panel();
-            this.rchTxtBx_About = new System.Windows.Forms.RichTextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnl_Navigation = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btn_LinkToApplications = new System.Windows.Forms.Button();
             this.btn_LinkToMyStartup = new System.Windows.Forms.Button();
             this.btn_LinkToIncubators = new System.Windows.Forms.Button();
             this.btn_LinkToProfile = new System.Windows.Forms.Button();
@@ -70,10 +70,19 @@
             this.lstBx_StartupTeam = new System.Windows.Forms.ListBox();
             this.lbl_MyStartupTitle = new System.Windows.Forms.Label();
             this.rchTxtBox = new System.Windows.Forms.RichTextBox();
+            this.pnl_Applications = new System.Windows.Forms.Panel();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lstVw_Applications = new System.Windows.Forms.ListView();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.btn_CreateApplication = new System.Windows.Forms.Button();
+            this.txtBx_RoundOfFunding = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.pnl_Profile.SuspendLayout();
+            this.pnl_About.SuspendLayout();
             this.pnl_Visitors.SuspendLayout();
             this.pnl_GeneralInfo.SuspendLayout();
-            this.pnl_About.SuspendLayout();
             this.panel1.SuspendLayout();
             this.pnl_Navigation.SuspendLayout();
             this.pnl_Logo.SuspendLayout();
@@ -81,21 +90,64 @@
             this.panel2.SuspendLayout();
             this.pnl_Incubators.SuspendLayout();
             this.pnl_MyStartup.SuspendLayout();
+            this.pnl_Applications.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnl_Profile
             // 
             this.pnl_Profile.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnl_Profile.BackColor = System.Drawing.Color.Transparent;
+            this.pnl_Profile.Controls.Add(this.pnl_About);
             this.pnl_Profile.Controls.Add(this.pnl_Visitors);
             this.pnl_Profile.Controls.Add(this.pnl_Chart);
             this.pnl_Profile.Controls.Add(this.pnl_ProfInfo);
             this.pnl_Profile.Controls.Add(this.pnl_GeneralInfo);
-            this.pnl_Profile.Controls.Add(this.pnl_About);
             this.pnl_Profile.Location = new System.Drawing.Point(164, 34);
             this.pnl_Profile.Name = "pnl_Profile";
             this.pnl_Profile.Size = new System.Drawing.Size(814, 526);
             this.pnl_Profile.TabIndex = 6;
+            // 
+            // pnl_About
+            // 
+            this.pnl_About.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
+            this.pnl_About.Controls.Add(this.rchTxtBx_About);
+            this.pnl_About.Controls.Add(this.label3);
+            this.pnl_About.Location = new System.Drawing.Point(0, 178);
+            this.pnl_About.Name = "pnl_About";
+            this.pnl_About.Size = new System.Drawing.Size(535, 348);
+            this.pnl_About.TabIndex = 11;
+            // 
+            // rchTxtBx_About
+            // 
+            this.rchTxtBx_About.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
+            this.rchTxtBx_About.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rchTxtBx_About.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.rchTxtBx_About.DetectUrls = false;
+            this.rchTxtBx_About.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.rchTxtBx_About.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.rchTxtBx_About.Location = new System.Drawing.Point(24, 60);
+            this.rchTxtBx_About.Name = "rchTxtBx_About";
+            this.rchTxtBx_About.ReadOnly = true;
+            this.rchTxtBx_About.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Horizontal;
+            this.rchTxtBx_About.ShortcutsEnabled = false;
+            this.rchTxtBx_About.Size = new System.Drawing.Size(473, 278);
+            this.rchTxtBx_About.TabIndex = 2;
+            this.rchTxtBx_About.TabStop = false;
+            this.rchTxtBx_About.Text = "";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label3.Location = new System.Drawing.Point(20, 12);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(108, 21);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "About myself";
             // 
             // pnl_Visitors
             // 
@@ -249,45 +301,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Contact information:";
             // 
-            // pnl_About
-            // 
-            this.pnl_About.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
-            this.pnl_About.Controls.Add(this.rchTxtBx_About);
-            this.pnl_About.Controls.Add(this.label3);
-            this.pnl_About.Location = new System.Drawing.Point(0, 178);
-            this.pnl_About.Name = "pnl_About";
-            this.pnl_About.Size = new System.Drawing.Size(535, 348);
-            this.pnl_About.TabIndex = 11;
-            // 
-            // rchTxtBx_About
-            // 
-            this.rchTxtBx_About.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
-            this.rchTxtBx_About.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rchTxtBx_About.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.rchTxtBx_About.DetectUrls = false;
-            this.rchTxtBx_About.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.rchTxtBx_About.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.rchTxtBx_About.Location = new System.Drawing.Point(24, 60);
-            this.rchTxtBx_About.Name = "rchTxtBx_About";
-            this.rchTxtBx_About.ReadOnly = true;
-            this.rchTxtBx_About.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Horizontal;
-            this.rchTxtBx_About.ShortcutsEnabled = false;
-            this.rchTxtBx_About.Size = new System.Drawing.Size(473, 278);
-            this.rchTxtBx_About.TabIndex = 2;
-            this.rchTxtBx_About.TabStop = false;
-            this.rchTxtBx_About.Text = "";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label3.Location = new System.Drawing.Point(20, 12);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(108, 21);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "About myself";
-            // 
             // panel1
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -302,7 +315,7 @@
             // pnl_Navigation
             // 
             this.pnl_Navigation.BackColor = System.Drawing.Color.Transparent;
-            this.pnl_Navigation.Controls.Add(this.button3);
+            this.pnl_Navigation.Controls.Add(this.btn_LinkToApplications);
             this.pnl_Navigation.Controls.Add(this.btn_LinkToMyStartup);
             this.pnl_Navigation.Controls.Add(this.btn_LinkToIncubators);
             this.pnl_Navigation.Controls.Add(this.btn_LinkToProfile);
@@ -311,20 +324,21 @@
             this.pnl_Navigation.Size = new System.Drawing.Size(159, 348);
             this.pnl_Navigation.TabIndex = 7;
             // 
-            // button3
+            // btn_LinkToApplications
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button3.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button3.Location = new System.Drawing.Point(1, 165);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(158, 49);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "button3";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button3.UseVisualStyleBackColor = false;
+            this.btn_LinkToApplications.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
+            this.btn_LinkToApplications.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_LinkToApplications.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_LinkToApplications.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btn_LinkToApplications.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_LinkToApplications.Location = new System.Drawing.Point(1, 165);
+            this.btn_LinkToApplications.Name = "btn_LinkToApplications";
+            this.btn_LinkToApplications.Size = new System.Drawing.Size(158, 49);
+            this.btn_LinkToApplications.TabIndex = 4;
+            this.btn_LinkToApplications.Text = "Application";
+            this.btn_LinkToApplications.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_LinkToApplications.UseVisualStyleBackColor = false;
+            this.btn_LinkToApplications.Click += new System.EventHandler(this.btn_LinkToApplications_Click);
             // 
             // btn_LinkToMyStartup
             // 
@@ -335,7 +349,7 @@
             this.btn_LinkToMyStartup.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btn_LinkToMyStartup.Location = new System.Drawing.Point(0, 55);
             this.btn_LinkToMyStartup.Name = "btn_LinkToMyStartup";
-            this.btn_LinkToMyStartup.Size = new System.Drawing.Size(161, 49);
+            this.btn_LinkToMyStartup.Size = new System.Drawing.Size(159, 49);
             this.btn_LinkToMyStartup.TabIndex = 3;
             this.btn_LinkToMyStartup.Text = "My Startup";
             this.btn_LinkToMyStartup.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -351,7 +365,7 @@
             this.btn_LinkToIncubators.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btn_LinkToIncubators.Location = new System.Drawing.Point(0, 110);
             this.btn_LinkToIncubators.Name = "btn_LinkToIncubators";
-            this.btn_LinkToIncubators.Size = new System.Drawing.Size(161, 49);
+            this.btn_LinkToIncubators.Size = new System.Drawing.Size(159, 49);
             this.btn_LinkToIncubators.TabIndex = 2;
             this.btn_LinkToIncubators.Text = "Business Incubators";
             this.btn_LinkToIncubators.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -596,28 +610,135 @@
             this.rchTxtBox.TabIndex = 0;
             this.rchTxtBox.Text = "Startup info";
             // 
+            // pnl_Applications
+            // 
+            this.pnl_Applications.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pnl_Applications.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
+            this.pnl_Applications.Controls.Add(this.groupBox2);
+            this.pnl_Applications.Controls.Add(this.groupBox1);
+            this.pnl_Applications.Controls.Add(this.label6);
+            this.pnl_Applications.Location = new System.Drawing.Point(164, 34);
+            this.pnl_Applications.Name = "pnl_Applications";
+            this.pnl_Applications.Size = new System.Drawing.Size(817, 523);
+            this.pnl_Applications.TabIndex = 4;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.lstVw_Applications);
+            this.groupBox2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.groupBox2.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.groupBox2.Location = new System.Drawing.Point(402, 100);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(406, 405);
+            this.groupBox2.TabIndex = 6;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "All Applications";
+            // 
+            // lstVw_Applications
+            // 
+            this.lstVw_Applications.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
+            this.lstVw_Applications.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lstVw_Applications.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lstVw_Applications.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.lstVw_Applications.HideSelection = false;
+            this.lstVw_Applications.Location = new System.Drawing.Point(8, 45);
+            this.lstVw_Applications.MultiSelect = false;
+            this.lstVw_Applications.Name = "lstVw_Applications";
+            this.lstVw_Applications.Size = new System.Drawing.Size(385, 354);
+            this.lstVw_Applications.TabIndex = 0;
+            this.lstVw_Applications.UseCompatibleStateImageBehavior = false;
+            this.lstVw_Applications.View = System.Windows.Forms.View.Details;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.panel3);
+            this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.groupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.groupBox1.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.groupBox1.Location = new System.Drawing.Point(49, 100);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(313, 144);
+            this.groupBox1.TabIndex = 5;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "New Application";
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.label7);
+            this.panel3.Controls.Add(this.btn_CreateApplication);
+            this.panel3.Controls.Add(this.txtBx_RoundOfFunding);
+            this.panel3.Location = new System.Drawing.Point(6, 31);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(302, 100);
+            this.panel3.TabIndex = 4;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label7.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label7.Location = new System.Drawing.Point(3, 18);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(139, 21);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "Round of funding";
+            // 
+            // btn_CreateApplication
+            // 
+            this.btn_CreateApplication.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            this.btn_CreateApplication.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_CreateApplication.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btn_CreateApplication.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_CreateApplication.Location = new System.Drawing.Point(3, 53);
+            this.btn_CreateApplication.Name = "btn_CreateApplication";
+            this.btn_CreateApplication.Size = new System.Drawing.Size(296, 44);
+            this.btn_CreateApplication.TabIndex = 3;
+            this.btn_CreateApplication.Text = "Create Application";
+            this.btn_CreateApplication.UseVisualStyleBackColor = true;
+            this.btn_CreateApplication.Click += new System.EventHandler(this.btn_CreateApplication_Click);
+            // 
+            // txtBx_RoundOfFunding
+            // 
+            this.txtBx_RoundOfFunding.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txtBx_RoundOfFunding.Location = new System.Drawing.Point(166, 15);
+            this.txtBx_RoundOfFunding.Name = "txtBx_RoundOfFunding";
+            this.txtBx_RoundOfFunding.Size = new System.Drawing.Size(130, 29);
+            this.txtBx_RoundOfFunding.TabIndex = 0;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label6.Location = new System.Drawing.Point(50, 45);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(131, 30);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "Applications";
+            // 
             // StartupCEOMmbrProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.GreenYellow;
+            this.BackColor = System.Drawing.Color.DarkCyan;
             this.ClientSize = new System.Drawing.Size(984, 562);
+            this.Controls.Add(this.pnl_Applications);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnl_Profile);
             this.Controls.Add(this.pnl_MyStartup);
             this.Controls.Add(this.pnl_Incubators);
-            this.Controls.Add(this.pnl_Profile);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "StartupCEOMmbrProfile";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Startup CEO Profile - Venture Market";
             this.pnl_Profile.ResumeLayout(false);
+            this.pnl_About.ResumeLayout(false);
+            this.pnl_About.PerformLayout();
             this.pnl_Visitors.ResumeLayout(false);
             this.pnl_Visitors.PerformLayout();
             this.pnl_GeneralInfo.ResumeLayout(false);
             this.pnl_GeneralInfo.PerformLayout();
-            this.pnl_About.ResumeLayout(false);
-            this.pnl_About.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.pnl_Navigation.ResumeLayout(false);
             this.pnl_Logo.ResumeLayout(false);
@@ -628,6 +749,12 @@
             this.pnl_Incubators.PerformLayout();
             this.pnl_MyStartup.ResumeLayout(false);
             this.pnl_MyStartup.PerformLayout();
+            this.pnl_Applications.ResumeLayout(false);
+            this.pnl_Applications.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -659,7 +786,7 @@
         private System.Windows.Forms.RichTextBox rchTxtBx_About;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btn_LinkToProfile;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btn_LinkToApplications;
         private System.Windows.Forms.Button btn_LinkToMyStartup;
         private System.Windows.Forms.Button btn_LinkToIncubators;
         private System.Windows.Forms.Label label4;
@@ -675,5 +802,14 @@
         private System.Windows.Forms.Label lbl_MyStartupTitle;
         private System.Windows.Forms.ListBox lstBx_StartupTeam;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Panel pnl_Applications;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btn_CreateApplication;
+        private System.Windows.Forms.TextBox txtBx_RoundOfFunding;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ListView lstVw_Applications;
     }
 }

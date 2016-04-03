@@ -20,6 +20,7 @@ namespace code.UserProfile
         Startup_Member startupCEO = null;
         DataClasses1DataContext vmDB;
         string incubatorTitle = null;
+        ListViewItem lvi;
         /// <summary>
         /// Витягується основна інформація про користувача
         /// </summary>
@@ -48,29 +49,9 @@ namespace code.UserProfile
             pnl_MyStartup.Hide();
             lbl_StartupsInIncubator.Hide();
             lbl_StartupsInIncubList.Hide();
+            pnl_Applications.Hide();
             btn_Join.Hide();
             lbl_JoinError.Hide();
-
-            // Вивести бізнес інкубатори та інформацію про них
-            // в ListView
-            var incubators = vmDB.Business_Incubators.Select(inc => inc);
-            ListViewItem lvi;
-            listView1.FullRowSelect = true;
-            listView1.GridLines = false;
-
-            listView1.Columns.Add("Title", 120);
-            listView1.Columns.Add("Location", 180);
-            listView1.Columns.Add("Number Of Seats", 150);
-
-            string[] arr = new string[3];
-            foreach (var s in incubators)
-            {
-                arr[0] = s.Title;
-                arr[1] = s.Address;
-                arr[2] = s.Number_Of_Seats.ToString();
-                lvi = new ListViewItem(arr);
-                listView1.Items.Add(lvi);
-            }
         }
 
         /// <summary>
@@ -81,6 +62,7 @@ namespace code.UserProfile
             pnl_Profile.Show();
             pnl_Incubators.Hide();
             pnl_MyStartup.Hide();
+            pnl_Applications.Hide();
             btn_Join.Hide();
             lbl_JoinError.Hide();
         }
@@ -93,6 +75,27 @@ namespace code.UserProfile
             pnl_Profile.Hide();
             pnl_Incubators.Show();
             pnl_MyStartup.Hide();
+            pnl_Applications.Hide();
+            listView1.Clear();
+            // Вивести бізнес інкубатори та інформацію про них
+            // в ListView
+            var incubators = vmDB.Business_Incubators.Select(inc => inc);
+            listView1.FullRowSelect = true;
+            listView1.GridLines = false;
+
+            listView1.Columns.Add("Title", 120);
+            listView1.Columns.Add("Location", 180);
+            listView1.Columns.Add("Number Of Seats", 150);
+            
+            string[] arr = new string[3];
+            foreach (var s in incubators)
+            {
+                arr[0] = s.Title;
+                arr[1] = s.Address;
+                arr[2] = s.Number_Of_Seats.ToString();
+                lvi = new ListViewItem(arr);
+                listView1.Items.Add(lvi);
+            }
         }
 
         /// <summary>
@@ -185,6 +188,7 @@ namespace code.UserProfile
         {
             pnl_Profile.Hide();
             pnl_Incubators.Hide();
+            pnl_Applications.Hide();
             pnl_MyStartup.Show();
             var startup = vmDB.Startups.Single(s => s.Title.Equals(startupCEO.Startup.Title));
             lbl_MyStartupTitle.Text = startup.Title;
@@ -203,6 +207,84 @@ namespace code.UserProfile
                 .Select(u => u.User.FName + " " + u.User.LName);
             lstBx_StartupTeam.DataSource = teamMember;
         }
-        
+
+        private void btn_LinkToApplications_Click(object sender, EventArgs e)
+        {
+            vmDB = new DataClasses1DataContext();
+            pnl_Profile.Hide();
+            pnl_Incubators.Hide();
+            pnl_MyStartup.Hide();
+            pnl_Applications.Show();
+            LoadApplicationList();
+        }
+
+        /// <summary>
+        /// При кліку по кнопці створити заявку на фінансування
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_CreateApplication_Click(object sender, EventArgs e)
+        {
+            vmDB = new DataClasses1DataContext();
+            Application application = new Application();
+            try
+            {
+                application.Application_Round = Convert.ToInt32(txtBx_RoundOfFunding.Text);
+            }
+            catch (FormatException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            application.StartupID = startupCEO.StartupID;
+            application.State = null;
+            application.ManagerID = null;
+            try
+            {
+                vmDB.Applications.InsertOnSubmit(application);
+                vmDB.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            txtBx_RoundOfFunding.Text = null;
+            LoadApplicationList();
+        }
+
+        /// <summary>
+        /// Метод виводить у ListView список заявок на фінансування
+        /// </summary>
+        private void LoadApplicationList()
+        {
+            var applications = vmDB.Applications.Where(a => a.StartupID == startupCEO.StartupID)
+                .Select(a => a);
+
+            lstVw_Applications.Clear();
+            lstVw_Applications.FullRowSelect = true;
+            lstVw_Applications.GridLines = false;
+
+            lstVw_Applications.Columns.Add("ID", 50);
+            lstVw_Applications.Columns.Add("Round", 60);
+            lstVw_Applications.Columns.Add("State", 100);
+            lstVw_Applications.Columns.Add("Invest Manager", 175);
+
+            string[] arr = new string[4];
+            foreach (var a in applications)
+            {
+                arr[0] = a.ID.ToString();
+                arr[1] = a.Application_Round.ToString();
+                arr[2] = a.State;
+                try
+                {
+                    arr[3] = a.Investment_Manager.User.FName + " " + a.Investment_Manager.User.LName;
+                }
+                catch (NullReferenceException)
+                {
+                    arr[3] = "Still empty";
+                }
+                lvi = new ListViewItem(arr);
+                lstVw_Applications.Items.Add(lvi);
+            }
+        }
     }
 }

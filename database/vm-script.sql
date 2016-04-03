@@ -256,7 +256,7 @@ CREATE TABLE dbo.Application(
 	ID int IDENTITY(1,1) NOT NULL,
 	ManagerID int NULL,
 	StartupID int NOT NULL,
-	State nvarchar(45) NOT NULL,
+	State nvarchar(45) NULL,
 	Application_Round int NOT NULL,
  	CONSTRAINT PK_Application PRIMARY KEY(ID) ,
  	CONSTRAINT FK_Application_InvestmentManager FOREIGN KEY(ManagerID) REFERENCES dbo.Investment_Manager(ID)

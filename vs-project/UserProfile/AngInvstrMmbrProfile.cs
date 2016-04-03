@@ -21,7 +21,7 @@ namespace code.UserProfile
             InitializeComponent();
             this.user = user;
             DataClasses1DataContext vmDB = new DataClasses1DataContext();
-            var angel = user.AngelInvestors.SingleOrDefault(u => u.UserID == user.ID);
+            var angel = vmDB.AngelInvestors.Single(u => u.UserID == user.ID);
             pnl_startups.Hide();
             pnl_edit.Hide();
             st_view.Hide();
