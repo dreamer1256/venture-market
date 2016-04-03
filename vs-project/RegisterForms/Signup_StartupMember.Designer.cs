@@ -160,18 +160,20 @@
             // 
             this.chckBx_IsCEO.AutoSize = true;
             this.chckBx_IsCEO.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.chckBx_IsCEO.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.chckBx_IsCEO.Location = new System.Drawing.Point(380, 26);
+            this.chckBx_IsCEO.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.chckBx_IsCEO.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.chckBx_IsCEO.Location = new System.Drawing.Point(418, 28);
             this.chckBx_IsCEO.Name = "chckBx_IsCEO";
-            this.chckBx_IsCEO.Size = new System.Drawing.Size(46, 21);
+            this.chckBx_IsCEO.Size = new System.Drawing.Size(45, 21);
             this.chckBx_IsCEO.TabIndex = 5;
             this.chckBx_IsCEO.Text = "Yes";
-            this.chckBx_IsCEO.UseVisualStyleBackColor = true;
+            this.chckBx_IsCEO.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.chckBx_IsCEO.UseVisualStyleBackColor = false;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(268, 26);
+            this.label8.Location = new System.Drawing.Point(268, 30);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(91, 17);
             this.label8.TabIndex = 8;

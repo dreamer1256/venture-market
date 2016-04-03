@@ -45,6 +45,7 @@ namespace code.UserProfile
             rchTxtBx_About.Text = startupCEO.About;
 
             pnl_Incubators.Hide();
+            pnl_MyStartup.Hide();
             lbl_StartupsInIncubator.Hide();
             lbl_StartupsInIncubList.Hide();
             btn_Join.Hide();
@@ -79,8 +80,7 @@ namespace code.UserProfile
         {
             pnl_Profile.Show();
             pnl_Incubators.Hide();
-            lbl_StartupsInIncubator.Hide();
-            lbl_StartupsInIncubList.Hide();
+            pnl_MyStartup.Hide();
             btn_Join.Hide();
             lbl_JoinError.Hide();
         }
@@ -92,6 +92,7 @@ namespace code.UserProfile
         {
             pnl_Profile.Hide();
             pnl_Incubators.Show();
+            pnl_MyStartup.Hide();
         }
 
         /// <summary>
@@ -143,11 +144,11 @@ namespace code.UserProfile
         private void btn_Join_Click(object sender, EventArgs e)
         {
             int incubatorID = vmDB.Business_Incubators.Single(i => i.Title.Equals(incubatorTitle)).ID;
-            var strtp = vmDB.Startups.Single(s => s.Title.Equals(startupCEO.Startup.Title));
-            var incubID_Before = strtp.IncubatorID;
-            strtp.IncubatorID = incubatorID;
+            var startup = vmDB.Startups.Single(s => s.Title.Equals(startupCEO.Startup.Title));
+            var incubID_Before = startup.IncubatorID;
+            startup.IncubatorID = incubatorID;
             vmDB.SubmitChanges();
-            var incubID_After = strtp.IncubatorID;
+            var incubID_After = startup.IncubatorID;
 
             // Перевірка успішності розміщення стартапу в інкубаторі
             if (incubID_Before != incubID_After)
@@ -176,8 +177,32 @@ namespace code.UserProfile
         private void btn_Logout_Click(object sender, EventArgs e)
         {
             this.Close();
-            LoginForm icmp = new LoginForm();
-            icmp.Show();
+            LoginForm lf = new LoginForm();
+            lf.Show();
         }
+
+        private void btn_LinkToMyStartup_Click(object sender, EventArgs e)
+        {
+            pnl_Profile.Hide();
+            pnl_Incubators.Hide();
+            pnl_MyStartup.Show();
+            var startup = vmDB.Startups.Single(s => s.Title.Equals(startupCEO.Startup.Title));
+            lbl_MyStartupTitle.Text = startup.Title;
+            rchTxtBox.Text = "Website: " + startup.Website
+                + "\nCEO: " + user.FName + " " + user.LName
+                + "\nDevelopment stage: " + startup.Development_Stage.Stage
+                + "\nBusiness Incubator: " + startup.Business_Incubator.Title.ToString()
+                + "\nBusiness Model: " + startup.Business_Model
+                + "\nMarketing strategy: " + startup.Marketing_Strategy
+                + "\nTotal investment: " + startup.Total_Investment
+                + "\nFoundation date: " + startup.Foundation_Date;
+
+            // Вивід у ListBox учасників команди даного стартапу
+            List<string> startupTeam = new List<string>();
+            var teamMember = vmDB.Startup_Members.Where(u => u.StartupID == startup.ID)
+                .Select(u => u.User.FName + " " + u.User.LName);
+            lstBx_StartupTeam.DataSource = teamMember;
+        }
+        
     }
 }

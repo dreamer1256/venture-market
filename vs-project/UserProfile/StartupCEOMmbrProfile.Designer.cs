@@ -57,6 +57,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbl_Name = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btn_Logout = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
             this.lbl_StartupsInIncubator = new System.Windows.Forms.Label();
@@ -64,7 +65,11 @@
             this.btn_Join = new System.Windows.Forms.Button();
             this.lbl_JoinError = new System.Windows.Forms.Label();
             this.pnl_Incubators = new System.Windows.Forms.Panel();
-            this.btn_Logout = new System.Windows.Forms.Button();
+            this.pnl_MyStartup = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lstBx_StartupTeam = new System.Windows.Forms.ListBox();
+            this.lbl_MyStartupTitle = new System.Windows.Forms.Label();
+            this.rchTxtBox = new System.Windows.Forms.RichTextBox();
             this.pnl_Profile.SuspendLayout();
             this.pnl_Visitors.SuspendLayout();
             this.pnl_GeneralInfo.SuspendLayout();
@@ -75,6 +80,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.pnl_Incubators.SuspendLayout();
+            this.pnl_MyStartup.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnl_Profile
@@ -334,6 +340,7 @@
             this.btn_LinkToMyStartup.Text = "My Startup";
             this.btn_LinkToMyStartup.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_LinkToMyStartup.UseVisualStyleBackColor = false;
+            this.btn_LinkToMyStartup.Click += new System.EventHandler(this.btn_LinkToMyStartup_Click);
             // 
             // btn_LinkToIncubators
             // 
@@ -410,6 +417,24 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(984, 28);
             this.panel2.TabIndex = 8;
+            // 
+            // btn_Logout
+            // 
+            this.btn_Logout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_Logout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(48)))));
+            this.btn_Logout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Logout.FlatAppearance.BorderSize = 0;
+            this.btn_Logout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(48)))));
+            this.btn_Logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Logout.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btn_Logout.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_Logout.Location = new System.Drawing.Point(897, 0);
+            this.btn_Logout.Name = "btn_Logout";
+            this.btn_Logout.Size = new System.Drawing.Size(87, 25);
+            this.btn_Logout.TabIndex = 0;
+            this.btn_Logout.Text = "Log out";
+            this.btn_Logout.UseVisualStyleBackColor = false;
+            this.btn_Logout.Click += new System.EventHandler(this.btn_Logout_Click);
             // 
             // label4
             // 
@@ -502,26 +527,74 @@
             this.pnl_Incubators.Controls.Add(this.lbl_StartupsInIncubator);
             this.pnl_Incubators.Controls.Add(this.listView1);
             this.pnl_Incubators.Controls.Add(this.label4);
-            this.pnl_Incubators.Location = new System.Drawing.Point(161, 34);
+            this.pnl_Incubators.Location = new System.Drawing.Point(165, 34);
             this.pnl_Incubators.Name = "pnl_Incubators";
-            this.pnl_Incubators.Size = new System.Drawing.Size(820, 526);
+            this.pnl_Incubators.Size = new System.Drawing.Size(816, 526);
             this.pnl_Incubators.TabIndex = 3;
             // 
-            // btn_Logout
+            // pnl_MyStartup
             // 
-            this.btn_Logout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(48)))));
-            this.btn_Logout.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Logout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(48)))));
-            this.btn_Logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Logout.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btn_Logout.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_Logout.Location = new System.Drawing.Point(897, 0);
-            this.btn_Logout.Name = "btn_Logout";
-            this.btn_Logout.Size = new System.Drawing.Size(87, 28);
-            this.btn_Logout.TabIndex = 0;
-            this.btn_Logout.Text = "Logout";
-            this.btn_Logout.UseVisualStyleBackColor = false;
-            this.btn_Logout.Click += new System.EventHandler(this.btn_Logout_Click);
+            this.pnl_MyStartup.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pnl_MyStartup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
+            this.pnl_MyStartup.Controls.Add(this.label5);
+            this.pnl_MyStartup.Controls.Add(this.lstBx_StartupTeam);
+            this.pnl_MyStartup.Controls.Add(this.lbl_MyStartupTitle);
+            this.pnl_MyStartup.Controls.Add(this.rchTxtBox);
+            this.pnl_MyStartup.Location = new System.Drawing.Point(165, 34);
+            this.pnl_MyStartup.Name = "pnl_MyStartup";
+            this.pnl_MyStartup.Size = new System.Drawing.Size(816, 526);
+            this.pnl_MyStartup.TabIndex = 5;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label5.Location = new System.Drawing.Point(51, 86);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(54, 21);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "Team:";
+            // 
+            // lstBx_StartupTeam
+            // 
+            this.lstBx_StartupTeam.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
+            this.lstBx_StartupTeam.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lstBx_StartupTeam.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lstBx_StartupTeam.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lstBx_StartupTeam.FormattingEnabled = true;
+            this.lstBx_StartupTeam.ItemHeight = 21;
+            this.lstBx_StartupTeam.Location = new System.Drawing.Point(78, 111);
+            this.lstBx_StartupTeam.Name = "lstBx_StartupTeam";
+            this.lstBx_StartupTeam.SelectionMode = System.Windows.Forms.SelectionMode.None;
+            this.lstBx_StartupTeam.Size = new System.Drawing.Size(272, 378);
+            this.lstBx_StartupTeam.Sorted = true;
+            this.lstBx_StartupTeam.TabIndex = 2;
+            // 
+            // lbl_MyStartupTitle
+            // 
+            this.lbl_MyStartupTitle.AutoSize = true;
+            this.lbl_MyStartupTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lbl_MyStartupTitle.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lbl_MyStartupTitle.Location = new System.Drawing.Point(49, 33);
+            this.lbl_MyStartupTitle.Name = "lbl_MyStartupTitle";
+            this.lbl_MyStartupTitle.Size = new System.Drawing.Size(120, 30);
+            this.lbl_MyStartupTitle.TabIndex = 1;
+            this.lbl_MyStartupTitle.Text = "My Startup";
+            // 
+            // rchTxtBox
+            // 
+            this.rchTxtBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
+            this.rchTxtBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rchTxtBox.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.rchTxtBox.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.rchTxtBox.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.rchTxtBox.Location = new System.Drawing.Point(409, 91);
+            this.rchTxtBox.Name = "rchTxtBox";
+            this.rchTxtBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.rchTxtBox.Size = new System.Drawing.Size(380, 391);
+            this.rchTxtBox.TabIndex = 0;
+            this.rchTxtBox.Text = "Startup info";
             // 
             // StartupCEOMmbrProfile
             // 
@@ -531,6 +604,7 @@
             this.ClientSize = new System.Drawing.Size(984, 562);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnl_MyStartup);
             this.Controls.Add(this.pnl_Incubators);
             this.Controls.Add(this.pnl_Profile);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -552,6 +626,8 @@
             this.panel2.ResumeLayout(false);
             this.pnl_Incubators.ResumeLayout(false);
             this.pnl_Incubators.PerformLayout();
+            this.pnl_MyStartup.ResumeLayout(false);
+            this.pnl_MyStartup.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -594,5 +670,10 @@
         private System.Windows.Forms.Label lbl_JoinError;
         private System.Windows.Forms.Panel pnl_Incubators;
         private System.Windows.Forms.Button btn_Logout;
+        private System.Windows.Forms.Panel pnl_MyStartup;
+        private System.Windows.Forms.RichTextBox rchTxtBox;
+        private System.Windows.Forms.Label lbl_MyStartupTitle;
+        private System.Windows.Forms.ListBox lstBx_StartupTeam;
+        private System.Windows.Forms.Label label5;
     }
 }
