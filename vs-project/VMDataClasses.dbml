@@ -2,8 +2,8 @@
   <Connection Mode="AppSettings" ConnectionString="Data Source=LIGHTSIDE\SQLEXPRESS;Initial Catalog=Venture_Market;Integrated Security=True" SettingsObjectName="code.Properties.Settings" SettingsPropertyName="Venture_MarketConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Angel_Interests" Member="Angel_Interests">
     <Type Name="Angel_Interest">
-      <Column Name="InterestID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="AngelID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="InterestID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AngelID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Association Name="AngelInvestor_Angel_Interest" Member="AngelInvestor" ThisKey="AngelID" OtherKey="ID" Type="AngelInvestor" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
       <Association Name="Industry_Interests_List_Angel_Interest" Member="Industry_Interests_List" ThisKey="InterestID" OtherKey="ID" Type="Industry_Interests_List" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
@@ -31,6 +31,7 @@
       <Column Name="StartupID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="State" Type="System.String" DbType="NVarChar(45) NOT NULL" CanBeNull="true" />
       <Column Name="Application_Round" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CreationDate" Type="System.DateTime" DbType="DateTime" CanBeNull="false" />
       <Association Name="Investment_Manager_Application" Member="Investment_Manager" ThisKey="ManagerID" OtherKey="ID" Type="Investment_Manager" IsForeignKey="true" DeleteRule="SET NULL" />
       <Association Name="Startup_Application" Member="Startup" ThisKey="StartupID" OtherKey="ID" Type="Startup" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
@@ -140,8 +141,6 @@
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="StartupID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Short_Resume" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="Country" Type="System.String" DbType="NVarChar(45) NOT NULL" CanBeNull="false" />
       <Column Name="Address" Type="System.String" DbType="NVarChar(45)" CanBeNull="true" />
       <Column Name="Is_CEO" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Column Name="Phone" Type="System.String" DbType="NVarChar(45)" CanBeNull="true" />
@@ -166,9 +165,11 @@
       <Column Name="Username" Type="System.String" DbType="NVarChar(45) NOT NULL" CanBeNull="false" />
       <Column Name="Email" Type="System.String" DbType="NVarChar(45) NOT NULL" CanBeNull="false" />
       <Column Name="Password" Type="System.String" DbType="NVarChar(45) NOT NULL" CanBeNull="false" />
-      <Column Name="Accaunt_Pic" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Accaunt_Pic" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" UpdateCheck="Never" />
       <Column Name="FName" Type="System.String" DbType="NVarChar(45) NOT NULL" CanBeNull="false" />
       <Column Name="LName" Type="System.String" DbType="NVarChar(45) NOT NULL" CanBeNull="false" />
+      <Column Name="RegDate" Type="System.DateTime" DbType="datetime" CanBeNull="false" />
+      <Column Name="LoggedDate" Type="System.DateTime" DbType="datetime" CanBeNull="false" />
       <Association Name="User_AngelInvestor" Member="AngelInvestors" ThisKey="ID" OtherKey="UserID" Type="AngelInvestor" />
       <Association Name="User_Investment_Manager" Member="Investment_Managers" ThisKey="ID" OtherKey="UserID" Type="Investment_Manager" />
       <Association Name="User_Startup_Member" Member="Startup_Members" ThisKey="ID" OtherKey="UserID" Type="Startup_Member" />

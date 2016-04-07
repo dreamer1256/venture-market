@@ -35,15 +35,13 @@ namespace code.UserProfile
             startupCEO = vmDB.Startup_Members.Single(u => u.UserID == user.ID);
             
             lbl_Name.Text = string.Format("{0} {1}", user.FName, user.LName);
-            lbl_Country.Text = string.Format("Country: {0}", startupCEO.Country);
             lbl_City.Text = string.Format("City: {0}", startupCEO.Address);
             lbl_Phone.Text = string.Format("Phone: {0}", startupCEO.Phone);
             lbl_Email.Text = string.Format("Email: {0}", user.Email);
             lbl_Skype.Text = string.Format("Skype: {0}", startupCEO.Skype);
             lbl_Twitter.Text = string.Format("Twitter: {0}", startupCEO.Twitter);
-            //lbl_Facebook.Text = string.Format("Facebook:\t{0}", ceo.Facebook);
-            //lbl_Website.Text = string.Format("Website:\t{0}", ceo.Website);
             rchTxtBx_About.Text = startupCEO.About;
+            label8.Text = "Reg Date " + user.RegDate.ToShortDateString();
 
             pnl_Incubators.Hide();
             pnl_MyStartup.Hide();
@@ -191,16 +189,24 @@ namespace code.UserProfile
             pnl_Applications.Hide();
             pnl_MyStartup.Show();
             var startup = vmDB.Startups.Single(s => s.Title.Equals(startupCEO.Startup.Title));
+            //var startup = vmDB.Startups.Where(s => s.Title.Equals(startupCEO.Startup.Title))
+            //    .Select(s => s);
             lbl_MyStartupTitle.Text = startup.Title;
-            rchTxtBox.Text = "Website: " + startup.Website
-                + "\nCEO: " + user.FName + " " + user.LName
-                + "\nDevelopment stage: " + startup.Development_Stage.Stage
-                + "\nBusiness Incubator: " + startup.Business_Incubator.Title.ToString()
-                + "\nBusiness Model: " + startup.Business_Model
-                + "\nMarketing strategy: " + startup.Marketing_Strategy
-                + "\nTotal investment: " + startup.Total_Investment
-                + "\nFoundation date: " + startup.Foundation_Date;
-
+            try
+            {
+                rchTxtBox.Text = //"Website: " + startup.Website
+                     "\nCEO: " + user.FName + " " + user.LName
+                    //+ "\nDevelopment stage: " + startup.Development_Stage.Stage
+                    //+ "\nBusiness Incubator: " + startup.Business_Incubator.Title.ToString()
+                    + "\nBusiness Model: " + startup.Business_Model
+                    + "\nMarketing strategy: " + startup.Marketing_Strategy
+                    + "\nTotal investment: " + startup.Total_Investment;
+                    //+ "\nFoundation date: " + startup.Foundation_Date;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             // Вивід у ListBox учасників команди даного стартапу
             List<string> startupTeam = new List<string>();
             var teamMember = vmDB.Startup_Members.Where(u => u.StartupID == startup.ID)
@@ -233,11 +239,12 @@ namespace code.UserProfile
             }
             catch (FormatException ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message); 
             }
             application.StartupID = startupCEO.StartupID;
-            application.State = null;
+            application.State = "no state";
             application.ManagerID = null;
+            application.CreationDate = DateTime.Now;
             try
             {
                 vmDB.Applications.InsertOnSubmit(application);
@@ -265,10 +272,11 @@ namespace code.UserProfile
 
             lstVw_Applications.Columns.Add("ID", 50);
             lstVw_Applications.Columns.Add("Round", 60);
-            lstVw_Applications.Columns.Add("State", 100);
-            lstVw_Applications.Columns.Add("Invest Manager", 175);
+            lstVw_Applications.Columns.Add("State", 80);
+            lstVw_Applications.Columns.Add("Invest Manager", 120);
+            lstVw_Applications.Columns.Add("Creation Date", 100);
 
-            string[] arr = new string[4];
+            string[] arr = new string[5];
             foreach (var a in applications)
             {
                 arr[0] = a.ID.ToString();
@@ -282,6 +290,7 @@ namespace code.UserProfile
                 {
                     arr[3] = "Still empty";
                 }
+                arr[4] = a.CreationDate.ToShortDateString();
                 lvi = new ListViewItem(arr);
                 lstVw_Applications.Items.Add(lvi);
             }

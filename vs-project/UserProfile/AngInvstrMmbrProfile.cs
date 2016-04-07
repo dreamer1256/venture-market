@@ -25,7 +25,10 @@ namespace code.UserProfile
             pnl_startups.Hide();
             pnl_edit.Hide();
             st_view.Hide();
-            //pictureBox1.Image = Image.FromFile(user.acc_pic);
+            if (user.Accaunt_Pic != null)
+            {
+                pictureBox1.Image = Image.FromFile(user.Accaunt_Pic);
+            }
             lbl_name.Text = string.Format("{0} {1}", user.FName, user.LName);
             lbl_phone.Text = string.Format("Phone: {0}", angel.Phone);
             lbl_email.Text = string.Format("Email: {0}", user.Email);
@@ -111,8 +114,8 @@ namespace code.UserProfile
             if (result == DialogResult.OK)
             {
                 string flnm = openFileDialog1.FileName;
-                //addim.acc_pic = flnm;
-                //vmDB.SubmitChanges();
+                addim.Accaunt_Pic = flnm;
+                vmDB.SubmitChanges();
             } else { MessageBox.Show("Изображение не загружено!"); }
         }
 

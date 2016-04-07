@@ -38,7 +38,6 @@
             this.txt_Skype = new System.Windows.Forms.TextBox();
             this.txt_Phone = new System.Windows.Forms.TextBox();
             this.txt_City = new System.Windows.Forms.TextBox();
-            this.txt_Country = new System.Windows.Forms.TextBox();
             this.chckBx_IsCEO = new System.Windows.Forms.CheckBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -46,7 +45,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.venture_MarketDataSet = new code.Venture_MarketDataSet();
             this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.usersTableAdapter = new code.Venture_MarketDataSetTableAdapters.UsersTableAdapter();
@@ -74,7 +72,6 @@
             this.panel1.Controls.Add(this.txt_Skype);
             this.panel1.Controls.Add(this.txt_Phone);
             this.panel1.Controls.Add(this.txt_City);
-            this.panel1.Controls.Add(this.txt_Country);
             this.panel1.Controls.Add(this.chckBx_IsCEO);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label7);
@@ -82,7 +79,6 @@
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.panel1.ForeColor = System.Drawing.Color.WhiteSmoke;
@@ -137,24 +133,17 @@
             // 
             // txt_Phone
             // 
-            this.txt_Phone.Location = new System.Drawing.Point(114, 138);
+            this.txt_Phone.Location = new System.Drawing.Point(114, 124);
             this.txt_Phone.Name = "txt_Phone";
             this.txt_Phone.Size = new System.Drawing.Size(135, 25);
             this.txt_Phone.TabIndex = 4;
             // 
             // txt_City
             // 
-            this.txt_City.Location = new System.Drawing.Point(114, 103);
+            this.txt_City.Location = new System.Drawing.Point(115, 80);
             this.txt_City.Name = "txt_City";
             this.txt_City.Size = new System.Drawing.Size(135, 25);
             this.txt_City.TabIndex = 3;
-            // 
-            // txt_Country
-            // 
-            this.txt_Country.Location = new System.Drawing.Point(114, 67);
-            this.txt_Country.Name = "txt_Country";
-            this.txt_Country.Size = new System.Drawing.Size(135, 25);
-            this.txt_Country.TabIndex = 2;
             // 
             // chckBx_IsCEO
             // 
@@ -209,7 +198,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(17, 141);
+            this.label4.Location = new System.Drawing.Point(20, 131);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(47, 17);
             this.label4.TabIndex = 4;
@@ -218,20 +207,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(17, 106);
+            this.label3.Location = new System.Drawing.Point(17, 83);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(31, 17);
+            this.label3.Size = new System.Drawing.Size(59, 17);
             this.label3.TabIndex = 3;
-            this.label3.Text = "City";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(17, 70);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 17);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Country";
+            this.label3.Text = "Location";
             // 
             // venture_MarketDataSet
             // 
@@ -279,7 +259,6 @@
         private System.Windows.Forms.TextBox txt_Skype;
         private System.Windows.Forms.TextBox txt_Phone;
         private System.Windows.Forms.TextBox txt_City;
-        private System.Windows.Forms.TextBox txt_Country;
         private System.Windows.Forms.CheckBox chckBx_IsCEO;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
@@ -287,7 +266,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btn_Finish;
         private System.Windows.Forms.ComboBox cmbBx_Startups;
         private Venture_MarketDataSet venture_MarketDataSet;

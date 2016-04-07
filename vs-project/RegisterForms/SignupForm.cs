@@ -49,10 +49,19 @@ namespace code
                 user.Email = txt_Email.Text;
                 user.FName = txt_FName.Text;
                 user.LName = txt_LName.Text;
+                user.RegDate = DateTime.Now;
+                user.LoggedDate = DateTime.Now;
                 vmDB.Users.InsertOnSubmit(user);
-                vmDB.SubmitChanges();
-                pnl_Sign_Role.Show();
-                pnl_Sign1.Hide();
+                try
+                {
+                    vmDB.SubmitChanges();
+                    pnl_Sign_Role.Show();
+                    pnl_Sign1.Hide();
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
             else
             {

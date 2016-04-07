@@ -82,9 +82,11 @@ CREATE TABLE dbo.Users(
 	Username nvarchar(45) NOT NULL,
 	Email nvarchar(45) NOT NULL,
 	Password nvarchar(45) NOT NULL,
-	Accaunt_Pic image NULL,
+	Accaunt_Pic nvarchar(max) NULL,
 	FName nvarchar(45) NOT NULL,
 	LName nvarchar(45) NOT NULL,
+	RegDate date NOT NULL,
+	LoggedDate datetime NOT NULL,
  	CONSTRAINT PK_Users PRIMARY KEY(ID) ,
  	CONSTRAINT UQ_Users_Username UNIQUE(Username),
  	CONSTRAINT UQ_Users_Email UNIQUE(Email) 
@@ -258,7 +260,8 @@ CREATE TABLE dbo.Application(
 	StartupID int NOT NULL,
 	State nvarchar(45) NULL,
 	Application_Round int NOT NULL,
- 	CONSTRAINT PK_Application PRIMARY KEY(ID) ,
+	CreationDate datetime NOT NULL,
+ 	CONSTRAINT PK_Application PRIMARY KEY(ID),
  	CONSTRAINT FK_Application_InvestmentManager FOREIGN KEY(ManagerID) REFERENCES dbo.Investment_Manager(ID)
  		ON UPDATE CASCADE ON DELETE SET NULL,
  	CONSTRAINT FK_Application_Startup FOREIGN KEY(StartupID) REFERENCES dbo.Startup(ID)
@@ -307,8 +310,6 @@ CREATE TABLE dbo.Startup_Members(
 	ID int IDENTITY(1,1) NOT NULL,
 	StartupID int NOT NULL,
 	UserID int NOT NULL,
-	Short_Resume nvarchar(max) NULL,
-	Country nvarchar(45) NOT NULL,
 	Address nvarchar(45) NULL,
 	Is_CEO bit NOT NULL CONSTRAINT DF_StarupMembers_IsCEO DEFAULT((0)),
 	Phone nvarchar(45) NULL,

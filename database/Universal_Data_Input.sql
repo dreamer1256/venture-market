@@ -1,47 +1,49 @@
 USE Venture_Market
 
 SET IDENTITY_INSERT Users ON
-INSERT Users(ID,Username,Email,Password,FName,LName) VALUES
-(1,N'ColinCornish',	N'colin.cornish@gmail.com', N'951357', N'Colin', N'Cornish'),
-(2,N'VirginiaBond',	N'virginia.bond@gmail.com', N'852654', N'Virginia', N'Bond'),
-(3,N'SallyClarkson', N'sally.clarkson@gmail.com', N'753951', N'Sally', N'Clarkson'),
-(4,N'LeonardDickens', N'leonard.dickens@gmail.com', N'987321', N'Leonard', N'Dickens'),
-(5,N'ThomasMay', N'thomas.may@gmail.com', N'456951', N'Thomas', N'May'),
-(6,N'DorothyInce', N'dorothy.ince@gmail.com', N'963741', N'Dorothy', N'Ince'),
-(7,N'DonnaMorrison', N'donna.morrison@gmail.com', N'852753', N'Donna', N'Morrison'),
-(8,N'JonathanHughes', N'jonathan.hughes@gmail.com', N'741963', N'Jonathan', N'Hughes'),
-(9,N'ChloeCampbell', N'chloe.campbell@gmail.com', N'8426842', N'Chloe', N'Campbell'),
-(10,N'MichelleLee', N'michelle.lee@gmail.com', N'957135', N'Michelle', N'Lee'),
-(11,N'TrevorGill', N'trevor.gill@gmail.com', N'397182', N'Trevor', N'Gill'),
-(12,N'VictoriaInce', N'victoria.ince@gmail.com', N'791346', N'Victoria', N'Ince'),
-(13,N'DavidJones', N'david.jones@gmail.com', N'957535', N'David', N'Jones'),
-(14,N'EdwardReid', N'edward.reid@gmail.com', N'759614', N'Edward', N'Reid'),
-(15,N'DonnaBuckland', N'donna.buckland@gmail.com', N'852545', N'Donna', N'Buckland'),
-(16,N'JackAvery', N'jack.avery@gmail.com', N'782398', N'Jack', N'Avery'),
-(17,N'JoeCornish', N'joe.cornish@gmail.com', N'983278', N'Joe', N'Cornish'),
-(18,N'JaneWright', N'jane.wright@gmail.com', N'129832', N'Jane', N'Wright'),
-(19,N'SallyNewman', N'sally.newman@gmail.com', N'45657595', N'Sally', N'Newman'),
-(20,N'FionaChapman', N'fiona.chapman@gmail.com', N'842695', N'Fiona', N'Chapman'),
-(21,N'GabrielleDavies', N'gabrielle.davies@gmail.com', N'951357', N'Gabrielle', N'Davies'),
-(22,N'ElizabethKelly',	N'elizabeth.kelly@gmail.com', N'852654', N'Elizabeth', N'Kelly'),
-(23,N'JoannePiper', N'joanne.piper', N'753951', N'Joanne', N'Piper'),
-(24,N'AustinPeters', N'austin.peters@gmail.com', N'987321', N'Austin', N'Peters'),
-(25,N'AmyOgden', N'amy.ogden@gmail.com', N'456951', N'Amy', N'Ogden'),
-(26,N'MichaelCampbell', N'michael.campbell@gmail.com', N'963741', N'Michael', N'Campbell'),
-(27,N'AndreaDavidson', N'andrea.davidson@gmail.com', N'852753', N'Andrea', N'Davidson'),
-(28,N'BenjaminMitchell', N'benjamin.mitchell@gmail.com', N'741963', N'Benjamin', N'Mitchell'),
-(29,N'DanParsons', N'dan.parsons@gmail.com', N'8426842', N'Dan', N'Parsons'),
-(30,N'ThomasAlsop', N'thomas.alsop@gmail.com', N'957135', N'Thomas', N'Alsop'),
-(31,N'JohnArnold', N'john.arnold@gmail.com', N'397182', N'John', N'Arnold'),
-(32,N'NatalieNolan', N'natalie.nolan@gmail.com', N'791346', N'Natalie', N'Nolan'),
-(33,N'ConnorBlack', N'connor.black@gmail.com', N'957535', N'Connor', N'Black'),
-(34,N'KarenBerry', N'karen.berry@gmail.com', N'759614', N'Karen', N'Berry'),
-(35,N'MollyWright', N'molly.wright@gmail.com', N'852545', N'Molly', N'Wright'),
-(36,N'DianePaige', N'diane.paige@gmail.com', N'782398', N'Diane', N'Paige'),
-(37,N'JacobVaughan', N'jacob.vaughan@gmail.com', N'983278', N'Jacob', N'Vaughan'),
-(38,N'AlisonMetcalfe', N'alison.metcalfe@gmail.com', N'129832', N'Alison', N'Metcalfe'),
-(39,N'RyanInce', N'ryan.ince@gmail.com', N'45657595', N'Ryan', N'Ince'),
-(40,N'WandaMorrison', N'wanda.morrison@gmail.com', N'842695', N'Wanda', N'Morrison')
+INSERT Users(ID,Username,Email,Password,FName,LName,RegDate,LoggedDate) VALUES
+(1,N'ColinCornish',	N'colin.cornish@gmail.com', N'951357', N'Colin', N'Cornish', '2016-04-04 03:14:00.000', '2016-03-29 16:20:00.000'),
+(2,N'VirginiaBond',	N'virginia.bond@gmail.com', N'852654', N'Virginia', N'Bond', '2016-04-04 03:14:00.000', '2016-03-29 16:20:00.000'),
+(3,N'SallyClarkson', N'sally.clarkson@gmail.com', N'753951', N'Sally', N'Clarkson', '2016-04-04 03:14:00.000', '2016-03-29 16:20:00.000'),
+(4,N'LeonardDickens', N'leonard.dickens@gmail.com', N'987321', N'Leonard', N'Dickens', '2016-04-04 03:14:00.000', '2016-03-29 16:20:00.000'),
+(5,N'ThomasMay', N'thomas.may@gmail.com', N'456951', N'Thomas', N'May', '2016-04-04 03:14:00.000', '2016-03-29 16:20:00.000'),
+(6,N'DorothyInce', N'dorothy.ince@gmail.com', N'963741', N'Dorothy', N'Ince', '2016-04-04 03:14:00.000', '2016-03-29 16:20:00.000'),
+(7,N'DonnaMorrison', N'donna.morrison@gmail.com', N'852753', N'Donna', N'Morrison', '2016-04-04 03:14:00.000', '2016-03-29 16:20:00.000'),
+(8,N'JonathanHughes', N'jonathan.hughes@gmail.com', N'741963', N'Jonathan', N'Hughes', '2016-04-04 03:14:00.000', '2016-03-29 16:20:00.000'),
+(9,N'ChloeCampbell', N'chloe.campbell@gmail.com', N'8426842', N'Chloe', N'Campbell', '2016-04-04 03:14:00.000', '2016-03-29 16:20:00.000'),
+(10,N'MichelleLee', N'michelle.lee@gmail.com', N'957135', N'Michelle', N'Lee', '2016-04-04 03:14:00.000', '2016-03-29 16:20:00.000'),
+(11,N'TrevorGill', N'trevor.gill@gmail.com', N'397182', N'Trevor', N'Gill', '2016-04-04 03:14:00.000', '2016-03-29 16:20:00.000'),
+(12,N'VictoriaInce', N'victoria.ince@gmail.com', N'791346', N'Victoria', N'Ince', '2016-04-04 03:14:00.000', '2016-03-29 16:20:00.000'),
+(13,N'DavidJones', N'david.jones@gmail.com', N'957535', N'David', N'Jones', '2016-04-04 03:14:00.000', '2016-03-29 16:20:00.000'),
+(14,N'EdwardReid', N'edward.reid@gmail.com', N'759614', N'Edward', N'Reid', '2016-04-04 03:14:00.000', '2016-03-29 16:20:00.000'),
+(15,N'DonnaBuckland', N'donna.buckland@gmail.com', N'852545', N'Donna', N'Buckland', '2016-04-04 03:14:00.000', '2016-03-29 16:20:00.000'),
+(16,N'JackAvery', N'jack.avery@gmail.com', N'782398', N'Jack', N'Avery', '2016-04-04 03:14:00.000', '2016-03-29 16:20:00.000'),
+(17,N'JoeCornish', N'joe.cornish@gmail.com', N'983278', N'Joe', N'Cornish', '2016-04-04 03:14:00.000', '2016-03-29 16:20:00.000'),
+(18,N'JaneWright', N'jane.wright@gmail.com', N'129832', N'Jane', N'Wright', '2016-04-04 03:14:00.000', '2016-03-29 16:20:00.000'),
+(19,N'SallyNewman', N'sally.newman@gmail.com', N'45657595', N'Sally', N'Newman', '2016-04-04 03:14:00.000', '2016-03-29 16:20:00.000'),
+(20,N'FionaChapman', N'fiona.chapman@gmail.com', N'842695', N'Fiona', N'Chapman', '2016-04-04 03:14:00.000', '2016-03-29 16:20:00.000'),
+(21,N'GabrielleDavies', N'gabrielle.davies@gmail.com', N'951357', N'Gabrielle', N'Davies', '2016-04-04 03:14:00.000', '2016-03-29 16:20:00.000'),
+(22,N'ElizabethKelly',	N'elizabeth.kelly@gmail.com', N'852654', N'Elizabeth', N'Kelly', '2016-04-04 03:14:00.000', '2016-03-29 16:20:00.000'),
+(23,N'JoannePiper', N'joanne.piper', N'753951', N'Joanne', N'Piper', '2016-04-04 03:14:00.000', '2016-03-29 16:20:00.000'),
+(24,N'AustinPeters', N'austin.peters@gmail.com', N'987321', N'Austin', N'Peters', '2016-04-04 03:14:00.000', '2016-03-29 16:20:00.000'),
+(25,N'AmyOgden', N'amy.ogden@gmail.com', N'456951', N'Amy', N'Ogden', '2016-04-04 03:14:00.000', '2016-03-29 16:20:00.000'),
+(26,N'MichaelCampbell', N'michael.campbell@gmail.com', N'963741', N'Michael', N'Campbell', '2016-04-04 03:14:00.000', '2016-03-29 16:20:00.000'),
+(27,N'AndreaDavidson', N'andrea.davidson@gmail.com', N'852753', N'Andrea', N'Davidson', '2016-04-04 03:14:00.000', '2016-03-29 16:20:00.000'),
+(28,N'BenjaminMitchell', N'benjamin.mitchell@gmail.com', N'741963', N'Benjamin', N'Mitchell', '2016-04-04 03:14:00.000', '2016-03-29 16:20:00.000'),
+(29,N'DanParsons', N'dan.parsons@gmail.com', N'8426842', N'Dan', N'Parsons', '2016-04-04 03:14:00.000', '2016-03-29 16:20:00.000'),
+(30,N'ThomasAlsop', N'thomas.alsop@gmail.com', N'957135', N'Thomas', N'Alsop', '2016-04-04 03:14:00.000', '2016-03-29 16:20:00.000'),
+(31,N'JohnArnold', N'john.arnold@gmail.com', N'397182', N'John', N'Arnold', '2016-04-04 03:14:00.000', '2016-03-29 16:20:00.000'),
+(32,N'NatalieNolan', N'natalie.nolan@gmail.com', N'791346', N'Natalie', N'Nolan', '2016-04-04 03:14:00.000', '2016-03-29 16:20:00.000'),
+(33,N'ConnorBlack', N'connor.black@gmail.com', N'957535', N'Connor', N'Black', '2016-04-04 03:14:00.000', '2016-03-29 16:20:00.000'),
+(34,N'KarenBerry', N'karen.berry@gmail.com', N'759614', N'Karen', N'Berry', '2016-04-04 03:14:00.000', '2016-03-29 16:20:00.000'),
+(35,N'MollyWright', N'molly.wright@gmail.com', N'852545', N'Molly', N'Wright', '2016-04-04 03:14:00.000', '2016-03-29 16:20:00.000'),
+(36,N'DianePaige', N'diane.paige@gmail.com', N'782398', N'Diane', N'Paige', '2016-04-04 03:14:00.000', '2016-03-29 16:20:00.000'),
+(37,N'JacobVaughan', N'jacob.vaughan@gmail.com', N'983278', N'Jacob', N'Vaughan', '2016-04-04 03:14:00.000', '2016-03-29 16:20:00.000'),
+(38,N'AlisonMetcalfe', N'alison.metcalfe@gmail.com', N'129832', N'Alison', N'Metcalfe', '2016-04-04 03:14:00.000', '2016-03-29 16:20:00.000'),
+(39,N'RyanInce', N'ryan.ince@gmail.com', N'45657595', N'Ryan', N'Ince', '2016-04-04 03:14:00.000', '2016-03-29 16:20:00.000'),
+(40,N'WandaMorrison', N'wanda.morrison@gmail.com', N'842695', N'Wanda', N'Morrison', '2016-04-04 03:14:00.000', '2016-03-29 16:20:00.000'),
+(41,N'stCEO', N'best.sceo@gmail.com', N'pass', N'Wanda', N'Morrison', '2016-04-04 03:14:00.000', '2016-03-29 16:20:00.000')
+
 SET IDENTITY_INSERT Users OFF
 GO
 SET IDENTITY_INSERT dbo.Role ON 
@@ -62,7 +64,8 @@ INSERT User_Role(UserId,RoleID) VALUES
 (21,4),(22,5),(23,1),(24,2),(25,3),
 (26,4),(27,5),(28,2),(29,3),(30,4),
 (31,5),(32,1),(33,2),(34,3),(35,4),
-(36,5),(37,1),(38,2),(39,3),(40,4)
+(36,5),(37,1),(38,2),(39,3),(40,4),
+(41,3)
 GO
 SET IDENTITY_INSERT AngelInvestor ON
 INSERT AngelInvestor(ID,UserID,Geo_Inerests,Skype) VALUES
@@ -106,9 +109,9 @@ INSERT Angel_Interests(InterestID, AngelID) Values
 GO
 SET IDENTITY_INSERT Business_Incubator ON
 INSERT Business_Incubator (ID, Title, Number_Of_Seats, Address, Website) VALUES
-(1,N'LvivInvest',50,N'Ukraine Lviv',N'lvivI.com'),
-(2,N'PLINC',300,N'Poland Lodz',N'PLINC.com'),
-(3,N'Allianz',130,N'Germany Munchen',N'Allianz.com')
+(1,N'LvivInc',50,N'Ukraine, Lviv',N'lviv-inc.com'),
+(2,N'PLINC',300,N'Poland, Lodz',N'PLINC.com'),
+(3,N'Allianz',130,N'Germany, Munchen',N'Allianz.com')
 SET IDENTITY_INSERT Business_Incubator OFF
 GO
 SET IDENTITY_INSERT Development_Stage ON
@@ -154,16 +157,16 @@ INSERT Investment_Manager(ID,Investment_CompanyID,UserID) VALUES
 SET IDENTITY_INSERT Investment_Manager OFF
 GO
 SET IDENTITY_INSERT Application ON
-INSERT Application (ID,ManagerID,StartupID,State,Application_Round) VALUES
-(1,2,5,N'considered',1),
-(2,1,4,N'accepted',1),
-(3,4,3,N'rejected',2),
-(4,3,2,N'rejected',1),
-(5,9,1,N'accepted',1),
-(6,NULL,6,N'no state',0),
-(7,NULL,7,N'no state',0),
-(8,NULL,8,N'no state',0),
-(9,NULL,9,N'no state',0)
+INSERT Application (ID,ManagerID,StartupID,State,Application_Round,CreationDate) VALUES
+(1,2,5,N'considered',1, '2016-04-04 03:14:00.000'),
+(2,1,4,N'accepted',1, '2016-04-04 03:14:00.000'),
+(3,4,3,N'rejected',2, '2016-04-04 03:14:00.000'),
+(4,3,2,N'rejected',1, '2016-04-04 03:14:00.000'),
+(5,9,1,N'accepted',1, '2016-04-04 03:14:00.000'),
+(6,NULL,6,N'no state',0, '2016-04-04 03:14:00.000'),
+(7,NULL,7,N'no state',0, '2016-04-04 03:14:00.000'),
+(8,NULL,8,N'no state',0, '2016-04-04 03:14:00.000'),
+(9,NULL,9,N'no state',0, '2016-04-04 03:14:00.000')
 SET IDENTITY_INSERT Application OFF
 GO
 INSERT Round_Of_Funding (ID,StartupID,Title,Total_Investment) VALUES
@@ -182,7 +185,7 @@ INSERT Round_Investor (RoundID,CompanyID,AngelID) VALUES
 GO
 SET IDENTITY_INSERT Startup_Members ON
 INSERT Startup_Members (ID,StartupID,UserID,Country,Is_CEO,Skype) VALUES
-(1,1,7,N'Canada',1,N'donna.morrison'),
+(1,1,7,N'Canada',0,N'donna.morrison'),
 (2,1,9,N'Canada',0,N'chloe.campbell'),
 (3,1,18,N'Canada',0,NULL),
 (4,1,19,N'Canada',0,NULL),
@@ -201,6 +204,6 @@ INSERT Startup_Members (ID,StartupID,UserID,Country,Is_CEO,Skype) VALUES
 (17,5,32,N'UK',1,N'natalie.nolan'),
 (18,5,33,N'UK',0,NULL),
 (19,5,34,N'UK',0,N'karen.berry'),
-(20,5,35,N'UK',0,NULL)
+(20,5,35,N'UK',0,NULL),
+(21,1,41,N'Ukraine',1,N'seo.besb')
 SET IDENTITY_INSERT Startup_Members OFF
-SELECT * FROM Startup_Members

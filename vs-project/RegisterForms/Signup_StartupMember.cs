@@ -53,8 +53,7 @@ namespace code.RegisterForms
             // Присвоїти учаснику ID стартапу залежно від вибору в полі comboBox
             Startup startup = vmDB.Startups.Single(u => u.Title == cmbBx_Startups.Text);
             sm.StartupID = startup.ID;
-
-            sm.Country = txt_Country.Text;
+            
             sm.Address = txt_City.Text;
             sm.Phone = txt_Phone.Text;
             sm.Skype = txt_Skype.Text;

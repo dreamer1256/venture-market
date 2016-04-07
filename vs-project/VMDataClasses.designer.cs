@@ -30,6 +30,9 @@ namespace code
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
+    partial void InsertAngel_Interest(Angel_Interest instance);
+    partial void UpdateAngel_Interest(Angel_Interest instance);
+    partial void DeleteAngel_Interest(Angel_Interest instance);
     partial void InsertAngelInvestor(AngelInvestor instance);
     partial void UpdateAngelInvestor(AngelInvestor instance);
     partial void DeleteAngelInvestor(AngelInvestor instance);
@@ -226,18 +229,37 @@ namespace code
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Angel_Interests")]
-	public partial class Angel_Interest
+	public partial class Angel_Interest : INotifyPropertyChanging, INotifyPropertyChanged
 	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _InterestID;
 		
 		private int _AngelID;
 		
+		private EntityRef<AngelInvestor> _AngelInvestor;
+		
+		private EntityRef<Industry_Interests_List> _Industry_Interests_List;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnInterestIDChanging(int value);
+    partial void OnInterestIDChanged();
+    partial void OnAngelIDChanging(int value);
+    partial void OnAngelIDChanged();
+    #endregion
+		
 		public Angel_Interest()
 		{
+			this._AngelInvestor = default(EntityRef<AngelInvestor>);
+			this._Industry_Interests_List = default(EntityRef<Industry_Interests_List>);
+			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InterestID", DbType="Int NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InterestID", DbType="Int NOT NULL", IsPrimaryKey=true)]
 		public int InterestID
 		{
 			get
@@ -248,12 +270,20 @@ namespace code
 			{
 				if ((this._InterestID != value))
 				{
+					if (this._Industry_Interests_List.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnInterestIDChanging(value);
+					this.SendPropertyChanging();
 					this._InterestID = value;
+					this.SendPropertyChanged("InterestID");
+					this.OnInterestIDChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AngelID", DbType="Int NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AngelID", DbType="Int NOT NULL", IsPrimaryKey=true)]
 		public int AngelID
 		{
 			get
@@ -264,8 +294,104 @@ namespace code
 			{
 				if ((this._AngelID != value))
 				{
+					if (this._AngelInvestor.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnAngelIDChanging(value);
+					this.SendPropertyChanging();
 					this._AngelID = value;
+					this.SendPropertyChanged("AngelID");
+					this.OnAngelIDChanged();
 				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="AngelInvestor_Angel_Interest", Storage="_AngelInvestor", ThisKey="AngelID", OtherKey="ID", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
+		public AngelInvestor AngelInvestor
+		{
+			get
+			{
+				return this._AngelInvestor.Entity;
+			}
+			set
+			{
+				AngelInvestor previousValue = this._AngelInvestor.Entity;
+				if (((previousValue != value) 
+							|| (this._AngelInvestor.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._AngelInvestor.Entity = null;
+						previousValue.Angel_Interests.Remove(this);
+					}
+					this._AngelInvestor.Entity = value;
+					if ((value != null))
+					{
+						value.Angel_Interests.Add(this);
+						this._AngelID = value.ID;
+					}
+					else
+					{
+						this._AngelID = default(int);
+					}
+					this.SendPropertyChanged("AngelInvestor");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Industry_Interests_List_Angel_Interest", Storage="_Industry_Interests_List", ThisKey="InterestID", OtherKey="ID", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
+		public Industry_Interests_List Industry_Interests_List
+		{
+			get
+			{
+				return this._Industry_Interests_List.Entity;
+			}
+			set
+			{
+				Industry_Interests_List previousValue = this._Industry_Interests_List.Entity;
+				if (((previousValue != value) 
+							|| (this._Industry_Interests_List.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Industry_Interests_List.Entity = null;
+						previousValue.Angel_Interests.Remove(this);
+					}
+					this._Industry_Interests_List.Entity = value;
+					if ((value != null))
+					{
+						value.Angel_Interests.Add(this);
+						this._InterestID = value.ID;
+					}
+					else
+					{
+						this._InterestID = default(int);
+					}
+					this.SendPropertyChanged("Industry_Interests_List");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
@@ -293,6 +419,8 @@ namespace code
 		private string _Skype;
 		
 		private string _Twitter;
+		
+		private EntitySet<Angel_Interest> _Angel_Interests;
 		
 		private EntitySet<Round_Investor> _Round_Investors;
 		
@@ -324,6 +452,7 @@ namespace code
 		
 		public AngelInvestor()
 		{
+			this._Angel_Interests = new EntitySet<Angel_Interest>(new Action<Angel_Interest>(this.attach_Angel_Interests), new Action<Angel_Interest>(this.detach_Angel_Interests));
 			this._Round_Investors = new EntitySet<Round_Investor>(new Action<Round_Investor>(this.attach_Round_Investors), new Action<Round_Investor>(this.detach_Round_Investors));
 			this._User = default(EntityRef<User>);
 			OnCreated();
@@ -513,6 +642,19 @@ namespace code
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="AngelInvestor_Angel_Interest", Storage="_Angel_Interests", ThisKey="ID", OtherKey="AngelID")]
+		public EntitySet<Angel_Interest> Angel_Interests
+		{
+			get
+			{
+				return this._Angel_Interests;
+			}
+			set
+			{
+				this._Angel_Interests.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="AngelInvestor_Round_Investor", Storage="_Round_Investors", ThisKey="ID", OtherKey="AngelID")]
 		public EntitySet<Round_Investor> Round_Investors
 		{
@@ -580,6 +722,18 @@ namespace code
 			}
 		}
 		
+		private void attach_Angel_Interests(Angel_Interest entity)
+		{
+			this.SendPropertyChanging();
+			entity.AngelInvestor = this;
+		}
+		
+		private void detach_Angel_Interests(Angel_Interest entity)
+		{
+			this.SendPropertyChanging();
+			entity.AngelInvestor = null;
+		}
+		
 		private void attach_Round_Investors(Round_Investor entity)
 		{
 			this.SendPropertyChanging();
@@ -609,6 +763,8 @@ namespace code
 		
 		private int _Application_Round;
 		
+		private System.DateTime _CreationDate;
+		
 		private EntityRef<Investment_Manager> _Investment_Manager;
 		
 		private EntityRef<Startup> _Startup;
@@ -627,6 +783,8 @@ namespace code
     partial void OnStateChanged();
     partial void OnApplication_RoundChanging(int value);
     partial void OnApplication_RoundChanged();
+    partial void OnCreationDateChanging(System.DateTime value);
+    partial void OnCreationDateChanged();
     #endregion
 		
 		public Application()
@@ -740,6 +898,26 @@ namespace code
 					this._Application_Round = value;
 					this.SendPropertyChanged("Application_Round");
 					this.OnApplication_RoundChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreationDate", DbType="DateTime")]
+		public System.DateTime CreationDate
+		{
+			get
+			{
+				return this._CreationDate;
+			}
+			set
+			{
+				if ((this._CreationDate != value))
+				{
+					this.OnCreationDateChanging(value);
+					this.SendPropertyChanging();
+					this._CreationDate = value;
+					this.SendPropertyChanged("CreationDate");
+					this.OnCreationDateChanged();
 				}
 			}
 		}
@@ -1143,6 +1321,8 @@ namespace code
 		
 		private string _Title;
 		
+		private EntitySet<Angel_Interest> _Angel_Interests;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -1155,6 +1335,7 @@ namespace code
 		
 		public Industry_Interests_List()
 		{
+			this._Angel_Interests = new EntitySet<Angel_Interest>(new Action<Angel_Interest>(this.attach_Angel_Interests), new Action<Angel_Interest>(this.detach_Angel_Interests));
 			OnCreated();
 		}
 		
@@ -1198,6 +1379,19 @@ namespace code
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Industry_Interests_List_Angel_Interest", Storage="_Angel_Interests", ThisKey="ID", OtherKey="InterestID")]
+		public EntitySet<Angel_Interest> Angel_Interests
+		{
+			get
+			{
+				return this._Angel_Interests;
+			}
+			set
+			{
+				this._Angel_Interests.Assign(value);
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -1216,6 +1410,18 @@ namespace code
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+		
+		private void attach_Angel_Interests(Angel_Interest entity)
+		{
+			this.SendPropertyChanging();
+			entity.Industry_Interests_List = this;
+		}
+		
+		private void detach_Angel_Interests(Angel_Interest entity)
+		{
+			this.SendPropertyChanging();
+			entity.Industry_Interests_List = null;
 		}
 	}
 	
@@ -2900,10 +3106,6 @@ namespace code
 		
 		private int _UserID;
 		
-		private string _Short_Resume;
-		
-		private string _Country;
-		
 		private string _Address;
 		
 		private bool _Is_CEO;
@@ -2930,10 +3132,6 @@ namespace code
     partial void OnStartupIDChanged();
     partial void OnUserIDChanging(int value);
     partial void OnUserIDChanged();
-    partial void OnShort_ResumeChanging(string value);
-    partial void OnShort_ResumeChanged();
-    partial void OnCountryChanging(string value);
-    partial void OnCountryChanged();
     partial void OnAddressChanging(string value);
     partial void OnAddressChanged();
     partial void OnIs_CEOChanging(bool value);
@@ -3019,46 +3217,6 @@ namespace code
 					this._UserID = value;
 					this.SendPropertyChanged("UserID");
 					this.OnUserIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Short_Resume", DbType="NVarChar(MAX)")]
-		public string Short_Resume
-		{
-			get
-			{
-				return this._Short_Resume;
-			}
-			set
-			{
-				if ((this._Short_Resume != value))
-				{
-					this.OnShort_ResumeChanging(value);
-					this.SendPropertyChanging();
-					this._Short_Resume = value;
-					this.SendPropertyChanged("Short_Resume");
-					this.OnShort_ResumeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Country", DbType="NVarChar(45) NOT NULL", CanBeNull=false)]
-		public string Country
-		{
-			get
-			{
-				return this._Country;
-			}
-			set
-			{
-				if ((this._Country != value))
-				{
-					this.OnCountryChanging(value);
-					this.SendPropertyChanging();
-					this._Country = value;
-					this.SendPropertyChanged("Country");
-					this.OnCountryChanged();
 				}
 			}
 		}
@@ -3454,11 +3612,15 @@ namespace code
 		
 		private string _Password;
 		
-		private System.Data.Linq.Binary _Accaunt_Pic;
+		private string _Accaunt_Pic;
 		
 		private string _FName;
 		
 		private string _LName;
+		
+		private System.DateTime _RegDate;
+		
+		private System.DateTime _LoggedDate;
 		
 		private EntitySet<AngelInvestor> _AngelInvestors;
 		
@@ -3480,12 +3642,16 @@ namespace code
     partial void OnEmailChanged();
     partial void OnPasswordChanging(string value);
     partial void OnPasswordChanged();
-    partial void OnAccaunt_PicChanging(System.Data.Linq.Binary value);
+    partial void OnAccaunt_PicChanging(string value);
     partial void OnAccaunt_PicChanged();
     partial void OnFNameChanging(string value);
     partial void OnFNameChanged();
     partial void OnLNameChanging(string value);
     partial void OnLNameChanged();
+    partial void OnRegDateChanging(System.DateTime value);
+    partial void OnRegDateChanged();
+    partial void OnLoggedDateChanging(System.DateTime value);
+    partial void OnLoggedDateChanged();
     #endregion
 		
 		public User()
@@ -3577,8 +3743,8 @@ namespace code
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Accaunt_Pic", DbType="Image", UpdateCheck=UpdateCheck.Never)]
-		public System.Data.Linq.Binary Accaunt_Pic
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Accaunt_Pic", DbType="NVarChar(MAX)", UpdateCheck=UpdateCheck.Never)]
+		public string Accaunt_Pic
 		{
 			get
 			{
@@ -3633,6 +3799,46 @@ namespace code
 					this._LName = value;
 					this.SendPropertyChanged("LName");
 					this.OnLNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RegDate", DbType="datetime")]
+		public System.DateTime RegDate
+		{
+			get
+			{
+				return this._RegDate;
+			}
+			set
+			{
+				if ((this._RegDate != value))
+				{
+					this.OnRegDateChanging(value);
+					this.SendPropertyChanging();
+					this._RegDate = value;
+					this.SendPropertyChanged("RegDate");
+					this.OnRegDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LoggedDate", DbType="datetime")]
+		public System.DateTime LoggedDate
+		{
+			get
+			{
+				return this._LoggedDate;
+			}
+			set
+			{
+				if ((this._LoggedDate != value))
+				{
+					this.OnLoggedDateChanging(value);
+					this.SendPropertyChanging();
+					this._LoggedDate = value;
+					this.SendPropertyChanged("LoggedDate");
+					this.OnLoggedDateChanged();
 				}
 			}
 		}

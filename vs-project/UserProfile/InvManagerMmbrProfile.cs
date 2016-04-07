@@ -65,14 +65,21 @@ namespace code.UserProfile
                       select s;
             foreach (var s in snm)
             {
-                if ((s.State.ToString() == "considered") | (s.State.ToString() == "no state"))
+                try
                 {
-                    arr[0] = s.Startup.Title;
-                    arr[1] = s.Investment_Manager.User.LName + " " + s.Investment_Manager.User.FName;
-                    arr[2] = s.State;
-                    arr[3] = "Raund " + s.Application_Round.ToString();
-                    itm = new ListViewItem(arr);
-                    listView2.Items.Add(itm);
+                    if ((s.State.ToString() == "considered") | (s.State.ToString() == "no state"))
+                    {
+                        arr[0] = s.Startup.Title;
+                        arr[1] = s.Investment_Manager.User.LName + " " + s.Investment_Manager.User.FName;
+                        arr[2] = s.State;
+                        arr[3] = "Raund " + s.Application_Round.ToString();
+                        itm = new ListViewItem(arr);
+                        listView2.Items.Add(itm);
+                    }
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
                 }
             }
         }
