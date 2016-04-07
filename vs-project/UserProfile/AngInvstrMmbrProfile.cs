@@ -188,7 +188,7 @@ namespace code.UserProfile
                      lbl_invest_info.Text = st.Development_Stage.Stage + "\n" + st.Total_Investment;
             }
             stname.Text = st.Title; 
-            lbl_startup_inf.Text = st.CEO + "\n" + 
+            lbl_startup_inf.Text = st.ceoID + "\n" + 
                                    st.Foundation_Date + "\n" + 
                                    st.Business_Model + "\n" +
                                    st.Marketing_Strategy;

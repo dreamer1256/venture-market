@@ -2316,6 +2316,8 @@ namespace code
 		
 		private System.Nullable<decimal> _Total_Investment;
 		
+		private string _Description;
+		
 		private EntityRef<Round_Investor> _Round_Investor;
 		
 		private EntityRef<Startup> _Startup;
@@ -2332,6 +2334,8 @@ namespace code
     partial void OnTitleChanged();
     partial void OnTotal_InvestmentChanging(System.Nullable<decimal> value);
     partial void OnTotal_InvestmentChanged();
+    partial void OnDescriptionChanging(string value);
+    partial void OnDescriptionChanged();
     #endregion
 		
 		public Round_Of_Funding()
@@ -2421,6 +2425,26 @@ namespace code
 					this._Total_Investment = value;
 					this.SendPropertyChanged("Total_Investment");
 					this.OnTotal_InvestmentChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="NVarChar(MAX)")]
+		public string Description
+		{
+			get
+			{
+				return this._Description;
+			}
+			set
+			{
+				if ((this._Description != value))
+				{
+					this.OnDescriptionChanging(value);
+					this.SendPropertyChanging();
+					this._Description = value;
+					this.SendPropertyChanged("Description");
+					this.OnDescriptionChanged();
 				}
 			}
 		}
@@ -2535,7 +2559,7 @@ namespace code
 		
 		private string _Twitter;
 		
-		private string _CEO;
+		private System.Nullable<int> _CEO;
 		
 		private System.Nullable<int> _IncubatorID;
 		
@@ -2579,8 +2603,8 @@ namespace code
     partial void OnFoundation_DateChanged();
     partial void OnTwitterChanging(string value);
     partial void OnTwitterChanged();
-    partial void OnCEOChanging(string value);
-    partial void OnCEOChanged();
+    partial void OnceoIDChanging(System.Nullable<int> value);
+    partial void OnceoIDChanged();
     partial void OnIncubatorIDChanging(System.Nullable<int> value);
     partial void OnIncubatorIDChanged();
     partial void OnDevelopment_StageIDChanging(int value);
@@ -2803,8 +2827,8 @@ namespace code
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CEO", DbType="NVarChar(45)")]
-		public string CEO
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CEO", DbType="Int")]
+		public System.Nullable<int> ceoID
 		{
 			get
 			{
@@ -2814,11 +2838,11 @@ namespace code
 			{
 				if ((this._CEO != value))
 				{
-					this.OnCEOChanging(value);
+					this.OnceoIDChanging(value);
 					this.SendPropertyChanging();
 					this._CEO = value;
-					this.SendPropertyChanged("CEO");
-					this.OnCEOChanged();
+					this.SendPropertyChanged("ceoID");
+					this.OnceoIDChanged();
 				}
 			}
 		}

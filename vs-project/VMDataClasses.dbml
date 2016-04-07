@@ -108,6 +108,7 @@
       <Column Name="StartupID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Title" Type="System.String" DbType="NVarChar(45) NOT NULL" CanBeNull="false" />
       <Column Name="Total_Investment" Type="System.Decimal" DbType="Decimal(10,0)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Association Name="Round_Of_Funding_Round_Investor" Member="Round_Investor" ThisKey="ID" OtherKey="RoundID" Type="Round_Investor" Cardinality="One" />
       <Association Name="Startup_Round_Of_Funding" Member="Startup" ThisKey="StartupID" OtherKey="ID" Type="Startup" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
@@ -124,7 +125,7 @@
       <Column Name="Website" Type="System.String" DbType="NVarChar(63)" CanBeNull="true" />
       <Column Name="Foundation_Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="Twitter" Type="System.String" DbType="NVarChar(63)" CanBeNull="true" />
-      <Column Name="CEO" Type="System.String" DbType="NVarChar(45)" CanBeNull="true" />
+      <Column Name="ceoID" Storage="_CEO" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="IncubatorID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Development_StageID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="Startup_Application" Member="Applications" ThisKey="ID" OtherKey="StartupID" Type="Application" />

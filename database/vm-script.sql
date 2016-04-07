@@ -202,7 +202,7 @@ CREATE TABLE dbo.Startup(
 	Website nvarchar(63) NULL,
 	Foundation_Date date NULL,
 	Twitter nvarchar(63) NULL,
-	CEO nvarchar(45) NULL,
+	ceoID int NULL,
 	IncubatorID int NULL,
 	Development_StageID int NOT NULL,
  	CONSTRAINT PK_Startup PRIMARY KEY(ID) ,
@@ -212,6 +212,8 @@ CREATE TABLE dbo.Startup(
  		ON UPDATE CASCADE ON DELETE SET NULL,
  	CONSTRAINT FK_Startup_Startup FOREIGN KEY(Competitors) REFERENCES dbo.Startup(ID)
  		ON UPDATE NO ACTION ON DELETE  NO ACTION,
+ 	CONSTRAINT	FK_Startup_ceoID FOREIGN KEY(ceoID) REFERENCES dbo.Users(ID)
+ 		ON UPDATE NO ACTION ON DELETE NO ACTION,
  	CONSTRAINT UQ_Startap_Title UNIQUE (Title) 
 ) 
 GO
@@ -278,6 +280,7 @@ CREATE TABLE dbo.Round_Of_Funding(
 	StartupID int NOT NULL,
 	Title nvarchar(45) NOT NULL,
 	Total_Investment decimal(10, 0) NULL,
+	Description nvarchar(max) NULL,
  	CONSTRAINT PK_Round_Of_Funding PRIMARY KEY(ID) ,
  	CONSTRAINT FK_RoundOfFunding_Startup FOREIGN KEY(StartupID) REFERENCES dbo.Startup(ID)
  		ON UPDATE CASCADE ON DELETE CASCADE

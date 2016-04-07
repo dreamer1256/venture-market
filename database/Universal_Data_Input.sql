@@ -184,7 +184,7 @@ INSERT Round_Investor (RoundID,CompanyID,AngelID) VALUES
 (5,NULL,3)
 GO
 SET IDENTITY_INSERT Startup_Members ON
-INSERT Startup_Members (ID,StartupID,UserID,Country,Is_CEO,Skype) VALUES
+INSERT Startup_Members (ID,StartupID,UserID,Address,Is_CEO,Skype) VALUES
 (1,1,7,N'Canada',0,N'donna.morrison'),
 (2,1,9,N'Canada',0,N'chloe.campbell'),
 (3,1,18,N'Canada',0,NULL),
