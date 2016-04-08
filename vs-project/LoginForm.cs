@@ -8,17 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using NLog;
 
 namespace code
 {
     public partial class LoginForm : Form
     {
         DataClasses1DataContext vmDB;
-        
+        private static Logger logger = LogManager.GetCurrentClassLogger();
         public LoginForm()
         {
             InitializeComponent();
             AcceptButton = btn_Login;
+            logger.Info("Application Start");
         }
 
         private void btnTop_Signup_Click(object sender, EventArgs e)
@@ -26,6 +28,7 @@ namespace code
             btnTop_Signup.Enabled = false;
             SignInForm sf = new SignInForm();
             sf.Show();
+            logger.Info("Show registration form");
             this.Hide();
         }
 
@@ -71,20 +74,16 @@ namespace code
                         UserProfile.AdminProfile ap = new UserProfile.AdminProfile(user);
                         break;
                 }
-
+                logger.Info("User is logged on");
                 this.Hide();
             }
             else
             {
+                logger.Info("User has entered the wrong password");
                 MessageBox.Show("Please enter a valid username and password!");
             }
         }
     
-        private void btnTop_Login_Click(object sender, EventArgs e)
-        {   
-            btnTop_Signup.Enabled = true;
-        }
-
         public bool IsValidUser(string userName, string passWord)
          {
             vmDB = new DataClasses1DataContext();

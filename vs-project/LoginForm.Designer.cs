@@ -76,6 +76,8 @@
             // 
             // btn_Login
             // 
+            this.btn_Login.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
+            this.btn_Login.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btn_Login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Login.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btn_Login.ForeColor = System.Drawing.Color.WhiteSmoke;
@@ -91,10 +93,12 @@
             // 
             this.txt_Password.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.txt_Password.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_Password.HideSelection = false;
             this.txt_Password.Location = new System.Drawing.Point(180, 111);
             this.txt_Password.Name = "txt_Password";
             this.txt_Password.Size = new System.Drawing.Size(251, 25);
             this.txt_Password.TabIndex = 3;
+            this.txt_Password.UseSystemPasswordChar = true;
             // 
             // txt_Username
             // 

@@ -7,17 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NLog;
 
 namespace code.RegisterForms
 {
     public partial class Signup_AngelInv : Form
     {
         private User user;
+        private static Logger logger = LogManager.GetCurrentClassLogger();
 
         public Signup_AngelInv(User user)
         {
             InitializeComponent();
             this.user = user;
+            logger.Info("Registration form for Angel investor downloaded\n."
+                + "[User ID = {0}]", user.ID);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -37,10 +41,18 @@ namespace code.RegisterForms
             ai.Min_Amount = Convert.ToDecimal(txt_MinAmount.Text);
             vmDB.AngelInvestors.InsertOnSubmit(ai);
             vmDB.User_Roles.InsertOnSubmit(ur);
-            vmDB.SubmitChanges();
-            UserProfile.AngInvstrMmbrProfile aimp = new UserProfile.AngInvstrMmbrProfile(user);
-            aimp.Show();
-            this.Hide();
+            try
+            {
+                vmDB.SubmitChanges();
+                UserProfile.AngInvstrMmbrProfile aimp = new UserProfile.AngInvstrMmbrProfile(user);
+                aimp.Show();
+                this.Hide();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+                logger.Error(ex.Message);
+            }
         }
     }
 }

@@ -148,12 +148,14 @@
             // chckBx_IsCEO
             // 
             this.chckBx_IsCEO.AutoSize = true;
+            this.chckBx_IsCEO.Checked = true;
+            this.chckBx_IsCEO.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chckBx_IsCEO.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.chckBx_IsCEO.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.chckBx_IsCEO.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.chckBx_IsCEO.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.chckBx_IsCEO.Location = new System.Drawing.Point(418, 28);
             this.chckBx_IsCEO.Name = "chckBx_IsCEO";
-            this.chckBx_IsCEO.Size = new System.Drawing.Size(45, 21);
+            this.chckBx_IsCEO.Size = new System.Drawing.Size(48, 21);
             this.chckBx_IsCEO.TabIndex = 5;
             this.chckBx_IsCEO.Text = "Yes";
             this.chckBx_IsCEO.TextAlign = System.Drawing.ContentAlignment.TopCenter;

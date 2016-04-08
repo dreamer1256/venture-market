@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NLog;
 
 namespace code.RegisterForms
 {
@@ -14,6 +15,8 @@ namespace code.RegisterForms
     {
         private DataClasses1DataContext vmDB;
         private User user;
+        private static Logger logger = LogManager.GetCurrentClassLogger();
+
         public Signup_InvestManager(User user)
         {
             InitializeComponent();
@@ -35,13 +38,20 @@ namespace code.RegisterForms
             im.UserID = user.ID;
             Investment_Company company = vmDB.Investment_Companies.Single(c => c.Title == cmbBx_Company.Text);
             im.Investment_CompanyID = company.ID;
-            im.Geo_Inerests = txt_GeoInterests.Text;
             vmDB.Investment_Managers.InsertOnSubmit(im);
             vmDB.User_Roles.InsertOnSubmit(ur);
-            vmDB.SubmitChanges();
-            this.Hide();
-            UserProfile.InvManagerMmbrProfile icmp = new UserProfile.InvManagerMmbrProfile(user);
-            icmp.Show();
+            try
+            {
+                vmDB.SubmitChanges();
+                this.Hide();
+                UserProfile.InvManagerMmbrProfile icmp = new UserProfile.InvManagerMmbrProfile(user);
+                icmp.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+                logger.Error(ex.Message);
+            }
         }
     }
 }

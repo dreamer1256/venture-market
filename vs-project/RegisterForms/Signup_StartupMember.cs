@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NLog;
 
 namespace code.RegisterForms
 {
@@ -14,6 +15,7 @@ namespace code.RegisterForms
     {
         private DataClasses1DataContext vmDB;
         private User user;
+        private static Logger logger = LogManager.GetCurrentClassLogger();
         bool isCEO = false;
 
         public Signup_StartupMember(User user)
@@ -61,18 +63,26 @@ namespace code.RegisterForms
             sm.About = rchTxtBx_About.Text;
             vmDB.Startup_Members.InsertOnSubmit(sm);
             vmDB.User_Roles.InsertOnSubmit(ur);
-            vmDB.SubmitChanges();
-            if(isCEO)
+            try
             {
-                UserProfile.StartupCEOMmbrProfile scpm = new UserProfile.StartupCEOMmbrProfile(user);
-                scpm.Show();
+                vmDB.SubmitChanges();
+                if (isCEO)
+                {
+                    UserProfile.StartupCEOMmbrProfile scpm = new UserProfile.StartupCEOMmbrProfile(user);
+                    scpm.Show();
+                }
+                else
+                {
+                    UserProfile.StartupMmbrProfile smp = new UserProfile.StartupMmbrProfile(user);
+                    smp.Show();
+                }
+                this.Hide();
             }
-            else
+            catch(Exception ex)
             {
-                UserProfile.StartupMmbrProfile smp = new UserProfile.StartupMmbrProfile(user);
-                smp.Show();
+                logger.Error(ex.Message);
+                MessageBox.Show(ex.Message);
             }
-            this.Hide();
         }
 
         private void Signup_StartupMember_Load(object sender, EventArgs e)

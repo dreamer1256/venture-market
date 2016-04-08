@@ -35,7 +35,7 @@ namespace code.UserProfile
             startupCEO = vmDB.Startup_Members.Single(u => u.UserID == user.ID);
             
             lbl_Name.Text = string.Format("{0} {1}", user.FName, user.LName);
-            lbl_City.Text = string.Format("City: {0}", startupCEO.Address);
+            lbl_City.Text = string.Format("Location: {0}", startupCEO.Address);
             lbl_Phone.Text = string.Format("Phone: {0}", startupCEO.Phone);
             lbl_Email.Text = string.Format("Email: {0}", user.Email);
             lbl_Skype.Text = string.Format("Skype: {0}", startupCEO.Skype);
@@ -189,19 +189,17 @@ namespace code.UserProfile
             pnl_Applications.Hide();
             pnl_MyStartup.Show();
             var startup = vmDB.Startups.Single(s => s.Title.Equals(startupCEO.Startup.Title));
-            //var startup = vmDB.Startups.Where(s => s.Title.Equals(startupCEO.Startup.Title))
-            //    .Select(s => s);
             lbl_MyStartupTitle.Text = startup.Title;
             try
             {
                 rchTxtBox.Text = //"Website: " + startup.Website
                      "\nCEO: " + user.FName + " " + user.LName
-                    //+ "\nDevelopment stage: " + startup.Development_Stage.Stage
-                    //+ "\nBusiness Incubator: " + startup.Business_Incubator.Title.ToString()
+                    + "\nDevelopment stage: " + startup.Development_Stage.Stage
+                    + "\nBusiness Incubator: " + startup.Business_Incubator.Title.ToString()
                     + "\nBusiness Model: " + startup.Business_Model
                     + "\nMarketing strategy: " + startup.Marketing_Strategy
-                    + "\nTotal investment: " + startup.Total_Investment;
-                    //+ "\nFoundation date: " + startup.Foundation_Date;
+                    + "\nTotal investment: " + startup.Total_Investment
+                    + "\nFoundation date: " + startup.Foundation_Date;
             }
             catch(Exception ex)
             {
@@ -270,11 +268,11 @@ namespace code.UserProfile
             lstVw_Applications.FullRowSelect = true;
             lstVw_Applications.GridLines = false;
 
-            lstVw_Applications.Columns.Add("ID", 50);
+            lstVw_Applications.Columns.Add("ID", 40);
             lstVw_Applications.Columns.Add("Round", 60);
             lstVw_Applications.Columns.Add("State", 80);
-            lstVw_Applications.Columns.Add("Invest Manager", 120);
-            lstVw_Applications.Columns.Add("Creation Date", 100);
+            lstVw_Applications.Columns.Add("Invest Manager", 150);
+            lstVw_Applications.Columns.Add("Creation Date", 125);
 
             string[] arr = new string[5];
             foreach (var a in applications)

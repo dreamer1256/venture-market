@@ -37,7 +37,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pnl_Chart = new System.Windows.Forms.Panel();
-            this.pnl_ProfInfo = new System.Windows.Forms.Panel();
             this.pnl_GeneralInfo = new System.Windows.Forms.Panel();
             this.lbl_Twitter = new System.Windows.Forms.Label();
             this.lbl_Skype = new System.Windows.Forms.Label();
@@ -101,11 +100,10 @@
             this.pnl_Profile.Controls.Add(this.pnl_About);
             this.pnl_Profile.Controls.Add(this.pnl_Visitors);
             this.pnl_Profile.Controls.Add(this.pnl_Chart);
-            this.pnl_Profile.Controls.Add(this.pnl_ProfInfo);
             this.pnl_Profile.Controls.Add(this.pnl_GeneralInfo);
-            this.pnl_Profile.Location = new System.Drawing.Point(164, 34);
+            this.pnl_Profile.Location = new System.Drawing.Point(165, 34);
             this.pnl_Profile.Name = "pnl_Profile";
-            this.pnl_Profile.Size = new System.Drawing.Size(814, 526);
+            this.pnl_Profile.Size = new System.Drawing.Size(916, 526);
             this.pnl_Profile.TabIndex = 6;
             // 
             // pnl_About
@@ -154,7 +152,7 @@
             this.pnl_Visitors.Controls.Add(this.label2);
             this.pnl_Visitors.Location = new System.Drawing.Point(541, 0);
             this.pnl_Visitors.Name = "pnl_Visitors";
-            this.pnl_Visitors.Size = new System.Drawing.Size(282, 172);
+            this.pnl_Visitors.Size = new System.Drawing.Size(375, 172);
             this.pnl_Visitors.TabIndex = 10;
             // 
             // label8
@@ -182,16 +180,8 @@
             this.pnl_Chart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
             this.pnl_Chart.Location = new System.Drawing.Point(541, 178);
             this.pnl_Chart.Name = "pnl_Chart";
-            this.pnl_Chart.Size = new System.Drawing.Size(282, 348);
+            this.pnl_Chart.Size = new System.Drawing.Size(375, 348);
             this.pnl_Chart.TabIndex = 12;
-            // 
-            // pnl_ProfInfo
-            // 
-            this.pnl_ProfInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
-            this.pnl_ProfInfo.Location = new System.Drawing.Point(0, 0);
-            this.pnl_ProfInfo.Name = "pnl_ProfInfo";
-            this.pnl_ProfInfo.Size = new System.Drawing.Size(149, 172);
-            this.pnl_ProfInfo.TabIndex = 8;
             // 
             // pnl_GeneralInfo
             // 
@@ -202,9 +192,9 @@
             this.pnl_GeneralInfo.Controls.Add(this.lbl_Email);
             this.pnl_GeneralInfo.Controls.Add(this.lbl_City);
             this.pnl_GeneralInfo.Controls.Add(this.label1);
-            this.pnl_GeneralInfo.Location = new System.Drawing.Point(155, 0);
+            this.pnl_GeneralInfo.Location = new System.Drawing.Point(0, 1);
             this.pnl_GeneralInfo.Name = "pnl_GeneralInfo";
-            this.pnl_GeneralInfo.Size = new System.Drawing.Size(380, 171);
+            this.pnl_GeneralInfo.Size = new System.Drawing.Size(535, 171);
             this.pnl_GeneralInfo.TabIndex = 9;
             // 
             // lbl_Twitter
@@ -212,7 +202,7 @@
             this.lbl_Twitter.AutoSize = true;
             this.lbl_Twitter.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lbl_Twitter.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.lbl_Twitter.Location = new System.Drawing.Point(207, 86);
+            this.lbl_Twitter.Location = new System.Drawing.Point(279, 86);
             this.lbl_Twitter.Name = "lbl_Twitter";
             this.lbl_Twitter.Size = new System.Drawing.Size(54, 17);
             this.lbl_Twitter.TabIndex = 6;
@@ -223,7 +213,7 @@
             this.lbl_Skype.AutoSize = true;
             this.lbl_Skype.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lbl_Skype.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.lbl_Skype.Location = new System.Drawing.Point(207, 43);
+            this.lbl_Skype.Location = new System.Drawing.Point(279, 42);
             this.lbl_Skype.Name = "lbl_Skype";
             this.lbl_Skype.Size = new System.Drawing.Size(49, 17);
             this.lbl_Skype.TabIndex = 5;
@@ -279,7 +269,7 @@
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.pnl_Navigation);
             this.panel1.Controls.Add(this.pnl_Logo);
-            this.panel1.Location = new System.Drawing.Point(0, 34);
+            this.panel1.Location = new System.Drawing.Point(0, 35);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(159, 516);
             this.panel1.TabIndex = 7;
@@ -401,7 +391,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(984, 28);
+            this.panel2.Size = new System.Drawing.Size(1084, 28);
             this.panel2.TabIndex = 8;
             // 
             // btn_Logout
@@ -414,7 +404,7 @@
             this.btn_Logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Logout.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btn_Logout.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_Logout.Location = new System.Drawing.Point(897, 0);
+            this.btn_Logout.Location = new System.Drawing.Point(997, 0);
             this.btn_Logout.Name = "btn_Logout";
             this.btn_Logout.Size = new System.Drawing.Size(87, 25);
             this.btn_Logout.TabIndex = 0;
@@ -484,7 +474,7 @@
             this.btn_Join.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_Join.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btn_Join.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
-            this.btn_Join.Location = new System.Drawing.Point(577, 288);
+            this.btn_Join.Location = new System.Drawing.Point(634, 289);
             this.btn_Join.Name = "btn_Join";
             this.btn_Join.Size = new System.Drawing.Size(180, 75);
             this.btn_Join.TabIndex = 3;
@@ -497,7 +487,7 @@
             this.lbl_JoinError.AutoSize = true;
             this.lbl_JoinError.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_JoinError.ForeColor = System.Drawing.Color.Crimson;
-            this.lbl_JoinError.Location = new System.Drawing.Point(49, 400);
+            this.lbl_JoinError.Location = new System.Drawing.Point(48, 453);
             this.lbl_JoinError.Name = "lbl_JoinError";
             this.lbl_JoinError.Size = new System.Drawing.Size(125, 25);
             this.lbl_JoinError.TabIndex = 4;
@@ -515,7 +505,7 @@
             this.pnl_Incubators.Controls.Add(this.label4);
             this.pnl_Incubators.Location = new System.Drawing.Point(165, 34);
             this.pnl_Incubators.Name = "pnl_Incubators";
-            this.pnl_Incubators.Size = new System.Drawing.Size(816, 526);
+            this.pnl_Incubators.Size = new System.Drawing.Size(919, 526);
             this.pnl_Incubators.TabIndex = 3;
             // 
             // pnl_MyStartup
@@ -528,7 +518,7 @@
             this.pnl_MyStartup.Controls.Add(this.rchTxtBox);
             this.pnl_MyStartup.Location = new System.Drawing.Point(165, 34);
             this.pnl_MyStartup.Name = "pnl_MyStartup";
-            this.pnl_MyStartup.Size = new System.Drawing.Size(816, 526);
+            this.pnl_MyStartup.Size = new System.Drawing.Size(919, 526);
             this.pnl_MyStartup.TabIndex = 5;
             // 
             // label5
@@ -575,10 +565,10 @@
             this.rchTxtBox.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.rchTxtBox.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.rchTxtBox.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.rchTxtBox.Location = new System.Drawing.Point(409, 91);
+            this.rchTxtBox.Location = new System.Drawing.Point(452, 87);
             this.rchTxtBox.Name = "rchTxtBox";
             this.rchTxtBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.rchTxtBox.Size = new System.Drawing.Size(380, 391);
+            this.rchTxtBox.Size = new System.Drawing.Size(414, 391);
             this.rchTxtBox.TabIndex = 0;
             this.rchTxtBox.Text = "Startup info";
             // 
@@ -589,9 +579,9 @@
             this.pnl_Applications.Controls.Add(this.groupBox2);
             this.pnl_Applications.Controls.Add(this.groupBox1);
             this.pnl_Applications.Controls.Add(this.label6);
-            this.pnl_Applications.Location = new System.Drawing.Point(164, 34);
+            this.pnl_Applications.Location = new System.Drawing.Point(165, 35);
             this.pnl_Applications.Name = "pnl_Applications";
-            this.pnl_Applications.Size = new System.Drawing.Size(817, 523);
+            this.pnl_Applications.Size = new System.Drawing.Size(919, 526);
             this.pnl_Applications.TabIndex = 4;
             // 
             // groupBox2
@@ -599,9 +589,9 @@
             this.groupBox2.Controls.Add(this.lstVw_Applications);
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupBox2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.groupBox2.Location = new System.Drawing.Point(402, 100);
+            this.groupBox2.Location = new System.Drawing.Point(422, 100);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(406, 405);
+            this.groupBox2.Size = new System.Drawing.Size(468, 414);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "All Applications";
@@ -616,7 +606,7 @@
             this.lstVw_Applications.Location = new System.Drawing.Point(8, 45);
             this.lstVw_Applications.MultiSelect = false;
             this.lstVw_Applications.Name = "lstVw_Applications";
-            this.lstVw_Applications.Size = new System.Drawing.Size(385, 354);
+            this.lstVw_Applications.Size = new System.Drawing.Size(455, 363);
             this.lstVw_Applications.TabIndex = 0;
             this.lstVw_Applications.UseCompatibleStateImageBehavior = false;
             this.lstVw_Applications.View = System.Windows.Forms.View.Details;
@@ -629,7 +619,7 @@
             this.groupBox1.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.groupBox1.Location = new System.Drawing.Point(49, 100);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(313, 144);
+            this.groupBox1.Size = new System.Drawing.Size(325, 144);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "New Application";
@@ -693,13 +683,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkCyan;
-            this.ClientSize = new System.Drawing.Size(984, 562);
+            this.ClientSize = new System.Drawing.Size(1084, 562);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnl_Incubators);
             this.Controls.Add(this.pnl_Applications);
             this.Controls.Add(this.pnl_Profile);
             this.Controls.Add(this.pnl_MyStartup);
-            this.Controls.Add(this.pnl_Incubators);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "StartupCEOMmbrProfile";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -738,7 +728,6 @@
         private System.Windows.Forms.Panel pnl_About;
         private System.Windows.Forms.Panel pnl_Visitors;
         private System.Windows.Forms.Panel pnl_GeneralInfo;
-        private System.Windows.Forms.Panel pnl_ProfInfo;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel pnl_Navigation;
         private System.Windows.Forms.Panel pnl_Logo;

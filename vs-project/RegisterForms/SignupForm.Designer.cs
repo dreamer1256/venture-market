@@ -119,6 +119,7 @@
             this.txt_PasswordConfirm.Name = "txt_PasswordConfirm";
             this.txt_PasswordConfirm.Size = new System.Drawing.Size(136, 25);
             this.txt_PasswordConfirm.TabIndex = 11;
+            this.txt_PasswordConfirm.UseSystemPasswordChar = true;
             // 
             // txt_Password
             // 
@@ -127,6 +128,7 @@
             this.txt_Password.Name = "txt_Password";
             this.txt_Password.Size = new System.Drawing.Size(136, 25);
             this.txt_Password.TabIndex = 10;
+            this.txt_Password.UseSystemPasswordChar = true;
             // 
             // txt_Email
             // 
