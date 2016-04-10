@@ -124,7 +124,6 @@ CREATE TABLE dbo.AngelInvestor(
 	Investment_Experience nvarchar(max) NULL,
 	Min_Amount decimal(10, 0) NULL,
 	Max_amount decimal(10, 0) NULL,
-	Geo_Inerests nvarchar(45) NULL,
 	Phone nvarchar(45) NULL,
 	Skype nvarchar(45) NULL,
 	Twitter nvarchar(45) NULL,
@@ -203,15 +202,15 @@ CREATE TABLE dbo.Startup(
 	Foundation_Date date NULL,
 	Twitter nvarchar(63) NULL,
 	ceoID int NULL,
-	IncubatorID int NULL,
-	Development_StageID int NOT NULL,
+	IncubID int NULL,
+	DevStageID int NOT NULL,
  	CONSTRAINT PK_Startup PRIMARY KEY(ID) ,
- 	CONSTRAINT FK_Startup_BusinessIncubator FOREIGN KEY(Development_StageID) REFERENCES dbo.Business_Incubator(ID)
+ 	CONSTRAINT FK_Startup_BusinessIncubator FOREIGN KEY(IncubID) REFERENCES dbo.Business_Incubator(ID)
  		ON UPDATE CASCADE ON DELETE CASCADE,
- 	CONSTRAINT FK_Startup_DevelopmentStage FOREIGN KEY(IncubatorID) REFERENCES dbo.Development_Stage(ID)
- 		ON UPDATE CASCADE ON DELETE SET NULL,
- 	CONSTRAINT FK_Startup_Startup FOREIGN KEY(Competitors) REFERENCES dbo.Startup(ID)
- 		ON UPDATE NO ACTION ON DELETE  NO ACTION,
+ 	CONSTRAINT FK_Startup_DevelopmentStage FOREIGN KEY(DevStageID) REFERENCES dbo.Development_Stage(ID)
+ 		ON UPDATE CASCADE ON DELETE CASCADE,
+ 	CONSTRAINT FK_Startup_Startup FOREIGN KEY(Competitors) REFERENCES dbo.Startup(ID),
+ 		--ON UPDATE SET NULL ON DELETE NO ACTION,
  	CONSTRAINT	FK_Startup_ceoID FOREIGN KEY(ceoID) REFERENCES dbo.Users(ID)
  		ON UPDATE NO ACTION ON DELETE NO ACTION,
  	CONSTRAINT UQ_Startap_Title UNIQUE (Title) 
