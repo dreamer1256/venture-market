@@ -36,12 +36,10 @@
             this.rchTxtBx_Expirience = new System.Windows.Forms.RichTextBox();
             this.txt_MaxAmount = new System.Windows.Forms.TextBox();
             this.txt_MinAmount = new System.Windows.Forms.TextBox();
-            this.txt_Get = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.txt_Twitter = new System.Windows.Forms.TextBox();
             this.txt_Skype = new System.Windows.Forms.TextBox();
             this.txt_Phone = new System.Windows.Forms.TextBox();
@@ -81,12 +79,10 @@
             this.panel1.Controls.Add(this.rchTxtBx_Expirience);
             this.panel1.Controls.Add(this.txt_MaxAmount);
             this.panel1.Controls.Add(this.txt_MinAmount);
-            this.panel1.Controls.Add(this.txt_Get);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.txt_Twitter);
             this.panel1.Controls.Add(this.txt_Skype);
             this.panel1.Controls.Add(this.txt_Phone);
@@ -118,24 +114,17 @@
             // 
             // txt_MaxAmount
             // 
-            this.txt_MaxAmount.Location = new System.Drawing.Point(421, 138);
+            this.txt_MaxAmount.Location = new System.Drawing.Point(421, 106);
             this.txt_MaxAmount.Name = "txt_MaxAmount";
             this.txt_MaxAmount.Size = new System.Drawing.Size(134, 20);
             this.txt_MaxAmount.TabIndex = 16;
             // 
             // txt_MinAmount
             // 
-            this.txt_MinAmount.Location = new System.Drawing.Point(421, 93);
+            this.txt_MinAmount.Location = new System.Drawing.Point(421, 61);
             this.txt_MinAmount.Name = "txt_MinAmount";
             this.txt_MinAmount.Size = new System.Drawing.Size(134, 20);
             this.txt_MinAmount.TabIndex = 15;
-            // 
-            // txt_Get
-            // 
-            this.txt_Get.Location = new System.Drawing.Point(421, 21);
-            this.txt_Get.Name = "txt_Get";
-            this.txt_Get.Size = new System.Drawing.Size(134, 20);
-            this.txt_Get.TabIndex = 14;
             // 
             // label10
             // 
@@ -149,7 +138,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(369, 141);
+            this.label9.Location = new System.Drawing.Point(369, 109);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(27, 13);
             this.label9.TabIndex = 12;
@@ -158,7 +147,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(372, 96);
+            this.label8.Location = new System.Drawing.Point(372, 64);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(24, 13);
             this.label8.TabIndex = 11;
@@ -167,20 +156,11 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(326, 65);
+            this.label7.Location = new System.Drawing.Point(326, 33);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(46, 13);
             this.label7.TabIndex = 10;
             this.label7.Text = "Amount:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(326, 24);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(70, 13);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Geo Interests";
             // 
             // txt_Twitter
             // 
@@ -228,12 +208,10 @@
         private System.Windows.Forms.RichTextBox rchTxtBx_Expirience;
         private System.Windows.Forms.TextBox txt_MaxAmount;
         private System.Windows.Forms.TextBox txt_MinAmount;
-        private System.Windows.Forms.TextBox txt_Get;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txt_Twitter;
         private System.Windows.Forms.TextBox txt_Skype;
         private System.Windows.Forms.TextBox txt_Phone;

@@ -34,8 +34,7 @@
             this.rchTxtBx_About = new System.Windows.Forms.RichTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.pnl_Visitors = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lbl_joinedDate = new System.Windows.Forms.Label();
             this.pnl_Chart = new System.Windows.Forms.Panel();
             this.pnl_GeneralInfo = new System.Windows.Forms.Panel();
             this.lbl_Twitter = new System.Windows.Forms.Label();
@@ -76,6 +75,7 @@
             this.btn_CreateApplication = new System.Windows.Forms.Button();
             this.txtBx_RoundOfFunding = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.lbl_lastLogin = new System.Windows.Forms.Label();
             this.pnl_Profile.SuspendLayout();
             this.pnl_About.SuspendLayout();
             this.pnl_Visitors.SuspendLayout();
@@ -103,7 +103,7 @@
             this.pnl_Profile.Controls.Add(this.pnl_GeneralInfo);
             this.pnl_Profile.Location = new System.Drawing.Point(165, 34);
             this.pnl_Profile.Name = "pnl_Profile";
-            this.pnl_Profile.Size = new System.Drawing.Size(916, 526);
+            this.pnl_Profile.Size = new System.Drawing.Size(919, 526);
             this.pnl_Profile.TabIndex = 6;
             // 
             // pnl_About
@@ -148,39 +148,30 @@
             // pnl_Visitors
             // 
             this.pnl_Visitors.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
-            this.pnl_Visitors.Controls.Add(this.label8);
-            this.pnl_Visitors.Controls.Add(this.label2);
+            this.pnl_Visitors.Controls.Add(this.lbl_lastLogin);
+            this.pnl_Visitors.Controls.Add(this.lbl_joinedDate);
             this.pnl_Visitors.Location = new System.Drawing.Point(541, 0);
             this.pnl_Visitors.Name = "pnl_Visitors";
-            this.pnl_Visitors.Size = new System.Drawing.Size(375, 172);
+            this.pnl_Visitors.Size = new System.Drawing.Size(378, 172);
             this.pnl_Visitors.TabIndex = 10;
             // 
-            // label8
+            // lbl_joinedDate
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(37, 55);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(35, 13);
-            this.label8.TabIndex = 2;
-            this.label8.Text = "label8";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label2.Location = new System.Drawing.Point(13, 12);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(90, 21);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Page views";
+            this.lbl_joinedDate.AutoSize = true;
+            this.lbl_joinedDate.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_joinedDate.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lbl_joinedDate.Location = new System.Drawing.Point(26, 13);
+            this.lbl_joinedDate.Name = "lbl_joinedDate";
+            this.lbl_joinedDate.Size = new System.Drawing.Size(83, 21);
+            this.lbl_joinedDate.TabIndex = 1;
+            this.lbl_joinedDate.Text = "Joined On";
             // 
             // pnl_Chart
             // 
             this.pnl_Chart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
             this.pnl_Chart.Location = new System.Drawing.Point(541, 178);
             this.pnl_Chart.Name = "pnl_Chart";
-            this.pnl_Chart.Size = new System.Drawing.Size(375, 348);
+            this.pnl_Chart.Size = new System.Drawing.Size(378, 348);
             this.pnl_Chart.TabIndex = 12;
             // 
             // pnl_GeneralInfo
@@ -192,6 +183,7 @@
             this.pnl_GeneralInfo.Controls.Add(this.lbl_Email);
             this.pnl_GeneralInfo.Controls.Add(this.lbl_City);
             this.pnl_GeneralInfo.Controls.Add(this.label1);
+            this.pnl_GeneralInfo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.pnl_GeneralInfo.Location = new System.Drawing.Point(0, 1);
             this.pnl_GeneralInfo.Name = "pnl_GeneralInfo";
             this.pnl_GeneralInfo.Size = new System.Drawing.Size(535, 171);
@@ -200,55 +192,55 @@
             // lbl_Twitter
             // 
             this.lbl_Twitter.AutoSize = true;
-            this.lbl_Twitter.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lbl_Twitter.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lbl_Twitter.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.lbl_Twitter.Location = new System.Drawing.Point(279, 86);
             this.lbl_Twitter.Name = "lbl_Twitter";
-            this.lbl_Twitter.Size = new System.Drawing.Size(54, 17);
+            this.lbl_Twitter.Size = new System.Drawing.Size(65, 21);
             this.lbl_Twitter.TabIndex = 6;
             this.lbl_Twitter.Text = "Twitter: ";
             // 
             // lbl_Skype
             // 
             this.lbl_Skype.AutoSize = true;
-            this.lbl_Skype.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lbl_Skype.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lbl_Skype.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.lbl_Skype.Location = new System.Drawing.Point(279, 42);
             this.lbl_Skype.Name = "lbl_Skype";
-            this.lbl_Skype.Size = new System.Drawing.Size(49, 17);
+            this.lbl_Skype.Size = new System.Drawing.Size(59, 21);
             this.lbl_Skype.TabIndex = 5;
             this.lbl_Skype.Text = "Skype: ";
             // 
             // lbl_Phone
             // 
             this.lbl_Phone.AutoSize = true;
-            this.lbl_Phone.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lbl_Phone.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lbl_Phone.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.lbl_Phone.Location = new System.Drawing.Point(16, 125);
             this.lbl_Phone.Name = "lbl_Phone";
-            this.lbl_Phone.Size = new System.Drawing.Size(44, 17);
+            this.lbl_Phone.Size = new System.Drawing.Size(54, 21);
             this.lbl_Phone.TabIndex = 4;
             this.lbl_Phone.Text = "Phone";
             // 
             // lbl_Email
             // 
             this.lbl_Email.AutoSize = true;
-            this.lbl_Email.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lbl_Email.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lbl_Email.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.lbl_Email.Location = new System.Drawing.Point(16, 86);
             this.lbl_Email.Name = "lbl_Email";
-            this.lbl_Email.Size = new System.Drawing.Size(46, 17);
+            this.lbl_Email.Size = new System.Drawing.Size(55, 21);
             this.lbl_Email.TabIndex = 3;
             this.lbl_Email.Text = "Email: ";
             // 
             // lbl_City
             // 
             this.lbl_City.AutoSize = true;
-            this.lbl_City.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lbl_City.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lbl_City.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.lbl_City.Location = new System.Drawing.Point(16, 45);
             this.lbl_City.Name = "lbl_City";
-            this.lbl_City.Size = new System.Drawing.Size(60, 17);
+            this.lbl_City.Size = new System.Drawing.Size(72, 21);
             this.lbl_City.TabIndex = 2;
             this.lbl_City.Text = "Location:";
             // 
@@ -678,6 +670,18 @@
             this.label6.TabIndex = 2;
             this.label6.Text = "Applications";
             // 
+            // lbl_lastLogin
+            // 
+            this.lbl_lastLogin.AutoSize = true;
+            this.lbl_lastLogin.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_lastLogin.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lbl_lastLogin.Location = new System.Drawing.Point(26, 46);
+            this.lbl_lastLogin.Name = "lbl_lastLogin";
+            this.lbl_lastLogin.Size = new System.Drawing.Size(84, 21);
+            this.lbl_lastLogin.TabIndex = 1;
+            this.lbl_lastLogin.Text = "Last Login";
+            this.lbl_lastLogin.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
             // StartupCEOMmbrProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -686,10 +690,10 @@
             this.ClientSize = new System.Drawing.Size(1084, 562);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.pnl_Incubators);
-            this.Controls.Add(this.pnl_Applications);
             this.Controls.Add(this.pnl_Profile);
             this.Controls.Add(this.pnl_MyStartup);
+            this.Controls.Add(this.pnl_Incubators);
+            this.Controls.Add(this.pnl_Applications);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "StartupCEOMmbrProfile";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -739,7 +743,7 @@
         private System.Windows.Forms.Label lbl_City;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbl_Name;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbl_joinedDate;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.RichTextBox rchTxtBx_About;
         private System.Windows.Forms.Label label3;
@@ -769,6 +773,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ListView lstVw_Applications;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lbl_lastLogin;
     }
 }

@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NLog;
 
 namespace code.UserProfile
 {
     public partial class StartupCEOMmbrProfile : Form
     {
+        private static Logger logger = LogManager.GetCurrentClassLogger();
+
         /// <summary>
         /// Клас StartupCEOMmbrProfile
         /// форма профілю користувача - керівника стартапом
@@ -41,8 +44,8 @@ namespace code.UserProfile
             lbl_Skype.Text = string.Format("Skype: {0}", startupCEO.Skype);
             lbl_Twitter.Text = string.Format("Twitter: {0}", startupCEO.Twitter);
             rchTxtBx_About.Text = startupCEO.About;
-            label8.Text = "Reg Date " + user.RegDate.ToShortDateString();
-
+            lbl_joinedDate.Text = "Joined on " + user.RegDate.ToShortDateString();
+            lbl_lastLogin.Text = "Last login " + user.LoggedDate.ToString();
             pnl_Incubators.Hide();
             pnl_MyStartup.Hide();
             lbl_StartupsInIncubator.Hide();
@@ -103,26 +106,27 @@ namespace code.UserProfile
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
             incubatorTitle = null;
+            startupCEO = vmDB.Startup_Members.Single(u => u.UserID == user.ID);
 
             if (listView1.SelectedIndices.Count <= 0)
                 return;
             if (listView1.SelectedIndices.Count > 0)
             {
-                lbl_StartupsInIncubList.Text = null;
+                lbl_StartupsInIncubList.Text = "";
                 incubatorTitle = listView1.SelectedItems[0].Text;
 
                 // Вивести стартапи, які вже розташовані у вибраному інкубаторі
                 lbl_StartupsInIncubator.Text = 
                     string.Format("In the {0} incubator are already working: ", incubatorTitle);
                 var incubator = vmDB.Business_Incubators.Single(i => incubatorTitle.Equals(i.Title));
-                var startups = vmDB.Startups.Where(s => s.IncubatorID == incubator.ID);
+                var startups = vmDB.Startups.Where(s => s.IncubID == incubator.ID);
                 foreach (var s in startups)
                     lbl_StartupsInIncubList.Text += "\n" + s.Title;
                 
                 // Перевірити, чи розташований стартап у інкубаторі.
                 // Якщо так - вивести повідомлення про це.
                 // В іншому випадку - показати кнопку Join Incubator
-                if (startupCEO.Startup.IncubatorID != null)
+                if (startupCEO.Startup.IncubID != null)
                 {
                     btn_Join.Hide();
                     ShowJoinErrorMessage();
@@ -144,12 +148,21 @@ namespace code.UserProfile
         /// </summary>
         private void btn_Join_Click(object sender, EventArgs e)
         {
+            startupCEO = vmDB.Startup_Members.Single(u => u.UserID == user.ID);
+
             int incubatorID = vmDB.Business_Incubators.Single(i => i.Title.Equals(incubatorTitle)).ID;
             var startup = vmDB.Startups.Single(s => s.Title.Equals(startupCEO.Startup.Title));
-            var incubID_Before = startup.IncubatorID;
-            startup.IncubatorID = incubatorID;
-            vmDB.SubmitChanges();
-            var incubID_After = startup.IncubatorID;
+            var incubID_Before = startup.IncubID;
+            startup.IncubID = incubatorID;
+            try
+            {
+                vmDB.SubmitChanges();
+            }
+            catch(Exception ex)
+            {
+                logger.Error("Startup is failed to join to the business incubator\n{0}", ex.Message);
+            }
+            var incubID_After = startup.IncubID;
 
             // Перевірка успішності розміщення стартапу в інкубаторі
             if (incubID_Before != incubID_After)
@@ -157,7 +170,7 @@ namespace code.UserProfile
                     + incubatorTitle + " business incubator");
             else
                 MessageBox.Show("Oops! An error occurred.\n"
-                    + "Your startup is failed to connect to the business incubator");
+                    + "Your startup is failed to join to the business incubator");
 
             btn_Join.Hide();
             ShowJoinErrorMessage();
@@ -168,10 +181,11 @@ namespace code.UserProfile
         /// </summary>
         private void ShowJoinErrorMessage()
         {
-            int incID = (int)startupCEO.Startup.IncubatorID;
-            string incubator = vmDB.Business_Incubators.Single(i => i.ID == incID).Title;
-            lbl_JoinError.Text = "Your startup are located in the " + incubator 
-                + " business incubator." + "\nYou can\'t join a new incubator now.";
+            startupCEO = vmDB.Startup_Members.Single(u => u.UserID == user.ID);
+
+            var incubator = vmDB.Business_Incubators.Single(i => i.ID == startupCEO.Startup.Business_Incubator.ID);
+            lbl_JoinError.Text = "Your startup are located in the " + incubator.Title 
+                + " business incubator.\nYou can\'t join a new incubator now.";
             lbl_JoinError.Show();
         }
 
@@ -188,23 +202,26 @@ namespace code.UserProfile
             pnl_Incubators.Hide();
             pnl_Applications.Hide();
             pnl_MyStartup.Show();
+
             var startup = vmDB.Startups.Single(s => s.Title.Equals(startupCEO.Startup.Title));
+            var stceo = vmDB.Users.SingleOrDefault(u => u.ID == startup.ceoID);
+            var devstage = vmDB.Development_Stages.Single(s => s.ID == startup.DevStageID);
+            var icub = vmDB.Business_Incubators.SingleOrDefault(i => i.ID == startup.IncubID);
+
             lbl_MyStartupTitle.Text = startup.Title;
-            try
-            {
-                rchTxtBox.Text = //"Website: " + startup.Website
-                     "\nCEO: " + user.FName + " " + user.LName
-                    + "\nDevelopment stage: " + startup.Development_Stage.Stage
-                    + "\nBusiness Incubator: " + startup.Business_Incubator.Title.ToString()
+            rchTxtBox.Clear();
+            if(stceo != null)
+                rchTxtBox.Text = "CEO: " + stceo.FName + " " + stceo.LName;
+            rchTxtBox.Text += "\nWebsite: " + startup.Website
+                    + "\nDevelopment stage: " + devstage.Stage;
+            if (icub != null)
+                rchTxtBox.Text += "\nBusiness Incubator: " + startup.Business_Incubator.Title;
+            rchTxtBox.Text += "\nTwitter: " + startup.Twitter
                     + "\nBusiness Model: " + startup.Business_Model
                     + "\nMarketing strategy: " + startup.Marketing_Strategy
                     + "\nTotal investment: " + startup.Total_Investment
-                    + "\nFoundation date: " + startup.Foundation_Date;
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+                    + "\nFoundation date: " + startup.Foundation_Date.ToString().Remove(11);
+         
             // Вивід у ListBox учасників команди даного стартапу
             List<string> startupTeam = new List<string>();
             var teamMember = vmDB.Startup_Members.Where(u => u.StartupID == startup.ID)

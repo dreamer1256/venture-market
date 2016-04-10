@@ -33,7 +33,6 @@ namespace code.UserProfile
             lbl_phone.Text = string.Format("Phone: {0}", angel.Phone);
             lbl_email.Text = string.Format("Email: {0}", user.Email);
             lbl_skype.Text = string.Format("Skype: {0}", angel.Skype);
-            lbl_geoint.Text = string.Format("Geo interests: {0}", angel.Geo_Inerests);
             lbl_twitter.Text = string.Format("Twitter: {0}", angel.Twitter);
             lbl_imax.Text = string.Format("Max: {0}", angel.Max_amount);
             lbl_imin.Text = string.Format("Min: {0}", angel.Min_Amount);
@@ -71,9 +70,9 @@ namespace code.UserProfile
             pnl_startups.Show();
             applications_view();
             var jr = (from p in vmDB.Startups
-                      orderby p.IncubatorID
+                      orderby p.IncubID
 
-                      join t in vmDB.Business_Incubators on p.IncubatorID equals t.ID
+                      join t in vmDB.Business_Incubators on p.IncubID equals t.ID
 
                       select new { starname = p.Title, businame = t.Title });
 
@@ -134,7 +133,7 @@ namespace code.UserProfile
                       select s;
             foreach (var s in snm)
             {
-                if (s.State == "no state" && s.Startup.IncubatorID == null)
+                if (s.State == "no state" && s.Startup.IncubID == null)
                 {
                     arr[0] = s.Startup.Title;
                     arr[1] = s.State;
@@ -185,7 +184,7 @@ namespace code.UserProfile
                 lbl_invest_info.Text = stage + "\n" + st.Total_Investment;
             } else {
                      btn_make_invest.Enabled = false;
-                     lbl_invest_info.Text = st.Development_Stage.Stage + "\n" + st.Total_Investment;
+                     lbl_invest_info.Text = st.Development_Stage1.Stage + "\n" + st.Total_Investment;
             }
             stname.Text = st.Title; 
             lbl_startup_inf.Text = st.ceoID + "\n" + 

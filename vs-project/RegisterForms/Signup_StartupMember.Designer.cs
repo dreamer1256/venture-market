@@ -99,8 +99,10 @@
             // 
             // btn_Finish
             // 
+            this.btn_Finish.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
+            this.btn_Finish.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btn_Finish.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Finish.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.btn_Finish.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btn_Finish.Location = new System.Drawing.Point(209, 257);
             this.btn_Finish.Name = "btn_Finish";
             this.btn_Finish.Size = new System.Drawing.Size(75, 38);
@@ -148,8 +150,6 @@
             // chckBx_IsCEO
             // 
             this.chckBx_IsCEO.AutoSize = true;
-            this.chckBx_IsCEO.Checked = true;
-            this.chckBx_IsCEO.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chckBx_IsCEO.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chckBx_IsCEO.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.chckBx_IsCEO.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));

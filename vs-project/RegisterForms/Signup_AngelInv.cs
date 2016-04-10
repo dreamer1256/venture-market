@@ -19,6 +19,7 @@ namespace code.RegisterForms
         public Signup_AngelInv(User user)
         {
             InitializeComponent();
+            AcceptButton = btn_Finish;
             this.user = user;
             logger.Info("Registration form for Angel investor downloaded\n."
                 + "[User ID = {0}]", user.ID);

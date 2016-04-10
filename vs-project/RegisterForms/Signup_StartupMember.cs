@@ -21,6 +21,7 @@ namespace code.RegisterForms
         public Signup_StartupMember(User user)
         {
             InitializeComponent();
+            AcceptButton = btn_Finish;
             this.user = user;
             
             // Отримання наз стартапів, які вже є у системі
@@ -39,12 +40,15 @@ namespace code.RegisterForms
             User_Role ur = new User_Role();
             ur.UserId = user.ID;
             sm.UserID = user.ID;
+            Startup startup = vmDB.Startups.Single(u => u.Title == cmbBx_Startups.Text);
 
             isCEO = chckBx_IsCEO.Checked;
-            if (isCEO)
+           
+            if(isCEO && startup.ceoID == null)
             {
                 sm.Is_CEO = true;
                 ur.RoleID = (int)URoles.Role.StartupCEO;  // роль керівника стартапу
+                startup.ceoID = user.ID;
             }
             else
             {
@@ -53,7 +57,6 @@ namespace code.RegisterForms
             }
 
             // Присвоїти учаснику ID стартапу залежно від вибору в полі comboBox
-            Startup startup = vmDB.Startups.Single(u => u.Title == cmbBx_Startups.Text);
             sm.StartupID = startup.ID;
             
             sm.Address = txt_City.Text;
@@ -63,6 +66,11 @@ namespace code.RegisterForms
             sm.About = rchTxtBx_About.Text;
             vmDB.Startup_Members.InsertOnSubmit(sm);
             vmDB.User_Roles.InsertOnSubmit(ur);
+            if (isCEO && startup.ceoID != null)
+            {
+                MessageBox.Show("You can\'t be the CEO of choosen startup.\nThere is a startup CEO!");
+            }
+            else
             try
             {
                 vmDB.SubmitChanges();
