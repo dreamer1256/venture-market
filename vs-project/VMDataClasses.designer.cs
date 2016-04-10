@@ -412,8 +412,6 @@ namespace code
 		
 		private System.Nullable<decimal> _Max_amount;
 		
-		private string _Geo_Inerests;
-		
 		private string _Phone;
 		
 		private string _Skype;
@@ -440,8 +438,6 @@ namespace code
     partial void OnMin_AmountChanged();
     partial void OnMax_amountChanging(System.Nullable<decimal> value);
     partial void OnMax_amountChanged();
-    partial void OnGeo_InerestsChanging(string value);
-    partial void OnGeo_InerestsChanged();
     partial void OnPhoneChanging(string value);
     partial void OnPhoneChanged();
     partial void OnSkypeChanging(string value);
@@ -558,26 +554,6 @@ namespace code
 					this._Max_amount = value;
 					this.SendPropertyChanged("Max_amount");
 					this.OnMax_amountChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Geo_Inerests", DbType="NVarChar(45)")]
-		public string Geo_Inerests
-		{
-			get
-			{
-				return this._Geo_Inerests;
-			}
-			set
-			{
-				if ((this._Geo_Inerests != value))
-				{
-					this.OnGeo_InerestsChanging(value);
-					this.SendPropertyChanging();
-					this._Geo_Inerests = value;
-					this.SendPropertyChanged("Geo_Inerests");
-					this.OnGeo_InerestsChanged();
 				}
 			}
 		}
@@ -1151,7 +1127,7 @@ namespace code
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Business_Incubator_Startup", Storage="_Startups", ThisKey="ID", OtherKey="Development_StageID")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Business_Incubator_Startup", Storage="_Startups", ThisKey="ID", OtherKey="IncubID")]
 		public EntitySet<Startup> Startups
 		{
 			get
@@ -1207,7 +1183,7 @@ namespace code
 		
 		private string _Stage;
 		
-		private EntitySet<Startup> _Startups;
+		private EntitySet<Startup> _Startups1;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -1221,7 +1197,7 @@ namespace code
 		
 		public Development_Stage()
 		{
-			this._Startups = new EntitySet<Startup>(new Action<Startup>(this.attach_Startups), new Action<Startup>(this.detach_Startups));
+			this._Startups1 = new EntitySet<Startup>(new Action<Startup>(this.attach_Startups1), new Action<Startup>(this.detach_Startups1));
 			OnCreated();
 		}
 		
@@ -1265,16 +1241,16 @@ namespace code
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Development_Stage_Startup", Storage="_Startups", ThisKey="ID", OtherKey="IncubatorID")]
-		public EntitySet<Startup> Startups
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Development_Stage_Startup1", Storage="_Startups1", ThisKey="ID", OtherKey="DevStageID")]
+		public EntitySet<Startup> Startups1
 		{
 			get
 			{
-				return this._Startups;
+				return this._Startups1;
 			}
 			set
 			{
-				this._Startups.Assign(value);
+				this._Startups1.Assign(value);
 			}
 		}
 		
@@ -1298,16 +1274,16 @@ namespace code
 			}
 		}
 		
-		private void attach_Startups(Startup entity)
+		private void attach_Startups1(Startup entity)
 		{
 			this.SendPropertyChanging();
-			entity.Development_Stage = this;
+			entity.Development_Stage1 = this;
 		}
 		
-		private void detach_Startups(Startup entity)
+		private void detach_Startups1(Startup entity)
 		{
 			this.SendPropertyChanging();
-			entity.Development_Stage = null;
+			entity.Development_Stage1 = null;
 		}
 	}
 	
@@ -2561,9 +2537,9 @@ namespace code
 		
 		private System.Nullable<int> _CEO;
 		
-		private System.Nullable<int> _IncubatorID;
+		private System.Nullable<int> _IncubID;
 		
-		private int _Development_StageID;
+		private int _DevStageID;
 		
 		private EntitySet<Application> _Applications;
 		
@@ -2573,11 +2549,11 @@ namespace code
 		
 		private EntitySet<Startup_Member> _Startup_Members;
 		
-		private EntityRef<Business_Incubator> _Business_Incubator;
-		
-		private EntityRef<Development_Stage> _Development_Stage;
-		
 		private EntityRef<Startup> _Startup1;
+		
+		private EntityRef<Development_Stage> _Development_Stage1;
+		
+		private EntityRef<Business_Incubator> _Business_Incubator;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -2605,10 +2581,10 @@ namespace code
     partial void OnTwitterChanged();
     partial void OnceoIDChanging(System.Nullable<int> value);
     partial void OnceoIDChanged();
-    partial void OnIncubatorIDChanging(System.Nullable<int> value);
-    partial void OnIncubatorIDChanged();
-    partial void OnDevelopment_StageIDChanging(int value);
-    partial void OnDevelopment_StageIDChanged();
+    partial void OnIncubIDChanging(System.Nullable<int> value);
+    partial void OnIncubIDChanged();
+    partial void OnDevStageIDChanging(int value);
+    partial void OnDevStageIDChanged();
     #endregion
 		
 		public Startup()
@@ -2617,9 +2593,9 @@ namespace code
 			this._Round_Of_Fundings = new EntitySet<Round_Of_Funding>(new Action<Round_Of_Funding>(this.attach_Round_Of_Fundings), new Action<Round_Of_Funding>(this.detach_Round_Of_Fundings));
 			this._Startups = new EntitySet<Startup>(new Action<Startup>(this.attach_Startups), new Action<Startup>(this.detach_Startups));
 			this._Startup_Members = new EntitySet<Startup_Member>(new Action<Startup_Member>(this.attach_Startup_Members), new Action<Startup_Member>(this.detach_Startup_Members));
-			this._Business_Incubator = default(EntityRef<Business_Incubator>);
-			this._Development_Stage = default(EntityRef<Development_Stage>);
 			this._Startup1 = default(EntityRef<Startup>);
+			this._Development_Stage1 = default(EntityRef<Development_Stage>);
+			this._Business_Incubator = default(EntityRef<Business_Incubator>);
 			OnCreated();
 		}
 		
@@ -2847,50 +2823,50 @@ namespace code
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IncubatorID", DbType="Int")]
-		public System.Nullable<int> IncubatorID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IncubID", DbType="Int")]
+		public System.Nullable<int> IncubID
 		{
 			get
 			{
-				return this._IncubatorID;
+				return this._IncubID;
 			}
 			set
 			{
-				if ((this._IncubatorID != value))
-				{
-					if (this._Development_Stage.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnIncubatorIDChanging(value);
-					this.SendPropertyChanging();
-					this._IncubatorID = value;
-					this.SendPropertyChanged("IncubatorID");
-					this.OnIncubatorIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Development_StageID", DbType="Int NOT NULL")]
-		public int Development_StageID
-		{
-			get
-			{
-				return this._Development_StageID;
-			}
-			set
-			{
-				if ((this._Development_StageID != value))
+				if ((this._IncubID != value))
 				{
 					if (this._Business_Incubator.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
-					this.OnDevelopment_StageIDChanging(value);
+					this.OnIncubIDChanging(value);
 					this.SendPropertyChanging();
-					this._Development_StageID = value;
-					this.SendPropertyChanged("Development_StageID");
-					this.OnDevelopment_StageIDChanged();
+					this._IncubID = value;
+					this.SendPropertyChanged("IncubID");
+					this.OnIncubIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DevStageID", DbType="Int NOT NULL")]
+		public int DevStageID
+		{
+			get
+			{
+				return this._DevStageID;
+			}
+			set
+			{
+				if ((this._DevStageID != value))
+				{
+					if (this._Development_Stage1.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnDevStageIDChanging(value);
+					this.SendPropertyChanging();
+					this._DevStageID = value;
+					this.SendPropertyChanged("DevStageID");
+					this.OnDevStageIDChanged();
 				}
 			}
 		}
@@ -2947,74 +2923,6 @@ namespace code
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Business_Incubator_Startup", Storage="_Business_Incubator", ThisKey="Development_StageID", OtherKey="ID", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
-		public Business_Incubator Business_Incubator
-		{
-			get
-			{
-				return this._Business_Incubator.Entity;
-			}
-			set
-			{
-				Business_Incubator previousValue = this._Business_Incubator.Entity;
-				if (((previousValue != value) 
-							|| (this._Business_Incubator.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Business_Incubator.Entity = null;
-						previousValue.Startups.Remove(this);
-					}
-					this._Business_Incubator.Entity = value;
-					if ((value != null))
-					{
-						value.Startups.Add(this);
-						this._Development_StageID = value.ID;
-					}
-					else
-					{
-						this._Development_StageID = default(int);
-					}
-					this.SendPropertyChanged("Business_Incubator");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Development_Stage_Startup", Storage="_Development_Stage", ThisKey="IncubatorID", OtherKey="ID", IsForeignKey=true, DeleteRule="SET NULL")]
-		public Development_Stage Development_Stage
-		{
-			get
-			{
-				return this._Development_Stage.Entity;
-			}
-			set
-			{
-				Development_Stage previousValue = this._Development_Stage.Entity;
-				if (((previousValue != value) 
-							|| (this._Development_Stage.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Development_Stage.Entity = null;
-						previousValue.Startups.Remove(this);
-					}
-					this._Development_Stage.Entity = value;
-					if ((value != null))
-					{
-						value.Startups.Add(this);
-						this._IncubatorID = value.ID;
-					}
-					else
-					{
-						this._IncubatorID = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Development_Stage");
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Startup_Startup", Storage="_Startup1", ThisKey="Competitors", OtherKey="ID", IsForeignKey=true)]
 		public Startup Startup1
 		{
@@ -3045,6 +2953,74 @@ namespace code
 						this._Competitors = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("Startup1");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Development_Stage_Startup1", Storage="_Development_Stage1", ThisKey="DevStageID", OtherKey="ID", IsForeignKey=true)]
+		public Development_Stage Development_Stage1
+		{
+			get
+			{
+				return this._Development_Stage1.Entity;
+			}
+			set
+			{
+				Development_Stage previousValue = this._Development_Stage1.Entity;
+				if (((previousValue != value) 
+							|| (this._Development_Stage1.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Development_Stage1.Entity = null;
+						previousValue.Startups1.Remove(this);
+					}
+					this._Development_Stage1.Entity = value;
+					if ((value != null))
+					{
+						value.Startups1.Add(this);
+						this._DevStageID = value.ID;
+					}
+					else
+					{
+						this._DevStageID = default(int);
+					}
+					this.SendPropertyChanged("Development_Stage1");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Business_Incubator_Startup", Storage="_Business_Incubator", ThisKey="IncubID", OtherKey="ID", IsForeignKey=true)]
+		public Business_Incubator Business_Incubator
+		{
+			get
+			{
+				return this._Business_Incubator.Entity;
+			}
+			set
+			{
+				Business_Incubator previousValue = this._Business_Incubator.Entity;
+				if (((previousValue != value) 
+							|| (this._Business_Incubator.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Business_Incubator.Entity = null;
+						previousValue.Startups.Remove(this);
+					}
+					this._Business_Incubator.Entity = value;
+					if ((value != null))
+					{
+						value.Startups.Add(this);
+						this._IncubID = value.ID;
+					}
+					else
+					{
+						this._IncubID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Business_Incubator");
 				}
 			}
 		}

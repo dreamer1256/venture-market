@@ -88,6 +88,9 @@
     <Compile Include="UserProfile\StartupMmbrProfile.Designer.cs">
       <DependentUpon>StartupMmbrProfile.cs</DependentUpon>
     </Compile>
+    <Compile Include="VMDataClasses.cs">
+      <DependentUpon>VMDataClasses.dbml</DependentUpon>
+    </Compile>
     <Compile Include="VMDataClasses.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

@@ -15,7 +15,6 @@
       <Column Name="Investment_Experience" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="Min_Amount" Type="System.Decimal" DbType="Decimal(10,0)" CanBeNull="true" />
       <Column Name="Max_amount" Type="System.Decimal" DbType="Decimal(10,0)" CanBeNull="true" />
-      <Column Name="Geo_Inerests" Type="System.String" DbType="NVarChar(45)" CanBeNull="true" />
       <Column Name="Phone" Type="System.String" DbType="NVarChar(45)" CanBeNull="true" />
       <Column Name="Skype" Type="System.String" DbType="NVarChar(45)" CanBeNull="true" />
       <Column Name="Twitter" Type="System.String" DbType="NVarChar(45)" CanBeNull="true" />
@@ -43,14 +42,14 @@
       <Column Name="Number_Of_Seats" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Address" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="Website" Type="System.String" DbType="NVarChar(63)" CanBeNull="true" />
-      <Association Name="Business_Incubator_Startup" Member="Startups" ThisKey="ID" OtherKey="Development_StageID" Type="Startup" />
+      <Association Name="Business_Incubator_Startup" Member="Startups" ThisKey="ID" OtherKey="IncubID" Type="Startup" />
     </Type>
   </Table>
   <Table Name="dbo.Development_Stage" Member="Development_Stages">
     <Type Name="Development_Stage">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Stage" Type="System.String" DbType="NVarChar(45) NOT NULL" CanBeNull="false" />
-      <Association Name="Development_Stage_Startup" Member="Startups" ThisKey="ID" OtherKey="IncubatorID" Type="Startup" />
+      <Association Name="Development_Stage_Startup1" Member="Startups1" ThisKey="ID" OtherKey="DevStageID" Type="Startup" />
     </Type>
   </Table>
   <Table Name="dbo.Industry_Interests_List" Member="Industry_Interests_Lists">
@@ -126,15 +125,15 @@
       <Column Name="Foundation_Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="Twitter" Type="System.String" DbType="NVarChar(63)" CanBeNull="true" />
       <Column Name="ceoID" Storage="_CEO" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="IncubatorID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Development_StageID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IncubID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DevStageID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="Startup_Application" Member="Applications" ThisKey="ID" OtherKey="StartupID" Type="Application" />
       <Association Name="Startup_Round_Of_Funding" Member="Round_Of_Fundings" ThisKey="ID" OtherKey="StartupID" Type="Round_Of_Funding" />
       <Association Name="Startup_Startup" Member="Startups" ThisKey="ID" OtherKey="Competitors" Type="Startup" />
       <Association Name="Startup_Startup_Member" Member="Startup_Members" ThisKey="ID" OtherKey="StartupID" Type="Startup_Member" />
-      <Association Name="Business_Incubator_Startup" Member="Business_Incubator" ThisKey="Development_StageID" OtherKey="ID" Type="Business_Incubator" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
-      <Association Name="Development_Stage_Startup" Member="Development_Stage" ThisKey="IncubatorID" OtherKey="ID" Type="Development_Stage" IsForeignKey="true" DeleteRule="SET NULL" />
       <Association Name="Startup_Startup" Member="Startup1" ThisKey="Competitors" OtherKey="ID" Type="Startup" IsForeignKey="true" />
+      <Association Name="Development_Stage_Startup1" Member="Development_Stage1" ThisKey="DevStageID" OtherKey="ID" Type="Development_Stage" IsForeignKey="true" />
+      <Association Name="Business_Incubator_Startup" Member="Business_Incubator" ThisKey="IncubID" OtherKey="ID" Type="Business_Incubator" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Startup_Members" Member="Startup_Members">
