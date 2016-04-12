@@ -77,6 +77,7 @@ namespace code.UserProfile
             pnl_Incubators.Show();
             pnl_MyStartup.Hide();
             pnl_Applications.Hide();
+            lbl_JoinError.Hide();
             listView1.Clear();
             // Вивести бізнес інкубатори та інформацію про них
             // в ListView
