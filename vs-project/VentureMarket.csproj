@@ -51,6 +51,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminPanels\AddAngelInvestor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPanels\AddAngelInvestor.Designer.cs">
+      <DependentUpon>AddAngelInvestor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanels\AddIncubator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPanels\AddIncubator.Designer.cs">
+      <DependentUpon>AddIncubator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanels\AddInvestCompany.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPanels\AddInvestCompany.Designer.cs">
+      <DependentUpon>AddInvestCompany.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanels\AddStartup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPanels\AddStartup.Designer.cs">
+      <DependentUpon>AddStartup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanels\RemoveIncubator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPanels\RemoveIncubator.Designer.cs">
+      <DependentUpon>RemoveIncubator.cs</DependentUpon>
+    </Compile>
     <Compile Include="RolesEnum.cs" />
     <Compile Include="UserProfile\AdminProfile.cs">
       <SubType>Form</SubType>
@@ -148,6 +178,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Venture_MarketDataSet.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AdminPanels\AddIncubator.resx">
+      <DependentUpon>AddIncubator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPanels\RemoveIncubator.resx">
+      <DependentUpon>RemoveIncubator.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>

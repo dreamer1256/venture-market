@@ -72,6 +72,8 @@ namespace code
                         break;
                     case (int)URoles.Role.Admin:
                         UserProfile.AdminProfile ap = new UserProfile.AdminProfile(user);
+                        ap.Owner = this;
+                        ap.Show();
                         break;
                 }
                 logger.Info("User is logged on");
