@@ -29,14 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series13 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series14 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series15 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -48,7 +45,6 @@
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.chart_profile = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.pnl_contact_inf = new System.Windows.Forms.Panel();
             this.lbl_web = new System.Windows.Forms.Label();
             this.lbl_company = new System.Windows.Forms.Label();
@@ -82,6 +78,8 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pnl_startup = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txt_amount = new System.Windows.Forms.TextBox();
             this.btm_finance = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -92,11 +90,8 @@
             this.button7 = new System.Windows.Forms.Button();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.pnl_menu = new System.Windows.Forms.Panel();
-            this.txt_amount = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lbl_total_inv = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart_profile)).BeginInit();
             this.pnl_contact_inf.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ventureMarketDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.venture_MarketDataSet)).BeginInit();
@@ -242,31 +237,10 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
-            this.panel2.Controls.Add(this.chart_profile);
             this.panel2.Location = new System.Drawing.Point(720, 240);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(280, 364);
             this.panel2.TabIndex = 8;
-            // 
-            // chart_profile
-            // 
-            this.chart_profile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
-            this.chart_profile.BorderlineColor = System.Drawing.SystemColors.WindowText;
-            chartArea1.Name = "ChartArea1";
-            this.chart_profile.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart_profile.Legends.Add(legend1);
-            this.chart_profile.Location = new System.Drawing.Point(3, 20);
-            this.chart_profile.Name = "chart_profile";
-            this.chart_profile.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series1.Legend = "Legend1";
-            series1.Name = "views";
-            this.chart_profile.Series.Add(series1);
-            this.chart_profile.Size = new System.Drawing.Size(274, 174);
-            this.chart_profile.TabIndex = 0;
-            this.chart_profile.Text = "chart2";
             // 
             // pnl_contact_inf
             // 
@@ -583,6 +557,7 @@
             // pnl_startup
             // 
             this.pnl_startup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
+            this.pnl_startup.Controls.Add(this.lbl_total_inv);
             this.pnl_startup.Controls.Add(this.label4);
             this.pnl_startup.Controls.Add(this.txt_amount);
             this.pnl_startup.Controls.Add(this.btm_finance);
@@ -591,11 +566,28 @@
             this.pnl_startup.Controls.Add(this.lbl_startap_strategy);
             this.pnl_startup.Controls.Add(this.lbl_startap_model);
             this.pnl_startup.Controls.Add(this.lbl_startap_title);
-            this.pnl_startup.Location = new System.Drawing.Point(193, 50);
+            this.pnl_startup.Location = new System.Drawing.Point(192, 50);
             this.pnl_startup.Name = "pnl_startup";
             this.pnl_startup.Size = new System.Drawing.Size(805, 560);
             this.pnl_startup.TabIndex = 11;
             this.pnl_startup.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_startup_Paint);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.label4.Location = new System.Drawing.Point(34, 429);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(46, 13);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Amount:";
+            // 
+            // txt_amount
+            // 
+            this.txt_amount.Location = new System.Drawing.Point(86, 424);
+            this.txt_amount.Name = "txt_amount";
+            this.txt_amount.Size = new System.Drawing.Size(166, 20);
+            this.txt_amount.TabIndex = 8;
             // 
             // btm_finance
             // 
@@ -668,7 +660,7 @@
             this.pnl_charts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
             this.pnl_charts.Controls.Add(this.button7);
             this.pnl_charts.Controls.Add(this.chart1);
-            this.pnl_charts.Location = new System.Drawing.Point(195, 50);
+            this.pnl_charts.Location = new System.Drawing.Point(195, 47);
             this.pnl_charts.Name = "pnl_charts";
             this.pnl_charts.Size = new System.Drawing.Size(805, 560);
             this.pnl_charts.TabIndex = 10;
@@ -694,45 +686,45 @@
             this.chart1.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.chart1.BorderlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
             this.chart1.BorderSkin.PageColor = System.Drawing.Color.GreenYellow;
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
+            chartArea5.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea5);
             this.chart1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.chart1.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
+            legend5.Name = "Legend1";
+            this.chart1.Legends.Add(legend5);
             this.chart1.Location = new System.Drawing.Point(49, 54);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
             this.chart1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            series2.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.Center;
-            series2.BackImageTransparentColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            series2.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            series2.BorderColor = System.Drawing.Color.Transparent;
-            series2.BorderWidth = 4;
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series2.Color = System.Drawing.Color.DarkSlateGray;
-            series2.LabelBackColor = System.Drawing.Color.Transparent;
-            series2.LabelBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
-            series2.LabelForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
-            series2.Legend = "Legend1";
-            series2.MarkerBorderColor = System.Drawing.Color.Red;
-            series2.Name = "Age";
-            series3.BorderWidth = 4;
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series3.Color = System.Drawing.Color.Red;
-            series3.LabelBackColor = System.Drawing.Color.Black;
-            series3.Legend = "Legend1";
-            series3.Name = "Score";
-            series4.BorderWidth = 4;
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series4.Legend = "Legend1";
-            series4.Name = "Series3";
-            this.chart1.Series.Add(series2);
-            this.chart1.Series.Add(series3);
-            this.chart1.Series.Add(series4);
+            series13.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.Center;
+            series13.BackImageTransparentColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            series13.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            series13.BorderColor = System.Drawing.Color.Transparent;
+            series13.BorderWidth = 4;
+            series13.ChartArea = "ChartArea1";
+            series13.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series13.Color = System.Drawing.Color.DarkSlateGray;
+            series13.LabelBackColor = System.Drawing.Color.Transparent;
+            series13.LabelBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
+            series13.LabelForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
+            series13.Legend = "Legend1";
+            series13.MarkerBorderColor = System.Drawing.Color.Red;
+            series13.Name = "Age";
+            series14.BorderWidth = 4;
+            series14.ChartArea = "ChartArea1";
+            series14.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series14.Color = System.Drawing.Color.Red;
+            series14.LabelBackColor = System.Drawing.Color.Black;
+            series14.Legend = "Legend1";
+            series14.Name = "Score";
+            series15.BorderWidth = 4;
+            series15.ChartArea = "ChartArea1";
+            series15.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series15.Legend = "Legend1";
+            series15.Name = "Series3";
+            this.chart1.Series.Add(series13);
+            this.chart1.Series.Add(series14);
+            this.chart1.Series.Add(series15);
             this.chart1.Size = new System.Drawing.Size(724, 384);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
@@ -754,22 +746,15 @@
             this.pnl_menu.Size = new System.Drawing.Size(186, 554);
             this.pnl_menu.TabIndex = 9;
             // 
-            // txt_amount
+            // lbl_total_inv
             // 
-            this.txt_amount.Location = new System.Drawing.Point(86, 424);
-            this.txt_amount.Name = "txt_amount";
-            this.txt_amount.Size = new System.Drawing.Size(166, 20);
-            this.txt_amount.TabIndex = 8;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label4.Location = new System.Drawing.Point(34, 429);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(46, 13);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Amount:";
+            this.lbl_total_inv.AutoSize = true;
+            this.lbl_total_inv.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.lbl_total_inv.Location = new System.Drawing.Point(33, 398);
+            this.lbl_total_inv.Name = "lbl_total_inv";
+            this.lbl_total_inv.Size = new System.Drawing.Size(49, 13);
+            this.lbl_total_inv.TabIndex = 10;
+            this.lbl_total_inv.Text = "Total Inv";
             // 
             // InvManagerMmbrProfile
             // 
@@ -793,8 +778,6 @@
             this.Load += new System.EventHandler(this.InvManagerMmbrProfile_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chart_profile)).EndInit();
             this.pnl_contact_inf.ResumeLayout(false);
             this.pnl_contact_inf.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ventureMarketDataSetBindingSource)).EndInit();
@@ -860,7 +843,6 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Panel pnl_menu;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart_profile;
         private System.Windows.Forms.Panel pnl_startup;
         private System.Windows.Forms.Label lbl_application;
         private System.Windows.Forms.Button btm_search;
@@ -876,5 +858,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txt_amount;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lbl_total_inv;
     }
 }
