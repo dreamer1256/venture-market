@@ -170,19 +170,23 @@ INSERT Application (ID,ManagerID,StartupID,State,Application_Round,CreationDate)
 (9,NULL,9,N'no state',0, '2016-04-04 03:14:00.000')
 SET IDENTITY_INSERT Application OFF
 GO
+SET IDENTITY_INSERT Round_Of_Funding ON
 INSERT Round_Of_Funding (ID,StartupID,Title,Total_Investment,Description) VALUES
 (1,1,N'Round1',4000,N'Description should be here'),
 (2,2,N'Round1',3000,N'Description should be here'),
 (3,3,N'Round1',1000,N'Description should be here'),
 (4,4,N'Round1',2000,N'Description should be here'),
 (5,5,N'Round1',4000,N'Description should be here')
+SET IDENTITY_INSERT Round_Of_Funding OFF
 GO
-INSERT Round_Investor (RoundID,CompanyID,AngelID) VALUES
-(1,3,NULL),
-(2,NULL,6),
-(3,1,NULL),
-(4,2,NULL),
-(5,NULL,3)
+SET IDENTITY_INSERT Round_Investor ON
+INSERT Round_Investor (ID,RoundID,CompanyID,AngelID) VALUES
+(1,2,3,NULL),
+(2,3,NULL,6),
+(3,1,1,NULL),
+(4,1,2,NULL),
+(5,2,NULL,3)
+SET IDENTITY_INSERT Round_Investor OFF
 GO
 SET IDENTITY_INSERT Startup_Members ON
 INSERT Startup_Members (ID,StartupID,UserID,Address,Is_CEO,Phone,Skype,Twitter,About) VALUES

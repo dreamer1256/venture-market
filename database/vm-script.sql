@@ -275,7 +275,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE dbo.Round_Of_Funding(
-	ID int NOT NULL,
+	ID int IDENTITY(1,1) NOT NULL,
 	StartupID int NOT NULL,
 	Title nvarchar(45) NOT NULL,
 	Total_Investment decimal(10, 0) NULL,
@@ -291,10 +291,11 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE dbo.Round_Investor(
+	ID int IDENTITY(1,1) NOT NULL,
 	CompanyID int NULL,
 	RoundID int NOT NULL,
 	AngelID int NULL,
- 	CONSTRAINT PK_Round_Investor PRIMARY KEY(RoundID) ,
+ 	CONSTRAINT PK_Round_Investor PRIMARY KEY(ID) ,
  	CONSTRAINT FK_RoundInvestor_InvestmentCompany FOREIGN KEY(CompanyID) REFERENCES dbo.Investment_Company(ID)
  		ON UPDATE CASCADE ON DELETE SET NULL,
  	CONSTRAINT FK_RoundInvestor_RoundOfFunding FOREIGN KEY(RoundID) REFERENCES dbo.Round_Of_Funding(ID)

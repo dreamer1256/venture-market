@@ -230,10 +230,17 @@ namespace code.UserProfile
                 newRF.Title = txt_inv_title.Text;
                 newRF.Description = txt_inv_description.Text;
                 newRF.Total_Investment = invamount;
+                newRI.RoundID = 1;
                 star.Total_Investment = invamount + old_amount;
                 vmDB.Round_Investors.InsertOnSubmit(newRI);
                 vmDB.Round_Of_Fundings.InsertOnSubmit(newRF);
-                vmDB.SubmitChanges();
+                try {
+                    vmDB.SubmitChanges();
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
                 if (MessageBox.Show("Operation completed", "", MessageBoxButtons.OK) == DialogResult.OK)
                 {
                     angel_invest.Hide();

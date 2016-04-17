@@ -49,7 +49,7 @@
     <Type Name="Development_Stage">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Stage" Type="System.String" DbType="NVarChar(45) NOT NULL" CanBeNull="false" />
-      <Association Name="Development_Stage_Startup1" Member="Startups1" ThisKey="ID" OtherKey="DevStageID" Type="Startup" />
+      <Association Name="Development_Stage_Startup" Member="Startups1" ThisKey="ID" OtherKey="DevStageID" Type="Startup" />
     </Type>
   </Table>
   <Table Name="dbo.Industry_Interests_List" Member="Industry_Interests_Lists">
@@ -94,8 +94,9 @@
   <Table Name="dbo.Round_Investor" Member="Round_Investors">
     <Type Name="Round_Investor">
       <Column Name="CompanyID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="RoundID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RoundID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="AngelID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ID" AutoSync="Never" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Association Name="Investment_Company_Round_Investor" Member="Investment_Company" ThisKey="CompanyID" OtherKey="ID" Type="Investment_Company" IsForeignKey="true" DeleteRule="SET NULL" />
       <Association Name="AngelInvestor_Round_Investor" Member="AngelInvestor" ThisKey="AngelID" OtherKey="ID" Type="AngelInvestor" IsForeignKey="true" DeleteRule="SET NULL" />
       <Association Name="Round_Of_Funding_Round_Investor" Member="Round_Of_Funding" ThisKey="RoundID" OtherKey="ID" Type="Round_Of_Funding" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
@@ -103,7 +104,7 @@
   </Table>
   <Table Name="dbo.Round_Of_Funding" Member="Round_Of_Fundings">
     <Type Name="Round_Of_Funding">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ID" AutoSync="Never" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="StartupID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Title" Type="System.String" DbType="NVarChar(45) NOT NULL" CanBeNull="false" />
       <Column Name="Total_Investment" Type="System.Decimal" DbType="Decimal(10,0)" CanBeNull="true" />
@@ -132,7 +133,7 @@
       <Association Name="Startup_Startup" Member="Startups" ThisKey="ID" OtherKey="Competitors" Type="Startup" />
       <Association Name="Startup_Startup_Member" Member="Startup_Members" ThisKey="ID" OtherKey="StartupID" Type="Startup_Member" />
       <Association Name="Startup_Startup" Member="Startup1" ThisKey="Competitors" OtherKey="ID" Type="Startup" IsForeignKey="true" />
-      <Association Name="Development_Stage_Startup1" Member="Development_Stage1" ThisKey="DevStageID" OtherKey="ID" Type="Development_Stage" IsForeignKey="true" />
+      <Association Name="Development_Stage_Startup" Member="Development_Stage1" ThisKey="DevStageID" OtherKey="ID" Type="Development_Stage" IsForeignKey="true" />
       <Association Name="Business_Incubator_Startup" Member="Business_Incubator" ThisKey="IncubID" OtherKey="ID" Type="Business_Incubator" IsForeignKey="true" />
     </Type>
   </Table>

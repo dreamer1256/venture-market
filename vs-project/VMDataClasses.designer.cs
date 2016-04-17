@@ -1241,7 +1241,7 @@ namespace code
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Development_Stage_Startup1", Storage="_Startups1", ThisKey="ID", OtherKey="DevStageID")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Development_Stage_Startup", Storage="_Startups1", ThisKey="ID", OtherKey="DevStageID")]
 		public EntitySet<Startup> Startups1
 		{
 			get
@@ -2057,6 +2057,8 @@ namespace code
 		
 		private System.Nullable<int> _AngelID;
 		
+		private int _ID;
+		
 		private EntityRef<Investment_Company> _Investment_Company;
 		
 		private EntityRef<AngelInvestor> _AngelInvestor;
@@ -2073,6 +2075,8 @@ namespace code
     partial void OnRoundIDChanged();
     partial void OnAngelIDChanging(System.Nullable<int> value);
     partial void OnAngelIDChanged();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
     #endregion
 		
 		public Round_Investor()
@@ -2107,7 +2111,7 @@ namespace code
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RoundID", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RoundID", DbType="Int NOT NULL")]
 		public int RoundID
 		{
 			get
@@ -2151,6 +2155,26 @@ namespace code
 					this._AngelID = value;
 					this.SendPropertyChanged("AngelID");
 					this.OnAngelIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
 				}
 			}
 		}
@@ -2321,7 +2345,7 @@ namespace code
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int ID
 		{
 			get
@@ -2957,7 +2981,7 @@ namespace code
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Development_Stage_Startup1", Storage="_Development_Stage1", ThisKey="DevStageID", OtherKey="ID", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Development_Stage_Startup", Storage="_Development_Stage1", ThisKey="DevStageID", OtherKey="ID", IsForeignKey=true)]
 		public Development_Stage Development_Stage1
 		{
 			get
