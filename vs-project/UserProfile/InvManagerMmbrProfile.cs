@@ -167,62 +167,21 @@ namespace code.UserProfile
                 sp.Total_Investment = tmp;
                 app.Application_Round = tmp2 + 1;
                 vmDB.SubmitChanges();
+                MessageBox.Show("Startup is accepted",
+                    "Success", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-        private void panel5_Paint(object sender, PaintEventArgs e)
+        private void btm_rejected_Click(object sender, EventArgs e)
         {
-
+            Startup sp = vmDB.Startups.Single(u => u.Title == listView2.SelectedItems[0].Text);
+            Application app = vmDB.Applications.Single(u => u.StartupID == sp.ID);
+            app.State = "rejected";
+            MessageBox.Show("Startup is rejected",
+                    "Success", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
-        private void InvManagerMmbrProfile_Load(object sender, EventArgs e)
-        {
 
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel4_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label25_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pnl_startup_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void lbl_startap_model_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbl_startap_strategy_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
+ 
 
     } }
 
