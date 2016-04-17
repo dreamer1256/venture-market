@@ -81,6 +81,7 @@
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.label1 = new System.Windows.Forms.Label();
             this.pnl_startup = new System.Windows.Forms.Panel();
+            this.btm_rejected = new System.Windows.Forms.Button();
             this.lbl_total_inv = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txt_amount = new System.Windows.Forms.TextBox();
@@ -91,8 +92,8 @@
             this.lbl_startap_model = new System.Windows.Forms.Label();
             this.lbl_startap_title = new System.Windows.Forms.Label();
             this.pnl_menu = new System.Windows.Forms.Panel();
-            this.btm_rejected = new System.Windows.Forms.Button();
             this.tableAdapterManager1 = new code.Venture_MarketDataSetTableAdapters.TableAdapterManager();
+            this.cmbx_applic_state = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.pnl_contact_inf.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ventureMarketDataSetBindingSource)).BeginInit();
@@ -256,7 +257,6 @@
             this.pnl_contact_inf.Name = "pnl_contact_inf";
             this.pnl_contact_inf.Size = new System.Drawing.Size(344, 184);
             this.pnl_contact_inf.TabIndex = 8;
-
             // 
             // lbl_web
             // 
@@ -386,7 +386,6 @@
             this.pnl_page_view.Name = "pnl_page_view";
             this.pnl_page_view.Size = new System.Drawing.Size(280, 184);
             this.pnl_page_view.TabIndex = 9;
-
             // 
             // label25
             // 
@@ -397,7 +396,6 @@
             this.label25.Size = new System.Drawing.Size(62, 13);
             this.label25.TabIndex = 21;
             this.label25.Text = "Page views";
-
             // 
             // panel5
             // 
@@ -468,7 +466,6 @@
             this.checkBox1.TabIndex = 6;
             this.checkBox1.Text = "Show only selected";
             this.checkBox1.UseVisualStyleBackColor = true;
-
             // 
             // btm_search
             // 
@@ -635,6 +632,7 @@
             // pnl_startup
             // 
             this.pnl_startup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
+            this.pnl_startup.Controls.Add(this.cmbx_applic_state);
             this.pnl_startup.Controls.Add(this.btm_rejected);
             this.pnl_startup.Controls.Add(this.lbl_total_inv);
             this.pnl_startup.Controls.Add(this.label4);
@@ -649,6 +647,18 @@
             this.pnl_startup.Name = "pnl_startup";
             this.pnl_startup.Size = new System.Drawing.Size(805, 560);
             this.pnl_startup.TabIndex = 11;
+            // 
+            // btm_rejected
+            // 
+            this.btm_rejected.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btm_rejected.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btm_rejected.Location = new System.Drawing.Point(365, 463);
+            this.btm_rejected.Name = "btm_rejected";
+            this.btm_rejected.Size = new System.Drawing.Size(75, 23);
+            this.btm_rejected.TabIndex = 11;
+            this.btm_rejected.Text = "Confirm";
+            this.btm_rejected.UseVisualStyleBackColor = true;
+            this.btm_rejected.Click += new System.EventHandler(this.btm_rejected_Click);
             // 
             // lbl_total_inv
             // 
@@ -757,24 +767,24 @@
             this.pnl_menu.Size = new System.Drawing.Size(186, 554);
             this.pnl_menu.TabIndex = 9;
             // 
-            // btm_rejected
-            // 
-            this.btm_rejected.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btm_rejected.ForeColor = System.Drawing.Color.Red;
-            this.btm_rejected.Location = new System.Drawing.Point(365, 463);
-            this.btm_rejected.Name = "btm_rejected";
-            this.btm_rejected.Size = new System.Drawing.Size(75, 23);
-            this.btm_rejected.TabIndex = 11;
-            this.btm_rejected.Text = "Rejected";
-            this.btm_rejected.UseVisualStyleBackColor = true;
-            this.btm_rejected.Click += new System.EventHandler(this.btm_rejected_Click);
-            // 
             // tableAdapterManager1
             // 
             this.tableAdapterManager1.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager1.Connection = null;
             this.tableAdapterManager1.UpdateOrder = code.Venture_MarketDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager1.UsersTableAdapter = null;
+            // 
+            // cmbx_applic_state
+            // 
+            this.cmbx_applic_state.FormattingEnabled = true;
+            this.cmbx_applic_state.Items.AddRange(new object[] {
+            "considered",
+            "accepted",
+            "rejected"});
+            this.cmbx_applic_state.Location = new System.Drawing.Point(365, 421);
+            this.cmbx_applic_state.Name = "cmbx_applic_state";
+            this.cmbx_applic_state.Size = new System.Drawing.Size(121, 21);
+            this.cmbx_applic_state.TabIndex = 12;
             // 
             // InvManagerMmbrProfile
             // 
@@ -879,5 +889,6 @@
         private System.Windows.Forms.Label lbl_total_inv;
         private System.Windows.Forms.Button btm_rejected;
         private Venture_MarketDataSetTableAdapters.TableAdapterManager tableAdapterManager1;
+        private System.Windows.Forms.ComboBox cmbx_applic_state;
     }
 }
