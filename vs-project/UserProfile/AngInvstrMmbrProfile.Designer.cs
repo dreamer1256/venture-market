@@ -29,40 +29,40 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_logout = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.startupslist = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbl_name = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel_prof1 = new System.Windows.Forms.Panel();
+            this.lbl_angel_info = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.lbl_imin = new System.Windows.Forms.Label();
             this.lbl_imax = new System.Windows.Forms.Label();
-            this.lbl_twitter = new System.Windows.Forms.Label();
-            this.lbl_phone = new System.Windows.Forms.Label();
-            this.lbl_skype = new System.Windows.Forms.Label();
-            this.lbl_email = new System.Windows.Forms.Label();
-            this.lbl_geoint = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btn_make_invest = new System.Windows.Forms.Button();
             this.pnl_startups = new System.Windows.Forms.Panel();
+            this.appic_view = new System.Windows.Forms.ListView();
             this.listView1 = new System.Windows.Forms.ListView();
             this.label5 = new System.Windows.Forms.Label();
-            this.appic_view = new System.Windows.Forms.ListView();
-            this.Startup = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.State = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Aplication_Round = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label2 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel_prof2 = new System.Windows.Forms.Panel();
             this.lbl_iexperience = new System.Windows.Forms.Label();
             this.pnl_profile = new System.Windows.Forms.Panel();
+            this.panel_prof3 = new System.Windows.Forms.Panel();
+            this.lbl_lastlogreg = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.pnl_edit = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.st_view = new System.Windows.Forms.Panel();
+            this.lbl_businc = new System.Windows.Forms.Label();
             this.angel_invest = new System.Windows.Forms.Panel();
+            this.txt_inv_description = new System.Windows.Forms.TextBox();
+            this.txt_inv_title = new System.Windows.Forms.TextBox();
+            this.lbl_inv_descr = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_inv = new System.Windows.Forms.Button();
             this.txt_inv = new System.Windows.Forms.TextBox();
@@ -76,13 +76,15 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.stname = new System.Windows.Forms.Label();
             this.showprofile = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel3.SuspendLayout();
+            this.panel_prof1.SuspendLayout();
             this.pnl_startups.SuspendLayout();
-            this.panel4.SuspendLayout();
+            this.panel_prof2.SuspendLayout();
             this.pnl_profile.SuspendLayout();
+            this.panel_prof3.SuspendLayout();
             this.pnl_edit.SuspendLayout();
             this.st_view.SuspendLayout();
             this.angel_invest.SuspendLayout();
@@ -91,24 +93,24 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btn_logout);
             this.panel1.Location = new System.Drawing.Point(5, 4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(992, 36);
             this.panel1.TabIndex = 0;
             // 
-            // button1
+            // btn_logout
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(34)))), ((int)(((byte)(40)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.button1.Location = new System.Drawing.Point(901, 7);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Logout";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btn_logout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(34)))), ((int)(((byte)(40)))));
+            this.btn_logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_logout.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.btn_logout.Location = new System.Drawing.Point(901, 7);
+            this.btn_logout.Name = "btn_logout";
+            this.btn_logout.Size = new System.Drawing.Size(75, 23);
+            this.btn_logout.TabIndex = 0;
+            this.btn_logout.Text = "Logout";
+            this.btn_logout.UseVisualStyleBackColor = false;
+            this.btn_logout.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel2
             // 
@@ -168,102 +170,58 @@
             this.lbl_name.TabIndex = 1;
             this.lbl_name.Text = "label2";
             // 
-            // panel3
+            // panel_prof1
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(50)))));
-            this.panel3.Controls.Add(this.label6);
-            this.panel3.Controls.Add(this.lbl_imin);
-            this.panel3.Controls.Add(this.lbl_imax);
-            this.panel3.Controls.Add(this.lbl_twitter);
-            this.panel3.Controls.Add(this.lbl_phone);
-            this.panel3.Controls.Add(this.lbl_skype);
-            this.panel3.Controls.Add(this.lbl_email);
-            this.panel3.Controls.Add(this.lbl_geoint);
-            this.panel3.Controls.Add(this.label3);
-            this.panel3.Location = new System.Drawing.Point(4, 10);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(429, 147);
-            this.panel3.TabIndex = 2;
+            this.panel_prof1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(50)))));
+            this.panel_prof1.Controls.Add(this.lbl_angel_info);
+            this.panel_prof1.Controls.Add(this.label4);
+            this.panel_prof1.Controls.Add(this.label6);
+            this.panel_prof1.Controls.Add(this.lbl_imax);
+            this.panel_prof1.Controls.Add(this.label3);
+            this.panel_prof1.Location = new System.Drawing.Point(4, 10);
+            this.panel_prof1.Name = "panel_prof1";
+            this.panel_prof1.Size = new System.Drawing.Size(429, 138);
+            this.panel_prof1.TabIndex = 2;
+            // 
+            // lbl_angel_info
+            // 
+            this.lbl_angel_info.AutoSize = true;
+            this.lbl_angel_info.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.lbl_angel_info.Location = new System.Drawing.Point(101, 48);
+            this.lbl_angel_info.Name = "lbl_angel_info";
+            this.lbl_angel_info.Size = new System.Drawing.Size(28, 13);
+            this.lbl_angel_info.TabIndex = 14;
+            this.lbl_angel_info.Text = "Text";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.label4.Location = new System.Drawing.Point(22, 48);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(40, 52);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "e-mail:\r\nskype:\r\nphone:\r\ntwitter:";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label6.Location = new System.Drawing.Point(221, 45);
+            this.label6.Location = new System.Drawing.Point(230, 45);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(96, 13);
             this.label6.TabIndex = 12;
             this.label6.Text = "Investition amount:";
             // 
-            // lbl_imin
-            // 
-            this.lbl_imin.AutoSize = true;
-            this.lbl_imin.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.lbl_imin.Location = new System.Drawing.Point(311, 71);
-            this.lbl_imin.Name = "lbl_imin";
-            this.lbl_imin.Size = new System.Drawing.Size(25, 13);
-            this.lbl_imin.TabIndex = 11;
-            this.lbl_imin.Text = "imin";
-            // 
             // lbl_imax
             // 
             this.lbl_imax.AutoSize = true;
             this.lbl_imax.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.lbl_imax.Location = new System.Drawing.Point(311, 58);
+            this.lbl_imax.Location = new System.Drawing.Point(319, 58);
             this.lbl_imax.Name = "lbl_imax";
-            this.lbl_imax.Size = new System.Drawing.Size(28, 13);
+            this.lbl_imax.Size = new System.Drawing.Size(30, 26);
             this.lbl_imax.TabIndex = 10;
-            this.lbl_imax.Text = "imax";
-            // 
-            // lbl_twitter
-            // 
-            this.lbl_twitter.AutoSize = true;
-            this.lbl_twitter.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.lbl_twitter.Location = new System.Drawing.Point(49, 97);
-            this.lbl_twitter.Name = "lbl_twitter";
-            this.lbl_twitter.Size = new System.Drawing.Size(35, 13);
-            this.lbl_twitter.TabIndex = 9;
-            this.lbl_twitter.Text = "twitter";
-            // 
-            // lbl_phone
-            // 
-            this.lbl_phone.AutoSize = true;
-            this.lbl_phone.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.lbl_phone.Location = new System.Drawing.Point(49, 84);
-            this.lbl_phone.Name = "lbl_phone";
-            this.lbl_phone.Size = new System.Drawing.Size(37, 13);
-            this.lbl_phone.TabIndex = 7;
-            this.lbl_phone.Text = "phone";
-            // 
-            // lbl_skype
-            // 
-            this.lbl_skype.AutoSize = true;
-            this.lbl_skype.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.lbl_skype.Location = new System.Drawing.Point(49, 71);
-            this.lbl_skype.Name = "lbl_skype";
-            this.lbl_skype.Size = new System.Drawing.Size(35, 13);
-            this.lbl_skype.TabIndex = 6;
-            this.lbl_skype.Text = "skype";
-            // 
-            // lbl_email
-            // 
-            this.lbl_email.AutoSize = true;
-            this.lbl_email.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.lbl_email.Location = new System.Drawing.Point(49, 58);
-            this.lbl_email.Name = "lbl_email";
-            this.lbl_email.Size = new System.Drawing.Size(31, 13);
-            this.lbl_email.TabIndex = 5;
-            this.lbl_email.Text = "email";
-            // 
-            // lbl_geoint
-            // 
-            this.lbl_geoint.AutoSize = true;
-            this.lbl_geoint.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.lbl_geoint.Location = new System.Drawing.Point(49, 45);
-            this.lbl_geoint.Name = "lbl_geoint";
-            this.lbl_geoint.Size = new System.Drawing.Size(36, 13);
-            this.lbl_geoint.TabIndex = 4;
-            this.lbl_geoint.Text = "geoint";
+            this.lbl_imax.Text = "Max:\r\nMin:";
             // 
             // label3
             // 
@@ -280,7 +238,7 @@
             this.btn_make_invest.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(34)))), ((int)(((byte)(40)))));
             this.btn_make_invest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_make_invest.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.btn_make_invest.Location = new System.Drawing.Point(284, 102);
+            this.btn_make_invest.Location = new System.Drawing.Point(245, 111);
             this.btn_make_invest.Name = "btn_make_invest";
             this.btn_make_invest.Size = new System.Drawing.Size(131, 23);
             this.btn_make_invest.TabIndex = 7;
@@ -291,21 +249,31 @@
             // pnl_startups
             // 
             this.pnl_startups.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
+            this.pnl_startups.Controls.Add(this.appic_view);
             this.pnl_startups.Controls.Add(this.listView1);
             this.pnl_startups.Controls.Add(this.label5);
-            this.pnl_startups.Controls.Add(this.appic_view);
             this.pnl_startups.Controls.Add(this.label2);
             this.pnl_startups.Location = new System.Drawing.Point(183, 46);
             this.pnl_startups.Name = "pnl_startups";
             this.pnl_startups.Size = new System.Drawing.Size(814, 543);
             this.pnl_startups.TabIndex = 7;
             // 
+            // appic_view
+            // 
+            this.appic_view.Location = new System.Drawing.Point(245, 39);
+            this.appic_view.Name = "appic_view";
+            this.appic_view.Size = new System.Drawing.Size(422, 332);
+            this.appic_view.TabIndex = 5;
+            this.appic_view.UseCompatibleStateImageBehavior = false;
+            this.appic_view.View = System.Windows.Forms.View.Details;
+            this.appic_view.SelectedIndexChanged += new System.EventHandler(this.appic_view_SelectedIndexChanged);
+            // 
             // listView1
             // 
             this.listView1.GridLines = true;
             this.listView1.Location = new System.Drawing.Point(14, 35);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(200, 496);
+            this.listView1.Size = new System.Drawing.Size(200, 336);
             this.listView1.TabIndex = 4;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Tile;
@@ -322,36 +290,6 @@
             this.label5.TabIndex = 3;
             this.label5.Text = "Avaiable applications:";
             // 
-            // appic_view
-            // 
-            this.appic_view.Alignment = System.Windows.Forms.ListViewAlignment.Left;
-            this.appic_view.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.Startup,
-            this.State,
-            this.Aplication_Round});
-            this.appic_view.GridLines = true;
-            this.appic_view.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
-            this.appic_view.Location = new System.Drawing.Point(238, 35);
-            this.appic_view.Name = "appic_view";
-            this.appic_view.Size = new System.Drawing.Size(225, 496);
-            this.appic_view.TabIndex = 2;
-            this.appic_view.UseCompatibleStateImageBehavior = false;
-            this.appic_view.View = System.Windows.Forms.View.Details;
-            this.appic_view.SelectedIndexChanged += new System.EventHandler(this.appic_view_SelectedIndexChanged);
-            // 
-            // Startup
-            // 
-            this.Startup.Text = "Startup";
-            this.Startup.Width = 100;
-            // 
-            // State
-            // 
-            this.State.Text = "State";
-            // 
-            // Aplication_Round
-            // 
-            this.Aplication_Round.Text = "Aplication_Round";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -363,14 +301,14 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "List of startups:";
             // 
-            // panel4
+            // panel_prof2
             // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(50)))));
-            this.panel4.Controls.Add(this.lbl_iexperience);
-            this.panel4.Location = new System.Drawing.Point(4, 169);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(429, 103);
-            this.panel4.TabIndex = 3;
+            this.panel_prof2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(50)))));
+            this.panel_prof2.Controls.Add(this.lbl_iexperience);
+            this.panel_prof2.Location = new System.Drawing.Point(4, 161);
+            this.panel_prof2.Name = "panel_prof2";
+            this.panel_prof2.Size = new System.Drawing.Size(429, 90);
+            this.panel_prof2.TabIndex = 3;
             // 
             // lbl_iexperience
             // 
@@ -385,12 +323,43 @@
             // pnl_profile
             // 
             this.pnl_profile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
-            this.pnl_profile.Controls.Add(this.panel3);
-            this.pnl_profile.Controls.Add(this.panel4);
+            this.pnl_profile.Controls.Add(this.panel_prof3);
+            this.pnl_profile.Controls.Add(this.panel_prof1);
+            this.pnl_profile.Controls.Add(this.panel_prof2);
             this.pnl_profile.Location = new System.Drawing.Point(184, 46);
             this.pnl_profile.Name = "pnl_profile";
-            this.pnl_profile.Size = new System.Drawing.Size(437, 278);
+            this.pnl_profile.Size = new System.Drawing.Size(666, 278);
             this.pnl_profile.TabIndex = 4;
+            // 
+            // panel_prof3
+            // 
+            this.panel_prof3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(50)))));
+            this.panel_prof3.Controls.Add(this.lbl_lastlogreg);
+            this.panel_prof3.Controls.Add(this.label9);
+            this.panel_prof3.Location = new System.Drawing.Point(449, 10);
+            this.panel_prof3.Name = "panel_prof3";
+            this.panel_prof3.Size = new System.Drawing.Size(203, 138);
+            this.panel_prof3.TabIndex = 4;
+            // 
+            // lbl_lastlogreg
+            // 
+            this.lbl_lastlogreg.AutoSize = true;
+            this.lbl_lastlogreg.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.lbl_lastlogreg.Location = new System.Drawing.Point(92, 10);
+            this.lbl_lastlogreg.Name = "lbl_lastlogreg";
+            this.lbl_lastlogreg.Size = new System.Drawing.Size(24, 13);
+            this.lbl_lastlogreg.TabIndex = 1;
+            this.lbl_lastlogreg.Text = "text";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.label9.Location = new System.Drawing.Point(13, 10);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(73, 26);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "Register date:\r\nLast login:";
             // 
             // pnl_edit
             // 
@@ -398,7 +367,7 @@
             this.pnl_edit.Controls.Add(this.button3);
             this.pnl_edit.Location = new System.Drawing.Point(183, 46);
             this.pnl_edit.Name = "pnl_edit";
-            this.pnl_edit.Size = new System.Drawing.Size(589, 193);
+            this.pnl_edit.Size = new System.Drawing.Size(510, 193);
             this.pnl_edit.TabIndex = 9;
             // 
             // button3
@@ -421,6 +390,8 @@
             // st_view
             // 
             this.st_view.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
+            this.st_view.Controls.Add(this.label12);
+            this.st_view.Controls.Add(this.lbl_businc);
             this.st_view.Controls.Add(this.angel_invest);
             this.st_view.Controls.Add(this.lbl_invest_info);
             this.st_view.Controls.Add(this.lbl_st_inf_con);
@@ -434,34 +405,73 @@
             this.st_view.Controls.Add(this.stname);
             this.st_view.Location = new System.Drawing.Point(183, 46);
             this.st_view.Name = "st_view";
-            this.st_view.Size = new System.Drawing.Size(510, 322);
+            this.st_view.Size = new System.Drawing.Size(510, 339);
             this.st_view.TabIndex = 10;
+            // 
+            // lbl_businc
+            // 
+            this.lbl_businc.AutoSize = true;
+            this.lbl_businc.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.lbl_businc.Location = new System.Drawing.Point(128, 262);
+            this.lbl_businc.Name = "lbl_businc";
+            this.lbl_businc.Size = new System.Drawing.Size(41, 13);
+            this.lbl_businc.TabIndex = 11;
+            this.lbl_businc.Text = "label12";
             // 
             // angel_invest
             // 
             this.angel_invest.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(34)))), ((int)(((byte)(40)))));
+            this.angel_invest.Controls.Add(this.txt_inv_description);
+            this.angel_invest.Controls.Add(this.txt_inv_title);
+            this.angel_invest.Controls.Add(this.lbl_inv_descr);
             this.angel_invest.Controls.Add(this.label1);
             this.angel_invest.Controls.Add(this.btn_inv);
             this.angel_invest.Controls.Add(this.txt_inv);
-            this.angel_invest.Location = new System.Drawing.Point(284, 131);
+            this.angel_invest.Location = new System.Drawing.Point(245, 142);
             this.angel_invest.Name = "angel_invest";
-            this.angel_invest.Size = new System.Drawing.Size(196, 69);
+            this.angel_invest.Size = new System.Drawing.Size(251, 190);
             this.angel_invest.TabIndex = 10;
+            // 
+            // txt_inv_description
+            // 
+            this.txt_inv_description.Location = new System.Drawing.Point(94, 50);
+            this.txt_inv_description.Multiline = true;
+            this.txt_inv_description.Name = "txt_inv_description";
+            this.txt_inv_description.Size = new System.Drawing.Size(138, 64);
+            this.txt_inv_description.TabIndex = 5;
+            // 
+            // txt_inv_title
+            // 
+            this.txt_inv_title.Location = new System.Drawing.Point(94, 19);
+            this.txt_inv_title.Name = "txt_inv_title";
+            this.txt_inv_title.Size = new System.Drawing.Size(138, 20);
+            this.txt_inv_title.TabIndex = 4;
+            // 
+            // lbl_inv_descr
+            // 
+            this.lbl_inv_descr.AutoSize = true;
+            this.lbl_inv_descr.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lbl_inv_descr.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.lbl_inv_descr.Location = new System.Drawing.Point(16, 15);
+            this.lbl_inv_descr.Name = "lbl_inv_descr";
+            this.lbl_inv_descr.Size = new System.Drawing.Size(79, 48);
+            this.lbl_inv_descr.TabIndex = 3;
+            this.lbl_inv_descr.Text = "Tittle:\r\n\r\nDescription:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label1.Location = new System.Drawing.Point(15, 11);
+            this.label1.Location = new System.Drawing.Point(16, 124);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 13);
+            this.label1.Size = new System.Drawing.Size(56, 16);
             this.label1.TabIndex = 2;
             this.label1.Text = "Amount:";
             // 
             // btn_inv
             // 
-            this.btn_inv.Location = new System.Drawing.Point(114, 28);
+            this.btn_inv.Location = new System.Drawing.Point(156, 154);
             this.btn_inv.Name = "btn_inv";
             this.btn_inv.Size = new System.Drawing.Size(75, 23);
             this.btn_inv.TabIndex = 1;
@@ -471,16 +481,16 @@
             // 
             // txt_inv
             // 
-            this.txt_inv.Location = new System.Drawing.Point(18, 30);
+            this.txt_inv.Location = new System.Drawing.Point(94, 120);
             this.txt_inv.Name = "txt_inv";
-            this.txt_inv.Size = new System.Drawing.Size(90, 20);
+            this.txt_inv.Size = new System.Drawing.Size(138, 20);
             this.txt_inv.TabIndex = 0;
             // 
             // lbl_invest_info
             // 
             this.lbl_invest_info.AutoSize = true;
             this.lbl_invest_info.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.lbl_invest_info.Location = new System.Drawing.Point(408, 68);
+            this.lbl_invest_info.Location = new System.Drawing.Point(355, 74);
             this.lbl_invest_info.Name = "lbl_invest_info";
             this.lbl_invest_info.Size = new System.Drawing.Size(74, 13);
             this.lbl_invest_info.TabIndex = 9;
@@ -500,7 +510,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label11.Location = new System.Drawing.Point(300, 68);
+            this.label11.Location = new System.Drawing.Point(243, 74);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(102, 26);
             this.label11.TabIndex = 6;
@@ -509,11 +519,11 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label10.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label10.Location = new System.Drawing.Point(281, 49);
+            this.label10.Location = new System.Drawing.Point(247, 42);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(75, 16);
+            this.label10.Size = new System.Drawing.Size(92, 20);
             this.label10.TabIndex = 5;
             this.label10.Text = "Investment:";
             // 
@@ -541,11 +551,11 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label7.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label7.Location = new System.Drawing.Point(14, 48);
+            this.label7.Location = new System.Drawing.Point(15, 42);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(79, 16);
+            this.label7.Size = new System.Drawing.Size(93, 20);
             this.label7.TabIndex = 2;
             this.label7.Text = "Description:";
             // 
@@ -583,6 +593,16 @@
             this.showprofile.UseVisualStyleBackColor = true;
             this.showprofile.Click += new System.EventHandler(this.showprofile_Click);
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.label12.Location = new System.Drawing.Point(17, 262);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(99, 13);
+            this.label12.TabIndex = 12;
+            this.label12.Text = "Business incubator:";
+            // 
             // AngInvstrMmbrProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -606,13 +626,15 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.panel_prof1.ResumeLayout(false);
+            this.panel_prof1.PerformLayout();
             this.pnl_startups.ResumeLayout(false);
             this.pnl_startups.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
+            this.panel_prof2.ResumeLayout(false);
+            this.panel_prof2.PerformLayout();
             this.pnl_profile.ResumeLayout(false);
+            this.panel_prof3.ResumeLayout(false);
+            this.panel_prof3.PerformLayout();
             this.pnl_edit.ResumeLayout(false);
             this.st_view.ResumeLayout(false);
             this.st_view.PerformLayout();
@@ -625,21 +647,14 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lbl_name;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label lbl_phone;
-        private System.Windows.Forms.Label lbl_skype;
-        private System.Windows.Forms.Label lbl_email;
-        private System.Windows.Forms.Label lbl_geoint;
+        private System.Windows.Forms.Panel panel_prof1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label lbl_twitter;
-        private System.Windows.Forms.Label lbl_imin;
         private System.Windows.Forms.Label lbl_imax;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel pnl_startups;
-        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel_prof2;
         private System.Windows.Forms.Label lbl_iexperience;
         private System.Windows.Forms.Panel pnl_profile;
         private System.Windows.Forms.Label label2;
@@ -648,10 +663,6 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ListView appic_view;
-        private System.Windows.Forms.ColumnHeader Startup;
-        private System.Windows.Forms.ColumnHeader State;
-        private System.Windows.Forms.ColumnHeader Aplication_Round;
         private System.Windows.Forms.Panel st_view;
         private System.Windows.Forms.Label stname;
         private System.Windows.Forms.ListView listView1;
@@ -672,5 +683,17 @@
         private System.Windows.Forms.Button btn_inv;
         private System.Windows.Forms.TextBox txt_inv;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbl_angel_info;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Panel panel_prof3;
+        private System.Windows.Forms.Label lbl_lastlogreg;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button btn_logout;
+        private System.Windows.Forms.ListView appic_view;
+        private System.Windows.Forms.Label lbl_inv_descr;
+        private System.Windows.Forms.TextBox txt_inv_description;
+        private System.Windows.Forms.TextBox txt_inv_title;
+        private System.Windows.Forms.Label lbl_businc;
+        private System.Windows.Forms.Label label12;
     }
 }

@@ -49,7 +49,7 @@ namespace code.UserProfile
         private void btn_AddInvestCompany_Click(object sender, EventArgs e)
         {
             AdminPanels.AddInvestCompany addInvCompany = new AdminPanels.AddInvestCompany();
-            addInvCompany.Show();
+            addInvCompany.ShowDialog();
         }
 
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
