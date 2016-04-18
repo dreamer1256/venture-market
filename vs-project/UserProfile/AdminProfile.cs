@@ -52,7 +52,7 @@ namespace code.UserProfile
             addInvCompany.ShowDialog();
         }
 
-        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        private void btn_Logout_Click(object sender, EventArgs e)
         {
             this.Close();
             LoginForm lf = new LoginForm();

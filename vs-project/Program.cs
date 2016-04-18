@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NLog;
 
 namespace code
 {
@@ -16,7 +17,10 @@ namespace code
         {
             global::System.Windows.Forms.Application.EnableVisualStyles();
             global::System.Windows.Forms.Application.SetCompatibleTextRenderingDefault(false);
+            Logger logger = LogManager.GetCurrentClassLogger();
+            logger.Info("Application start");
             global::System.Windows.Forms.Application.Run(new LoginForm());
+            
         }
     }
 }

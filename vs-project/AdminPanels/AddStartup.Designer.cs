@@ -164,6 +164,7 @@
             this.btn_Cancel.TabIndex = 13;
             this.btn_Cancel.Text = "Cancel";
             this.btn_Cancel.UseVisualStyleBackColor = true;
+            this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);
             // 
             // btn_Accept
             // 
@@ -197,9 +198,11 @@
             // 
             // AddStartup
             // 
+            this.AcceptButton = this.btn_Accept;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
+            this.CancelButton = this.btn_Cancel;
             this.ClientSize = new System.Drawing.Size(830, 473);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.dateTimePicker);

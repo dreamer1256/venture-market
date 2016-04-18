@@ -167,24 +167,17 @@ namespace code.UserProfile
                 sp.Total_Investment = tmp;
                 app.Application_Round = tmp2 + 1;
                 vmDB.SubmitChanges();
-                MessageBox.Show("Startup is accepted",
+                MessageBox.Show("Application is accepted",
                     "Success", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
         private void btm_rejected_Click(object sender, EventArgs e)
         {
-            string state;
-            if(cmbx_applic_state.Text == "considered")
-            { state = "considered"; }
-            else if((cmbx_applic_state.Text == "accepted")) { state = "accepted"; }
-            else if ((cmbx_applic_state.Text == "rejected")) { state = "rejected"; }
-            var mngr = vmDB.Investment_Managers.Single(u => u.UserID == user.ID);
             Startup sp = vmDB.Startups.Single(u => u.Title == listView2.SelectedItems[0].Text);
             Application app = vmDB.Applications.Single(u => u.StartupID == sp.ID);
-            app.State = cmbx_applic_state.Text;
-            app.ManagerID = mngr.ID;
+            app.State = "reject";
             vmDB.SubmitChanges();
-            MessageBox.Show("Application sttate was changed",
+            MessageBox.Show("Application rejected",
                     "Success", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 

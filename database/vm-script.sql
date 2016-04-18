@@ -327,5 +327,20 @@ CREATE TABLE dbo.Startup_Members(
 )
 GO
 
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE dbo.UserLoginHistory(
+	ID int IDENTITY(1,1) NOT NULL,
+	UserID int NOT NULL,
+	OS nvarchar(max) NULL,
+	Domain nvarchar(max) NULL,
+	IP nvarchar(45) NULL,
+	LoggedDate datetime,
+ 	CONSTRAINT PK_UserLoginHistory PRIMARY KEY(ID),
+ 	CONSTRAINT FK_UserLoginHistory_Users FOREIGN KEY(UserID) REFERENCES dbo.Users(ID)
+) 
+
 ALTER DATABASE Venture_Market SET  READ_WRITE 
 GO

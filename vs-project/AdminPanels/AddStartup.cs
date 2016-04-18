@@ -70,5 +70,10 @@ namespace code.AdminPanels
                 }
             }
         }
+
+        private void btn_Cancel_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
     }
 }

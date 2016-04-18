@@ -81,6 +81,7 @@
     <Compile Include="AdminPanels\RemoveIncubator.Designer.cs">
       <DependentUpon>RemoveIncubator.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserExit.cs" />
     <Compile Include="RolesEnum.cs" />
     <Compile Include="UserProfile\AdminProfile.cs">
       <SubType>Form</SubType>
@@ -180,6 +181,9 @@
     </Compile>
     <EmbeddedResource Include="AdminPanels\AddIncubator.resx">
       <DependentUpon>AddIncubator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPanels\AddStartup.resx">
+      <DependentUpon>AddStartup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminPanels\RemoveIncubator.resx">
       <DependentUpon>RemoveIncubator.cs</DependentUpon>

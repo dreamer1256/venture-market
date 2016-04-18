@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -93,7 +93,6 @@
             this.lbl_startap_title = new System.Windows.Forms.Label();
             this.pnl_menu = new System.Windows.Forms.Panel();
             this.tableAdapterManager1 = new code.Venture_MarketDataSetTableAdapters.TableAdapterManager();
-            this.cmbx_applic_state = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.pnl_contact_inf.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ventureMarketDataSetBindingSource)).BeginInit();
@@ -535,7 +534,6 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
-            this.panel3.Controls.Add(this.pnl_charts);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.btn_logout);
             this.panel3.Location = new System.Drawing.Point(1, 3);
@@ -548,7 +546,7 @@
             this.pnl_charts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
             this.pnl_charts.Controls.Add(this.button7);
             this.pnl_charts.Controls.Add(this.chart1);
-            this.pnl_charts.Location = new System.Drawing.Point(890, 27);
+            this.pnl_charts.Location = new System.Drawing.Point(193, 50);
             this.pnl_charts.Name = "pnl_charts";
             this.pnl_charts.Size = new System.Drawing.Size(805, 560);
             this.pnl_charts.TabIndex = 10;
@@ -574,45 +572,45 @@
             this.chart1.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.chart1.BorderlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
             this.chart1.BorderSkin.PageColor = System.Drawing.Color.GreenYellow;
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
             this.chart1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.chart1.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(49, 54);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
             this.chart1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            series4.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.Center;
-            series4.BackImageTransparentColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            series4.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            series4.BorderColor = System.Drawing.Color.Transparent;
-            series4.BorderWidth = 4;
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series4.Color = System.Drawing.Color.DarkSlateGray;
-            series4.LabelBackColor = System.Drawing.Color.Transparent;
-            series4.LabelBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
-            series4.LabelForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
-            series4.Legend = "Legend1";
-            series4.MarkerBorderColor = System.Drawing.Color.Red;
-            series4.Name = "Age";
-            series5.BorderWidth = 4;
-            series5.ChartArea = "ChartArea1";
-            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series5.Color = System.Drawing.Color.Red;
-            series5.LabelBackColor = System.Drawing.Color.Black;
-            series5.Legend = "Legend1";
-            series5.Name = "Score";
-            series6.BorderWidth = 4;
-            series6.ChartArea = "ChartArea1";
-            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series6.Legend = "Legend1";
-            series6.Name = "Series3";
-            this.chart1.Series.Add(series4);
-            this.chart1.Series.Add(series5);
-            this.chart1.Series.Add(series6);
+            series1.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.Center;
+            series1.BackImageTransparentColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            series1.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            series1.BorderColor = System.Drawing.Color.Transparent;
+            series1.BorderWidth = 4;
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series1.Color = System.Drawing.Color.DarkSlateGray;
+            series1.LabelBackColor = System.Drawing.Color.Transparent;
+            series1.LabelBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
+            series1.LabelForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
+            series1.Legend = "Legend1";
+            series1.MarkerBorderColor = System.Drawing.Color.Red;
+            series1.Name = "Age";
+            series2.BorderWidth = 4;
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series2.Color = System.Drawing.Color.Red;
+            series2.LabelBackColor = System.Drawing.Color.Black;
+            series2.Legend = "Legend1";
+            series2.Name = "Score";
+            series3.BorderWidth = 4;
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series3.Legend = "Legend1";
+            series3.Name = "Series3";
+            this.chart1.Series.Add(series1);
+            this.chart1.Series.Add(series2);
+            this.chart1.Series.Add(series3);
             this.chart1.Size = new System.Drawing.Size(724, 384);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
@@ -632,7 +630,6 @@
             // pnl_startup
             // 
             this.pnl_startup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
-            this.pnl_startup.Controls.Add(this.cmbx_applic_state);
             this.pnl_startup.Controls.Add(this.btm_rejected);
             this.pnl_startup.Controls.Add(this.lbl_total_inv);
             this.pnl_startup.Controls.Add(this.label4);
@@ -651,12 +648,12 @@
             // btm_rejected
             // 
             this.btm_rejected.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btm_rejected.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btm_rejected.Location = new System.Drawing.Point(365, 463);
+            this.btm_rejected.ForeColor = System.Drawing.Color.Red;
+            this.btm_rejected.Location = new System.Drawing.Point(315, 464);
             this.btm_rejected.Name = "btm_rejected";
             this.btm_rejected.Size = new System.Drawing.Size(75, 23);
             this.btm_rejected.TabIndex = 11;
-            this.btm_rejected.Text = "Confirm";
+            this.btm_rejected.Text = "Reject";
             this.btm_rejected.UseVisualStyleBackColor = true;
             this.btm_rejected.Click += new System.EventHandler(this.btm_rejected_Click);
             // 
@@ -774,24 +771,13 @@
             this.tableAdapterManager1.UpdateOrder = code.Venture_MarketDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager1.UsersTableAdapter = null;
             // 
-            // cmbx_applic_state
-            // 
-            this.cmbx_applic_state.FormattingEnabled = true;
-            this.cmbx_applic_state.Items.AddRange(new object[] {
-            "considered",
-            "accepted",
-            "rejected"});
-            this.cmbx_applic_state.Location = new System.Drawing.Point(365, 421);
-            this.cmbx_applic_state.Name = "cmbx_applic_state";
-            this.cmbx_applic_state.Size = new System.Drawing.Size(121, 21);
-            this.cmbx_applic_state.TabIndex = 12;
-            // 
             // InvManagerMmbrProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(34)))), ((int)(((byte)(40)))));
             this.ClientSize = new System.Drawing.Size(1000, 602);
+            this.Controls.Add(this.pnl_charts);
             this.Controls.Add(this.pnl_startup);
             this.Controls.Add(this.pnl_aplication);
             this.Controls.Add(this.pnl_menu);
@@ -889,6 +875,5 @@
         private System.Windows.Forms.Label lbl_total_inv;
         private System.Windows.Forms.Button btm_rejected;
         private Venture_MarketDataSetTableAdapters.TableAdapterManager tableAdapterManager1;
-        private System.Windows.Forms.ComboBox cmbx_applic_state;
     }
 }

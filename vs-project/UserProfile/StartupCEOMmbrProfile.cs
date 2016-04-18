@@ -13,12 +13,13 @@ namespace code.UserProfile
 {
     public partial class StartupCEOMmbrProfile : Form
     {
-        private static Logger logger = LogManager.GetCurrentClassLogger();
-
         /// <summary>
         /// Клас StartupCEOMmbrProfile
         /// форма профілю користувача - керівника стартапом
         /// </summary>
+        /// 
+        private static Logger logger = LogManager.GetCurrentClassLogger();
+
         User user = null;
         Startup_Member startupCEO = null;
         DataClasses1DataContext vmDB;
@@ -30,13 +31,17 @@ namespace code.UserProfile
         /// <param name="user">Поточний користувач</param>
         public StartupCEOMmbrProfile(User user)
         {
+            this.FormClosing += StartupCEOMmbrProfile_FormClosing;
             InitializeComponent();
             this.user = user;
             vmDB = new DataClasses1DataContext();
             
             // Інформація про користувача.
             startupCEO = vmDB.Startup_Members.Single(u => u.UserID == user.ID);
-            
+            int logID = vmDB.UserLoginHistories.Where(h => h.UserID == user.ID)
+                .OrderByDescending(h => h.LoggedDate).Select(h => h.ID).First();           
+            var userLogHist = vmDB.UserLoginHistories.Single(h => h.ID == logID);
+
             lbl_Name.Text = string.Format("{0} {1}", user.FName, user.LName);
             lbl_City.Text = string.Format("Location: {0}", startupCEO.Address);
             lbl_Phone.Text = string.Format("Phone: {0}", startupCEO.Phone);
@@ -45,7 +50,19 @@ namespace code.UserProfile
             lbl_Twitter.Text = string.Format("Twitter: {0}", startupCEO.Twitter);
             rchTxtBx_About.Text = startupCEO.About;
             lbl_joinedDate.Text = "Joined on " + user.RegDate.ToShortDateString();
-            lbl_lastLogin.Text = "Last login " + user.LoggedDate.ToString();
+            lbl_lastLogin.Text = "Last login " + user.LoggedDate.ToString() + 
+                "\nIP: " + userLogHist.IP + "\nOS: " + userLogHist.OS + "\nDomain: " + userLogHist.Domain;
+            
+            var allLogging = vmDB.UserLoginHistories.Where(h => h.UserID == user.ID)
+                .OrderByDescending(h => h.LoggedDate).Take(20);
+            int counter = 1;
+            foreach(var logDate in allLogging)
+            {
+                if(counter % 2 == 0)   
+                    lbl_LogHist.Text += ("\n" + logDate.LoggedDate + " " + logDate.Domain);
+                    counter ++;
+            }
+
             pnl_Incubators.Hide();
             pnl_MyStartup.Hide();
             lbl_StartupsInIncubator.Hide();
@@ -310,6 +327,11 @@ namespace code.UserProfile
                 lvi = new ListViewItem(arr);
                 lstVw_Applications.Items.Add(lvi);
             }
+        }
+
+        private void StartupCEOMmbrProfile_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            UserExit.SaveUserStoryOnExit(user.ID);   
         }
     }
 }

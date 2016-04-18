@@ -34,8 +34,11 @@
             this.rchTxtBx_About = new System.Windows.Forms.RichTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.pnl_Visitors = new System.Windows.Forms.Panel();
+            this.lbl_lastLogin = new System.Windows.Forms.Label();
             this.lbl_joinedDate = new System.Windows.Forms.Label();
             this.pnl_Chart = new System.Windows.Forms.Panel();
+            this.lbl_LogHist = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.pnl_GeneralInfo = new System.Windows.Forms.Panel();
             this.lbl_Twitter = new System.Windows.Forms.Label();
             this.lbl_Skype = new System.Windows.Forms.Label();
@@ -75,10 +78,10 @@
             this.btn_CreateApplication = new System.Windows.Forms.Button();
             this.txtBx_RoundOfFunding = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.lbl_lastLogin = new System.Windows.Forms.Label();
             this.pnl_Profile.SuspendLayout();
             this.pnl_About.SuspendLayout();
             this.pnl_Visitors.SuspendLayout();
+            this.pnl_Chart.SuspendLayout();
             this.pnl_GeneralInfo.SuspendLayout();
             this.panel1.SuspendLayout();
             this.pnl_Navigation.SuspendLayout();
@@ -155,6 +158,18 @@
             this.pnl_Visitors.Size = new System.Drawing.Size(378, 172);
             this.pnl_Visitors.TabIndex = 10;
             // 
+            // lbl_lastLogin
+            // 
+            this.lbl_lastLogin.AutoSize = true;
+            this.lbl_lastLogin.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_lastLogin.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lbl_lastLogin.Location = new System.Drawing.Point(26, 46);
+            this.lbl_lastLogin.Name = "lbl_lastLogin";
+            this.lbl_lastLogin.Size = new System.Drawing.Size(84, 21);
+            this.lbl_lastLogin.TabIndex = 1;
+            this.lbl_lastLogin.Text = "Last Login";
+            this.lbl_lastLogin.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
             // lbl_joinedDate
             // 
             this.lbl_joinedDate.AutoSize = true;
@@ -169,10 +184,33 @@
             // pnl_Chart
             // 
             this.pnl_Chart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
+            this.pnl_Chart.Controls.Add(this.lbl_LogHist);
+            this.pnl_Chart.Controls.Add(this.label2);
             this.pnl_Chart.Location = new System.Drawing.Point(541, 178);
             this.pnl_Chart.Name = "pnl_Chart";
             this.pnl_Chart.Size = new System.Drawing.Size(378, 348);
             this.pnl_Chart.TabIndex = 12;
+            // 
+            // lbl_LogHist
+            // 
+            this.lbl_LogHist.AutoSize = true;
+            this.lbl_LogHist.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lbl_LogHist.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lbl_LogHist.Location = new System.Drawing.Point(47, 93);
+            this.lbl_LogHist.Name = "lbl_LogHist";
+            this.lbl_LogHist.Size = new System.Drawing.Size(0, 20);
+            this.lbl_LogHist.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label2.Location = new System.Drawing.Point(39, 38);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(145, 25);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Logging history";
             // 
             // pnl_GeneralInfo
             // 
@@ -251,9 +289,9 @@
             this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.label1.Location = new System.Drawing.Point(3, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(161, 21);
+            this.label1.Size = new System.Drawing.Size(157, 21);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Contact information:";
+            this.label1.Text = "Contact information";
             // 
             // panel1
             // 
@@ -670,18 +708,6 @@
             this.label6.TabIndex = 2;
             this.label6.Text = "Applications";
             // 
-            // lbl_lastLogin
-            // 
-            this.lbl_lastLogin.AutoSize = true;
-            this.lbl_lastLogin.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_lastLogin.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lbl_lastLogin.Location = new System.Drawing.Point(26, 46);
-            this.lbl_lastLogin.Name = "lbl_lastLogin";
-            this.lbl_lastLogin.Size = new System.Drawing.Size(84, 21);
-            this.lbl_lastLogin.TabIndex = 1;
-            this.lbl_lastLogin.Text = "Last Login";
-            this.lbl_lastLogin.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            // 
             // StartupCEOMmbrProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -698,11 +724,14 @@
             this.Name = "StartupCEOMmbrProfile";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Startup CEO Profile - Venture Market";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.StartupCEOMmbrProfile_FormClosing);
             this.pnl_Profile.ResumeLayout(false);
             this.pnl_About.ResumeLayout(false);
             this.pnl_About.PerformLayout();
             this.pnl_Visitors.ResumeLayout(false);
             this.pnl_Visitors.PerformLayout();
+            this.pnl_Chart.ResumeLayout(false);
+            this.pnl_Chart.PerformLayout();
             this.pnl_GeneralInfo.ResumeLayout(false);
             this.pnl_GeneralInfo.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -774,5 +803,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ListView lstVw_Applications;
         private System.Windows.Forms.Label lbl_lastLogin;
+        private System.Windows.Forms.Label lbl_LogHist;
+        private System.Windows.Forms.Label label2;
     }
 }

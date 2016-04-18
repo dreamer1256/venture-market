@@ -20,7 +20,7 @@ namespace code
         {
             InitializeComponent();
             AcceptButton = btn_Login;
-            logger.Info("Application Start");
+            logger.Info("Show login form");
         }
 
         private void btnTop_Signup_Click(object sender, EventArgs e)
@@ -42,12 +42,13 @@ namespace code
             string userName = txt_Username.Text;
             string password = txt_Password.Text;
 
-            if(IsValidUser(userName, password))
+            if (IsValidUser(userName, password))
             {
                 vmDB = new DataClasses1DataContext();
-                
+
                 var user = vmDB.Users.Single(u => u.Username.Equals(userName));
                 User_Role userRole = vmDB.User_Roles.Single(r => r.UserId == user.ID);
+
                 switch(userRole.RoleID)
                 {
                     case (int)URoles.Role.AnglInvestor:
@@ -76,13 +77,14 @@ namespace code
                         ap.Show();
                         break;
                 }
-                logger.Info("User is logged on");
+                logger.Info("User has logged. [Username:{0},User ID:{1}]",user.Username,user.ID);
                 this.Hide();
             }
             else
             {
-                logger.Info("User has entered the wrong password");
-                MessageBox.Show("Please enter a valid username and password!");
+                logger.Info("User has entered the wrong password or username");
+                MessageBox.Show("Please enter a valid username and password!", 
+                    "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     

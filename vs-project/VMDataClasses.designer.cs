@@ -75,6 +75,9 @@ namespace code
     partial void InsertUser(User instance);
     partial void UpdateUser(User instance);
     partial void DeleteUser(User instance);
+    partial void InsertUserLoginHistory(UserLoginHistory instance);
+    partial void UpdateUserLoginHistory(UserLoginHistory instance);
+    partial void DeleteUserLoginHistory(UserLoginHistory instance);
     #endregion
 		
 		public DataClasses1DataContext() : 
@@ -224,6 +227,14 @@ namespace code
 			get
 			{
 				return this.GetTable<User>();
+			}
+		}
+		
+		public System.Data.Linq.Table<UserLoginHistory> UserLoginHistories
+		{
+			get
+			{
+				return this.GetTable<UserLoginHistory>();
 			}
 		}
 	}
@@ -3654,6 +3665,8 @@ namespace code
 		
 		private EntitySet<User_Role> _User_Roles;
 		
+		private EntityRef<UserLoginHistory> _UserLoginHistory;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -3684,6 +3697,7 @@ namespace code
 			this._Investment_Managers = new EntitySet<Investment_Manager>(new Action<Investment_Manager>(this.attach_Investment_Managers), new Action<Investment_Manager>(this.detach_Investment_Managers));
 			this._Startup_Members = new EntitySet<Startup_Member>(new Action<Startup_Member>(this.attach_Startup_Members), new Action<Startup_Member>(this.detach_Startup_Members));
 			this._User_Roles = new EntitySet<User_Role>(new Action<User_Role>(this.attach_User_Roles), new Action<User_Role>(this.detach_User_Roles));
+			this._UserLoginHistory = default(EntityRef<UserLoginHistory>);
 			OnCreated();
 		}
 		
@@ -3698,6 +3712,10 @@ namespace code
 			{
 				if ((this._ID != value))
 				{
+					if (this._UserLoginHistory.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnIDChanging(value);
 					this.SendPropertyChanging();
 					this._ID = value;
@@ -3919,6 +3937,40 @@ namespace code
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="UserLoginHistory_User", Storage="_UserLoginHistory", ThisKey="ID", OtherKey="UserID", IsForeignKey=true)]
+		public UserLoginHistory UserLoginHistory
+		{
+			get
+			{
+				return this._UserLoginHistory.Entity;
+			}
+			set
+			{
+				UserLoginHistory previousValue = this._UserLoginHistory.Entity;
+				if (((previousValue != value) 
+							|| (this._UserLoginHistory.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._UserLoginHistory.Entity = null;
+						previousValue.Users.Remove(this);
+					}
+					this._UserLoginHistory.Entity = value;
+					if ((value != null))
+					{
+						value.Users.Add(this);
+						this._ID = value.UserID;
+					}
+					else
+					{
+						this._ID = default(int);
+					}
+					this.SendPropertyChanged("UserLoginHistory");
+				}
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -3985,6 +4037,216 @@ namespace code
 		{
 			this.SendPropertyChanging();
 			entity.User = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="")]
+	public partial class UserLoginHistory : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private int _UserID;
+		
+		private string _OS;
+		
+		private string _Domain;
+		
+		private string _IP;
+		
+		private System.DateTime _LoggedDate;
+		
+		private EntitySet<User> _Users;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnUserIDChanging(int value);
+    partial void OnUserIDChanged();
+    partial void OnOSChanging(string value);
+    partial void OnOSChanged();
+    partial void OnDomainChanging(string value);
+    partial void OnDomainChanged();
+    partial void OnIPChanging(string value);
+    partial void OnIPChanged();
+    partial void OnLoggedDateChanging(System.DateTime value);
+    partial void OnLoggedDateChanged();
+    #endregion
+		
+		public UserLoginHistory()
+		{
+			this._Users = new EntitySet<User>(new Action<User>(this.attach_Users), new Action<User>(this.detach_Users));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="Int NOT NULL")]
+		public int UserID
+		{
+			get
+			{
+				return this._UserID;
+			}
+			set
+			{
+				if ((this._UserID != value))
+				{
+					this.OnUserIDChanging(value);
+					this.SendPropertyChanging();
+					this._UserID = value;
+					this.SendPropertyChanged("UserID");
+					this.OnUserIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OS", DbType="NVarChar(MAX)")]
+		public string OS
+		{
+			get
+			{
+				return this._OS;
+			}
+			set
+			{
+				if ((this._OS != value))
+				{
+					this.OnOSChanging(value);
+					this.SendPropertyChanging();
+					this._OS = value;
+					this.SendPropertyChanged("OS");
+					this.OnOSChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Domain", DbType="NVarChar(MAX)")]
+		public string Domain
+		{
+			get
+			{
+				return this._Domain;
+			}
+			set
+			{
+				if ((this._Domain != value))
+				{
+					this.OnDomainChanging(value);
+					this.SendPropertyChanging();
+					this._Domain = value;
+					this.SendPropertyChanged("Domain");
+					this.OnDomainChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IP", DbType="NVarChar(45)")]
+		public string IP
+		{
+			get
+			{
+				return this._IP;
+			}
+			set
+			{
+				if ((this._IP != value))
+				{
+					this.OnIPChanging(value);
+					this.SendPropertyChanging();
+					this._IP = value;
+					this.SendPropertyChanged("IP");
+					this.OnIPChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LoggedDate", DbType="datetime")]
+		public System.DateTime LoggedDate
+		{
+			get
+			{
+				return this._LoggedDate;
+			}
+			set
+			{
+				if ((this._LoggedDate != value))
+				{
+					this.OnLoggedDateChanging(value);
+					this.SendPropertyChanging();
+					this._LoggedDate = value;
+					this.SendPropertyChanged("LoggedDate");
+					this.OnLoggedDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="UserLoginHistory_User", Storage="_Users", ThisKey="UserID", OtherKey="ID")]
+		public EntitySet<User> Users
+		{
+			get
+			{
+				return this._Users;
+			}
+			set
+			{
+				this._Users.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Users(User entity)
+		{
+			this.SendPropertyChanging();
+			entity.UserLoginHistory = this;
+		}
+		
+		private void detach_Users(User entity)
+		{
+			this.SendPropertyChanging();
+			entity.UserLoginHistory = null;
 		}
 	}
 }

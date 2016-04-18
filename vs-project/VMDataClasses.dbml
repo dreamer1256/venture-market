@@ -175,6 +175,18 @@
       <Association Name="User_Investment_Manager" Member="Investment_Managers" ThisKey="ID" OtherKey="UserID" Type="Investment_Manager" />
       <Association Name="User_Startup_Member" Member="Startup_Members" ThisKey="ID" OtherKey="UserID" Type="Startup_Member" />
       <Association Name="User_User_Role" Member="User_Roles" ThisKey="ID" OtherKey="UserId" Type="User_Role" />
+      <Association Name="UserLoginHistory_User" Member="UserLoginHistory" ThisKey="ID" OtherKey="UserID" Type="UserLoginHistory" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="" Member="UserLoginHistories">
+    <Type Name="UserLoginHistory">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="OS" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Domain" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="IP" Type="System.String" DbType="NVarChar(45)" CanBeNull="true" />
+      <Column Name="LoggedDate" Type="System.DateTime" DbType="datetime" CanBeNull="false" />
+      <Association Name="UserLoginHistory_User" Member="Users" ThisKey="UserID" OtherKey="ID" Type="User" />
     </Type>
   </Table>
 </Database>
