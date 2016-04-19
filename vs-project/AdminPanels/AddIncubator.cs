@@ -41,13 +41,18 @@ namespace code.AdminPanels
                         Number_Of_Seats = Int32.Parse(txt_Seats.Text)
                     };
 
+                    News news = new News
+                    {
+                        Information = "Added a new business incubator " + bi.Title,
+                        Date = DateTime.Now,
+                        Type = "Incubator"
+                    };
+                    vmDB.News.InsertOnSubmit(news);
                     vmDB.Business_Incubators.InsertOnSubmit(bi);
                     try
                     {
                         vmDB.SubmitChanges();
                         logger.Info("Business Incubator " + txt_Title.Text + " added to the system");
-                        MessageBox.Show("Business Incubator successfully added to the system!",
-                            "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Hide();
                     }
                     catch (Exception ex)

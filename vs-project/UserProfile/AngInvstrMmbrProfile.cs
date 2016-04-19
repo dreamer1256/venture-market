@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NLog;
 
 namespace code.UserProfile
 {
@@ -15,6 +16,8 @@ namespace code.UserProfile
     {
         User user;
         DataClasses1DataContext vmDB = new DataClasses1DataContext();
+        private static Logger logger = LogManager.GetCurrentClassLogger();
+
         public AngInvstrMmbrProfile(User user)
         {
             InitializeComponent();
@@ -234,11 +237,24 @@ namespace code.UserProfile
                 star.Total_Investment = invamount + old_amount;
                 vmDB.Round_Investors.InsertOnSubmit(newRI);
                 vmDB.Round_Of_Fundings.InsertOnSubmit(newRF);
-                try {
+                News news = new News
+                {
+                    Information = user.FName + " " + user.LName + " has allocated funding for the "
+                        + star.Title + " startup",
+                    Date = DateTime.Now,
+                    Type = "Application"
+                };
+                vmDB.News.InsertOnSubmit(news);
+                try
+                {
                     vmDB.SubmitChanges();
+                    logger.Info("Angel investor has allocated  funding for the " + star.Title + " startup\n"
+                         + "\t[UserID: " + user.ID + ", UserName: " + user.Username + ", Startup: ]" + star.Title);
                 }
                 catch(Exception ex)
                 {
+                    logger.Info("An error ocured when Angel investor try to allocate funding for the " + star.Title + " startup\n"
+                         + "\t[UserID: " + user.ID + ", UserName: " + user.Username + ", Startup: ]" + star.Title);
                     MessageBox.Show(ex.Message);
                 }
                 if (MessageBox.Show("Operation completed", "", MessageBoxButtons.OK) == DialogResult.OK)

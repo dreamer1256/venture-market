@@ -189,4 +189,12 @@
       <Association Name="UserLoginHistory_User" Member="Users" ThisKey="UserID" OtherKey="ID" Type="User" />
     </Type>
   </Table>
+  <Table Name="" Member="News">
+    <Type Name="News">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Information" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Type" Type="System.String" DbType="NVarChar(45) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
 </Database>

@@ -341,6 +341,16 @@ CREATE TABLE dbo.UserLoginHistory(
  	CONSTRAINT PK_UserLoginHistory PRIMARY KEY(ID),
  	CONSTRAINT FK_UserLoginHistory_Users FOREIGN KEY(UserID) REFERENCES dbo.Users(ID)
 ) 
+GO
+
+CREATE TABLE News(
+	ID int IDENTITY(1,1) NOT NULL,
+	Information nvarchar(max) NOT NULL,
+	Date datetime NOT NULL,
+	Type nvarchar(45) NOT NULL,
+	CONSTRAINT PK_News PRIMARY KEY(ID)
+)
+GO
 
 ALTER DATABASE Venture_Market SET  READ_WRITE 
 GO

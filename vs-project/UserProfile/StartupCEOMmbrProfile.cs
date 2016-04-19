@@ -44,25 +44,18 @@ namespace code.UserProfile
 
             lbl_Name.Text = string.Format("{0} {1}", user.FName, user.LName);
             lbl_City.Text = string.Format("Location: {0}", startupCEO.Address);
-            lbl_Phone.Text = string.Format("Phone: {0}", startupCEO.Phone);
-            lbl_Email.Text = string.Format("Email: {0}", user.Email);
-            lbl_Skype.Text = string.Format("Skype: {0}", startupCEO.Skype);
-            lbl_Twitter.Text = string.Format("Twitter: {0}", startupCEO.Twitter);
+            lbl_Phone.Text = string.Format("Phone:  {0}", startupCEO.Phone);
+            lbl_Email.Text = string.Format("Email:  {0}", user.Email);
+            lbl_Skype.Text = string.Format("Skype:  {0}", startupCEO.Skype);
+            lbl_Twitter.Text = string.Format("Twitter:  {0}", startupCEO.Twitter);
             rchTxtBx_About.Text = startupCEO.About;
-            lbl_joinedDate.Text = "Joined on " + user.RegDate.ToShortDateString();
-            lbl_lastLogin.Text = "Last login " + user.LoggedDate.ToString() + 
-                "\nIP: " + userLogHist.IP + "\nOS: " + userLogHist.OS + "\nDomain: " + userLogHist.Domain;
+            lbl_joinedDate.Text = "Joined on   " + user.RegDate.ToShortDateString();
+            lbl_lastLogin.Text = "Last login   " + user.LoggedDate.ToString() + 
+                "\nIP:  " + userLogHist.IP + "\nOS:  " + userLogHist.OS + "\nDomain:  " + userLogHist.Domain;
             
-            var allLogging = vmDB.UserLoginHistories.Where(h => h.UserID == user.ID)
-                .OrderByDescending(h => h.LoggedDate).Take(20);
-            int counter = 1;
-            foreach(var logDate in allLogging)
-            {
-                if(counter % 2 == 0)   
-                    lbl_LogHist.Text += ("\n" + logDate.LoggedDate + " " + logDate.Domain);
-                    counter ++;
-            }
-
+            code.LoginHistory.LoadUserLoginHistory(user.ID, lbl_LogHist);   // Завантажити історію логувань користувача
+            code.SystemNews.LoadNews(pnl_News); // Завантажити стрічку новин
+            
             pnl_Incubators.Hide();
             pnl_MyStartup.Hide();
             lbl_StartupsInIncubator.Hide();
@@ -172,24 +165,28 @@ namespace code.UserProfile
             var startup = vmDB.Startups.Single(s => s.Title.Equals(startupCEO.Startup.Title));
             var incubID_Before = startup.IncubID;
             startup.IncubID = incubatorID;
+            News news = new News    // Додаємо нову подію у список новин
+            {
+                Information = "Startup " + startup.Title + " joined the "
+                    + startup.Business_Incubator.Title + " business incubator",
+                Date = DateTime.Now,
+                Type = "Startup"
+            };
+            vmDB.News.InsertOnSubmit(news);
             try
             {
                 vmDB.SubmitChanges();
+                logger.Info("Startup " + startup.Title + " joined the "
+                    + startup.Business_Incubator.Title + " business incubator");
             }
             catch(Exception ex)
             {
-                logger.Error("Startup is failed to join to the business incubator\n{0}", ex.Message);
+                logger.Error("Startup {0} is failed to join to the {2} business incubator\n{3}",
+                    startup.Title, startup.Business_Incubator.Title, ex.Message);
+                MessageBox.Show("Oops! An error occurred.\nYour startup is failed to join to the business incubator",
+                    "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            var incubID_After = startup.IncubID;
-
-            // Перевірка успішності розміщення стартапу в інкубаторі
-            if (incubID_Before != incubID_After)
-                MessageBox.Show("Your startup successfully joined\n to " 
-                    + incubatorTitle + " business incubator");
-            else
-                MessageBox.Show("Oops! An error occurred.\n"
-                    + "Your startup is failed to join to the business incubator");
-
+            
             btn_Join.Hide();
             ShowJoinErrorMessage();
         }
@@ -210,6 +207,7 @@ namespace code.UserProfile
         private void btn_Logout_Click(object sender, EventArgs e)
         {
             this.Close();
+            logger.Info("User logged out[Username: {0}, ID: {1}]", user.Username, user.ID);
             LoginForm lf = new LoginForm();
             lf.Show();
         }
@@ -229,16 +227,16 @@ namespace code.UserProfile
             lbl_MyStartupTitle.Text = startup.Title;
             rchTxtBox.Clear();
             if(stceo != null)
-                rchTxtBox.Text = "CEO: " + stceo.FName + " " + stceo.LName;
-            rchTxtBox.Text += "\nWebsite: " + startup.Website
-                    + "\nDevelopment stage: " + devstage.Stage;
+                rchTxtBox.Text = "CEO:\t\t\t\t " + stceo.FName + " " + stceo.LName;
+            rchTxtBox.Text += "\nWebsite:\t\t\t " + startup.Website
+                    + "\nDevelopment stage:\t " + devstage.Stage;
             if (icub != null)
-                rchTxtBox.Text += "\nBusiness Incubator: " + startup.Business_Incubator.Title;
-            rchTxtBox.Text += "\nTwitter: " + startup.Twitter
-                    + "\nBusiness Model: " + startup.Business_Model
-                    + "\nMarketing strategy: " + startup.Marketing_Strategy
-                    + "\nTotal investment: " + startup.Total_Investment
-                    + "\nFoundation date: " + startup.Foundation_Date.ToString().Remove(11);
+                rchTxtBox.Text += "\nBusiness Incubator:\t\t " + startup.Business_Incubator.Title;
+            rchTxtBox.Text += "\nTwitter:\t\t\t " + startup.Twitter
+                    + "\nBusiness Model:\t\t " + startup.Business_Model
+                    + "\nMarketing strategy:\t\t " + startup.Marketing_Strategy
+                    + "\nTotal investment:\t\t " + startup.Total_Investment
+                    + "\nFoundation date:\t\t " + startup.Foundation_Date.ToString().Remove(11);
          
             // Вивід у ListBox учасників команди даного стартапу
             List<string> startupTeam = new List<string>();
@@ -260,8 +258,6 @@ namespace code.UserProfile
         /// <summary>
         /// При кліку по кнопці створити заявку на фінансування
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void btn_CreateApplication_Click(object sender, EventArgs e)
         {
             vmDB = new DataClasses1DataContext();
@@ -278,14 +274,29 @@ namespace code.UserProfile
             application.State = "no state";
             application.ManagerID = null;
             application.CreationDate = DateTime.Now;
+
+            News news = new News
+            {
+                Information = "Startup " + startupCEO.Startup.Title + " created an application for finances",
+                Date = DateTime.Now,
+                Type = "Application"
+            };
+
+            vmDB.Applications.InsertOnSubmit(application);
+            vmDB.News.InsertOnSubmit(news);
             try
             {
-                vmDB.Applications.InsertOnSubmit(application);
                 vmDB.SubmitChanges();
+                logger.Info("Startup CEO has applied for funding." +
+                    " \n[UserID: {0}, StartupID: {1}, StartupTitle: {2}, RoundOfFunding: {3}]",
+                    user.ID, startupCEO.StartupID, startupCEO.Startup.Title, txtBx_RoundOfFunding.Text);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                logger.Error("An error when startup CEO has applied for funding." +
+                    " \n[UserID: {0}, StartupID: {1}, StartupTitle: {2}, RoundOfFunding: {3}]",
+                    user.ID, startupCEO.StartupID, startupCEO.Startup.Title, txtBx_RoundOfFunding.Text);
             }
             txtBx_RoundOfFunding.Text = null;
             LoadApplicationList();

@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>code</RootNamespace>
-    <AssemblyName>code</AssemblyName>
+    <AssemblyName>Venture Market</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -81,6 +81,8 @@
     <Compile Include="AdminPanels\RemoveIncubator.Designer.cs">
       <DependentUpon>RemoveIncubator.cs</DependentUpon>
     </Compile>
+    <Compile Include="LoginHistory.cs" />
+    <Compile Include="SystemNews.cs" />
     <Compile Include="UserExit.cs" />
     <Compile Include="RolesEnum.cs" />
     <Compile Include="UserProfile\AdminProfile.cs">
@@ -179,6 +181,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Venture_MarketDataSet.xsd</DependentUpon>
     </Compile>
+    <None Include="Resources\img_NewsCompany.png" />
+    <None Include="Resources\img_NewsIncubator.png" />
+    <None Include="Resources\money-icon.png" />
+    <None Include="Resources\rocket-fly.png" />
+    <None Include="Resources\startup-128.png" />
+    <None Include="Resources\img_NewsStartup.png" />
+    <None Include="Resources\img_NewsStartup.bmp" />
     <EmbeddedResource Include="AdminPanels\AddIncubator.resx">
       <DependentUpon>AddIncubator.cs</DependentUpon>
     </EmbeddedResource>
@@ -232,6 +241,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="RegisterForms\Signup_AngelInv.resx">
       <DependentUpon>Signup_AngelInv.cs</DependentUpon>

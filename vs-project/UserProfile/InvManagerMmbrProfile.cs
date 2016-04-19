@@ -7,11 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NLog;
 
 namespace code.UserProfile
-{   
+{
+
     public partial class InvManagerMmbrProfile : Form
     {
+        private static Logger logger = LogManager.GetCurrentClassLogger();
+
         //Function to display basic information about Invest manager profile
         User user;
         DataClasses1DataContext vmDB = new DataClasses1DataContext();
@@ -166,9 +170,28 @@ namespace code.UserProfile
 
                 sp.Total_Investment = tmp;
                 app.Application_Round = tmp2 + 1;
-                vmDB.SubmitChanges();
-                MessageBox.Show("Application is accepted",
-                    "Success", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                News news = new News
+                {
+                    Information = user.FName + " " + user.LName + " has accepted the application for funding\nfrom the "
+                        + sp.Title + " startup",
+                    Date = DateTime.Now,
+                    Type = "Application"
+                };
+                vmDB.News.InsertOnSubmit(news);
+                try
+                {
+                    vmDB.SubmitChanges();
+                    logger.Info("Invest manager has accepted the application for finances from the" + sp.Title + " startup\n" 
+                        + "\t[UserID: " + user.ID + ", UserName:" + user.Username + ", Startup: " + sp.Title + ", ApplicationID: "+ app.ID +"]");
+                } 
+                catch (Exception ex)
+                {
+                    MessageBox.Show("An error ocured: " + ex.Message);
+                    logger.Error("An error ocured when invest manager accept the application for finances\n"
+                        + "\t[UserID: " + user.ID + ", UserName:" + user.Username + ", Startup: " + sp.Title + ", ApplicationID: " + app.ID + "]");
+                }
+
             }
         }
         private void btm_rejected_Click(object sender, EventArgs e)
@@ -176,9 +199,27 @@ namespace code.UserProfile
             Startup sp = vmDB.Startups.Single(u => u.Title == listView2.SelectedItems[0].Text);
             Application app = vmDB.Applications.Single(u => u.StartupID == sp.ID);
             app.State = "reject";
-            vmDB.SubmitChanges();
-            MessageBox.Show("Application rejected",
-                    "Success", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            News news = new News
+            {
+                Information = user.FName + " " + user.LName + " has rejected the application for funding\nfrom the "
+                        + sp.Title + " startup",
+                Date = DateTime.Now,
+                Type = "Application"
+            };
+            vmDB.News.InsertOnSubmit(news);
+            try
+            {
+                vmDB.SubmitChanges();
+                logger.Info("Invest manager has rejected the application for finances from the" + sp.Title + " startup\n"
+                       + "\t[UserID: " + user.ID + ", UserName:" + user.Username + ", Startup: " + sp.Title + ", ApplicationID: " + app.ID + "]");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error ocured: " + ex.Message);
+                logger.Error("An error ocured when invest manager reject the application for finances\n"
+                        + "\t[UserID: " + user.ID + ", UserName:" + user.Username + ", Startup: " + sp.Title + ", ApplicationID: " + app.ID + "]");
+            }
+            
         }
 
 

@@ -57,10 +57,15 @@ namespace code.AdminPanels
                 vmDB.Startups.InsertOnSubmit(star);
                 try
                 {
+                    News news = new News
+                    {
+                        Information = "Added a new startup " + star.Title,
+                        Date = DateTime.Now,
+                        Type = "Startup"
+                    };
+                    vmDB.News.InsertOnSubmit(news);
                     vmDB.SubmitChanges();
                     logger.Info("Startup " + tb_title.Text + " added to the system");
-                    MessageBox.Show("Startup successfully added to the system!",
-                        "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Hide();
                 }
                 catch (Exception ex)

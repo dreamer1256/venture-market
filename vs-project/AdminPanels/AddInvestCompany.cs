@@ -51,10 +51,15 @@ namespace code.AdminPanels
                     vmDB.Investment_Companies.InsertOnSubmit(addcomp);
                     try
                     {
-                        vmDB.SubmitChanges();
+                    News news = new News
+                    {
+                        Information = "To the system added a new investment company " + addcomp.Title,
+                        Date = DateTime.Now,
+                        Type = "Company"
+                    };
+                    vmDB.News.InsertOnSubmit(news);
+                    vmDB.SubmitChanges();
                         logger.Info("Company " + txt_addinvest_comName.Text + " added to the system");
-                        MessageBox.Show("Company successfully added to the system!",
-                            "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Hide();
                     }
                     catch (Exception ex)
