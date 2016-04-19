@@ -19,7 +19,6 @@ namespace code.UserProfile
         {
             InitializeComponent();
             pnl_startups.Hide();
-            pnl_edit.Hide();
             st_view.Hide();
             this.user = user;
             var angel = vmDB.AngelInvestors.Single(u => u.UserID == user.ID);
@@ -35,8 +34,14 @@ namespace code.UserProfile
                                   + angel.Phone + "\n" 
                                   + angel.Twitter;
             lbl_lastlogreg.Text = user.RegDate.ToShortDateString() + "\n" + user.LoggedDate;
+            var checkeditems = from n in vmDB.Angel_Interests
+                               where n.AngelID == angel.ID
+                               select n;
+            foreach (var j in checkeditems)
+            {
+                chlist_angel.Items.Add(j.Industry_Interests_List.Title);
+            }
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -46,9 +51,14 @@ namespace code.UserProfile
 
         private void showprofile_Click(object sender, EventArgs e)
         {
+            vmDB = new DataClasses1DataContext();
+            string impath = vmDB.Users.Single(u => u.ID == user.ID).Accaunt_Pic;
+            if (impath != "")
+            {
+                pictureBox1.Image = Image.FromFile(impath);
+            }
             st_view.Hide();
             pnl_startups.Hide();
-            pnl_edit.Hide();
             pnl_profile.Show();
         }
 
@@ -59,7 +69,6 @@ namespace code.UserProfile
 
             st_view.Hide();
             pnl_profile.Hide();
-            pnl_edit.Hide();
             pnl_startups.Show();
 
             applications_view();
@@ -95,28 +104,12 @@ namespace code.UserProfile
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            int userID = user.ID;
-            User addim = vmDB.Users.Single(r => r.ID == userID);
-            openFileDialog1.InitialDirectory = "d:";
-            openFileDialog1.Filter = "image (JPEG,PNG) files (*.jpg)|*.jpg|*.png)|*.png|All files (*.*)|*.*";
-            DialogResult result = openFileDialog1.ShowDialog();
-            if (result == DialogResult.OK)
-            {
-                string flnm = openFileDialog1.FileName;
-                addim.Accaunt_Pic = flnm;
-                vmDB.SubmitChanges();
-                MessageBox.Show("Изображение загружено!");
-            }
-            else { MessageBox.Show("Изображение не загружено!"); }
-        }
-
         private void button2_Click_1(object sender, EventArgs e)
         {
             pnl_startups.Hide();
             pnl_profile.Hide();
-            pnl_edit.Show();
+            user_profile_edit open = new user_profile_edit(user);
+            open.Show();
         }
 
         private void applications_view()
