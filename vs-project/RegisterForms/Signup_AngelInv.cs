@@ -54,6 +54,14 @@ namespace code.RegisterForms
                 MessageBox.Show("Error: " + ex.Message);
                 logger.Error(ex.Message);
             }
+            for (int i = 0; i < chlist_singh_angel.CheckedIndices.Count; i++)
+            {
+                Angel_Interest addint = new Angel_Interest();
+                addint.InterestID = (chlist_singh_angel.CheckedIndices[i] + 1);
+                addint.AngelID = ai.ID;
+                vmDB.Angel_Interests.InsertOnSubmit(addint);
+                vmDB.SubmitChanges();
+            }
         }
     }
 }

@@ -32,6 +32,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.chlist_singh_angel = new System.Windows.Forms.CheckedListBox();
             this.btn_Finish = new System.Windows.Forms.Button();
             this.rchTxtBx_Expirience = new System.Windows.Forms.RichTextBox();
             this.txt_MaxAmount = new System.Windows.Forms.TextBox();
@@ -75,6 +76,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.chlist_singh_angel);
             this.panel1.Controls.Add(this.btn_Finish);
             this.panel1.Controls.Add(this.rchTxtBx_Expirience);
             this.panel1.Controls.Add(this.txt_MaxAmount);
@@ -94,6 +96,27 @@
             this.panel1.Size = new System.Drawing.Size(597, 372);
             this.panel1.TabIndex = 3;
             // 
+            // chlist_singh_angel
+            // 
+            this.chlist_singh_angel.CheckOnClick = true;
+            this.chlist_singh_angel.FormattingEnabled = true;
+            this.chlist_singh_angel.Items.AddRange(new object[] {
+            "eCommerce",
+            "Cloud",
+            "Media",
+            "Mobile",
+            "Saas",
+            "Games",
+            "Research",
+            "Geo",
+            "Social Networking",
+            "Advertisment"});
+            this.chlist_singh_angel.Location = new System.Drawing.Point(80, 213);
+            this.chlist_singh_angel.MultiColumn = true;
+            this.chlist_singh_angel.Name = "chlist_singh_angel";
+            this.chlist_singh_angel.Size = new System.Drawing.Size(371, 64);
+            this.chlist_singh_angel.TabIndex = 19;
+            // 
             // btn_Finish
             // 
             this.btn_Finish.Location = new System.Drawing.Point(259, 313);
@@ -106,9 +129,9 @@
             // 
             // rchTxtBx_Expirience
             // 
-            this.rchTxtBx_Expirience.Location = new System.Drawing.Point(114, 207);
+            this.rchTxtBx_Expirience.Location = new System.Drawing.Point(167, 136);
             this.rchTxtBx_Expirience.Name = "rchTxtBx_Expirience";
-            this.rchTxtBx_Expirience.Size = new System.Drawing.Size(441, 76);
+            this.rchTxtBx_Expirience.Size = new System.Drawing.Size(212, 41);
             this.rchTxtBx_Expirience.TabIndex = 17;
             this.rchTxtBx_Expirience.Text = "";
             // 
@@ -129,7 +152,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(50, 180);
+            this.label10.Location = new System.Drawing.Point(50, 139);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(111, 13);
             this.label10.TabIndex = 13;
@@ -215,5 +238,6 @@
         private System.Windows.Forms.TextBox txt_Twitter;
         private System.Windows.Forms.TextBox txt_Skype;
         private System.Windows.Forms.TextBox txt_Phone;
+        private System.Windows.Forms.CheckedListBox chlist_singh_angel;
     }
 }
