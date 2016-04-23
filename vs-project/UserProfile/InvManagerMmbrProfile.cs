@@ -4,10 +4,9 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using NLog;
+using System.Runtime.InteropServices;
 
 namespace code.UserProfile
 {
@@ -24,7 +23,12 @@ namespace code.UserProfile
             InitializeComponent();
             this.user = user;
 
+            // Інформація про користувача.
+            
             var maneger = vmDB.Investment_Managers.Single(u => u.UserID == user.ID);
+            int logID = vmDB.UserLoginHistories.Where(h => h.UserID == user.ID)
+                .OrderByDescending(h => h.LoggedDate).Select(h => h.ID).First();
+            var userLogHist = vmDB.UserLoginHistories.Single(h => h.ID == logID);
             pnl_aplication.Hide();
             pnl_charts.Hide();
             pnl_startup.Hide();
@@ -34,6 +38,21 @@ namespace code.UserProfile
             lbl_email.Text = string.Format("Email:            {0}", user.Email);
             lbl_web.Text = string.Format("Website:          {0}", maneger.Investment_Company.Website);
             lbl_office_adr.Text = string.Format("Office Address:   {0}", maneger.Investment_Company.Office_Address);
+
+            lbl_joinedDate.Text = "Joined on   " + user.RegDate.ToShortDateString();
+            lbl_lastLogin.Text = "Last login   " + user.LoggedDate.ToString() +
+                "\nIP:  " + userLogHist.IP + "\nOS:  " + userLogHist.OS + "\nDomain:  " + userLogHist.Domain;
+
+            code.LoginHistory.LoadUserLoginHistory(user.ID, lbl_LogHist);   // Завантажити історію логувань користувача
+            code.SystemNews.LoadNews(pnl_News); // Завантажити стрічку новин
+
+            var snm = from s in vmDB.Startups
+                      select s;
+            foreach (var s in snm)
+            {
+                this.chart2.Series["Age"].Points.AddXY("", s.Total_Investment.ToString());
+
+            }
 
         }
         //Button to exit the Profile
@@ -53,10 +72,8 @@ namespace code.UserProfile
         private void button2_Click(object sender, EventArgs e)
         {
             pnl_startup.Hide();
-            pnl_page_view.Hide();
-            pnl_contact_inf.Hide();
             pnl_charts.Hide();
-            pnl_aplication.Show();
+            Animate_module.Util.Animate(pnl_aplication, Animate_module.Util.Effect.Slide, 150, 0);
             listView2.Items.Clear();
             ListViewItem itm;
             string[] arr = new string[4];
@@ -83,8 +100,11 @@ namespace code.UserProfile
             pnl_startup.Hide();
             pnl_aplication.Hide();
             pnl_charts.Hide();
-            pnl_page_view.Show();
-            pnl_contact_inf.Show();
+            Animate_module.Util.Animate(panel6, Animate_module.Util.Effect.Slide, 150, 0);
+            Animate_module.Util.Animate(pnl_page_view, Animate_module.Util.Effect.Slide, 150, 0);
+            Animate_module.Util.Animate(pnl_contact_inf, Animate_module.Util.Effect.Slide, 150, 0);
+            Animate_module.Util.Animate(panel1, Animate_module.Util.Effect.Slide, 150, 0);
+            Animate_module.Util.Animate(panel2, Animate_module.Util.Effect.Slide, 150, 0);
         }
         //The function to display information about startup and options
         private void listView2_SelectedIndexChanged(object sender, EventArgs e)
@@ -98,20 +118,18 @@ namespace code.UserProfile
                 lbl_startap_model.Text = string.Format(   "Business Model:       {0}", str.Business_Model);
                 lbl_total_inv.Text = string.Format("Total Investment:       {0} $", str.Total_Investment);
                 textBox1.Text = string.Format("{0}", str.Description);
-                pnl_page_view.Hide();
-                pnl_contact_inf.Hide();
                 pnl_aplication.Hide();
-                pnl_startup.Show();
+                Animate_module.Util.Animate(pnl_startup, Animate_module.Util.Effect.Slide, 150, 0);
             }
         }
         //Button to display charts
         private void button4_Click(object sender, EventArgs e)
         {
-            pnl_page_view.Hide();
-            pnl_contact_inf.Hide();
+           // pnl_page_view.Hide();
+            //pnl_contact_inf.Hide();
             pnl_aplication.Hide();
             pnl_startup.Hide();
-            pnl_charts.Show();
+            Animate_module.Util.Animate(pnl_charts, Animate_module.Util.Effect.Slide, 150, 0);
         }
 
         private void chart1_Click(object sender, EventArgs e)
@@ -161,6 +179,7 @@ namespace code.UserProfile
                 Startup sp = vmDB.Startups.Single(u => u.Title == listView2.SelectedItems[0].Text);
                 Application app = vmDB.Applications.Single(u => u.StartupID == sp.ID);
                 app.State = "accepted";
+                lbl_ok.Text = string.Format("accepted");
 
                 decimal invamount = Decimal.Parse(txt_amount.Text);
                 decimal old_amount = Decimal.Parse(sp.Total_Investment.ToString());
@@ -222,8 +241,10 @@ namespace code.UserProfile
             
         }
 
-
- 
-
+        private void button6_Click(object sender, EventArgs e)
+        {
+            user_profile_edit edit = new user_profile_edit(user);
+            edit.Show();
+        }
     } }
 
