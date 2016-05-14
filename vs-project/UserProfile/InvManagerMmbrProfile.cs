@@ -50,7 +50,7 @@ namespace code.UserProfile
                       select s;
             foreach (var s in snm)
             {
-                this.chart2.Series["Age"].Points.AddXY("", s.Total_Investment.ToString());
+                this.chart2.Series["Age"].Points.AddXY(s.Total_Investment.ToString(), s.Total_Investment.ToString());
 
             }
 
@@ -65,8 +65,25 @@ namespace code.UserProfile
         //Button to refresh data
         private void btm_refresh_Click(object sender, EventArgs e)
         {
-            btm_refresh.Click += button2_Click;
-            checkBox1.Checked = false;
+            listView2.Items.Clear();
+            ListViewItem itm;
+            string[] arr = new string[4];
+            var snm = from s in vmDB.Applications
+                      select s;
+            foreach (var s in snm)
+            {
+                if ((s.State.ToString() == "considered") | (s.State.ToString() == "no state"))
+                {
+                    arr[0] = s.Startup.Title;
+                    if (s.ManagerID == null)
+                    { arr[1] = "No mamager"; }
+                    else { arr[1] = s.Investment_Manager.User.LName + " " + s.Investment_Manager.User.FName; }
+                    arr[2] = s.State;
+                    arr[3] = "Round " + s.Application_Round.ToString();
+                    itm = new ListViewItem(arr);
+                    listView2.Items.Add(itm);
+                }
+            }
         }
         //The function to display information about the application, and their parameters
         private void button2_Click(object sender, EventArgs e)
@@ -100,11 +117,16 @@ namespace code.UserProfile
             pnl_startup.Hide();
             pnl_aplication.Hide();
             pnl_charts.Hide();
-            Animate_module.Util.Animate(panel6, Animate_module.Util.Effect.Slide, 150, 0);
-            Animate_module.Util.Animate(pnl_page_view, Animate_module.Util.Effect.Slide, 150, 0);
-            Animate_module.Util.Animate(pnl_contact_inf, Animate_module.Util.Effect.Slide, 150, 0);
-            Animate_module.Util.Animate(panel1, Animate_module.Util.Effect.Slide, 150, 0);
-            Animate_module.Util.Animate(panel2, Animate_module.Util.Effect.Slide, 150, 0);
+            panel6.Show();
+            pnl_page_view.Show();
+            pnl_contact_inf.Show();
+            panel1.Show();
+            panel2.Show();
+            /*   Animate_module.Util.Animate(panel6, Animate_module.Util.Effect.Slide, 150, 0);
+               Animate_module.Util.Animate(pnl_page_view, Animate_module.Util.Effect.Slide, 150, 0);
+               Animate_module.Util.Animate(pnl_contact_inf, Animate_module.Util.Effect.Slide, 150, 0);
+               Animate_module.Util.Animate(panel1, Animate_module.Util.Effect.Slide, 150, 0);
+               Animate_module.Util.Animate(panel2, Animate_module.Util.Effect.Slide, 150, 0);*/
         }
         //The function to display information about startup and options
         private void listView2_SelectedIndexChanged(object sender, EventArgs e)
@@ -143,7 +165,7 @@ namespace code.UserProfile
                       select s;
             foreach (var s in snm)
             {
-                this.chart1.Series["Age"].Points.AddXY("Day", s.ManagerID.ToString());
+                this.chart1.Series["Day"].Points.AddXY("manth", s.ManagerID.ToString());
                 this.chart1.Series["Score"].Points.AddXY("Cash", s.Application_Round.ToString());
             }
         }
