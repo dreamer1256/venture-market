@@ -258,6 +258,7 @@ GO
 CREATE TABLE dbo.Application(
 	ID int IDENTITY(1,1) NOT NULL,
 	ManagerID int NULL,
+	Angel_ID int NULL,
 	StartupID int NOT NULL,
 	State nvarchar(45) NULL,
 	Application_Round int NOT NULL,
@@ -266,7 +267,9 @@ CREATE TABLE dbo.Application(
  	CONSTRAINT FK_Application_InvestmentManager FOREIGN KEY(ManagerID) REFERENCES dbo.Investment_Manager(ID)
  		ON UPDATE CASCADE ON DELETE SET NULL,
  	CONSTRAINT FK_Application_Startup FOREIGN KEY(StartupID) REFERENCES dbo.Startup(ID)
- 		ON UPDATE CASCADE ON DELETE CASCADE
+ 		ON UPDATE CASCADE ON DELETE CASCADE,
+	CONSTRAINT FK_Angel FOREIGN KEY(Angel_ID) REFERENCES dbo.AngelInvestor(ID)
+		ON UPDATE NO ACTION
 )
 GO
 /****** Object:  Table dbo.Round_Of_Funding ******/
@@ -280,6 +283,7 @@ CREATE TABLE dbo.Round_Of_Funding(
 	Title nvarchar(45) NOT NULL,
 	Total_Investment decimal(10, 0) NULL,
 	Description nvarchar(max) NULL,
+	invest_date datetime,
  	CONSTRAINT PK_Round_Of_Funding PRIMARY KEY(ID) ,
  	CONSTRAINT FK_RoundOfFunding_Startup FOREIGN KEY(StartupID) REFERENCES dbo.Startup(ID)
  		ON UPDATE CASCADE ON DELETE CASCADE
@@ -351,6 +355,20 @@ CREATE TABLE News(
 	CONSTRAINT PK_News PRIMARY KEY(ID)
 )
 GO
-
+GO
+CREATE TABLE dbo.CompanyMember(
+	ID int IDENTITY(1,1) NOT NULL,
+	UserID int NOT NULL,
+	CompID int NOT NULL,
+	Phone nvarchar(45) NULL,
+	Skype nvarchar(45) NULL,
+	Twitter nvarchar(45) NULL,
+ 	CONSTRAINT PK_CompanyMember PRIMARY KEY(ID) ,
+ 	CONSTRAINT FK_CompanyMember_Users FOREIGN KEY(UserID) REFERENCES dbo.Users(ID)
+ 		ON UPDATE CASCADE ON DELETE CASCADE,
+	CONSTRAINT FK_CompanyMember_Investment_company FOREIGN KEY(CompID) REFERENCES dbo.Investment_Company(ID)
+        ON UPDATE CASCADE ON DELETE CASCADE
+)
+GO
 ALTER DATABASE Venture_Market SET  READ_WRITE 
 GO

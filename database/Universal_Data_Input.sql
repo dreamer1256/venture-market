@@ -158,25 +158,25 @@ INSERT Investment_Manager(ID,Investment_CompanyID,UserID,Geo_Inerests) VALUES
 SET IDENTITY_INSERT Investment_Manager OFF
 GO
 SET IDENTITY_INSERT Application ON
-INSERT Application (ID,ManagerID,StartupID,State,Application_Round,CreationDate) VALUES
-(1,10,5,N'considered',0, '2016-04-04 03:14:00.000'),
-(2,1,4,N'accepted',0, '2016-04-04 03:14:00.000'),
-(3,4,3,N'rejected',0, '2016-04-04 03:14:00.000'),
-(4,3,2,N'rejected',0, '2016-04-04 03:14:00.000'),
-(5,9,1,N'accepted',0, '2016-04-04 03:14:00.000'),
-(6,NULL,6,N'no state',0, '2016-04-04 03:14:00.000'),
-(7,NULL,7,N'no state',0, '2016-04-04 03:14:00.000'),
-(8,NULL,8,N'no state',0, '2016-04-04 03:14:00.000'),
-(9,NULL,9,N'no state',0, '2016-04-04 03:14:00.000')
+INSERT Application (ID,ManagerID,Angel_ID,StartupID,State,Application_Round,CreationDate) VALUES
+(1,10,NULL,5,N'considered',0, '2016-04-04 03:14:00.000'),
+(2,1,NULL,4,N'accepted',0, '2016-04-04 03:14:00.000'),
+(3,4,NULL,3,N'rejected',0, '2016-04-04 03:14:00.000'),
+(4,3,NULL,2,N'rejected',0, '2016-04-04 03:14:00.000'),
+(5,9,NULL,1,N'accepted',0, '2016-04-04 03:14:00.000'),
+(6,NULL,NULL,6,N'no state',0, '2016-04-04 03:14:00.000'),
+(7,NULL,NULL,7,N'no state',0, '2016-04-04 03:14:00.000'),
+(8,NULL,NULL,8,N'no state',0, '2016-04-04 03:14:00.000'),
+(9,NULL,NULL,9,N'no state',0, '2016-04-04 03:14:00.000')
 SET IDENTITY_INSERT Application OFF
 GO
 SET IDENTITY_INSERT Round_Of_Funding ON
-INSERT Round_Of_Funding (ID,StartupID,Title,Total_Investment,Description) VALUES
-(1,1,N'Round1',4000,N'Description should be here'),
-(2,2,N'Round1',3000,N'Description should be here'),
-(3,3,N'Round1',1000,N'Description should be here'),
-(4,4,N'Round1',2000,N'Description should be here'),
-(5,5,N'Round1',4000,N'Description should be here')
+INSERT Round_Of_Funding (ID,StartupID,Title,Total_Investment,Description,invest_date) VALUES
+(1,1,N'Round1',4000,N'Description should be here','2016-04-04 03:14:00.000'),
+(2,2,N'Round1',3000,N'Description should be here','2016-04-04 03:14:00.000'),
+(3,3,N'Round1',1000,N'Description should be here','2016-04-04 03:14:00.000'),
+(4,4,N'Round1',2000,N'Description should be here','2016-04-04 03:14:00.000'),
+(5,5,N'Round1',4000,N'Description should be here','2016-04-04 03:14:00.000')
 SET IDENTITY_INSERT Round_Of_Funding OFF
 GO
 SET IDENTITY_INSERT Round_Investor ON
@@ -216,7 +216,7 @@ INSERT Startup_Members (ID,StartupID,UserID,Address,Is_CEO,Phone,Skype,Twitter,A
 (26,7,40,N'Ukraine, Kyiv',0,N'382658741258',N'Wanda.Morrison',N'Wanda.Morrison',N'Information about account should be here.'),
 (27,1,45,N'England, London',0,N'3802147856',N'st.Mmbr',N'st.Mmbr',N'Information about account should be here.')
 SET IDENTITY_INSERT Startup_Members OFF
-
+GO
 SET IDENTITY_INSERT UserLoginHistory ON
 INSERT UserLoginHistory(ID,UserID,OS,Domain,IP,LoggedDate) VALUES
 (1,1,N'Debian GNU/Linux 7.4',N'UserPC',N'127.0.0.1','2016-03-29 16:20:00.000'),
@@ -266,3 +266,9 @@ INSERT UserLoginHistory(ID,UserID,OS,Domain,IP,LoggedDate) VALUES
 (45,45,N'Debian GNU/Linux 7.4',N'UserPC',N'127.0.0.1','2016-03-29 16:20:00.000'),
 (46,46,N'Debian GNU/Linux 7.4',N'UserPC',N'127.0.0.1','2016-03-29 16:20:00.000')
 SET IDENTITY_INSERT UserLoginHistory OFF
+GO
+SET IDENTITY_INSERT CompanyMember ON
+INSERT CompanyMember(ID,UserID,CompID,Phone,Skype,Twitter) VALUES
+(1,42,1,N'380936987145',N'sljar',N'sljar')
+SET IDENTITY_INSERT CompanyMember OFF 
+GO
