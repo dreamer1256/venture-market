@@ -38,6 +38,15 @@ namespace code.UserProfile
             
             // Інформація про користувача.
             startupCEO = vmDB.Startup_Members.Single(u => u.UserID == user.ID);
+
+            // Приховати елементи навігації, якщо учасник стартапу не є його керівником
+            if (!startupCEO.Is_CEO)
+            {
+                btn_LinkToApplications.Enabled = false;
+                btn_LinkToApplications.Hide();
+                btn_LinkToIncubators.Enabled = false;
+                btn_LinkToIncubators.Hide();
+            }
             int logID = vmDB.UserLoginHistories.Where(h => h.UserID == user.ID)
                 .OrderByDescending(h => h.LoggedDate).Select(h => h.ID).First();           
             var userLogHist = vmDB.UserLoginHistories.Single(h => h.ID == logID);
@@ -343,6 +352,12 @@ namespace code.UserProfile
         private void StartupCEOMmbrProfile_FormClosing(object sender, FormClosingEventArgs e)
         {
             UserExit.SaveUserStoryOnExit(user.ID);   
+        }
+
+        private void btn_EditProfile_Click(object sender, EventArgs e)
+        {
+            user_profile_edit edit = new user_profile_edit(user);
+            edit.Show();
         }
     }
 }
