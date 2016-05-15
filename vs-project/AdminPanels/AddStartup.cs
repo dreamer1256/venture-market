@@ -34,7 +34,7 @@ namespace code.AdminPanels
             cbox_mark_strategy.Items.Add(b);
 
             if (tb_title.Text == "" || tb_description.Text == "" || tb_website.Text == "" || tb_twitter.Text == "" || cbox_bis_model.Text == "" || cbox_mark_strategy.Text == "")
-                MessageBox.Show("Fields can not be empty!\n",
+                MessageBox.Show("Fields cannot be empty!\n",
                     "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else
             {
@@ -59,7 +59,7 @@ namespace code.AdminPanels
                 {
                     News news = new News
                     {
-                        Information = "Added a new startup " + star.Title,
+                        Information = "A new startup added: " + star.Title,
                         Date = DateTime.Now,
                         Type = "Startup"
                     };
@@ -71,7 +71,7 @@ namespace code.AdminPanels
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.StackTrace, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    logger.Error("An error ocured while adding Startup to DB: " + ex.Message);
+                    logger.Error("An error occured while adding Startup to DB: " + ex.Message);
                 }
             }
         }

@@ -53,7 +53,7 @@ namespace code.UserProfile
                                   + angel.Phone + "\n" 
                                   + angel.Twitter;
             lbl_joined.Text = "Joined on   " + user.RegDate.ToShortDateString();
-            lbl_lastlog.Text = "Last login   " + user.LoggedDate.ToString() +
+            lbl_lastlog.Text = "Last seen   " + user.LoggedDate.ToString() +
                 "\nIP:  " + userLogHist.IP + "\nOS:  " + userLogHist.OS + "\nDomain:  " + userLogHist.Domain;
             //вивід industry interests користувача user
             var checkeditems = from n in vmDB.Angel_Interests
@@ -254,7 +254,7 @@ namespace code.UserProfile
         {
             if (txt_inv.Text == "" && txt_inv_title.Text == "" && txt_inv_description.Text == "")
             {
-                MessageBox.Show("Complete all fields", "", MessageBoxButtons.OK);
+                MessageBox.Show("Fill in a fields!", "", MessageBoxButtons.OK);
             } else {
                 Startup star = vmDB.Startups.Single(u => u.Title == stname.Text);
                 var angel = vmDB.AngelInvestors.Single(u => u.UserID == user.ID);
@@ -279,7 +279,7 @@ namespace code.UserProfile
 
                 News news = new News
                 {
-                    Information = user.FName + " " + user.LName + " has allocated funding for the "
+                    Information = user.FName + " " + user.LName + " has allocated money for the "
                         + star.Title + " startup",
                     Date = DateTime.Now,
                     Type = "Application"
@@ -288,12 +288,12 @@ namespace code.UserProfile
                 try
                 {
                     vmDB.SubmitChanges();
-                    logger.Info("Angel investor has allocated  funding for the " + star.Title + " startup\n"
+                    logger.Info("Angel investor has allocated money for the " + star.Title + " startup\n"
                          + "\t[UserID: " + user.ID + ", UserName: " + user.Username + ", Startup: ]" + star.Title);
                 }
                 catch(Exception ex)
                 {
-                    logger.Info("An error ocured when Angel investor try to allocate funding for the " + star.Title + " startup\n"
+                    logger.Info("An error occured when Angel investor tried to allocate money for the " + star.Title + " startup\n"
                          + "\t[UserID: " + user.ID + ", UserName: " + user.Username + ", Startup: ]" + star.Title);
                     MessageBox.Show(ex.Message);
                 }
@@ -363,7 +363,7 @@ namespace code.UserProfile
             string[] history_list = new string[2];
             list_history_inv.FullRowSelect = true;
             list_history_inv.GridLines = false;
-            list_history_inv.Columns.Add("Investition amount", 102);
+            list_history_inv.Columns.Add("Total investments", 102);
             list_history_inv.Columns.Add("Date", 162);
 
             var history = (from ARF in vmDB.Round_Of_Fundings

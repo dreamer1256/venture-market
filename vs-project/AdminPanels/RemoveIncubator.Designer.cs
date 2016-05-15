@@ -41,9 +41,9 @@
             this.label1.ForeColor = System.Drawing.Color.OrangeRed;
             this.label1.Location = new System.Drawing.Point(23, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(411, 42);
+            this.label1.Size = new System.Drawing.Size(400, 42);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Note: \r\n     You can\'t remove the incubator while it has a startup";
+            this.label1.Text = "Note: \r\n     You can\'t delete the incubator while it has a startup";
             // 
             // listView1
             // 
@@ -70,7 +70,7 @@
             this.btn_Remove.Name = "btn_Remove";
             this.btn_Remove.Size = new System.Drawing.Size(203, 37);
             this.btn_Remove.TabIndex = 2;
-            this.btn_Remove.Text = "Remove";
+            this.btn_Remove.Text = "Delete";
             this.btn_Remove.UseVisualStyleBackColor = true;
             this.btn_Remove.Click += new System.EventHandler(this.btn_Remove_Click);
             // 

@@ -35,7 +35,7 @@ namespace code.UserProfile
                         .OrderByDescending(h => h.LoggedDate).Select(h => h.ID).First();
             var userLogHist = vmDB.UserLoginHistories.Single(h => h.ID == logID);
             lbl_joined_combr.Text = "Joined on   " + user.RegDate.ToShortDateString();
-            lbl_lastlog_combr.Text = "Last login   " + user.LoggedDate.ToString() +
+            lbl_lastlog_combr.Text = "Last seen   " + user.LoggedDate.ToString() +
                 "\nIP:  " + userLogHist.IP + "\nOS:  " + userLogHist.OS + "\nDomain:  " + userLogHist.Domain;
 
             code.LoginHistory.LoadUserLoginHistory(user.ID, lbl_LogHist_combr);   // Завантажити історію логувань користувача

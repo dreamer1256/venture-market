@@ -43,14 +43,14 @@ namespace code
 
             if(usr.Count() != 0)
             {
-                logger.Info("User with choosen username is already registered[{0}]", txt_Username.Text);
-                MessageBox.Show("User with username [" + txt_Username.Text + "] is already registered.\n"
+                logger.Info("This username already exists[{0}]", txt_Username.Text);
+                MessageBox.Show("This username already exists [" + txt_Username.Text + "].\n"
                      + "Please choose another username.");
             }
             else if(mail.Count() != 0)
             {
-                logger.Info("User with choosen mail is already registered[{0}]", txt_Email.Text);
-                MessageBox.Show("User with mail [" + txt_Email.Text + "] is already registered.\n");
+                logger.Info("This mail already exists[{0}]", txt_Email.Text);
+                MessageBox.Show("This username already mail: [" + txt_Email.Text + "].\n");
             }
             else if(txt_Password.Text == "" || txt_Password.TextLength < 6)
             {
@@ -58,7 +58,7 @@ namespace code
             }
             else if (txt_Password.Text != txt_PasswordConfirm.Text)
             {
-                MessageBox.Show("Passwords are not the same");
+                MessageBox.Show("The repeat password you typed does not match!");
             }
             else
             {

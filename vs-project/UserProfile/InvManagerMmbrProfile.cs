@@ -40,7 +40,7 @@ namespace code.UserProfile
             lbl_office_adr.Text = string.Format("Office Address:   {0}", maneger.Investment_Company.Office_Address);
 
             lbl_joinedDate.Text = "Joined on   " + user.RegDate.ToShortDateString();
-            lbl_lastLogin.Text = "Last login   " + user.LoggedDate.ToString() +
+            lbl_lastLogin.Text = "Last seen   " + user.LoggedDate.ToString() +
                 "\nIP:  " + userLogHist.IP + "\nOS:  " + userLogHist.OS + "\nDomain:  " + userLogHist.Domain;
 
             code.LoginHistory.LoadUserLoginHistory(user.ID, lbl_LogHist);   // Завантажити історію логувань користувача
@@ -214,7 +214,7 @@ namespace code.UserProfile
 
                 News news = new News
                 {
-                    Information = user.FName + " " + user.LName + " has accepted the application for funding\nfrom the "
+                    Information = user.FName + " " + user.LName + " has accepted the funding application \nfrom the "
                         + sp.Title + " startup",
                     Date = DateTime.Now,
                     Type = "Application"
@@ -228,8 +228,8 @@ namespace code.UserProfile
                 } 
                 catch (Exception ex)
                 {
-                    MessageBox.Show("An error ocured: " + ex.Message);
-                    logger.Error("An error ocured when invest manager accept the application for finances\n"
+                    MessageBox.Show("An error occured: " + ex.Message);
+                    logger.Error("An error occured when invest manager accept the application for finances\n"
                         + "\t[UserID: " + user.ID + ", UserName:" + user.Username + ", Startup: " + sp.Title + ", ApplicationID: " + app.ID + "]");
                 }
 
@@ -256,8 +256,8 @@ namespace code.UserProfile
             }
             catch (Exception ex)
             {
-                MessageBox.Show("An error ocured: " + ex.Message);
-                logger.Error("An error ocured when invest manager reject the application for finances\n"
+                MessageBox.Show("An error occured: " + ex.Message);
+                logger.Error("An error occured when invest manager reject the application for finances\n"
                         + "\t[UserID: " + user.ID + ", UserName:" + user.Username + ", Startup: " + sp.Title + ", ApplicationID: " + app.ID + "]");
             }
             

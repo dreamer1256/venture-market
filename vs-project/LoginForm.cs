@@ -83,7 +83,7 @@ namespace code
             else
             {
                 logger.Info("User has entered the wrong password or username");
-                MessageBox.Show("Please enter a valid username and password!", 
+                MessageBox.Show("Please enter correct username and password!", 
                     "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }

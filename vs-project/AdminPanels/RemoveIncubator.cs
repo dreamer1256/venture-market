@@ -48,21 +48,12 @@ namespace code.AdminPanels
                 incubID = Int32.Parse(listView1.FocusedItem.SubItems[0].Text);
                 var deleteIncubDetails = vmDB.Business_Incubators.Single(i => i.ID == incubID);
                 vmDB.Business_Incubators.DeleteOnSubmit(deleteIncubDetails);
-
-                DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete " +
-                        deleteIncubDetails.Title + " business incubator?", "Confirm Delete",
-                        MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
+                
                 try
                 {
-                    if (dialogResult == DialogResult.Yes)
-                    {
                         vmDB.SubmitChanges();
-                        MessageBox.Show("Business Incubator " + deleteIncubDetails.Title + " successfully removed!",
-                            "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         logger.Info("Business Incubator " + deleteIncubDetails.Title + " removed");
                         LoadIncubatorsList();
-                    }
                 }
                 catch (Exception ex)
                 {

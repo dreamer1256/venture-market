@@ -68,22 +68,14 @@ namespace code.RegisterForms
             vmDB.User_Roles.InsertOnSubmit(ur);
             if (isCEO && startup.ceoID != null)
             {
-                MessageBox.Show("You can\'t be the CEO of choosen startup.\nThere is a startup CEO!");
+                MessageBox.Show("You can\'t be the CEO of the choosen startup.\nThere is a startup CEO!");
             }
             else
             try
             {
                 vmDB.SubmitChanges();
-                if (isCEO)
-                {
                     UserProfile.StartupCEOMmbrProfile scpm = new UserProfile.StartupCEOMmbrProfile(user);
                     scpm.Show();
-                }
-                else
-                {
-                    UserProfile.StartupMmbrProfile smp = new UserProfile.StartupMmbrProfile(user);
-                    smp.Show();
-                }
                 this.Hide();
             }
             catch(Exception ex)

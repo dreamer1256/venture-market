@@ -59,7 +59,7 @@ namespace code.UserProfile
             lbl_Twitter.Text = string.Format("Twitter:  {0}", startupCEO.Twitter);
             rchTxtBx_About.Text = startupCEO.About;
             lbl_joinedDate.Text = "Joined on   " + user.RegDate.ToShortDateString();
-            lbl_lastLogin.Text = "Last login   " + user.LoggedDate.ToString() + 
+            lbl_lastLogin.Text = "Last seen   " + user.LoggedDate.ToString() + 
                 "\nIP:  " + userLogHist.IP + "\nOS:  " + userLogHist.OS + "\nDomain:  " + userLogHist.Domain;
             
             code.LoginHistory.LoadUserLoginHistory(user.ID, lbl_LogHist);   // Завантажити історію логувань користувача
@@ -137,7 +137,7 @@ namespace code.UserProfile
 
                 // Вивести стартапи, які вже розташовані у вибраному інкубаторі
                 lbl_StartupsInIncubator.Text = 
-                    string.Format("In the {0} incubator are already working: ", incubatorTitle);
+                    string.Format("In the {0} incubator are already involved : ", incubatorTitle);
                 var incubator = vmDB.Business_Incubators.Single(i => incubatorTitle.Equals(i.Title));
                 var startups = vmDB.Startups.Where(s => s.IncubID == incubator.ID);
                 foreach (var s in startups)
@@ -190,9 +190,9 @@ namespace code.UserProfile
             }
             catch(Exception ex)
             {
-                logger.Error("Startup {0} is failed to join to the {2} business incubator\n{3}",
+                logger.Error("Startup {0} is failed to join the {2} business incubator\n{3}",
                     startup.Title, startup.Business_Incubator.Title, ex.Message);
-                MessageBox.Show("Oops! An error occurred.\nYour startup is failed to join to the business incubator",
+                MessageBox.Show("Oops! An error occurred.\nYour startup is failed to join the business incubator",
                     "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             
@@ -208,7 +208,7 @@ namespace code.UserProfile
             startupCEO = vmDB.Startup_Members.Single(u => u.UserID == user.ID);
 
             var incubator = vmDB.Business_Incubators.Single(i => i.ID == startupCEO.Startup.Business_Incubator.ID);
-            lbl_JoinError.Text = "Your startup are located in the " + incubator.Title 
+            lbl_JoinError.Text = "Your startup is in the " + incubator.Title 
                 + " business incubator.\nYou can\'t join a new incubator now.";
             lbl_JoinError.Show();
         }
@@ -286,7 +286,7 @@ namespace code.UserProfile
 
             News news = new News
             {
-                Information = "Startup " + startupCEO.Startup.Title + " created an application for finances",
+                Information = "Startup " + startupCEO.Startup.Title + " created a cash call",
                 Date = DateTime.Now,
                 Type = "Application"
             };
@@ -296,14 +296,14 @@ namespace code.UserProfile
             try
             {
                 vmDB.SubmitChanges();
-                logger.Info("Startup CEO has applied for funding." +
+                logger.Info("Startup CEO has created a cash call." +
                     " \n[UserID: {0}, StartupID: {1}, StartupTitle: {2}, RoundOfFunding: {3}]",
                     user.ID, startupCEO.StartupID, startupCEO.Startup.Title, txtBx_RoundOfFunding.Text);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                logger.Error("An error when startup CEO has applied for funding." +
+                logger.Error("An error occured when startup CEO has created a cash call." +
                     " \n[UserID: {0}, StartupID: {1}, StartupTitle: {2}, RoundOfFunding: {3}]",
                     user.ID, startupCEO.StartupID, startupCEO.Startup.Title, txtBx_RoundOfFunding.Text);
             }
@@ -327,7 +327,7 @@ namespace code.UserProfile
             lstVw_Applications.Columns.Add("Round", 60);
             lstVw_Applications.Columns.Add("State", 80);
             lstVw_Applications.Columns.Add("Invest Manager", 150);
-            lstVw_Applications.Columns.Add("Creation Date", 125);
+            lstVw_Applications.Columns.Add("Foundation Date", 125);
 
             string[] arr = new string[5];
             foreach (var a in applications)

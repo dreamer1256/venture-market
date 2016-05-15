@@ -29,7 +29,7 @@ namespace code.AdminPanels
             // Перевірити чи усі поля заповнено.
             // Якщо так, то створюється новий інкубатор
             if (txt_Title.Text == "" || txt_Location.Text == "" || txt_Website.Text == "" || txt_Seats.Text == "")
-                MessageBox.Show("Fields can not be empty!\n",
+                MessageBox.Show("Fields can`t be empty!\n",
                     "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else
                 {
@@ -43,7 +43,7 @@ namespace code.AdminPanels
 
                     News news = new News
                     {
-                        Information = "Added a new business incubator " + bi.Title,
+                        Information = "A new business incubator added" + bi.Title,
                         Date = DateTime.Now,
                         Type = "Incubator"
                     };
@@ -58,7 +58,7 @@ namespace code.AdminPanels
                     catch (Exception ex)
                     {
                         MessageBox.Show(ex.StackTrace, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        logger.Error("An error ocured while adding incubator to DB: " + ex.Message);
+                        logger.Error("An error occured while adding incubator to DB: " + ex.Message);
                     }
                 }
         }

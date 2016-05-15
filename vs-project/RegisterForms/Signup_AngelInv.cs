@@ -21,7 +21,7 @@ namespace code.RegisterForms
             InitializeComponent();
             AcceptButton = btn_Finish;
             this.user = user;
-            logger.Info("Registration form for Angel investor downloaded\n."
+            logger.Info("Registration form for Angel investor is downloaded\n."
                 + "[User ID = {0}]", user.ID);
         }
 

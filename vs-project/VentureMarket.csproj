@@ -116,12 +116,6 @@
     <Compile Include="UserProfile\StartupCEOMmbrProfile.Designer.cs">
       <DependentUpon>StartupCEOMmbrProfile.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserProfile\StartupMmbrProfile.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UserProfile\StartupMmbrProfile.Designer.cs">
-      <DependentUpon>StartupMmbrProfile.cs</DependentUpon>
-    </Compile>
     <Compile Include="user_profile_edit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -221,9 +215,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserProfile\StartupCEOMmbrProfile.resx">
       <DependentUpon>StartupCEOMmbrProfile.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserProfile\StartupMmbrProfile.resx">
-      <DependentUpon>StartupMmbrProfile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="user_profile_edit.resx">
       <DependentUpon>user_profile_edit.cs</DependentUpon>
