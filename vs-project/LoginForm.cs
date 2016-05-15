@@ -68,8 +68,8 @@ namespace code
                         immp.Show();
                         break;
                     case (int)URoles.Role.StartupMember:
-                        UserProfile.StartupMmbrProfile smp = new UserProfile.StartupMmbrProfile(user);
-                        smp.Show();
+                        UserProfile.StartupCEOMmbrProfile sm = new UserProfile.StartupCEOMmbrProfile(user);
+                        sm.Show();
                         break;
                     case (int)URoles.Role.Admin:
                         UserProfile.AdminProfile ap = new UserProfile.AdminProfile(user);
