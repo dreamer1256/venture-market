@@ -53,23 +53,6 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tb_pg_general = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.pnl_angl = new System.Windows.Forms.Panel();
-            this.btn_sbm_ch_angel = new System.Windows.Forms.Button();
-            this.chlist_ind_int = new System.Windows.Forms.CheckedListBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.txt_angel_max = new System.Windows.Forms.TextBox();
-            this.txt_angel_min = new System.Windows.Forms.TextBox();
-            this.txt_angel_twitter = new System.Windows.Forms.TextBox();
-            this.txt_angel_skype = new System.Windows.Forms.TextBox();
-            this.txt_angel_phone = new System.Windows.Forms.TextBox();
-            this.txt_angel_exp = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.pnl_combr_edit = new System.Windows.Forms.Panel();
             this.txt_cmbr_twitter = new System.Windows.Forms.TextBox();
             this.txt_cmbr_skype = new System.Windows.Forms.TextBox();
@@ -94,14 +77,31 @@
             this.label25 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
+            this.pnl_angl = new System.Windows.Forms.Panel();
+            this.btn_sbm_ch_angel = new System.Windows.Forms.Button();
+            this.chlist_ind_int = new System.Windows.Forms.CheckedListBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.txt_angel_max = new System.Windows.Forms.TextBox();
+            this.txt_angel_min = new System.Windows.Forms.TextBox();
+            this.txt_angel_twitter = new System.Windows.Forms.TextBox();
+            this.txt_angel_skype = new System.Windows.Forms.TextBox();
+            this.txt_angel_phone = new System.Windows.Forms.TextBox();
+            this.txt_angel_exp = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.pnl_general.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tb_pg_general.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.pnl_angl.SuspendLayout();
             this.pnl_combr_edit.SuspendLayout();
             this.pnl_inv_mngr_edit.SuspendLayout();
             this.pnl_startupceo_edit_prfl2.SuspendLayout();
+            this.pnl_angl.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnl_general
@@ -373,195 +373,6 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "User profile information";
             // 
-            // pnl_angl
-            // 
-            this.pnl_angl.Controls.Add(this.btn_sbm_ch_angel);
-            this.pnl_angl.Controls.Add(this.chlist_ind_int);
-            this.pnl_angl.Controls.Add(this.label20);
-            this.pnl_angl.Controls.Add(this.label19);
-            this.pnl_angl.Controls.Add(this.label18);
-            this.pnl_angl.Controls.Add(this.txt_angel_max);
-            this.pnl_angl.Controls.Add(this.txt_angel_min);
-            this.pnl_angl.Controls.Add(this.txt_angel_twitter);
-            this.pnl_angl.Controls.Add(this.txt_angel_skype);
-            this.pnl_angl.Controls.Add(this.txt_angel_phone);
-            this.pnl_angl.Controls.Add(this.txt_angel_exp);
-            this.pnl_angl.Controls.Add(this.label17);
-            this.pnl_angl.Controls.Add(this.label16);
-            this.pnl_angl.Controls.Add(this.label15);
-            this.pnl_angl.Controls.Add(this.label14);
-            this.pnl_angl.Controls.Add(this.label1);
-            this.pnl_angl.Location = new System.Drawing.Point(4, 3);
-            this.pnl_angl.Name = "pnl_angl";
-            this.pnl_angl.Size = new System.Drawing.Size(538, 259);
-            this.pnl_angl.TabIndex = 0;
-            // 
-            // btn_sbm_ch_angel
-            // 
-            this.btn_sbm_ch_angel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_sbm_ch_angel.ForeColor = System.Drawing.Color.Lime;
-            this.btn_sbm_ch_angel.Location = new System.Drawing.Point(409, 222);
-            this.btn_sbm_ch_angel.Name = "btn_sbm_ch_angel";
-            this.btn_sbm_ch_angel.Size = new System.Drawing.Size(101, 28);
-            this.btn_sbm_ch_angel.TabIndex = 16;
-            this.btn_sbm_ch_angel.Text = "Submit changes";
-            this.btn_sbm_ch_angel.UseVisualStyleBackColor = true;
-            this.btn_sbm_ch_angel.Click += new System.EventHandler(this.btn_sbm_ch_angel_Click);
-            // 
-            // chlist_ind_int
-            // 
-            this.chlist_ind_int.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(50)))));
-            this.chlist_ind_int.CheckOnClick = true;
-            this.chlist_ind_int.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.chlist_ind_int.FormattingEnabled = true;
-            this.chlist_ind_int.Items.AddRange(new object[] {
-            "eCommerce",
-            "Cloud",
-            "Media",
-            "Mobile",
-            "Saas",
-            "Games",
-            "Research",
-            "Geo",
-            "Social Networking",
-            "Advertisment"});
-            this.chlist_ind_int.Location = new System.Drawing.Point(13, 171);
-            this.chlist_ind_int.MultiColumn = true;
-            this.chlist_ind_int.Name = "chlist_ind_int";
-            this.chlist_ind_int.Size = new System.Drawing.Size(363, 79);
-            this.chlist_ind_int.TabIndex = 15;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label20.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label20.Location = new System.Drawing.Point(10, 152);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(110, 16);
-            this.label20.TabIndex = 14;
-            this.label20.Text = "Industry interests:";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label19.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label19.Location = new System.Drawing.Point(257, 60);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(32, 16);
-            this.label19.TabIndex = 13;
-            this.label19.Text = "min:";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label18.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label18.Location = new System.Drawing.Point(257, 34);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(36, 16);
-            this.label18.TabIndex = 12;
-            this.label18.Text = "max:";
-            // 
-            // txt_angel_max
-            // 
-            this.txt_angel_max.Location = new System.Drawing.Point(302, 33);
-            this.txt_angel_max.Name = "txt_angel_max";
-            this.txt_angel_max.Size = new System.Drawing.Size(100, 20);
-            this.txt_angel_max.TabIndex = 11;
-            // 
-            // txt_angel_min
-            // 
-            this.txt_angel_min.Location = new System.Drawing.Point(302, 59);
-            this.txt_angel_min.Name = "txt_angel_min";
-            this.txt_angel_min.Size = new System.Drawing.Size(100, 20);
-            this.txt_angel_min.TabIndex = 10;
-            // 
-            // txt_angel_twitter
-            // 
-            this.txt_angel_twitter.Location = new System.Drawing.Point(64, 74);
-            this.txt_angel_twitter.Name = "txt_angel_twitter";
-            this.txt_angel_twitter.Size = new System.Drawing.Size(100, 20);
-            this.txt_angel_twitter.TabIndex = 9;
-            // 
-            // txt_angel_skype
-            // 
-            this.txt_angel_skype.Location = new System.Drawing.Point(64, 41);
-            this.txt_angel_skype.Name = "txt_angel_skype";
-            this.txt_angel_skype.Size = new System.Drawing.Size(100, 20);
-            this.txt_angel_skype.TabIndex = 8;
-            // 
-            // txt_angel_phone
-            // 
-            this.txt_angel_phone.Location = new System.Drawing.Point(64, 10);
-            this.txt_angel_phone.Name = "txt_angel_phone";
-            this.txt_angel_phone.Size = new System.Drawing.Size(100, 20);
-            this.txt_angel_phone.TabIndex = 7;
-            // 
-            // txt_angel_exp
-            // 
-            this.txt_angel_exp.Location = new System.Drawing.Point(169, 108);
-            this.txt_angel_exp.Multiline = true;
-            this.txt_angel_exp.Name = "txt_angel_exp";
-            this.txt_angel_exp.Size = new System.Drawing.Size(134, 38);
-            this.txt_angel_exp.TabIndex = 6;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label17.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label17.Location = new System.Drawing.Point(186, 10);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(117, 16);
-            this.label17.TabIndex = 5;
-            this.label17.Text = "Investition amount:";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label16.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label16.Location = new System.Drawing.Point(10, 75);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(50, 16);
-            this.label16.TabIndex = 4;
-            this.label16.Text = "Twitter:";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label15.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label15.Location = new System.Drawing.Point(10, 44);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(50, 16);
-            this.label15.TabIndex = 3;
-            this.label15.Text = "Skype:";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label14.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label14.Location = new System.Drawing.Point(10, 11);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(50, 16);
-            this.label14.TabIndex = 2;
-            this.label14.Text = "Phone:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label1.Location = new System.Drawing.Point(10, 108);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(145, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Investment experience:";
-            // 
             // pnl_combr_edit
             // 
             this.pnl_combr_edit.Controls.Add(this.txt_cmbr_twitter);
@@ -800,6 +611,195 @@
             this.label23.TabIndex = 11;
             this.label23.Text = "Adress:";
             // 
+            // pnl_angl
+            // 
+            this.pnl_angl.Controls.Add(this.btn_sbm_ch_angel);
+            this.pnl_angl.Controls.Add(this.chlist_ind_int);
+            this.pnl_angl.Controls.Add(this.label20);
+            this.pnl_angl.Controls.Add(this.label19);
+            this.pnl_angl.Controls.Add(this.label18);
+            this.pnl_angl.Controls.Add(this.txt_angel_max);
+            this.pnl_angl.Controls.Add(this.txt_angel_min);
+            this.pnl_angl.Controls.Add(this.txt_angel_twitter);
+            this.pnl_angl.Controls.Add(this.txt_angel_skype);
+            this.pnl_angl.Controls.Add(this.txt_angel_phone);
+            this.pnl_angl.Controls.Add(this.txt_angel_exp);
+            this.pnl_angl.Controls.Add(this.label17);
+            this.pnl_angl.Controls.Add(this.label16);
+            this.pnl_angl.Controls.Add(this.label15);
+            this.pnl_angl.Controls.Add(this.label14);
+            this.pnl_angl.Controls.Add(this.label1);
+            this.pnl_angl.Location = new System.Drawing.Point(4, 3);
+            this.pnl_angl.Name = "pnl_angl";
+            this.pnl_angl.Size = new System.Drawing.Size(538, 259);
+            this.pnl_angl.TabIndex = 0;
+            // 
+            // btn_sbm_ch_angel
+            // 
+            this.btn_sbm_ch_angel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_sbm_ch_angel.ForeColor = System.Drawing.Color.Lime;
+            this.btn_sbm_ch_angel.Location = new System.Drawing.Point(409, 222);
+            this.btn_sbm_ch_angel.Name = "btn_sbm_ch_angel";
+            this.btn_sbm_ch_angel.Size = new System.Drawing.Size(101, 28);
+            this.btn_sbm_ch_angel.TabIndex = 16;
+            this.btn_sbm_ch_angel.Text = "Submit changes";
+            this.btn_sbm_ch_angel.UseVisualStyleBackColor = true;
+            this.btn_sbm_ch_angel.Click += new System.EventHandler(this.btn_sbm_ch_angel_Click);
+            // 
+            // chlist_ind_int
+            // 
+            this.chlist_ind_int.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(50)))));
+            this.chlist_ind_int.CheckOnClick = true;
+            this.chlist_ind_int.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.chlist_ind_int.FormattingEnabled = true;
+            this.chlist_ind_int.Items.AddRange(new object[] {
+            "eCommerce",
+            "Cloud",
+            "Media",
+            "Mobile",
+            "Saas",
+            "Games",
+            "Research",
+            "Geo",
+            "Social Networking",
+            "Advertisment"});
+            this.chlist_ind_int.Location = new System.Drawing.Point(13, 171);
+            this.chlist_ind_int.MultiColumn = true;
+            this.chlist_ind_int.Name = "chlist_ind_int";
+            this.chlist_ind_int.Size = new System.Drawing.Size(363, 79);
+            this.chlist_ind_int.TabIndex = 15;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label20.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label20.Location = new System.Drawing.Point(10, 152);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(110, 16);
+            this.label20.TabIndex = 14;
+            this.label20.Text = "Industry interests:";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label19.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label19.Location = new System.Drawing.Point(257, 60);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(32, 16);
+            this.label19.TabIndex = 13;
+            this.label19.Text = "min:";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label18.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label18.Location = new System.Drawing.Point(257, 34);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(36, 16);
+            this.label18.TabIndex = 12;
+            this.label18.Text = "max:";
+            // 
+            // txt_angel_max
+            // 
+            this.txt_angel_max.Location = new System.Drawing.Point(302, 33);
+            this.txt_angel_max.Name = "txt_angel_max";
+            this.txt_angel_max.Size = new System.Drawing.Size(100, 20);
+            this.txt_angel_max.TabIndex = 11;
+            // 
+            // txt_angel_min
+            // 
+            this.txt_angel_min.Location = new System.Drawing.Point(302, 59);
+            this.txt_angel_min.Name = "txt_angel_min";
+            this.txt_angel_min.Size = new System.Drawing.Size(100, 20);
+            this.txt_angel_min.TabIndex = 10;
+            // 
+            // txt_angel_twitter
+            // 
+            this.txt_angel_twitter.Location = new System.Drawing.Point(64, 74);
+            this.txt_angel_twitter.Name = "txt_angel_twitter";
+            this.txt_angel_twitter.Size = new System.Drawing.Size(100, 20);
+            this.txt_angel_twitter.TabIndex = 9;
+            // 
+            // txt_angel_skype
+            // 
+            this.txt_angel_skype.Location = new System.Drawing.Point(64, 41);
+            this.txt_angel_skype.Name = "txt_angel_skype";
+            this.txt_angel_skype.Size = new System.Drawing.Size(100, 20);
+            this.txt_angel_skype.TabIndex = 8;
+            // 
+            // txt_angel_phone
+            // 
+            this.txt_angel_phone.Location = new System.Drawing.Point(64, 10);
+            this.txt_angel_phone.Name = "txt_angel_phone";
+            this.txt_angel_phone.Size = new System.Drawing.Size(100, 20);
+            this.txt_angel_phone.TabIndex = 7;
+            // 
+            // txt_angel_exp
+            // 
+            this.txt_angel_exp.Location = new System.Drawing.Point(169, 108);
+            this.txt_angel_exp.Multiline = true;
+            this.txt_angel_exp.Name = "txt_angel_exp";
+            this.txt_angel_exp.Size = new System.Drawing.Size(134, 38);
+            this.txt_angel_exp.TabIndex = 6;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label17.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label17.Location = new System.Drawing.Point(186, 10);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(117, 16);
+            this.label17.TabIndex = 5;
+            this.label17.Text = "Investition amount:";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label16.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label16.Location = new System.Drawing.Point(10, 75);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(50, 16);
+            this.label16.TabIndex = 4;
+            this.label16.Text = "Twitter:";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label15.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label15.Location = new System.Drawing.Point(10, 44);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(50, 16);
+            this.label15.TabIndex = 3;
+            this.label15.Text = "Skype:";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label14.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label14.Location = new System.Drawing.Point(10, 11);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(50, 16);
+            this.label14.TabIndex = 2;
+            this.label14.Text = "Phone:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label1.Location = new System.Drawing.Point(10, 108);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(145, 16);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Investment experience:";
+            // 
             // user_profile_edit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -808,20 +808,21 @@
             this.ClientSize = new System.Drawing.Size(560, 299);
             this.Controls.Add(this.tabControl1);
             this.Name = "user_profile_edit";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "user_profile_edit";
             this.pnl_general.ResumeLayout(false);
             this.pnl_general.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tb_pg_general.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
-            this.pnl_angl.ResumeLayout(false);
-            this.pnl_angl.PerformLayout();
             this.pnl_combr_edit.ResumeLayout(false);
             this.pnl_combr_edit.PerformLayout();
             this.pnl_inv_mngr_edit.ResumeLayout(false);
             this.pnl_inv_mngr_edit.PerformLayout();
             this.pnl_startupceo_edit_prfl2.ResumeLayout(false);
             this.pnl_startupceo_edit_prfl2.PerformLayout();
+            this.pnl_angl.ResumeLayout(false);
+            this.pnl_angl.PerformLayout();
             this.ResumeLayout(false);
 
         }

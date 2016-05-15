@@ -68,8 +68,8 @@ namespace code
                         immp.Show();
                         break;
                     case (int)URoles.Role.StartupMember:
-                        UserProfile.StartupCEOMmbrProfile sm = new UserProfile.StartupCEOMmbrProfile(user);
-                        sm.Show();
+                        UserProfile.StartupMmbrProfile smp = new UserProfile.StartupMmbrProfile(user);
+                        smp.Show();
                         break;
                     case (int)URoles.Role.Admin:
                         UserProfile.AdminProfile ap = new UserProfile.AdminProfile(user);
@@ -83,7 +83,7 @@ namespace code
             else
             {
                 logger.Info("User has entered the wrong password or username");
-                MessageBox.Show("Please enter correct username and password!", 
+                MessageBox.Show("Please enter correct username and password!",
                     "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
