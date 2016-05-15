@@ -20,6 +20,9 @@ namespace code
             InitializeComponent();
             //you should close all panels on "User profile information"
             pnl_angl.Hide();
+            pnl_combr_edit.Hide();
+            pnl_startupceo_edit_prfl2.Hide();
+            pnl_inv_mngr_edit.Hide();
             //
 
             this.user = user;
@@ -32,16 +35,16 @@ namespace code
                     intialiseangel();
                     break;
                 case (int)URoles.Role.InvCompanyMember:
-                    //show panel
+                    pnl_combr_edit.Show();
                     break;
                 case (int)URoles.Role.StartupCEO:
-                    //show panel
+                    pnl_startupceo_edit_prfl2.Show();
                     break;
                 case (int)URoles.Role.InvestManager:
-                    //show panel
+                    initialise_invest_manager_edit_page();
                     break;
                 case (int)URoles.Role.StartupMember:
-                    //show panel
+                    pnl_startupceo_edit_prfl2.Show();
                     break;
             }
         }
@@ -168,6 +171,50 @@ namespace code
                 addint.AngelID = changel.ID;
                 vmDB.Angel_Interests.InsertOnSubmit(addint);
                 vmDB.SubmitChanges();
+            }
+        }
+        //submit changes for company member edit panel
+        private void btn_cmbr_esit_confirm_Click(object sender, EventArgs e)
+        {
+            if (txt_cmbr_phone.Text != "" && txt_cmbr_twitter.Text != "" && txt_cmbr_skype.Text != "")
+            {
+                var cmbr = vmDB.CompanyMember.Single(u => u.UserID == user.ID);
+                cmbr.Phone = txt_cmbr_phone.Text;
+                cmbr.Twitter = txt_cmbr_twitter.Text;
+                cmbr.Skype = txt_cmbr_skype.Text;
+                vmDB.SubmitChanges();
+            }
+        }
+        //submit changes for startup member edit panel
+        private void btn_ceo_submit_ch_Click(object sender, EventArgs e)
+        {
+            if (txt_ceo_edit_phone.Text != "" && txt_ceo_edit_adress.Text  != "" && txt_ceo_edit_about.Text != "" && txt_ceo_edit_twitter.Text  != "" && txt_ceo_edit_skype.Text != "")
+            {
+                var ceo = vmDB.Startup_Members.Single(u => u.UserID == user.ID);
+                ceo.Phone = txt_ceo_edit_phone.Text;
+                ceo.Address = txt_ceo_edit_adress.Text;
+                ceo.About = txt_ceo_edit_about.Text;
+                ceo.Twitter = txt_ceo_edit_twitter.Text;
+                ceo.Skype = txt_ceo_edit_skype.Text;
+            }
+        }
+        //initialise invest manager panel, put companies in cmbx
+        private void initialise_invest_manager_edit_page()
+        {
+            pnl_inv_mngr_edit.Show();
+            var im_company = from c in vmDB.Investment_Companies
+                             select c.Title;
+            foreach (var l in im_company)
+                cmbx_change_comp.Items.Add(l);
+        }
+        //submit changes for inves manager edit panel
+        private void btn_invmngr_edit_Click(object sender, EventArgs e)
+        {
+            if (cmbx_change_comp.Text != null)
+            {
+                var invmngr = vmDB.Investment_Managers.Single(u => u.UserID == user.ID);
+                Investment_Company ch_company = vmDB.Investment_Companies.Single(c => c.Title == cmbx_change_comp.Text);
+                invmngr.Investment_CompanyID = ch_company.ID;
             }
         }
     }
