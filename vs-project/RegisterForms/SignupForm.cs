@@ -120,7 +120,7 @@ namespace code
             if (rdBttn_CompanyMemeber.Checked == true)
             {
                 vmDB = new DataClasses1DataContext();
-                RegisterForms.Signup_CompanyMember s_cm = new RegisterForms.Signup_CompanyMember();
+                RegisterForms.Signup_CompanyMember s_cm = new RegisterForms.Signup_CompanyMember(user);
                 
                 s_cm.Show();
                 this.Hide();

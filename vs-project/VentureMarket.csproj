@@ -81,6 +81,7 @@
     <Compile Include="AdminPanels\RemoveIncubator.Designer.cs">
       <DependentUpon>RemoveIncubator.cs</DependentUpon>
     </Compile>
+    <Compile Include="Animate_module.cs" />
     <Compile Include="LoginHistory.cs" />
     <Compile Include="SystemNews.cs" />
     <Compile Include="UserExit.cs" />

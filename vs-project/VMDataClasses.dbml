@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Venture_Market" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=LIGHTSIDE\SQLEXPRESS;Initial Catalog=Venture_Market;Integrated Security=True" SettingsObjectName="code.Properties.Settings" SettingsPropertyName="Venture_MarketConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=ERGOPROXY;Initial Catalog=Venture_Market;Integrated Security=True" SettingsObjectName="code.Properties.Settings" SettingsPropertyName="Venture_MarketConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Angel_Interests" Member="Angel_Interests">
     <Type Name="Angel_Interest">
       <Column Name="InterestID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -31,6 +31,7 @@
       <Column Name="State" Type="System.String" DbType="NVarChar(45) NOT NULL" CanBeNull="true" />
       <Column Name="Application_Round" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="CreationDate" Type="System.DateTime" DbType="DateTime" CanBeNull="false" />
+      <Column Name="Angel_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="Investment_Manager_Application" Member="Investment_Manager" ThisKey="ManagerID" OtherKey="ID" Type="Investment_Manager" IsForeignKey="true" DeleteRule="SET NULL" />
       <Association Name="Startup_Application" Member="Startup" ThisKey="StartupID" OtherKey="ID" Type="Startup" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
@@ -70,6 +71,7 @@
       <Column Name="CEO" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Association Name="Investment_Company_Investment_Manager" Member="Investment_Managers" ThisKey="ID" OtherKey="Investment_CompanyID" Type="Investment_Manager" />
       <Association Name="Investment_Company_Round_Investor" Member="Round_Investors" ThisKey="ID" OtherKey="CompanyID" Type="Round_Investor" />
+      <Association Name="Investment_Company_CompanyMember" Member="CompanyMember" ThisKey="ID" OtherKey="CompID" Type="CompanyMember" />
     </Type>
   </Table>
   <Table Name="dbo.Investment_Manager" Member="Investment_Managers">
@@ -109,6 +111,7 @@
       <Column Name="Title" Type="System.String" DbType="NVarChar(45) NOT NULL" CanBeNull="false" />
       <Column Name="Total_Investment" Type="System.Decimal" DbType="Decimal(10,0)" CanBeNull="true" />
       <Column Name="Description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="invest_date" Type="System.DateTime" DbType="datetime" CanBeNull="true" />
       <Association Name="Round_Of_Funding_Round_Investor" Member="Round_Investor" ThisKey="ID" OtherKey="RoundID" Type="Round_Investor" Cardinality="One" />
       <Association Name="Startup_Round_Of_Funding" Member="Startup" ThisKey="StartupID" OtherKey="ID" Type="Startup" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
@@ -175,6 +178,7 @@
       <Association Name="User_Investment_Manager" Member="Investment_Managers" ThisKey="ID" OtherKey="UserID" Type="Investment_Manager" />
       <Association Name="User_Startup_Member" Member="Startup_Members" ThisKey="ID" OtherKey="UserID" Type="Startup_Member" />
       <Association Name="User_User_Role" Member="User_Roles" ThisKey="ID" OtherKey="UserId" Type="User_Role" />
+      <Association Name="User_CompanyMember" Member="CompanyMember" ThisKey="ID" OtherKey="UserID" Type="CompanyMember" />
       <Association Name="UserLoginHistory_User" Member="UserLoginHistory" ThisKey="ID" OtherKey="UserID" Type="UserLoginHistory" IsForeignKey="true" />
     </Type>
   </Table>
@@ -195,6 +199,18 @@
       <Column Name="Information" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
       <Column Name="Date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="Type" Type="System.String" DbType="NVarChar(45) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CompanyMember" Member="CompanyMember">
+    <Type Name="CompanyMember">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CompID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Phone" Type="System.String" DbType="NVarChar(45)" CanBeNull="true" />
+      <Column Name="Skype" Type="System.String" DbType="NVarChar(45)" CanBeNull="true" />
+      <Column Name="Twitter" Type="System.String" DbType="NVarChar(45)" CanBeNull="true" />
+      <Association Name="Investment_Company_CompanyMember" Member="Investment_Company" ThisKey="CompID" OtherKey="ID" Type="Investment_Company" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="User_CompanyMember" Member="User" ThisKey="UserID" OtherKey="ID" Type="User" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
   </Table>
 </Database>

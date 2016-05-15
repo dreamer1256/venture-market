@@ -31,11 +31,14 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_logout = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btn_my_inv = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.startupslist = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbl_name = new System.Windows.Forms.Label();
             this.panel_prof1 = new System.Windows.Forms.Panel();
+            this.label13 = new System.Windows.Forms.Label();
+            this.lbl_iexperience = new System.Windows.Forms.Label();
             this.lbl_angel_info = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -48,13 +51,18 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel_prof2 = new System.Windows.Forms.Panel();
-            this.lbl_iexperience = new System.Windows.Forms.Label();
+            this.chlist_angel = new System.Windows.Forms.CheckedListBox();
             this.pnl_profile = new System.Windows.Forms.Panel();
-            this.panel_prof3 = new System.Windows.Forms.Panel();
-            this.lbl_lastlogreg = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label14 = new System.Windows.Forms.Label();
+            this.pnl_News = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.lbl_LogHist = new System.Windows.Forms.Label();
+            this.panel_prof3 = new System.Windows.Forms.Panel();
+            this.lbl_lastlog = new System.Windows.Forms.Label();
+            this.lbl_joined = new System.Windows.Forms.Label();
             this.st_view = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.lbl_businc = new System.Windows.Forms.Label();
@@ -75,7 +83,16 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.stname = new System.Windows.Forms.Label();
             this.showprofile = new System.Windows.Forms.Button();
-            this.chlist_angel = new System.Windows.Forms.CheckedListBox();
+            this.pnl_my_investitions = new System.Windows.Forms.Panel();
+            this.label15 = new System.Windows.Forms.Label();
+            this.pnl_myst_info = new System.Windows.Forms.Panel();
+            this.list_history_inv = new System.Windows.Forms.ListView();
+            this.btn_view_st_home = new System.Windows.Forms.Button();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.lbl_myinv_stinfo = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.lv_my_investitions = new System.Windows.Forms.ListView();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -83,9 +100,14 @@
             this.pnl_startups.SuspendLayout();
             this.panel_prof2.SuspendLayout();
             this.pnl_profile.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.panel_prof3.SuspendLayout();
             this.st_view.SuspendLayout();
             this.angel_invest.SuspendLayout();
+            this.pnl_my_investitions.SuspendLayout();
+            this.pnl_myst_info.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -94,7 +116,7 @@
             this.panel1.Controls.Add(this.btn_logout);
             this.panel1.Location = new System.Drawing.Point(5, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(992, 36);
+            this.panel1.Size = new System.Drawing.Size(988, 36);
             this.panel1.TabIndex = 0;
             // 
             // btn_logout
@@ -102,7 +124,7 @@
             this.btn_logout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(34)))), ((int)(((byte)(40)))));
             this.btn_logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_logout.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.btn_logout.Location = new System.Drawing.Point(901, 7);
+            this.btn_logout.Location = new System.Drawing.Point(909, 7);
             this.btn_logout.Name = "btn_logout";
             this.btn_logout.Size = new System.Drawing.Size(75, 23);
             this.btn_logout.TabIndex = 0;
@@ -113,21 +135,35 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
+            this.panel2.Controls.Add(this.btn_my_inv);
             this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.startupslist);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.lbl_name);
             this.panel2.Location = new System.Drawing.Point(5, 46);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(173, 339);
+            this.panel2.Size = new System.Drawing.Size(173, 379);
             this.panel2.TabIndex = 1;
+            // 
+            // btn_my_inv
+            // 
+            this.btn_my_inv.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(34)))), ((int)(((byte)(40)))));
+            this.btn_my_inv.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_my_inv.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.btn_my_inv.Location = new System.Drawing.Point(0, 290);
+            this.btn_my_inv.Name = "btn_my_inv";
+            this.btn_my_inv.Size = new System.Drawing.Size(173, 38);
+            this.btn_my_inv.TabIndex = 3;
+            this.btn_my_inv.Text = "My investitions";
+            this.btn_my_inv.UseVisualStyleBackColor = false;
+            this.btn_my_inv.Click += new System.EventHandler(this.btn_my_inv_Click);
             // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(34)))), ((int)(((byte)(40)))));
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.button2.Location = new System.Drawing.Point(0, 294);
+            this.button2.Location = new System.Drawing.Point(0, 334);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(173, 38);
             this.button2.TabIndex = 0;
@@ -164,73 +200,101 @@
             this.lbl_name.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.lbl_name.Location = new System.Drawing.Point(45, 173);
             this.lbl_name.Name = "lbl_name";
-            this.lbl_name.Size = new System.Drawing.Size(45, 16);
+            this.lbl_name.Size = new System.Drawing.Size(95, 16);
             this.lbl_name.TabIndex = 1;
-            this.lbl_name.Text = "label2";
+            this.lbl_name.Text = "FirstLast name";
             // 
             // panel_prof1
             // 
             this.panel_prof1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(50)))));
+            this.panel_prof1.Controls.Add(this.label13);
             this.panel_prof1.Controls.Add(this.lbl_iexperience);
             this.panel_prof1.Controls.Add(this.lbl_angel_info);
             this.panel_prof1.Controls.Add(this.label4);
             this.panel_prof1.Controls.Add(this.label6);
             this.panel_prof1.Controls.Add(this.lbl_imax);
             this.panel_prof1.Controls.Add(this.label3);
-            this.panel_prof1.Location = new System.Drawing.Point(4, 10);
+            this.panel_prof1.Location = new System.Drawing.Point(4, 5);
             this.panel_prof1.Name = "panel_prof1";
-            this.panel_prof1.Size = new System.Drawing.Size(437, 154);
+            this.panel_prof1.Size = new System.Drawing.Size(489, 193);
             this.panel_prof1.TabIndex = 2;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label13.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.label13.Location = new System.Drawing.Point(344, 62);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(40, 36);
+            this.label13.TabIndex = 15;
+            this.label13.Text = "Max:\r\nMin:";
+            // 
+            // lbl_iexperience
+            // 
+            this.lbl_iexperience.AutoSize = true;
+            this.lbl_iexperience.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lbl_iexperience.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.lbl_iexperience.Location = new System.Drawing.Point(22, 128);
+            this.lbl_iexperience.Name = "lbl_iexperience";
+            this.lbl_iexperience.Size = new System.Drawing.Size(82, 18);
+            this.lbl_iexperience.TabIndex = 0;
+            this.lbl_iexperience.Text = "iexperience";
             // 
             // lbl_angel_info
             // 
             this.lbl_angel_info.AutoSize = true;
+            this.lbl_angel_info.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lbl_angel_info.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.lbl_angel_info.Location = new System.Drawing.Point(101, 48);
+            this.lbl_angel_info.Location = new System.Drawing.Point(99, 45);
             this.lbl_angel_info.Name = "lbl_angel_info";
-            this.lbl_angel_info.Size = new System.Drawing.Size(28, 13);
+            this.lbl_angel_info.Size = new System.Drawing.Size(36, 18);
             this.lbl_angel_info.TabIndex = 14;
             this.lbl_angel_info.Text = "Text";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label4.Location = new System.Drawing.Point(22, 48);
+            this.label4.Location = new System.Drawing.Point(34, 45);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(40, 52);
+            this.label4.Size = new System.Drawing.Size(53, 72);
             this.label4.TabIndex = 13;
             this.label4.Text = "e-mail:\r\nskype:\r\nphone:\r\ntwitter:";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label6.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label6.Location = new System.Drawing.Point(230, 45);
+            this.label6.Location = new System.Drawing.Point(253, 45);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(96, 13);
+            this.label6.Size = new System.Drawing.Size(131, 18);
             this.label6.TabIndex = 12;
             this.label6.Text = "Investition amount:";
             // 
             // lbl_imax
             // 
             this.lbl_imax.AutoSize = true;
+            this.lbl_imax.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lbl_imax.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.lbl_imax.Location = new System.Drawing.Point(319, 58);
+            this.lbl_imax.Location = new System.Drawing.Point(383, 63);
             this.lbl_imax.Name = "lbl_imax";
-            this.lbl_imax.Size = new System.Drawing.Size(30, 26);
+            this.lbl_imax.Size = new System.Drawing.Size(40, 36);
             this.lbl_imax.TabIndex = 10;
             this.lbl_imax.Text = "Max:\r\nMin:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label3.Location = new System.Drawing.Point(21, 19);
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.label3.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label3.Location = new System.Drawing.Point(21, 15);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(102, 13);
+            this.label3.Size = new System.Drawing.Size(158, 21);
             this.label3.TabIndex = 0;
-            this.label3.Text = "Contact Information:";
+            this.label3.Text = "Contact Information";
             // 
             // btn_make_invest
             // 
@@ -254,14 +318,14 @@
             this.pnl_startups.Controls.Add(this.label2);
             this.pnl_startups.Location = new System.Drawing.Point(183, 46);
             this.pnl_startups.Name = "pnl_startups";
-            this.pnl_startups.Size = new System.Drawing.Size(814, 543);
+            this.pnl_startups.Size = new System.Drawing.Size(810, 339);
             this.pnl_startups.TabIndex = 7;
             // 
             // appic_view
             // 
             this.appic_view.Location = new System.Drawing.Point(245, 39);
             this.appic_view.Name = "appic_view";
-            this.appic_view.Size = new System.Drawing.Size(422, 332);
+            this.appic_view.Size = new System.Drawing.Size(422, 293);
             this.appic_view.TabIndex = 5;
             this.appic_view.UseCompatibleStateImageBehavior = false;
             this.appic_view.View = System.Windows.Forms.View.Details;
@@ -269,10 +333,14 @@
             // 
             // listView1
             // 
+            this.listView1.BackColor = System.Drawing.SystemColors.Window;
+            this.listView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.listView1.ForeColor = System.Drawing.SystemColors.WindowText;
             this.listView1.GridLines = true;
             this.listView1.Location = new System.Drawing.Point(14, 35);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(200, 336);
+            this.listView1.Size = new System.Drawing.Size(200, 297);
             this.listView1.TabIndex = 4;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Tile;
@@ -304,65 +372,137 @@
             // 
             this.panel_prof2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(50)))));
             this.panel_prof2.Controls.Add(this.chlist_angel);
-            this.panel_prof2.Location = new System.Drawing.Point(4, 173);
+            this.panel_prof2.Location = new System.Drawing.Point(4, 203);
             this.panel_prof2.Name = "panel_prof2";
-            this.panel_prof2.Size = new System.Drawing.Size(437, 83);
+            this.panel_prof2.Size = new System.Drawing.Size(489, 83);
             this.panel_prof2.TabIndex = 3;
             // 
-            // lbl_iexperience
+            // chlist_angel
             // 
-            this.lbl_iexperience.AutoSize = true;
-            this.lbl_iexperience.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.lbl_iexperience.Location = new System.Drawing.Point(22, 111);
-            this.lbl_iexperience.Name = "lbl_iexperience";
-            this.lbl_iexperience.Size = new System.Drawing.Size(61, 13);
-            this.lbl_iexperience.TabIndex = 0;
-            this.lbl_iexperience.Text = "iexperience";
+            this.chlist_angel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(50)))));
+            this.chlist_angel.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.chlist_angel.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.chlist_angel.FormattingEnabled = true;
+            this.chlist_angel.Location = new System.Drawing.Point(12, 11);
+            this.chlist_angel.MultiColumn = true;
+            this.chlist_angel.Name = "chlist_angel";
+            this.chlist_angel.SelectionMode = System.Windows.Forms.SelectionMode.None;
+            this.chlist_angel.Size = new System.Drawing.Size(461, 60);
+            this.chlist_angel.TabIndex = 0;
             // 
             // pnl_profile
             // 
             this.pnl_profile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
+            this.pnl_profile.Controls.Add(this.panel5);
+            this.pnl_profile.Controls.Add(this.pnl_News);
+            this.pnl_profile.Controls.Add(this.panel4);
+            this.pnl_profile.Controls.Add(this.panel3);
             this.pnl_profile.Controls.Add(this.panel_prof3);
             this.pnl_profile.Controls.Add(this.panel_prof1);
             this.pnl_profile.Controls.Add(this.panel_prof2);
-            this.pnl_profile.Location = new System.Drawing.Point(184, 46);
+            this.pnl_profile.Location = new System.Drawing.Point(183, 46);
             this.pnl_profile.Name = "pnl_profile";
-            this.pnl_profile.Size = new System.Drawing.Size(666, 358);
+            this.pnl_profile.Size = new System.Drawing.Size(810, 550);
             this.pnl_profile.TabIndex = 4;
             // 
-            // panel_prof3
+            // panel5
             // 
-            this.panel_prof3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(50)))));
-            this.panel_prof3.Controls.Add(this.lbl_lastlogreg);
-            this.panel_prof3.Controls.Add(this.label9);
-            this.panel_prof3.Location = new System.Drawing.Point(449, 10);
-            this.panel_prof3.Name = "panel_prof3";
-            this.panel_prof3.Size = new System.Drawing.Size(203, 138);
-            this.panel_prof3.TabIndex = 4;
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(50)))));
+            this.panel5.Controls.Add(this.label14);
+            this.panel5.Location = new System.Drawing.Point(502, 130);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(303, 44);
+            this.panel5.TabIndex = 8;
             // 
-            // lbl_lastlogreg
+            // label14
             // 
-            this.lbl_lastlogreg.AutoSize = true;
-            this.lbl_lastlogreg.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.lbl_lastlogreg.Location = new System.Drawing.Point(92, 10);
-            this.lbl_lastlogreg.Name = "lbl_lastlogreg";
-            this.lbl_lastlogreg.Size = new System.Drawing.Size(24, 13);
-            this.lbl_lastlogreg.TabIndex = 1;
-            this.lbl_lastlogreg.Text = "text";
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label14.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label14.Location = new System.Drawing.Point(14, 12);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(89, 20);
+            this.label14.TabIndex = 0;
+            this.label14.Text = "Log History";
+            // 
+            // pnl_News
+            // 
+            this.pnl_News.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(50)))));
+            this.pnl_News.Location = new System.Drawing.Point(4, 343);
+            this.pnl_News.Name = "pnl_News";
+            this.pnl_News.Size = new System.Drawing.Size(489, 204);
+            this.pnl_News.TabIndex = 7;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(50)))));
+            this.panel4.Controls.Add(this.label9);
+            this.panel4.Location = new System.Drawing.Point(4, 292);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(489, 50);
+            this.panel4.TabIndex = 6;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label9.Location = new System.Drawing.Point(13, 10);
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label9.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label9.Location = new System.Drawing.Point(12, 10);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(73, 26);
+            this.label9.Size = new System.Drawing.Size(58, 24);
             this.label9.TabIndex = 0;
-            this.label9.Text = "Register date:\r\nLast login:";
+            this.label9.Text = "News";
             // 
-            // openFileDialog1
+            // panel3
             // 
-            this.openFileDialog1.FileName = "openFileDialog1";
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(50)))));
+            this.panel3.Controls.Add(this.lbl_LogHist);
+            this.panel3.Location = new System.Drawing.Point(502, 177);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(303, 158);
+            this.panel3.TabIndex = 5;
+            // 
+            // lbl_LogHist
+            // 
+            this.lbl_LogHist.AutoSize = true;
+            this.lbl_LogHist.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lbl_LogHist.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lbl_LogHist.Location = new System.Drawing.Point(13, 12);
+            this.lbl_LogHist.Name = "lbl_LogHist";
+            this.lbl_LogHist.Size = new System.Drawing.Size(0, 20);
+            this.lbl_LogHist.TabIndex = 0;
+            // 
+            // panel_prof3
+            // 
+            this.panel_prof3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(50)))));
+            this.panel_prof3.Controls.Add(this.lbl_lastlog);
+            this.panel_prof3.Controls.Add(this.lbl_joined);
+            this.panel_prof3.Location = new System.Drawing.Point(502, 5);
+            this.panel_prof3.Name = "panel_prof3";
+            this.panel_prof3.Size = new System.Drawing.Size(303, 117);
+            this.panel_prof3.TabIndex = 4;
+            // 
+            // lbl_lastlog
+            // 
+            this.lbl_lastlog.AutoSize = true;
+            this.lbl_lastlog.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lbl_lastlog.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.lbl_lastlog.Location = new System.Drawing.Point(13, 37);
+            this.lbl_lastlog.Name = "lbl_lastlog";
+            this.lbl_lastlog.Size = new System.Drawing.Size(77, 20);
+            this.lbl_lastlog.TabIndex = 1;
+            this.lbl_lastlog.Text = "Last login";
+            // 
+            // lbl_joined
+            // 
+            this.lbl_joined.AutoSize = true;
+            this.lbl_joined.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lbl_joined.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lbl_joined.Location = new System.Drawing.Point(13, 10);
+            this.lbl_joined.Name = "lbl_joined";
+            this.lbl_joined.Size = new System.Drawing.Size(56, 20);
+            this.lbl_joined.TabIndex = 0;
+            this.lbl_joined.Text = "Joined";
             // 
             // st_view
             // 
@@ -580,14 +720,116 @@
             this.showprofile.UseVisualStyleBackColor = true;
             this.showprofile.Click += new System.EventHandler(this.showprofile_Click);
             // 
-            // chlist_angel
+            // pnl_my_investitions
             // 
-            this.chlist_angel.FormattingEnabled = true;
-            this.chlist_angel.Location = new System.Drawing.Point(8, 9);
-            this.chlist_angel.MultiColumn = true;
-            this.chlist_angel.Name = "chlist_angel";
-            this.chlist_angel.Size = new System.Drawing.Size(421, 64);
-            this.chlist_angel.TabIndex = 0;
+            this.pnl_my_investitions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
+            this.pnl_my_investitions.Controls.Add(this.label15);
+            this.pnl_my_investitions.Controls.Add(this.pnl_myst_info);
+            this.pnl_my_investitions.Controls.Add(this.lv_my_investitions);
+            this.pnl_my_investitions.Location = new System.Drawing.Point(183, 46);
+            this.pnl_my_investitions.Name = "pnl_my_investitions";
+            this.pnl_my_investitions.Size = new System.Drawing.Size(810, 379);
+            this.pnl_my_investitions.TabIndex = 11;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label15.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label15.Location = new System.Drawing.Point(18, 15);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(165, 20);
+            this.label15.TabIndex = 3;
+            this.label15.Text = "Accepted applications";
+            // 
+            // pnl_myst_info
+            // 
+            this.pnl_myst_info.Controls.Add(this.list_history_inv);
+            this.pnl_myst_info.Controls.Add(this.btn_view_st_home);
+            this.pnl_myst_info.Controls.Add(this.label17);
+            this.pnl_myst_info.Controls.Add(this.label18);
+            this.pnl_myst_info.Controls.Add(this.lbl_myinv_stinfo);
+            this.pnl_myst_info.Controls.Add(this.label16);
+            this.pnl_myst_info.Location = new System.Drawing.Point(220, 38);
+            this.pnl_myst_info.Name = "pnl_myst_info";
+            this.pnl_myst_info.Size = new System.Drawing.Size(582, 334);
+            this.pnl_myst_info.TabIndex = 1;
+            // 
+            // list_history_inv
+            // 
+            this.list_history_inv.Location = new System.Drawing.Point(299, 36);
+            this.list_history_inv.Name = "list_history_inv";
+            this.list_history_inv.Size = new System.Drawing.Size(269, 283);
+            this.list_history_inv.TabIndex = 7;
+            this.list_history_inv.UseCompatibleStateImageBehavior = false;
+            this.list_history_inv.View = System.Windows.Forms.View.Details;
+            // 
+            // btn_view_st_home
+            // 
+            this.btn_view_st_home.Enabled = false;
+            this.btn_view_st_home.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_view_st_home.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btn_view_st_home.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_view_st_home.Location = new System.Drawing.Point(13, 97);
+            this.btn_view_st_home.Name = "btn_view_st_home";
+            this.btn_view_st_home.Size = new System.Drawing.Size(155, 46);
+            this.btn_view_st_home.TabIndex = 5;
+            this.btn_view_st_home.Text = "View startup home page\r\n(make investition)";
+            this.btn_view_st_home.UseVisualStyleBackColor = true;
+            this.btn_view_st_home.Click += new System.EventHandler(this.btn_view_st_home_Click);
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label17.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label17.Location = new System.Drawing.Point(296, 11);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(131, 20);
+            this.label17.TabIndex = 4;
+            this.label17.Text = "Investition history";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label18.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.label18.Location = new System.Drawing.Point(31, 38);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(126, 48);
+            this.label18.TabIndex = 2;
+            this.label18.Text = "Startup name\r\nTotal investment\r\nDevelopment stage";
+            // 
+            // lbl_myinv_stinfo
+            // 
+            this.lbl_myinv_stinfo.AutoSize = true;
+            this.lbl_myinv_stinfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lbl_myinv_stinfo.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lbl_myinv_stinfo.Location = new System.Drawing.Point(162, 38);
+            this.lbl_myinv_stinfo.Name = "lbl_myinv_stinfo";
+            this.lbl_myinv_stinfo.Size = new System.Drawing.Size(0, 16);
+            this.lbl_myinv_stinfo.TabIndex = 1;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label16.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label16.Location = new System.Drawing.Point(9, 9);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(94, 20);
+            this.label16.TabIndex = 0;
+            this.label16.Text = "Information:";
+            // 
+            // lv_my_investitions
+            // 
+            this.lv_my_investitions.Location = new System.Drawing.Point(19, 39);
+            this.lv_my_investitions.Name = "lv_my_investitions";
+            this.lv_my_investitions.Size = new System.Drawing.Size(194, 333);
+            this.lv_my_investitions.TabIndex = 0;
+            this.lv_my_investitions.UseCompatibleStateImageBehavior = false;
+            this.lv_my_investitions.View = System.Windows.Forms.View.Details;
+            this.lv_my_investitions.SelectedIndexChanged += new System.EventHandler(this.lv_my_investitions_SelectedIndexChanged);
             // 
             // AngInvstrMmbrProfile
             // 
@@ -599,8 +841,9 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnl_profile);
-            this.Controls.Add(this.pnl_startups);
             this.Controls.Add(this.st_view);
+            this.Controls.Add(this.pnl_startups);
+            this.Controls.Add(this.pnl_my_investitions);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MaximizeBox = false;
             this.Name = "AngInvstrMmbrProfile";
@@ -617,12 +860,22 @@
             this.pnl_startups.PerformLayout();
             this.panel_prof2.ResumeLayout(false);
             this.pnl_profile.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.panel_prof3.ResumeLayout(false);
             this.panel_prof3.PerformLayout();
             this.st_view.ResumeLayout(false);
             this.st_view.PerformLayout();
             this.angel_invest.ResumeLayout(false);
             this.angel_invest.PerformLayout();
+            this.pnl_my_investitions.ResumeLayout(false);
+            this.pnl_my_investitions.PerformLayout();
+            this.pnl_myst_info.ResumeLayout(false);
+            this.pnl_myst_info.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -641,8 +894,6 @@
         private System.Windows.Forms.Label lbl_iexperience;
         private System.Windows.Forms.Panel pnl_profile;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel st_view;
         private System.Windows.Forms.Label stname;
@@ -667,8 +918,8 @@
         private System.Windows.Forms.Label lbl_angel_info;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel_prof3;
-        private System.Windows.Forms.Label lbl_lastlogreg;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lbl_lastlog;
+        private System.Windows.Forms.Label lbl_joined;
         private System.Windows.Forms.Button btn_logout;
         private System.Windows.Forms.ListView appic_view;
         private System.Windows.Forms.Label lbl_inv_descr;
@@ -676,6 +927,25 @@
         private System.Windows.Forms.TextBox txt_inv_title;
         private System.Windows.Forms.Label lbl_businc;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.CheckedListBox chlist_angel;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label lbl_LogHist;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Panel pnl_News;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Button btn_my_inv;
+        private System.Windows.Forms.Panel pnl_my_investitions;
+        private System.Windows.Forms.ListView lv_my_investitions;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Panel pnl_myst_info;
+        private System.Windows.Forms.Button btn_view_st_home;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label lbl_myinv_stinfo;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.ListView list_history_inv;
     }
 }
