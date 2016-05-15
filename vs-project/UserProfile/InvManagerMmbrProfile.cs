@@ -15,7 +15,10 @@ namespace code.UserProfile
     {
         private static Logger logger = LogManager.GetCurrentClassLogger();
 
-        //Function to display basic information about Invest manager profile
+        /// <summary>
+        /// Клас InvManagerMmbrProfile
+        /// форма профілю користувача - інвест менеджера
+        /// </summary>
         User user;
         DataClasses1DataContext vmDB = new DataClasses1DataContext();
         public InvManagerMmbrProfile(User user)
@@ -23,7 +26,7 @@ namespace code.UserProfile
             InitializeComponent();
             this.user = user;
 
-            // Інформація про користувача.
+            /// Інформація про користувача.
             
             var maneger = vmDB.Investment_Managers.Single(u => u.UserID == user.ID);
             int logID = vmDB.UserLoginHistories.Where(h => h.UserID == user.ID)
@@ -43,17 +46,15 @@ namespace code.UserProfile
             lbl_lastLogin.Text = "Last seen   " + user.LoggedDate.ToString() +
                 "\nIP:  " + userLogHist.IP + "\nOS:  " + userLogHist.OS + "\nDomain:  " + userLogHist.Domain;
 
-            code.LoginHistory.LoadUserLoginHistory(user.ID, lbl_LogHist);   // Завантажити історію логувань користувача
-            code.SystemNews.LoadNews(pnl_News); // Завантажити стрічку новин
+            code.LoginHistory.LoadUserLoginHistory(user.ID, lbl_LogHist);           /// Завантажити історію логувань користувача
+            code.SystemNews.LoadNews(pnl_News);                                     /// Завантажити стрічку новин
 
-            var snm = from s in vmDB.Startups
-                      select s;
+            var snm = from s in vmDB.Round_Of_Fundings
+            select s;
             foreach (var s in snm)
             {
                 this.chart2.Series["Age"].Points.AddXY(s.Total_Investment.ToString(), s.Total_Investment.ToString());
-
             }
-
         }
         //Button to exit the Profile
         private void btm_logout(object sender, EventArgs e)
@@ -122,11 +123,7 @@ namespace code.UserProfile
             pnl_contact_inf.Show();
             panel1.Show();
             panel2.Show();
-            /*   Animate_module.Util.Animate(panel6, Animate_module.Util.Effect.Slide, 150, 0);
-               Animate_module.Util.Animate(pnl_page_view, Animate_module.Util.Effect.Slide, 150, 0);
-               Animate_module.Util.Animate(pnl_contact_inf, Animate_module.Util.Effect.Slide, 150, 0);
-               Animate_module.Util.Animate(panel1, Animate_module.Util.Effect.Slide, 150, 0);
-               Animate_module.Util.Animate(panel2, Animate_module.Util.Effect.Slide, 150, 0);*/
+
         }
         //The function to display information about startup and options
         private void listView2_SelectedIndexChanged(object sender, EventArgs e)
@@ -135,10 +132,14 @@ namespace code.UserProfile
             {
                 Startup str = vmDB.Startups.Single(u => u.Title.Equals(listView2.SelectedItems[0].Text));
 
-                lbl_startap_title.Text = string.Format("Startup: {0}", str.Title);
-                lbl_startap_strategy.Text = string.Format("Marketing Strategy:  {0}", str.Marketing_Strategy);
+                lbl_startap_title.Text = string.Format(   "Startup: {0}", str.Title);
+                lbl_startap_strategy.Text = string.Format("Marketing Strategy:   {0}", str.Marketing_Strategy);
                 lbl_startap_model.Text = string.Format(   "Business Model:       {0}", str.Business_Model);
-                lbl_total_inv.Text = string.Format("Total Investment:       {0} $", str.Total_Investment);
+                lbl_Competitors.Text = string.Format(     "Competitors:          {0}", str.Competitors);
+                lbl_Website.Text = string.Format(         "Website:              {0}", str.Website);
+                lbl_Twiter.Text = string.Format(          "Twiter:               {0}", str.Twitter);
+                lbl_Foundation_Date.Text = string.Format( "Foundation_Date:      {0}", str.Foundation_Date);
+                lbl_total_inv.Text = string.Format(       "Total Investment:     {0} $", str.Total_Investment);
                 textBox1.Text = string.Format("{0}", str.Description);
                 pnl_aplication.Hide();
                 Animate_module.Util.Animate(pnl_startup, Animate_module.Util.Effect.Slide, 150, 0);
@@ -230,7 +231,7 @@ namespace code.UserProfile
                 {
                     MessageBox.Show("An error occured: " + ex.Message);
                     logger.Error("An error occured when invest manager accept the application for finances\n"
-                        + "\t[UserID: " + user.ID + ", UserName:" + user.Username + ", Startup: " + sp.Title + ", ApplicationID: " + app.ID + "]");
+                       + "\t[UserID: " + user.ID + ", UserName:" + user.Username + ", Startup: " + sp.Title + ", ApplicationID: " + app.ID + "]");
                 }
 
             }
@@ -258,7 +259,7 @@ namespace code.UserProfile
             {
                 MessageBox.Show("An error occured: " + ex.Message);
                 logger.Error("An error occured when invest manager reject the application for finances\n"
-                        + "\t[UserID: " + user.ID + ", UserName:" + user.Username + ", Startup: " + sp.Title + ", ApplicationID: " + app.ID + "]");
+                     + "\t[UserID: " + user.ID + ", UserName:" + user.Username + ", Startup: " + sp.Title + ", ApplicationID: " + app.ID + "]");
             }
             
         }
@@ -268,5 +269,7 @@ namespace code.UserProfile
             user_profile_edit edit = new user_profile_edit(user);
             edit.Show();
         }
+
+
     } }
 

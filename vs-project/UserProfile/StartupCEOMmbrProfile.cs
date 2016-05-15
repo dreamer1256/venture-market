@@ -38,15 +38,6 @@ namespace code.UserProfile
             
             // Інформація про користувача.
             startupCEO = vmDB.Startup_Members.Single(u => u.UserID == user.ID);
-
-            // Приховати елементи навігації, якщо учасник стартапу не є його керівником
-            if (!startupCEO.Is_CEO)
-            {
-                btn_LinkToApplications.Enabled = false;
-                btn_LinkToApplications.Hide();
-                btn_LinkToIncubators.Enabled = false;
-                btn_LinkToIncubators.Hide();
-            }
             int logID = vmDB.UserLoginHistories.Where(h => h.UserID == user.ID)
                 .OrderByDescending(h => h.LoggedDate).Select(h => h.ID).First();           
             var userLogHist = vmDB.UserLoginHistories.Single(h => h.ID == logID);
@@ -59,8 +50,8 @@ namespace code.UserProfile
             lbl_Twitter.Text = string.Format("Twitter:  {0}", startupCEO.Twitter);
             rchTxtBx_About.Text = startupCEO.About;
             lbl_joinedDate.Text = "Joined on   " + user.RegDate.ToShortDateString();
-            lbl_lastLogin.Text = "Last seen   " + user.LoggedDate.ToString() + 
-                "\nIP:  " + userLogHist.IP + "\nOS:  " + userLogHist.OS + "\nDomain:  " + userLogHist.Domain;
+            lbl_lastLogin.Text = "Last seen   " + user.LoggedDate.ToString() +
+                 "\nIP:  " + userLogHist.IP + "\nOS:  " + userLogHist.OS + "\nDomain:  " + userLogHist.Domain;
             
             code.LoginHistory.LoadUserLoginHistory(user.ID, lbl_LogHist);   // Завантажити історію логувань користувача
             code.SystemNews.LoadNews(pnl_News); // Завантажити стрічку новин
@@ -136,7 +127,7 @@ namespace code.UserProfile
                 incubatorTitle = listView1.SelectedItems[0].Text;
 
                 // Вивести стартапи, які вже розташовані у вибраному інкубаторі
-                lbl_StartupsInIncubator.Text = 
+                lbl_StartupsInIncubator.Text =
                     string.Format("In the {0} incubator are already involved : ", incubatorTitle);
                 var incubator = vmDB.Business_Incubators.Single(i => incubatorTitle.Equals(i.Title));
                 var startups = vmDB.Startups.Where(s => s.IncubID == incubator.ID);
@@ -192,7 +183,7 @@ namespace code.UserProfile
             {
                 logger.Error("Startup {0} is failed to join the {2} business incubator\n{3}",
                     startup.Title, startup.Business_Incubator.Title, ex.Message);
-                MessageBox.Show("Oops! An error occurred.\nYour startup is failed to join the business incubator",
+                MessageBox.Show("Oops! An error occurred.\nYour startup is failed to join to the business incubator",
                     "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             
@@ -208,7 +199,7 @@ namespace code.UserProfile
             startupCEO = vmDB.Startup_Members.Single(u => u.UserID == user.ID);
 
             var incubator = vmDB.Business_Incubators.Single(i => i.ID == startupCEO.Startup.Business_Incubator.ID);
-            lbl_JoinError.Text = "Your startup is in the " + incubator.Title 
+            lbl_JoinError.Text = "Your startup is in the " + incubator.Title
                 + " business incubator.\nYou can\'t join a new incubator now.";
             lbl_JoinError.Show();
         }
@@ -352,12 +343,6 @@ namespace code.UserProfile
         private void StartupCEOMmbrProfile_FormClosing(object sender, FormClosingEventArgs e)
         {
             UserExit.SaveUserStoryOnExit(user.ID);   
-        }
-
-        private void btn_EditProfile_Click(object sender, EventArgs e)
-        {
-            user_profile_edit edit = new user_profile_edit(user);
-            edit.Show();
         }
     }
 }

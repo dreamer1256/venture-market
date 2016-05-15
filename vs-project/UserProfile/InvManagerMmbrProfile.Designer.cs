@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -55,8 +55,6 @@
             this.lbl_email = new System.Windows.Forms.Label();
             this.lbl_office_adr = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.ventureMarketDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.venture_MarketDataSet = new code.Venture_MarketDataSet();
             this.pnl_page_view = new System.Windows.Forms.Panel();
             this.lbl_LogHist = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -76,6 +74,10 @@
             this.Application_round = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel3 = new System.Windows.Forms.Panel();
             this.pnl_startup = new System.Windows.Forms.Panel();
+            this.lbl_Competitors = new System.Windows.Forms.Label();
+            this.lbl_Foundation_Date = new System.Windows.Forms.Label();
+            this.lbl_Website = new System.Windows.Forms.Label();
+            this.lbl_Twiter = new System.Windows.Forms.Label();
             this.lbl_ok = new System.Windows.Forms.Label();
             this.btm_rejected = new System.Windows.Forms.Button();
             this.lbl_total_inv = new System.Windows.Forms.Label();
@@ -92,13 +94,14 @@
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.label1 = new System.Windows.Forms.Label();
             this.pnl_menu = new System.Windows.Forms.Panel();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.ventureMarketDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.venture_MarketDataSet = new code.Venture_MarketDataSet();
             this.tableAdapterManager1 = new code.Venture_MarketDataSetTableAdapters.TableAdapterManager();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
             this.panel2.SuspendLayout();
             this.pnl_contact_inf.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ventureMarketDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.venture_MarketDataSet)).BeginInit();
             this.pnl_page_view.SuspendLayout();
             this.panel6.SuspendLayout();
             this.pnl_aplication.SuspendLayout();
@@ -107,18 +110,21 @@
             this.pnl_charts.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.pnl_menu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ventureMarketDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.venture_MarketDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
             this.button1.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(34)))), ((int)(((byte)(40)))));
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button1.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.button1.Location = new System.Drawing.Point(0, 200);
+            this.button1.Location = new System.Drawing.Point(3, 205);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(186, 38);
+            this.button1.Size = new System.Drawing.Size(180, 40);
             this.button1.TabIndex = 0;
             this.button1.Text = "My Profile";
             this.button1.UseVisualStyleBackColor = false;
@@ -127,13 +133,14 @@
             // button2
             // 
             this.button2.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(34)))), ((int)(((byte)(40)))));
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button2.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.button2.Location = new System.Drawing.Point(0, 255);
+            this.button2.Location = new System.Drawing.Point(2, 251);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(186, 38);
+            this.button2.Size = new System.Drawing.Size(180, 40);
             this.button2.TabIndex = 1;
             this.button2.Text = "Application";
             this.button2.UseVisualStyleBackColor = false;
@@ -142,13 +149,14 @@
             // button4
             // 
             this.button4.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(34)))), ((int)(((byte)(40)))));
             this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button4.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.button4.Location = new System.Drawing.Point(0, 314);
+            this.button4.Location = new System.Drawing.Point(2, 297);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(186, 38);
+            this.button4.Size = new System.Drawing.Size(180, 40);
             this.button4.TabIndex = 3;
             this.button4.Text = "Charts";
             this.button4.UseVisualStyleBackColor = false;
@@ -157,13 +165,14 @@
             // button6
             // 
             this.button6.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
+            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(34)))), ((int)(((byte)(40)))));
             this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button6.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.button6.Location = new System.Drawing.Point(0, 373);
+            this.button6.Location = new System.Drawing.Point(2, 343);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(186, 38);
+            this.button6.Size = new System.Drawing.Size(180, 40);
             this.button6.TabIndex = 5;
             this.button6.Text = "Edit my profile";
             this.button6.UseVisualStyleBackColor = false;
@@ -173,6 +182,7 @@
             // 
             this.btn_logout.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btn_logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_logout.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btn_logout.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.btn_logout.Location = new System.Drawing.Point(926, 7);
             this.btn_logout.Name = "btn_logout";
@@ -186,6 +196,7 @@
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
+            this.panel1.Controls.Add(this.textBox2);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.chart2);
             this.panel1.Location = new System.Drawing.Point(704, 241);
@@ -207,49 +218,49 @@
             // chart2
             // 
             this.chart2.BackColor = System.Drawing.Color.Transparent;
-            chartArea5.AxisX.InterlacedColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            chartArea5.AxisX.LineColor = System.Drawing.Color.Silver;
-            chartArea5.AxisX.TitleForeColor = System.Drawing.Color.Silver;
-            chartArea5.AxisX2.InterlacedColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            chartArea5.AxisX2.LineColor = System.Drawing.Color.Silver;
-            chartArea5.AxisX2.TitleForeColor = System.Drawing.Color.Silver;
-            chartArea5.AxisY.InterlacedColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            chartArea5.AxisY.LineColor = System.Drawing.Color.Silver;
-            chartArea5.AxisY.TitleForeColor = System.Drawing.Color.Silver;
-            chartArea5.AxisY2.InterlacedColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            chartArea5.AxisY2.LineColor = System.Drawing.Color.Silver;
-            chartArea5.AxisY2.TitleForeColor = System.Drawing.Color.Silver;
-            chartArea5.BackColor = System.Drawing.Color.Transparent;
-            chartArea5.BackImageTransparentColor = System.Drawing.Color.Transparent;
-            chartArea5.BackSecondaryColor = System.Drawing.Color.Transparent;
-            chartArea5.BorderColor = System.Drawing.Color.Transparent;
-            chartArea5.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea5);
-            legend5.BackColor = System.Drawing.Color.Transparent;
-            legend5.BackImageTransparentColor = System.Drawing.Color.Transparent;
-            legend5.BackSecondaryColor = System.Drawing.Color.Transparent;
-            legend5.BorderColor = System.Drawing.Color.Transparent;
-            legend5.ForeColor = System.Drawing.Color.Silver;
-            legend5.HeaderSeparatorColor = System.Drawing.Color.White;
-            legend5.InterlacedRowsColor = System.Drawing.Color.Transparent;
-            legend5.ItemColumnSeparatorColor = System.Drawing.Color.Maroon;
-            legend5.Name = "Legend1";
-            legend5.TitleBackColor = System.Drawing.Color.Transparent;
-            this.chart2.Legends.Add(legend5);
+            chartArea1.AxisX.InterlacedColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            chartArea1.AxisX.LineColor = System.Drawing.Color.Silver;
+            chartArea1.AxisX.TitleForeColor = System.Drawing.Color.Silver;
+            chartArea1.AxisX2.InterlacedColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            chartArea1.AxisX2.LineColor = System.Drawing.Color.Silver;
+            chartArea1.AxisX2.TitleForeColor = System.Drawing.Color.Silver;
+            chartArea1.AxisY.InterlacedColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            chartArea1.AxisY.LineColor = System.Drawing.Color.Silver;
+            chartArea1.AxisY.TitleForeColor = System.Drawing.Color.Silver;
+            chartArea1.AxisY2.InterlacedColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            chartArea1.AxisY2.LineColor = System.Drawing.Color.Silver;
+            chartArea1.AxisY2.TitleForeColor = System.Drawing.Color.Silver;
+            chartArea1.BackColor = System.Drawing.Color.Transparent;
+            chartArea1.BackImageTransparentColor = System.Drawing.Color.Transparent;
+            chartArea1.BackSecondaryColor = System.Drawing.Color.Transparent;
+            chartArea1.BorderColor = System.Drawing.Color.Transparent;
+            chartArea1.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea1);
+            legend1.BackColor = System.Drawing.Color.Transparent;
+            legend1.BackImageTransparentColor = System.Drawing.Color.Transparent;
+            legend1.BackSecondaryColor = System.Drawing.Color.Transparent;
+            legend1.BorderColor = System.Drawing.Color.Transparent;
+            legend1.ForeColor = System.Drawing.Color.Silver;
+            legend1.HeaderSeparatorColor = System.Drawing.Color.White;
+            legend1.InterlacedRowsColor = System.Drawing.Color.Transparent;
+            legend1.ItemColumnSeparatorColor = System.Drawing.Color.Maroon;
+            legend1.Name = "Legend1";
+            legend1.TitleBackColor = System.Drawing.Color.Transparent;
+            this.chart2.Legends.Add(legend1);
             this.chart2.Location = new System.Drawing.Point(30, 31);
             this.chart2.Name = "chart2";
             this.chart2.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
-            series7.BackImageTransparentColor = System.Drawing.Color.Red;
-            series7.BackSecondaryColor = System.Drawing.Color.Maroon;
-            series7.ChartArea = "ChartArea1";
-            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series7.Color = System.Drawing.Color.White;
-            series7.LabelBackColor = System.Drawing.Color.Transparent;
-            series7.LabelBorderColor = System.Drawing.Color.Transparent;
-            series7.LabelForeColor = System.Drawing.Color.Transparent;
-            series7.Legend = "Legend1";
-            series7.Name = "Age";
-            this.chart2.Series.Add(series7);
+            series1.BackImageTransparentColor = System.Drawing.Color.Red;
+            series1.BackSecondaryColor = System.Drawing.Color.Maroon;
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series1.Color = System.Drawing.Color.White;
+            series1.LabelBackColor = System.Drawing.Color.Transparent;
+            series1.LabelBorderColor = System.Drawing.Color.Transparent;
+            series1.LabelForeColor = System.Drawing.Color.Transparent;
+            series1.Legend = "Legend1";
+            series1.Name = "Age";
+            this.chart2.Series.Add(series1);
             this.chart2.Size = new System.Drawing.Size(227, 174);
             this.chart2.TabIndex = 24;
             this.chart2.Text = "chart2";
@@ -376,16 +387,6 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Contact information:";
             // 
-            // ventureMarketDataSetBindingSource
-            // 
-            this.ventureMarketDataSetBindingSource.DataSource = this.venture_MarketDataSet;
-            this.ventureMarketDataSetBindingSource.Position = 0;
-            // 
-            // venture_MarketDataSet
-            // 
-            this.venture_MarketDataSet.DataSetName = "Venture_MarketDataSet";
-            this.venture_MarketDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // pnl_page_view
             // 
             this.pnl_page_view.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -463,7 +464,7 @@
             this.pnl_aplication.Controls.Add(this.txt_box_search);
             this.pnl_aplication.Controls.Add(this.lbl_application);
             this.pnl_aplication.Controls.Add(this.listView2);
-            this.pnl_aplication.Location = new System.Drawing.Point(194, 51);
+            this.pnl_aplication.Location = new System.Drawing.Point(195, 49);
             this.pnl_aplication.Name = "pnl_aplication";
             this.pnl_aplication.Size = new System.Drawing.Size(805, 563);
             this.pnl_aplication.TabIndex = 9;
@@ -577,6 +578,10 @@
             // 
             this.pnl_startup.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnl_startup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
+            this.pnl_startup.Controls.Add(this.lbl_Competitors);
+            this.pnl_startup.Controls.Add(this.lbl_Foundation_Date);
+            this.pnl_startup.Controls.Add(this.lbl_Website);
+            this.pnl_startup.Controls.Add(this.lbl_Twiter);
             this.pnl_startup.Controls.Add(this.lbl_ok);
             this.pnl_startup.Controls.Add(this.btm_rejected);
             this.pnl_startup.Controls.Add(this.lbl_total_inv);
@@ -588,10 +593,54 @@
             this.pnl_startup.Controls.Add(this.lbl_startap_strategy);
             this.pnl_startup.Controls.Add(this.lbl_startap_model);
             this.pnl_startup.Controls.Add(this.lbl_startap_title);
-            this.pnl_startup.Location = new System.Drawing.Point(194, 51);
+            this.pnl_startup.Location = new System.Drawing.Point(194, 49);
             this.pnl_startup.Name = "pnl_startup";
             this.pnl_startup.Size = new System.Drawing.Size(805, 560);
             this.pnl_startup.TabIndex = 11;
+            // 
+            // lbl_Competitors
+            // 
+            this.lbl_Competitors.AutoSize = true;
+            this.lbl_Competitors.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lbl_Competitors.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.lbl_Competitors.Location = new System.Drawing.Point(400, 124);
+            this.lbl_Competitors.Name = "lbl_Competitors";
+            this.lbl_Competitors.Size = new System.Drawing.Size(101, 16);
+            this.lbl_Competitors.TabIndex = 16;
+            this.lbl_Competitors.Text = "lbl_Competitors";
+            // 
+            // lbl_Foundation_Date
+            // 
+            this.lbl_Foundation_Date.AutoSize = true;
+            this.lbl_Foundation_Date.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lbl_Foundation_Date.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.lbl_Foundation_Date.Location = new System.Drawing.Point(617, 379);
+            this.lbl_Foundation_Date.Name = "lbl_Foundation_Date";
+            this.lbl_Foundation_Date.Size = new System.Drawing.Size(132, 16);
+            this.lbl_Foundation_Date.TabIndex = 15;
+            this.lbl_Foundation_Date.Text = "lbl_Foundation_Date";
+            // 
+            // lbl_Website
+            // 
+            this.lbl_Website.AutoSize = true;
+            this.lbl_Website.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lbl_Website.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.lbl_Website.Location = new System.Drawing.Point(400, 170);
+            this.lbl_Website.Name = "lbl_Website";
+            this.lbl_Website.Size = new System.Drawing.Size(79, 16);
+            this.lbl_Website.TabIndex = 14;
+            this.lbl_Website.Text = "lbl_Website";
+            // 
+            // lbl_Twiter
+            // 
+            this.lbl_Twiter.AutoSize = true;
+            this.lbl_Twiter.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lbl_Twiter.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.lbl_Twiter.Location = new System.Drawing.Point(400, 205);
+            this.lbl_Twiter.Name = "lbl_Twiter";
+            this.lbl_Twiter.Size = new System.Drawing.Size(65, 16);
+            this.lbl_Twiter.TabIndex = 13;
+            this.lbl_Twiter.Text = "lbl_Twiter";
             // 
             // lbl_ok
             // 
@@ -674,10 +723,10 @@
             this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox1.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.textBox1.Location = new System.Drawing.Point(31, 118);
+            this.textBox1.Location = new System.Drawing.Point(31, 58);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(325, 371);
+            this.textBox1.Size = new System.Drawing.Size(325, 431);
             this.textBox1.TabIndex = 5;
             // 
             // lbl_startap_strategy
@@ -685,7 +734,7 @@
             this.lbl_startap_strategy.AutoSize = true;
             this.lbl_startap_strategy.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lbl_startap_strategy.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.lbl_startap_strategy.Location = new System.Drawing.Point(28, 62);
+            this.lbl_startap_strategy.Location = new System.Drawing.Point(399, 53);
             this.lbl_startap_strategy.Name = "lbl_startap_strategy";
             this.lbl_startap_strategy.Size = new System.Drawing.Size(56, 16);
             this.lbl_startap_strategy.TabIndex = 4;
@@ -696,7 +745,7 @@
             this.lbl_startap_model.AutoSize = true;
             this.lbl_startap_model.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lbl_startap_model.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.lbl_startap_model.Location = new System.Drawing.Point(29, 88);
+            this.lbl_startap_model.Location = new System.Drawing.Point(400, 79);
             this.lbl_startap_model.Name = "lbl_startap_model";
             this.lbl_startap_model.Size = new System.Drawing.Size(46, 16);
             this.lbl_startap_model.TabIndex = 3;
@@ -719,7 +768,7 @@
             this.pnl_charts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
             this.pnl_charts.Controls.Add(this.button7);
             this.pnl_charts.Controls.Add(this.chart1);
-            this.pnl_charts.Location = new System.Drawing.Point(192, 49);
+            this.pnl_charts.Location = new System.Drawing.Point(194, 49);
             this.pnl_charts.Name = "pnl_charts";
             this.pnl_charts.Size = new System.Drawing.Size(805, 560);
             this.pnl_charts.TabIndex = 10;
@@ -747,83 +796,83 @@
             this.chart1.BorderlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
             this.chart1.BorderSkin.BackColor = System.Drawing.Color.Black;
             this.chart1.BorderSkin.PageColor = System.Drawing.Color.GreenYellow;
-            chartArea6.AxisX.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.Triangle;
-            chartArea6.AxisX.InterlacedColor = System.Drawing.Color.Gray;
-            chartArea6.AxisX.LineColor = System.Drawing.Color.DimGray;
-            chartArea6.AxisX.MajorGrid.IntervalOffsetType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Auto;
-            chartArea6.AxisX.MajorGrid.LineColor = System.Drawing.Color.DimGray;
-            chartArea6.AxisX.MajorTickMark.LineColor = System.Drawing.Color.DimGray;
-            chartArea6.AxisX.MinorGrid.LineColor = System.Drawing.Color.DimGray;
-            chartArea6.AxisX.MinorTickMark.LineColor = System.Drawing.Color.DimGray;
-            chartArea6.AxisX.TitleForeColor = System.Drawing.Color.DarkGray;
-            chartArea6.AxisX2.LineColor = System.Drawing.Color.DimGray;
-            chartArea6.AxisX2.MajorGrid.IntervalOffsetType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Auto;
-            chartArea6.AxisX2.MajorGrid.LineColor = System.Drawing.Color.DimGray;
-            chartArea6.AxisX2.MajorTickMark.LineColor = System.Drawing.Color.DimGray;
-            chartArea6.AxisX2.MinorGrid.LineColor = System.Drawing.Color.DimGray;
-            chartArea6.AxisX2.MinorTickMark.LineColor = System.Drawing.Color.DimGray;
-            chartArea6.AxisX2.TitleForeColor = System.Drawing.Color.DarkGray;
-            chartArea6.AxisY.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.Triangle;
-            chartArea6.AxisY.LineColor = System.Drawing.Color.DimGray;
-            chartArea6.AxisY.MajorGrid.IntervalOffsetType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Auto;
-            chartArea6.AxisY.MajorGrid.LineColor = System.Drawing.Color.DimGray;
-            chartArea6.AxisY.MajorTickMark.LineColor = System.Drawing.Color.DimGray;
-            chartArea6.AxisY.MinorGrid.LineColor = System.Drawing.Color.DimGray;
-            chartArea6.AxisY.MinorTickMark.LineColor = System.Drawing.Color.DimGray;
-            chartArea6.AxisY.TitleForeColor = System.Drawing.Color.DarkGray;
-            chartArea6.AxisY2.LineColor = System.Drawing.Color.DimGray;
-            chartArea6.AxisY2.MajorGrid.IntervalOffsetType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Auto;
-            chartArea6.AxisY2.MajorGrid.LineColor = System.Drawing.Color.DimGray;
-            chartArea6.AxisY2.MajorTickMark.LineColor = System.Drawing.Color.DimGray;
-            chartArea6.AxisY2.MinorGrid.LineColor = System.Drawing.Color.DimGray;
-            chartArea6.AxisY2.MinorTickMark.LineColor = System.Drawing.Color.DimGray;
-            chartArea6.AxisY2.TitleForeColor = System.Drawing.Color.DarkGray;
-            chartArea6.BackColor = System.Drawing.Color.Transparent;
-            chartArea6.BorderColor = System.Drawing.Color.SaddleBrown;
-            chartArea6.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea6);
+            chartArea2.AxisX.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.Triangle;
+            chartArea2.AxisX.InterlacedColor = System.Drawing.Color.Gray;
+            chartArea2.AxisX.LineColor = System.Drawing.Color.DimGray;
+            chartArea2.AxisX.MajorGrid.IntervalOffsetType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Auto;
+            chartArea2.AxisX.MajorGrid.LineColor = System.Drawing.Color.DimGray;
+            chartArea2.AxisX.MajorTickMark.LineColor = System.Drawing.Color.DimGray;
+            chartArea2.AxisX.MinorGrid.LineColor = System.Drawing.Color.DimGray;
+            chartArea2.AxisX.MinorTickMark.LineColor = System.Drawing.Color.DimGray;
+            chartArea2.AxisX.TitleForeColor = System.Drawing.Color.DarkGray;
+            chartArea2.AxisX2.LineColor = System.Drawing.Color.DimGray;
+            chartArea2.AxisX2.MajorGrid.IntervalOffsetType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Auto;
+            chartArea2.AxisX2.MajorGrid.LineColor = System.Drawing.Color.DimGray;
+            chartArea2.AxisX2.MajorTickMark.LineColor = System.Drawing.Color.DimGray;
+            chartArea2.AxisX2.MinorGrid.LineColor = System.Drawing.Color.DimGray;
+            chartArea2.AxisX2.MinorTickMark.LineColor = System.Drawing.Color.DimGray;
+            chartArea2.AxisX2.TitleForeColor = System.Drawing.Color.DarkGray;
+            chartArea2.AxisY.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.Triangle;
+            chartArea2.AxisY.LineColor = System.Drawing.Color.DimGray;
+            chartArea2.AxisY.MajorGrid.IntervalOffsetType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Auto;
+            chartArea2.AxisY.MajorGrid.LineColor = System.Drawing.Color.DimGray;
+            chartArea2.AxisY.MajorTickMark.LineColor = System.Drawing.Color.DimGray;
+            chartArea2.AxisY.MinorGrid.LineColor = System.Drawing.Color.DimGray;
+            chartArea2.AxisY.MinorTickMark.LineColor = System.Drawing.Color.DimGray;
+            chartArea2.AxisY.TitleForeColor = System.Drawing.Color.DarkGray;
+            chartArea2.AxisY2.LineColor = System.Drawing.Color.DimGray;
+            chartArea2.AxisY2.MajorGrid.IntervalOffsetType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Auto;
+            chartArea2.AxisY2.MajorGrid.LineColor = System.Drawing.Color.DimGray;
+            chartArea2.AxisY2.MajorTickMark.LineColor = System.Drawing.Color.DimGray;
+            chartArea2.AxisY2.MinorGrid.LineColor = System.Drawing.Color.DimGray;
+            chartArea2.AxisY2.MinorTickMark.LineColor = System.Drawing.Color.DimGray;
+            chartArea2.AxisY2.TitleForeColor = System.Drawing.Color.DarkGray;
+            chartArea2.BackColor = System.Drawing.Color.Transparent;
+            chartArea2.BorderColor = System.Drawing.Color.SaddleBrown;
+            chartArea2.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea2);
             this.chart1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.chart1.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
-            legend6.HeaderSeparatorColor = System.Drawing.Color.Maroon;
-            legend6.ItemColumnSeparatorColor = System.Drawing.Color.Maroon;
-            legend6.Name = "Legend1";
-            legend6.TitleForeColor = System.Drawing.Color.Maroon;
-            legend6.TitleSeparatorColor = System.Drawing.Color.Maroon;
-            this.chart1.Legends.Add(legend6);
+            legend2.HeaderSeparatorColor = System.Drawing.Color.Maroon;
+            legend2.ItemColumnSeparatorColor = System.Drawing.Color.Maroon;
+            legend2.Name = "Legend1";
+            legend2.TitleForeColor = System.Drawing.Color.Maroon;
+            legend2.TitleSeparatorColor = System.Drawing.Color.Maroon;
+            this.chart1.Legends.Add(legend2);
             this.chart1.Location = new System.Drawing.Point(26, 34);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
             this.chart1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            series8.BackHatchStyle = System.Windows.Forms.DataVisualization.Charting.ChartHatchStyle.BackwardDiagonal;
-            series8.BackImageTransparentColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            series8.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            series8.BorderColor = System.Drawing.Color.Transparent;
-            series8.BorderWidth = 7;
-            series8.ChartArea = "ChartArea1";
-            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series8.Color = System.Drawing.Color.DarkCyan;
-            series8.LabelBackColor = System.Drawing.Color.Transparent;
-            series8.LabelBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            series8.LabelForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            series8.Legend = "Legend1";
-            series8.MarkerBorderColor = System.Drawing.Color.Red;
-            series8.MarkerColor = System.Drawing.Color.Red;
-            series8.MarkerImageTransparentColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            series8.Name = "Day";
-            series8.ShadowColor = System.Drawing.Color.Red;
-            series9.BackHatchStyle = System.Windows.Forms.DataVisualization.Charting.ChartHatchStyle.BackwardDiagonal;
-            series9.BackImageTransparentColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            series9.BackSecondaryColor = System.Drawing.Color.Navy;
-            series9.BorderWidth = 7;
-            series9.ChartArea = "ChartArea1";
-            series9.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series9.Color = System.Drawing.Color.LightCoral;
-            series9.LabelBackColor = System.Drawing.Color.Black;
-            series9.Legend = "Legend1";
-            series9.Name = "Score";
-            series9.YValuesPerPoint = 3;
-            this.chart1.Series.Add(series8);
-            this.chart1.Series.Add(series9);
+            series2.BackHatchStyle = System.Windows.Forms.DataVisualization.Charting.ChartHatchStyle.BackwardDiagonal;
+            series2.BackImageTransparentColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            series2.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            series2.BorderColor = System.Drawing.Color.Transparent;
+            series2.BorderWidth = 7;
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series2.Color = System.Drawing.Color.DarkCyan;
+            series2.LabelBackColor = System.Drawing.Color.Transparent;
+            series2.LabelBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            series2.LabelForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            series2.Legend = "Legend1";
+            series2.MarkerBorderColor = System.Drawing.Color.Red;
+            series2.MarkerColor = System.Drawing.Color.Red;
+            series2.MarkerImageTransparentColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            series2.Name = "Day";
+            series2.ShadowColor = System.Drawing.Color.Red;
+            series3.BackHatchStyle = System.Windows.Forms.DataVisualization.Charting.ChartHatchStyle.BackwardDiagonal;
+            series3.BackImageTransparentColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            series3.BackSecondaryColor = System.Drawing.Color.Navy;
+            series3.BorderWidth = 7;
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series3.Color = System.Drawing.Color.LightCoral;
+            series3.LabelBackColor = System.Drawing.Color.Black;
+            series3.Legend = "Legend1";
+            series3.Name = "Score";
+            series3.YValuesPerPoint = 3;
+            this.chart1.Series.Add(series2);
+            this.chart1.Series.Add(series3);
             this.chart1.Size = new System.Drawing.Size(766, 485);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
@@ -852,8 +901,30 @@
             this.pnl_menu.Controls.Add(this.button4);
             this.pnl_menu.Location = new System.Drawing.Point(2, 51);
             this.pnl_menu.Name = "pnl_menu";
-            this.pnl_menu.Size = new System.Drawing.Size(186, 554);
+            this.pnl_menu.Size = new System.Drawing.Size(186, 560);
             this.pnl_menu.TabIndex = 9;
+            // 
+            // textBox2
+            // 
+            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox2.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.textBox2.Location = new System.Drawing.Point(18, 203);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(256, 138);
+            this.textBox2.TabIndex = 26;
+            this.textBox2.Text = "This graph shows the total investment in the company.";
+            // 
+            // ventureMarketDataSetBindingSource
+            // 
+            this.ventureMarketDataSetBindingSource.DataSource = this.venture_MarketDataSet;
+            this.ventureMarketDataSetBindingSource.Position = 0;
+            // 
+            // venture_MarketDataSet
+            // 
+            this.venture_MarketDataSet.DataSetName = "Venture_MarketDataSet";
+            this.venture_MarketDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // tableAdapterManager1
             // 
@@ -893,8 +964,6 @@
             this.panel2.PerformLayout();
             this.pnl_contact_inf.ResumeLayout(false);
             this.pnl_contact_inf.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ventureMarketDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.venture_MarketDataSet)).EndInit();
             this.pnl_page_view.ResumeLayout(false);
             this.pnl_page_view.PerformLayout();
             this.panel6.ResumeLayout(false);
@@ -909,6 +978,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.pnl_menu.ResumeLayout(false);
             this.pnl_menu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ventureMarketDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.venture_MarketDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -972,5 +1043,10 @@
         private System.Windows.Forms.Label lbl_ok;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lbl_Competitors;
+        private System.Windows.Forms.Label lbl_Foundation_Date;
+        private System.Windows.Forms.Label lbl_Website;
+        private System.Windows.Forms.Label lbl_Twiter;
+        private System.Windows.Forms.TextBox textBox2;
     }
 }

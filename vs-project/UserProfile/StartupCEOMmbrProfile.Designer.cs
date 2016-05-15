@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StartupCEOMmbrProfile));
             this.pnl_Profile = new System.Windows.Forms.Panel();
             this.pnl_News = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.pnl_About = new System.Windows.Forms.Panel();
             this.rchTxtBx_About = new System.Windows.Forms.RichTextBox();
@@ -81,9 +80,8 @@
             this.btn_CreateApplication = new System.Windows.Forms.Button();
             this.txtBx_RoundOfFunding = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.btn_EditProfile = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.pnl_Profile.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.pnl_About.SuspendLayout();
             this.pnl_Visitors.SuspendLayout();
             this.pnl_Chart.SuspendLayout();
@@ -99,6 +97,7 @@
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnl_Profile
@@ -124,15 +123,6 @@
             this.pnl_News.Name = "pnl_News";
             this.pnl_News.Size = new System.Drawing.Size(536, 300);
             this.pnl_News.TabIndex = 13;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
-            this.panel4.Controls.Add(this.label8);
-            this.panel4.Location = new System.Drawing.Point(380, 178);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(536, 50);
-            this.panel4.TabIndex = 14;
             // 
             // label8
             // 
@@ -245,7 +235,7 @@
             this.label2.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.label2.Location = new System.Drawing.Point(18, 13);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(126, 21);
+            this.label2.Size = new System.Drawing.Size(125, 21);
             this.label2.TabIndex = 0;
             this.label2.Text = "Logging history";
             // 
@@ -271,7 +261,7 @@
             this.lbl_Twitter.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.lbl_Twitter.Location = new System.Drawing.Point(232, 73);
             this.lbl_Twitter.Name = "lbl_Twitter";
-            this.lbl_Twitter.Size = new System.Drawing.Size(61, 20);
+            this.lbl_Twitter.Size = new System.Drawing.Size(62, 20);
             this.lbl_Twitter.TabIndex = 6;
             this.lbl_Twitter.Text = "Twitter: ";
             // 
@@ -454,7 +444,6 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
-            this.panel2.Controls.Add(this.btn_EditProfile);
             this.panel2.Controls.Add(this.btn_Logout);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
@@ -596,7 +585,7 @@
             this.label5.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.label5.Location = new System.Drawing.Point(51, 86);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(52, 21);
+            this.label5.Size = new System.Drawing.Size(54, 21);
             this.label5.TabIndex = 3;
             this.label5.Text = "Team:";
             // 
@@ -746,30 +735,20 @@
             this.label6.TabIndex = 2;
             this.label6.Text = "Applications";
             // 
-            // btn_EditProfile
+            // panel4
             // 
-            this.btn_EditProfile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_EditProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(48)))));
-            this.btn_EditProfile.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_EditProfile.FlatAppearance.BorderSize = 0;
-            this.btn_EditProfile.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(48)))));
-            this.btn_EditProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_EditProfile.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btn_EditProfile.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_EditProfile.Location = new System.Drawing.Point(892, 0);
-            this.btn_EditProfile.Name = "btn_EditProfile";
-            this.btn_EditProfile.Size = new System.Drawing.Size(87, 25);
-            this.btn_EditProfile.TabIndex = 1;
-            this.btn_EditProfile.Text = "Edit profile";
-            this.btn_EditProfile.UseVisualStyleBackColor = false;
-            this.btn_EditProfile.Click += new System.EventHandler(this.btn_EditProfile_Click);
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
+            this.panel4.Controls.Add(this.label8);
+            this.panel4.Location = new System.Drawing.Point(380, 178);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(536, 50);
+            this.panel4.TabIndex = 14;
             // 
             // StartupCEOMmbrProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkCyan;
-            this.BackgroundImage = global::code.Properties.Resources.background3;
             this.ClientSize = new System.Drawing.Size(1084, 562);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -781,11 +760,8 @@
             this.Name = "StartupCEOMmbrProfile";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Startup CEO Profile - Venture Market";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.StartupCEOMmbrProfile_FormClosing);
             this.pnl_Profile.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.pnl_About.ResumeLayout(false);
             this.pnl_About.PerformLayout();
             this.pnl_Visitors.ResumeLayout(false);
@@ -810,6 +786,8 @@
             this.groupBox1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -868,6 +846,5 @@
         private System.Windows.Forms.Panel pnl_News;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Button btn_EditProfile;
     }
 }

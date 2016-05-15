@@ -45,7 +45,7 @@ namespace code
             {
                 logger.Info("This username already exists[{0}]", txt_Username.Text);
                 MessageBox.Show("This username already exists [" + txt_Username.Text + "].\n"
-                     + "Please choose another username.");
+                                    + "Please choose another username.");
             }
             else if(mail.Count() != 0)
             {

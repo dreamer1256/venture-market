@@ -49,60 +49,72 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label1.Location = new System.Drawing.Point(257, 87);
+            this.label1.Location = new System.Drawing.Point(280, 153);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(27, 13);
+            this.label1.Size = new System.Drawing.Size(34, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Title";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label2.Location = new System.Drawing.Point(257, 111);
+            this.label2.Location = new System.Drawing.Point(280, 177);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 13);
+            this.label2.Size = new System.Drawing.Size(76, 16);
             this.label2.TabIndex = 1;
             this.label2.Text = "Description";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label3.Location = new System.Drawing.Point(257, 167);
+            this.label3.Location = new System.Drawing.Point(280, 233);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(84, 13);
+            this.label3.Size = new System.Drawing.Size(108, 16);
             this.label3.TabIndex = 2;
             this.label3.Text = "Business_Model";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label4.Location = new System.Drawing.Point(257, 194);
+            this.label4.Location = new System.Drawing.Point(280, 260);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(99, 13);
+            this.label4.Size = new System.Drawing.Size(124, 16);
             this.label4.TabIndex = 3;
             this.label4.Text = "Marketing_Strategy";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label5.Location = new System.Drawing.Point(257, 221);
+            this.label5.Location = new System.Drawing.Point(280, 287);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(46, 13);
+            this.label5.Size = new System.Drawing.Size(58, 16);
             this.label5.TabIndex = 4;
             this.label5.Text = "Website";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label6.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label6.Location = new System.Drawing.Point(257, 247);
+            this.label6.Location = new System.Drawing.Point(280, 313);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(39, 13);
+            this.label6.Size = new System.Drawing.Size(47, 16);
             this.label6.TabIndex = 5;
             this.label6.Text = "Twitter";
             // 
@@ -111,77 +123,79 @@
             this.cbox_bis_model.FormattingEnabled = true;
             this.cbox_bis_model.Items.AddRange(new object[] {
             "Free in"});
-            this.cbox_bis_model.Location = new System.Drawing.Point(372, 164);
+            this.cbox_bis_model.Location = new System.Drawing.Point(416, 230);
             this.cbox_bis_model.Name = "cbox_bis_model";
-            this.cbox_bis_model.Size = new System.Drawing.Size(121, 21);
+            this.cbox_bis_model.Size = new System.Drawing.Size(137, 21);
             this.cbox_bis_model.TabIndex = 6;
             // 
             // tb_title
             // 
-            this.tb_title.Location = new System.Drawing.Point(372, 84);
+            this.tb_title.Location = new System.Drawing.Point(416, 150);
             this.tb_title.Name = "tb_title";
-            this.tb_title.Size = new System.Drawing.Size(100, 20);
+            this.tb_title.Size = new System.Drawing.Size(137, 20);
             this.tb_title.TabIndex = 7;
             // 
             // cbox_mark_strategy
             // 
             this.cbox_mark_strategy.FormattingEnabled = true;
-            this.cbox_mark_strategy.Location = new System.Drawing.Point(372, 191);
+            this.cbox_mark_strategy.Location = new System.Drawing.Point(416, 257);
             this.cbox_mark_strategy.Name = "cbox_mark_strategy";
-            this.cbox_mark_strategy.Size = new System.Drawing.Size(121, 21);
+            this.cbox_mark_strategy.Size = new System.Drawing.Size(137, 21);
             this.cbox_mark_strategy.TabIndex = 8;
             // 
             // tb_description
             // 
-            this.tb_description.Location = new System.Drawing.Point(372, 110);
+            this.tb_description.Location = new System.Drawing.Point(416, 176);
             this.tb_description.Name = "tb_description";
-            this.tb_description.Size = new System.Drawing.Size(100, 20);
+            this.tb_description.Size = new System.Drawing.Size(137, 20);
             this.tb_description.TabIndex = 9;
             // 
             // tb_website
             // 
-            this.tb_website.Location = new System.Drawing.Point(372, 218);
+            this.tb_website.Location = new System.Drawing.Point(416, 284);
             this.tb_website.Name = "tb_website";
-            this.tb_website.Size = new System.Drawing.Size(100, 20);
+            this.tb_website.Size = new System.Drawing.Size(137, 20);
             this.tb_website.TabIndex = 10;
             // 
             // tb_twitter
             // 
-            this.tb_twitter.Location = new System.Drawing.Point(372, 247);
+            this.tb_twitter.Location = new System.Drawing.Point(416, 313);
             this.tb_twitter.Name = "tb_twitter";
-            this.tb_twitter.Size = new System.Drawing.Size(100, 20);
+            this.tb_twitter.Size = new System.Drawing.Size(137, 20);
             this.tb_twitter.TabIndex = 11;
             // 
             // btn_Cancel
             // 
+            this.btn_Cancel.BackColor = System.Drawing.Color.Transparent;
             this.btn_Cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btn_Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Cancel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btn_Cancel.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_Cancel.Location = new System.Drawing.Point(400, 337);
+            this.btn_Cancel.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.btn_Cancel.Location = new System.Drawing.Point(425, 386);
             this.btn_Cancel.Name = "btn_Cancel";
             this.btn_Cancel.Size = new System.Drawing.Size(150, 36);
             this.btn_Cancel.TabIndex = 13;
             this.btn_Cancel.Text = "Cancel";
-            this.btn_Cancel.UseVisualStyleBackColor = true;
+            this.btn_Cancel.UseVisualStyleBackColor = false;
             this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);
             // 
             // btn_Accept
             // 
+            this.btn_Accept.BackColor = System.Drawing.Color.Transparent;
             this.btn_Accept.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Accept.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btn_Accept.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_Accept.Location = new System.Drawing.Point(239, 337);
+            this.btn_Accept.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.btn_Accept.Location = new System.Drawing.Point(264, 386);
             this.btn_Accept.Name = "btn_Accept";
             this.btn_Accept.Size = new System.Drawing.Size(150, 36);
             this.btn_Accept.TabIndex = 12;
             this.btn_Accept.Text = "Add";
-            this.btn_Accept.UseVisualStyleBackColor = true;
+            this.btn_Accept.UseVisualStyleBackColor = false;
             this.btn_Accept.Click += new System.EventHandler(this.btn_Accept_Click);
             // 
             // dateTimePicker
             // 
-            this.dateTimePicker.Location = new System.Drawing.Point(372, 135);
+            this.dateTimePicker.Location = new System.Drawing.Point(416, 201);
             this.dateTimePicker.Name = "dateTimePicker";
             this.dateTimePicker.Size = new System.Drawing.Size(137, 20);
             this.dateTimePicker.TabIndex = 14;
@@ -189,10 +203,12 @@
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label7.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label7.Location = new System.Drawing.Point(257, 141);
+            this.label7.Location = new System.Drawing.Point(280, 207);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(86, 13);
+            this.label7.Size = new System.Drawing.Size(107, 16);
             this.label7.TabIndex = 15;
             this.label7.Text = "Foundation Date";
             // 
@@ -202,8 +218,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
+            this.BackgroundImage = global::code.Properties.Resources.LOGIN;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.CancelButton = this.btn_Cancel;
-            this.ClientSize = new System.Drawing.Size(830, 473);
+            this.ClientSize = new System.Drawing.Size(834, 472);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.dateTimePicker);
             this.Controls.Add(this.btn_Cancel);
@@ -221,6 +239,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "AddStartup";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddStartup";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -48,7 +48,7 @@ namespace code.AdminPanels
                 incubID = Int32.Parse(listView1.FocusedItem.SubItems[0].Text);
                 var deleteIncubDetails = vmDB.Business_Incubators.Single(i => i.ID == incubID);
                 vmDB.Business_Incubators.DeleteOnSubmit(deleteIncubDetails);
-                
+
                 try
                 {
                         vmDB.SubmitChanges();

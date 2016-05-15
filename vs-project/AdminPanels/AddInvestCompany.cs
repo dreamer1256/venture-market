@@ -35,7 +35,7 @@ namespace code.AdminPanels
                 if (txt_addinvest_adress.Text == "" || txt_addinvest_comName.Text == "" || txt_addinvest_decription.Text == "" || txt_addinvest_website.Text == "")
                 { MessageBox.Show("Some fields are epmty!\n", "Warning", MessageBoxButtons.OK); }
                 else if(isunique == false)
-                { MessageBox.Show("Such company exists.\n", "Warning", MessageBoxButtons.OK);}
+                { MessageBox.Show("Such company exists.\n", "Warning", MessageBoxButtons.OK); }
                 else
                 {
                     Investment_Company addcomp = new Investment_Company
@@ -66,7 +66,7 @@ namespace code.AdminPanels
                     {
                         MessageBox.Show(ex.StackTrace, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         logger.Error("An error occured while adding Company to DB: " + ex.Message);
-                    }
+                }
                 }
         }
 

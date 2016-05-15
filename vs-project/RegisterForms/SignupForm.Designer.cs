@@ -42,9 +42,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnTop_Login = new System.Windows.Forms.Button();
-            this.btnTop_Signup = new System.Windows.Forms.Button();
             this.pnl_Sign_Role = new System.Windows.Forms.Panel();
             this.pnl_RoleChooser = new System.Windows.Forms.Panel();
             this.rdBttn_InvManager = new System.Windows.Forms.RadioButton();
@@ -54,10 +51,13 @@
             this.btn_NextToSpec = new System.Windows.Forms.Button();
             this.btn_BackToSign1 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
+            this.btnTop_Signup = new System.Windows.Forms.Button();
+            this.btnTop_Login = new System.Windows.Forms.Button();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.pnl_Sign1.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
             this.pnl_Sign_Role.SuspendLayout();
             this.pnl_RoleChooser.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnl_Sign1
@@ -86,9 +86,10 @@
             // 
             this.btn_NextToURoles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_NextToURoles.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btn_NextToURoles.Location = new System.Drawing.Point(213, 256);
+            this.btn_NextToURoles.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.btn_NextToURoles.Location = new System.Drawing.Point(164, 243);
             this.btn_NextToURoles.Name = "btn_NextToURoles";
-            this.btn_NextToURoles.Size = new System.Drawing.Size(100, 38);
+            this.btn_NextToURoles.Size = new System.Drawing.Size(186, 40);
             this.btn_NextToURoles.TabIndex = 14;
             this.btn_NextToURoles.Text = "Next";
             this.btn_NextToURoles.UseVisualStyleBackColor = true;
@@ -198,43 +199,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Username";
             // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.btnTop_Login, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnTop_Signup, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(815, 30);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(164, 33);
-            this.tableLayoutPanel1.TabIndex = 2;
-            // 
-            // btnTop_Login
-            // 
-            this.btnTop_Login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTop_Login.Location = new System.Drawing.Point(3, 3);
-            this.btnTop_Login.Name = "btnTop_Login";
-            this.btnTop_Login.Size = new System.Drawing.Size(76, 27);
-            this.btnTop_Login.TabIndex = 0;
-            this.btnTop_Login.Text = "Login";
-            this.btnTop_Login.UseVisualStyleBackColor = true;
-            this.btnTop_Login.Click += new System.EventHandler(this.btnTop_Login_Click);
-            // 
-            // btnTop_Signup
-            // 
-            this.btnTop_Signup.Enabled = false;
-            this.btnTop_Signup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTop_Signup.Location = new System.Drawing.Point(85, 3);
-            this.btnTop_Signup.Name = "btnTop_Signup";
-            this.btnTop_Signup.Size = new System.Drawing.Size(75, 27);
-            this.btnTop_Signup.TabIndex = 1;
-            this.btnTop_Signup.Text = "Sign Up";
-            this.btnTop_Signup.UseVisualStyleBackColor = true;
-            // 
             // pnl_Sign_Role
             // 
             this.pnl_Sign_Role.BackColor = System.Drawing.Color.Transparent;
@@ -335,11 +299,53 @@
             this.label4.TabIndex = 4;
             this.label4.Text = "Please select  your role";
             // 
+            // btnTop_Signup
+            // 
+            this.btnTop_Signup.BackColor = System.Drawing.Color.Transparent;
+            this.btnTop_Signup.Enabled = false;
+            this.btnTop_Signup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTop_Signup.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.btnTop_Signup.Location = new System.Drawing.Point(85, 3);
+            this.btnTop_Signup.Name = "btnTop_Signup";
+            this.btnTop_Signup.Size = new System.Drawing.Size(75, 27);
+            this.btnTop_Signup.TabIndex = 1;
+            this.btnTop_Signup.Text = "Sign Up";
+            this.btnTop_Signup.UseVisualStyleBackColor = false;
+            // 
+            // btnTop_Login
+            // 
+            this.btnTop_Login.BackColor = System.Drawing.Color.Transparent;
+            this.btnTop_Login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTop_Login.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.btnTop_Login.Location = new System.Drawing.Point(3, 3);
+            this.btnTop_Login.Name = "btnTop_Login";
+            this.btnTop_Login.Size = new System.Drawing.Size(76, 27);
+            this.btnTop_Login.TabIndex = 0;
+            this.btnTop_Login.Text = "Login";
+            this.btnTop_Login.UseVisualStyleBackColor = false;
+            this.btnTop_Login.Click += new System.EventHandler(this.btnTop_Login_Click);
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.btnTop_Login, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnTop_Signup, 1, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(815, 30);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(164, 33);
+            this.tableLayoutPanel1.TabIndex = 2;
+            // 
             // SignInForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(30)))));
             this.BackgroundImage = global::code.Properties.Resources.LOGIN;
             this.ClientSize = new System.Drawing.Size(999, 602);
             this.Controls.Add(this.tableLayoutPanel1);
@@ -349,13 +355,14 @@
             this.Name = "SignInForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sign In - Venture Market";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.pnl_Sign1.ResumeLayout(false);
             this.pnl_Sign1.PerformLayout();
-            this.tableLayoutPanel1.ResumeLayout(false);
             this.pnl_Sign_Role.ResumeLayout(false);
             this.pnl_Sign_Role.PerformLayout();
             this.pnl_RoleChooser.ResumeLayout(false);
             this.pnl_RoleChooser.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -376,9 +383,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Button btnTop_Login;
-        private System.Windows.Forms.Button btnTop_Signup;
         private System.Windows.Forms.Panel pnl_Sign_Role;
         private System.Windows.Forms.RadioButton rdBttn_CompanyMemeber;
         private System.Windows.Forms.RadioButton rdBttn_Startuper;
@@ -388,5 +392,8 @@
         private System.Windows.Forms.Button btn_NextToSpec;
         private System.Windows.Forms.Button btn_BackToSign1;
         private System.Windows.Forms.Panel pnl_RoleChooser;
+        private System.Windows.Forms.Button btnTop_Signup;
+        private System.Windows.Forms.Button btnTop_Login;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
     }
 }

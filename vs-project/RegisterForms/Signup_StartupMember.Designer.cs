@@ -102,10 +102,11 @@
             this.btn_Finish.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
             this.btn_Finish.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btn_Finish.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Finish.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_Finish.Location = new System.Drawing.Point(209, 257);
+            this.btn_Finish.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.btn_Finish.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.btn_Finish.Location = new System.Drawing.Point(153, 248);
             this.btn_Finish.Name = "btn_Finish";
-            this.btn_Finish.Size = new System.Drawing.Size(75, 38);
+            this.btn_Finish.Size = new System.Drawing.Size(186, 40);
             this.btn_Finish.TabIndex = 9;
             this.btn_Finish.Text = "Finish";
             this.btn_Finish.UseVisualStyleBackColor = true;
@@ -115,7 +116,7 @@
             // 
             this.rchTxtBx_About.Location = new System.Drawing.Point(114, 177);
             this.rchTxtBx_About.Name = "rchTxtBx_About";
-            this.rchTxtBx_About.Size = new System.Drawing.Size(350, 63);
+            this.rchTxtBx_About.Size = new System.Drawing.Size(350, 51);
             this.rchTxtBx_About.TabIndex = 8;
             this.rchTxtBx_About.Text = "";
             // 
@@ -153,7 +154,7 @@
             this.chckBx_IsCEO.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chckBx_IsCEO.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.chckBx_IsCEO.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.chckBx_IsCEO.Location = new System.Drawing.Point(418, 28);
+            this.chckBx_IsCEO.Location = new System.Drawing.Point(410, 32);
             this.chckBx_IsCEO.Name = "chckBx_IsCEO";
             this.chckBx_IsCEO.Size = new System.Drawing.Size(48, 21);
             this.chckBx_IsCEO.TabIndex = 5;
@@ -234,7 +235,7 @@
             this.AcceptButton = this.btn_Finish;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(30)))));
             this.BackgroundImage = global::code.Properties.Resources.LOGIN;
             this.ClientSize = new System.Drawing.Size(999, 602);
             this.Controls.Add(this.panel1);
@@ -243,6 +244,7 @@
             this.Name = "Signup_StartupMember";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Startup Member Sign Up - Venture Market";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Signup_StartupMember_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

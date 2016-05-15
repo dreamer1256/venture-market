@@ -59,7 +59,7 @@ namespace code.AdminPanels
                     {
                         MessageBox.Show(ex.StackTrace, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         logger.Error("An error occured while adding incubator to DB: " + ex.Message);
-                    }
+                }
                 }
         }
     }
