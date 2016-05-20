@@ -140,8 +140,12 @@ namespace code.UserProfile
         //відкриття форми редагування інформації про користувача
         private void button2_Click_1(object sender, EventArgs e)
         {
-            user_profile_edit open = new user_profile_edit(user);
-            open.Show();
+            int ifwasopened = code.user_profile_edit.getstate();
+            if (ifwasopened != 1)
+            {
+                user_profile_edit open = new user_profile_edit(user);
+                open.Show();
+            }
         }
 
         //вивід вільних заявок

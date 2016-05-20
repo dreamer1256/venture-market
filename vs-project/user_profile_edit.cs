@@ -15,9 +15,12 @@ namespace code
     {
         User user;
         DataClasses1DataContext vmDB = new DataClasses1DataContext();
+        bool isvalidemailcheck;
+        public static int wasopened;
         public user_profile_edit(User user)
         {
             InitializeComponent();
+            wasopened = 1;
             //you should close all panels on "User profile information"
             pnl_angl.Hide();
             pnl_combr_edit.Hide();
@@ -100,10 +103,6 @@ namespace code
         {
             int userID = user.ID;
             User changePRFL = vmDB.Users.Single(r => r.ID == userID);
-            if (txt_new_email.Text != "")
-            {
-                changePRFL.Email = txt_new_email.Text;
-            }
             if (txt_fname_ch.Text != "")
             {
                 changePRFL.FName = txt_fname_ch.Text;
@@ -123,6 +122,13 @@ namespace code
                     else { MessageBox.Show("New and repeated passwords don't match!"); }
                 }
                 else { MessageBox.Show("Old password is incorrect!"); }
+            }
+            if (txt_new_email.Text != "" && code.ValidateEmail.IsValidEmail(txt_new_email.Text) == true)
+            {
+                changePRFL.Email = txt_new_email.Text;
+            } else if (txt_new_email.Text == "" || code.ValidateEmail.IsValidEmail(txt_new_email.Text) == false)
+            {
+                MessageBox.Show("Email is not valid!");
             }
             vmDB.SubmitChanges();
         }
@@ -215,6 +221,30 @@ namespace code
                 var invmngr = vmDB.Investment_Managers.Single(u => u.UserID == user.ID);
                 Investment_Company ch_company = vmDB.Investment_Companies.Single(c => c.Title == cmbx_change_comp.Text);
                 invmngr.Investment_CompanyID = ch_company.ID;
+            }
+        }
+
+        private void user_profile_edit_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            wasopened = 0;
+        }
+        public static int getstate()
+        {
+            return wasopened;
+        }
+
+        private void txt_new_email_Leave(object sender, EventArgs e)
+        {
+            isvalidemailcheck = code.ValidateEmail.IsValidEmail(txt_new_email.Text);
+            if (isvalidemailcheck == true)
+            {
+                lbl_email_isv.ForeColor = System.Drawing.Color.Green;
+                lbl_email_isv.Text = "email is valid";
+            }
+            else if (isvalidemailcheck == false)
+            {
+                lbl_email_isv.ForeColor = System.Drawing.Color.Red;
+                lbl_email_isv.Text = "email is not valid";
             }
         }
     }

@@ -266,8 +266,12 @@ namespace code.UserProfile
 
         private void button6_Click(object sender, EventArgs e)
         {
-            user_profile_edit edit = new user_profile_edit(user);
-            edit.Show();
+            int ifwasopened = code.user_profile_edit.getstate();
+            if (ifwasopened != 1)
+            {
+                user_profile_edit edit = new user_profile_edit(user);
+                edit.Show();
+            }
         }
 
 

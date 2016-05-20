@@ -16,7 +16,7 @@ namespace code
         private DataClasses1DataContext vmDB;
         private User user;
         private static Logger logger = LogManager.GetCurrentClassLogger();
-        
+        bool isvalidemail;
         private RadioButton radioBtn = new RadioButton();
         public SignInForm()
         {
@@ -59,6 +59,10 @@ namespace code
             else if (txt_Password.Text != txt_PasswordConfirm.Text)
             {
                 MessageBox.Show("The repeat password you typed does not match!");
+            }
+            else if (code.ValidateEmail.IsValidEmail(txt_Email.Text) == false)
+            {
+                MessageBox.Show("Email is not valid!");
             }
             else
             {
@@ -127,6 +131,20 @@ namespace code
             }
             else
                 MessageBox.Show("Error!");
+        }
+
+        private void txt_Email_Leave(object sender, EventArgs e)
+        {
+            isvalidemail = code.ValidateEmail.IsValidEmail(txt_Email.Text);
+            if (isvalidemail == true)
+            {
+                lbl_isvalid_email.ForeColor = System.Drawing.Color.Green;
+                lbl_isvalid_email.Text = "email is valid";
+            } else if (isvalidemail == false)
+            {
+                lbl_isvalid_email.ForeColor = System.Drawing.Color.Red;
+                lbl_isvalid_email.Text = "email is not valid";
+            }
         }
     }
 }
