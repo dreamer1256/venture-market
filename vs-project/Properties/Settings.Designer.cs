@@ -26,7 +26,7 @@ namespace code.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=ERGOPROXY;Initial Catalog=Venture_Market;Integrated Security=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=OZZY-ПК;Initial Catalog=Venture_Market;Integrated Security=True")]
         public string Venture_MarketConnectionString {
             get {
                 return ((string)(this["Venture_MarketConnectionString"]));
