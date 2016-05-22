@@ -30,27 +30,34 @@ namespace code.RegisterForms
 
         private void btn_Finish_Click(object sender, EventArgs e)
         {
-            vmDB = new DataClasses1DataContext();
-            Investment_Manager im = new Investment_Manager();
-            User_Role ur = new User_Role();
-            ur.UserId = user.ID;
-            ur.RoleID = (int)URoles.Role.InvestManager;
-            im.UserID = user.ID;
-            Investment_Company company = vmDB.Investment_Companies.Single(c => c.Title == cmbBx_Company.Text);
-            im.Investment_CompanyID = company.ID;
-            vmDB.Investment_Managers.InsertOnSubmit(im);
-            vmDB.User_Roles.InsertOnSubmit(ur);
-            try
+            if (cmbBx_Company.Text != "")
             {
-                vmDB.SubmitChanges();
-                this.Hide();
-                UserProfile.InvManagerMmbrProfile icmp = new UserProfile.InvManagerMmbrProfile(user);
-                icmp.Show();
+                vmDB = new DataClasses1DataContext();
+                Investment_Manager im = new Investment_Manager();
+                User_Role ur = new User_Role();
+                ur.UserId = user.ID;
+                ur.RoleID = (int)URoles.Role.InvestManager;
+                im.UserID = user.ID;
+                Investment_Company company = vmDB.Investment_Companies.Single(c => c.Title == cmbBx_Company.Text);
+                im.Investment_CompanyID = company.ID;
+                vmDB.Investment_Managers.InsertOnSubmit(im);
+                vmDB.User_Roles.InsertOnSubmit(ur);
+                try
+                {
+                    vmDB.SubmitChanges();
+                    this.Hide();
+                    UserProfile.InvManagerMmbrProfile icmp = new UserProfile.InvManagerMmbrProfile(user);
+                    icmp.Show();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                    logger.Error(ex.Message);
+                }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("Error: " + ex.Message);
-                logger.Error(ex.Message);
+                label1.ForeColor = Color.Red;
             }
         }
     }

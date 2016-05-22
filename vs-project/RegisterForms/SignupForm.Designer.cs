@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.pnl_Sign1 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lbl_isvalid_email = new System.Windows.Forms.Label();
             this.btn_NextToURoles = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -54,7 +56,6 @@
             this.btnTop_Signup = new System.Windows.Forms.Button();
             this.btnTop_Login = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.lbl_isvalid_email = new System.Windows.Forms.Label();
             this.pnl_Sign1.SuspendLayout();
             this.pnl_Sign_Role.SuspendLayout();
             this.pnl_RoleChooser.SuspendLayout();
@@ -64,6 +65,7 @@
             // pnl_Sign1
             // 
             this.pnl_Sign1.BackColor = System.Drawing.Color.Transparent;
+            this.pnl_Sign1.Controls.Add(this.label5);
             this.pnl_Sign1.Controls.Add(this.lbl_isvalid_email);
             this.pnl_Sign1.Controls.Add(this.btn_NextToURoles);
             this.pnl_Sign1.Controls.Add(this.label8);
@@ -83,6 +85,25 @@
             this.pnl_Sign1.Name = "pnl_Sign1";
             this.pnl_Sign1.Size = new System.Drawing.Size(520, 313);
             this.pnl_Sign1.TabIndex = 1;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.ForeColor = System.Drawing.Color.DarkGray;
+            this.label5.Location = new System.Drawing.Point(33, 20);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(123, 15);
+            this.label5.TabIndex = 16;
+            this.label5.Text = "*All fields are required";
+            // 
+            // lbl_isvalid_email
+            // 
+            this.lbl_isvalid_email.AutoSize = true;
+            this.lbl_isvalid_email.Location = new System.Drawing.Point(353, 80);
+            this.lbl_isvalid_email.Name = "lbl_isvalid_email";
+            this.lbl_isvalid_email.Size = new System.Drawing.Size(0, 17);
+            this.lbl_isvalid_email.TabIndex = 15;
             // 
             // btn_NextToURoles
             // 
@@ -261,7 +282,6 @@
             // rdBttn_CompanyMemeber
             // 
             this.rdBttn_CompanyMemeber.AutoSize = true;
-            this.rdBttn_CompanyMemeber.Enabled = false;
             this.rdBttn_CompanyMemeber.Location = new System.Drawing.Point(20, 91);
             this.rdBttn_CompanyMemeber.Name = "rdBttn_CompanyMemeber";
             this.rdBttn_CompanyMemeber.Size = new System.Drawing.Size(110, 17);
@@ -344,14 +364,6 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(164, 33);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
-            // lbl_isvalid_email
-            // 
-            this.lbl_isvalid_email.AutoSize = true;
-            this.lbl_isvalid_email.Location = new System.Drawing.Point(353, 80);
-            this.lbl_isvalid_email.Name = "lbl_isvalid_email";
-            this.lbl_isvalid_email.Size = new System.Drawing.Size(0, 17);
-            this.lbl_isvalid_email.TabIndex = 15;
-            // 
             // SignInForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -407,5 +419,6 @@
         private System.Windows.Forms.Button btnTop_Login;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label lbl_isvalid_email;
+        private System.Windows.Forms.Label label5;
     }
 }

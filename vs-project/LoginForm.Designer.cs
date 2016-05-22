@@ -65,7 +65,7 @@
             this.btnTop_Signup.Location = new System.Drawing.Point(379, 19);
             this.btnTop_Signup.Name = "btnTop_Signup";
             this.btnTop_Signup.Size = new System.Drawing.Size(87, 27);
-            this.btnTop_Signup.TabIndex = 1;
+            this.btnTop_Signup.TabIndex = 5;
             this.btnTop_Signup.Text = "Sign Up";
             this.btnTop_Signup.UseVisualStyleBackColor = false;
             this.btnTop_Signup.Click += new System.EventHandler(this.btnTop_Signup_Click);
@@ -82,7 +82,7 @@
             this.lbl_FrgtPsswrd.Location = new System.Drawing.Point(208, 179);
             this.lbl_FrgtPsswrd.Name = "lbl_FrgtPsswrd";
             this.lbl_FrgtPsswrd.Size = new System.Drawing.Size(230, 17);
-            this.lbl_FrgtPsswrd.TabIndex = 5;
+            this.lbl_FrgtPsswrd.TabIndex = 4;
             this.lbl_FrgtPsswrd.TabStop = true;
             this.lbl_FrgtPsswrd.Text = "Forgot your username or password?";
             this.lbl_FrgtPsswrd.VisitedLinkColor = System.Drawing.Color.White;
@@ -98,7 +98,7 @@
             this.btn_Login.Location = new System.Drawing.Point(135, 241);
             this.btn_Login.Name = "btn_Login";
             this.btn_Login.Size = new System.Drawing.Size(229, 38);
-            this.btn_Login.TabIndex = 4;
+            this.btn_Login.TabIndex = 3;
             this.btn_Login.Text = "Login";
             this.btn_Login.UseVisualStyleBackColor = true;
             this.btn_Login.Click += new System.EventHandler(this.btn_Login_Click);
@@ -111,7 +111,7 @@
             this.txt_Password.Location = new System.Drawing.Point(187, 135);
             this.txt_Password.Name = "txt_Password";
             this.txt_Password.Size = new System.Drawing.Size(251, 25);
-            this.txt_Password.TabIndex = 3;
+            this.txt_Password.TabIndex = 2;
             this.txt_Password.UseSystemPasswordChar = true;
             // 
             // txt_Username
@@ -121,7 +121,7 @@
             this.txt_Username.Location = new System.Drawing.Point(187, 89);
             this.txt_Username.Name = "txt_Username";
             this.txt_Username.Size = new System.Drawing.Size(251, 25);
-            this.txt_Username.TabIndex = 2;
+            this.txt_Username.TabIndex = 1;
             // 
             // lbl_Password
             // 

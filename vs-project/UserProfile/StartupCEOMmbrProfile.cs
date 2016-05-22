@@ -49,8 +49,8 @@ namespace code.UserProfile
             }
 
             int logID = vmDB.UserLoginHistories.Where(h => h.UserID == user.ID)
-                .OrderByDescending(h => h.LoggedDate).Select(h => h.ID).First();           
-            var userLogHist = vmDB.UserLoginHistories.Single(h => h.ID == logID);
+                .OrderByDescending(h => h.LoggedDate).Select(h => h.ID).FirstOrDefault();           
+            var userLogHist = vmDB.UserLoginHistories.SingleOrDefault(h => h.ID == logID);
 
             lbl_Name.Text = string.Format("{0} {1}", user.FName, user.LName);
             lbl_City.Text = string.Format("Location: {0}", startupCEO.Address);
@@ -60,6 +60,7 @@ namespace code.UserProfile
             lbl_Twitter.Text = string.Format("Twitter:  {0}", startupCEO.Twitter);
             rchTxtBx_About.Text = startupCEO.About;
             lbl_joinedDate.Text = "Joined on   " + user.RegDate.ToShortDateString();
+           
             lbl_lastLogin.Text = "Last seen   " + user.LoggedDate.ToString() +
                  "\nIP:  " + userLogHist.IP + "\nOS:  " + userLogHist.OS + "\nDomain:  " + userLogHist.Domain;
             

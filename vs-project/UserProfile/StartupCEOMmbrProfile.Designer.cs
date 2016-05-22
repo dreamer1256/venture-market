@@ -59,6 +59,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbl_Name = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btn_EditProfile = new System.Windows.Forms.Button();
             this.btn_Logout = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
@@ -81,7 +82,6 @@
             this.btn_CreateApplication = new System.Windows.Forms.Button();
             this.txtBx_RoundOfFunding = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.btn_EditProfile = new System.Windows.Forms.Button();
             this.pnl_Profile.SuspendLayout();
             this.panel4.SuspendLayout();
             this.pnl_About.SuspendLayout();
@@ -128,6 +128,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
+            this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panel4.Controls.Add(this.label8);
             this.panel4.Location = new System.Drawing.Point(380, 178);
             this.panel4.Name = "panel4";
@@ -148,6 +149,7 @@
             // pnl_About
             // 
             this.pnl_About.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
+            this.pnl_About.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pnl_About.Controls.Add(this.rchTxtBx_About);
             this.pnl_About.Controls.Add(this.label3);
             this.pnl_About.Location = new System.Drawing.Point(0, 178);
@@ -187,6 +189,7 @@
             // pnl_Visitors
             // 
             this.pnl_Visitors.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
+            this.pnl_Visitors.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pnl_Visitors.Controls.Add(this.lbl_lastLogin);
             this.pnl_Visitors.Controls.Add(this.lbl_joinedDate);
             this.pnl_Visitors.Location = new System.Drawing.Point(380, 1);
@@ -220,6 +223,7 @@
             // pnl_Chart
             // 
             this.pnl_Chart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
+            this.pnl_Chart.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pnl_Chart.Controls.Add(this.lbl_LogHist);
             this.pnl_Chart.Controls.Add(this.label2);
             this.pnl_Chart.ForeColor = System.Drawing.SystemColors.ControlDark;
@@ -252,6 +256,7 @@
             // pnl_GeneralInfo
             // 
             this.pnl_GeneralInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
+            this.pnl_GeneralInfo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pnl_GeneralInfo.Controls.Add(this.lbl_Twitter);
             this.pnl_GeneralInfo.Controls.Add(this.lbl_Skype);
             this.pnl_GeneralInfo.Controls.Add(this.lbl_Phone);
@@ -356,15 +361,17 @@
             // btn_LinkToApplications
             // 
             this.btn_LinkToApplications.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
+            this.btn_LinkToApplications.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btn_LinkToApplications.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_LinkToApplications.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_LinkToApplications.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btn_LinkToApplications.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_LinkToApplications.Location = new System.Drawing.Point(1, 165);
+            this.btn_LinkToApplications.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_LinkToApplications.Location = new System.Drawing.Point(0, 184);
             this.btn_LinkToApplications.Name = "btn_LinkToApplications";
-            this.btn_LinkToApplications.Size = new System.Drawing.Size(158, 49);
+            this.btn_LinkToApplications.Size = new System.Drawing.Size(158, 67);
             this.btn_LinkToApplications.TabIndex = 4;
-            this.btn_LinkToApplications.Text = "Application";
+            this.btn_LinkToApplications.Text = "Application for finance";
             this.btn_LinkToApplications.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_LinkToApplications.UseVisualStyleBackColor = false;
             this.btn_LinkToApplications.Click += new System.EventHandler(this.btn_LinkToApplications_Click);
@@ -372,10 +379,12 @@
             // btn_LinkToMyStartup
             // 
             this.btn_LinkToMyStartup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
+            this.btn_LinkToMyStartup.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btn_LinkToMyStartup.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_LinkToMyStartup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_LinkToMyStartup.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btn_LinkToMyStartup.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_LinkToMyStartup.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_LinkToMyStartup.Location = new System.Drawing.Point(0, 55);
             this.btn_LinkToMyStartup.Name = "btn_LinkToMyStartup";
             this.btn_LinkToMyStartup.Size = new System.Drawing.Size(159, 49);
@@ -388,13 +397,15 @@
             // btn_LinkToIncubators
             // 
             this.btn_LinkToIncubators.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
+            this.btn_LinkToIncubators.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btn_LinkToIncubators.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_LinkToIncubators.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_LinkToIncubators.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btn_LinkToIncubators.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btn_LinkToIncubators.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_LinkToIncubators.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_LinkToIncubators.Location = new System.Drawing.Point(0, 110);
             this.btn_LinkToIncubators.Name = "btn_LinkToIncubators";
-            this.btn_LinkToIncubators.Size = new System.Drawing.Size(159, 49);
+            this.btn_LinkToIncubators.Size = new System.Drawing.Size(159, 68);
             this.btn_LinkToIncubators.TabIndex = 2;
             this.btn_LinkToIncubators.Text = "Business Incubators";
             this.btn_LinkToIncubators.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -404,11 +415,12 @@
             // btn_LinkToProfile
             // 
             this.btn_LinkToProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
+            this.btn_LinkToProfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btn_LinkToProfile.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_LinkToProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_LinkToProfile.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btn_LinkToProfile.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_LinkToProfile.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_LinkToProfile.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_LinkToProfile.Location = new System.Drawing.Point(1, 0);
             this.btn_LinkToProfile.Name = "btn_LinkToProfile";
             this.btn_LinkToProfile.Size = new System.Drawing.Size(158, 49);
@@ -421,6 +433,7 @@
             // pnl_Logo
             // 
             this.pnl_Logo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
+            this.pnl_Logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pnl_Logo.Controls.Add(this.pictureBox1);
             this.pnl_Logo.Controls.Add(this.lbl_Name);
             this.pnl_Logo.Location = new System.Drawing.Point(1, 0);
@@ -454,6 +467,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panel2.Controls.Add(this.btn_EditProfile);
             this.panel2.Controls.Add(this.btn_Logout);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
@@ -461,6 +475,24 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1084, 28);
             this.panel2.TabIndex = 8;
+            // 
+            // btn_EditProfile
+            // 
+            this.btn_EditProfile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_EditProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(48)))));
+            this.btn_EditProfile.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_EditProfile.FlatAppearance.BorderSize = 0;
+            this.btn_EditProfile.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(48)))));
+            this.btn_EditProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_EditProfile.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btn_EditProfile.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_EditProfile.Location = new System.Drawing.Point(904, 0);
+            this.btn_EditProfile.Name = "btn_EditProfile";
+            this.btn_EditProfile.Size = new System.Drawing.Size(87, 25);
+            this.btn_EditProfile.TabIndex = 1;
+            this.btn_EditProfile.Text = "Edit profile";
+            this.btn_EditProfile.UseVisualStyleBackColor = false;
+            this.btn_EditProfile.Click += new System.EventHandler(this.btn_EditProfile_Click);
             // 
             // btn_Logout
             // 
@@ -745,24 +777,6 @@
             this.label6.Size = new System.Drawing.Size(131, 30);
             this.label6.TabIndex = 2;
             this.label6.Text = "Applications";
-            // 
-            // btn_EditProfile
-            // 
-            this.btn_EditProfile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_EditProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(48)))));
-            this.btn_EditProfile.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_EditProfile.FlatAppearance.BorderSize = 0;
-            this.btn_EditProfile.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(48)))));
-            this.btn_EditProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_EditProfile.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btn_EditProfile.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_EditProfile.Location = new System.Drawing.Point(904, 0);
-            this.btn_EditProfile.Name = "btn_EditProfile";
-            this.btn_EditProfile.Size = new System.Drawing.Size(87, 25);
-            this.btn_EditProfile.TabIndex = 1;
-            this.btn_EditProfile.Text = "Edit profile";
-            this.btn_EditProfile.UseVisualStyleBackColor = false;
-            this.btn_EditProfile.Click += new System.EventHandler(this.btn_EditProfile_Click);
             // 
             // StartupCEOMmbrProfile
             // 

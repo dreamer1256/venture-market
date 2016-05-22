@@ -28,29 +28,36 @@ namespace code.RegisterForms
 
         private void btn_sighnup_ang_finish_Click(object sender, EventArgs e)
         {
-            CompanyMember cm = new CompanyMember();
-            User_Role ur = new User_Role();
-            ur.RoleID = (int)URoles.Role.InvCompanyMember;
-            ur.UserId = user.ID;
-            cm.UserID = user.ID;
-            Investment_Company company = vmDB.Investment_Companies.Single(c => c.Title == cmbx_member_add_comp.Text);
-            cm.CompID = company.ID;
-            cm.Phone = txt_member_phone.Text;
-            cm.Twitter = txt_member_twitter.Text;
-            cm.Skype = txt_member_skype.Text;
-            vmDB.CompanyMember.InsertOnSubmit(cm);
-            vmDB.User_Roles.InsertOnSubmit(ur);
-            try
+            if (cmbx_member_add_comp.Text != "")
             {
-                vmDB.SubmitChanges();
-                this.Hide();
-                UserProfile.InvCompanyMmbrProfile icmb = new UserProfile.InvCompanyMmbrProfile(user);
-                icmb.Show();
+                CompanyMember cm = new CompanyMember();
+                User_Role ur = new User_Role();
+                ur.RoleID = (int)URoles.Role.InvCompanyMember;
+                ur.UserId = user.ID;
+                cm.UserID = user.ID;
+                Investment_Company company = vmDB.Investment_Companies.Single(c => c.Title == cmbx_member_add_comp.Text);
+                cm.CompID = company.ID;
+                cm.Phone = txt_member_phone.Text;
+                cm.Twitter = txt_member_twitter.Text;
+                cm.Skype = txt_member_skype.Text;
+                vmDB.CompanyMember.InsertOnSubmit(cm);
+                vmDB.User_Roles.InsertOnSubmit(ur);
+                try
+                {
+                    vmDB.SubmitChanges();
+                    this.Hide();
+                    UserProfile.InvCompanyMmbrProfile icmb = new UserProfile.InvCompanyMmbrProfile(user);
+                    icmb.Show();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                    logger.Error(ex.Message);
+                }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("Error: " + ex.Message);
-                logger.Error(ex.Message);
+                label1.ForeColor = Color.Red;
             }
 
         }

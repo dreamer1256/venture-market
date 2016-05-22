@@ -38,8 +38,16 @@ namespace code.RegisterForms
             ai.Skype = txt_Skype.Text;
             ai.Twitter = txt_Twitter.Text;
             ai.Investment_Experience = rchTxtBx_Expirience.Text;
-            ai.Max_amount = Convert.ToDecimal(txt_MaxAmount.Text);
-            ai.Min_Amount = Convert.ToDecimal(txt_MinAmount.Text);
+            try
+            {
+                ai.Max_amount = Convert.ToDecimal(txt_MaxAmount.Text);
+                ai.Min_Amount = Convert.ToDecimal(txt_MinAmount.Text);
+            }
+            catch
+            {
+                ai.Max_amount = 0;
+                ai.Min_Amount = 0;
+            }
             vmDB.AngelInvestors.InsertOnSubmit(ai);
             vmDB.User_Roles.InsertOnSubmit(ur);
             try

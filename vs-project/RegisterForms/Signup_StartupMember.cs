@@ -23,6 +23,7 @@ namespace code.RegisterForms
             InitializeComponent();
             AcceptButton = btn_Finish;
             this.user = user;
+            label2.Visible = false;
             
             // Отримання наз стартапів, які вже є у системі
             vmDB = new DataClasses1DataContext();
@@ -35,61 +36,64 @@ namespace code.RegisterForms
        
         private void button1_Click(object sender, EventArgs e)
         {
-            vmDB = new DataClasses1DataContext();
-            Startup_Member sm = new Startup_Member();
-            User_Role ur = new User_Role();
-            ur.UserId = user.ID;
-            sm.UserID = user.ID;
-            Startup startup = vmDB.Startups.Single(u => u.Title == cmbBx_Startups.Text);
+            if (cmbBx_Startups.Text != "")
+            {
+                label2.Visible = false;
+                vmDB = new DataClasses1DataContext();
+                Startup_Member sm = new Startup_Member();
+                User_Role ur = new User_Role();
+                ur.UserId = user.ID;
+                sm.UserID = user.ID;
+                Startup startup = vmDB.Startups.Single(u => u.Title == cmbBx_Startups.Text);
 
-            isCEO = chckBx_IsCEO.Checked;
-           
-            if(isCEO && startup.ceoID == null)
-            {
-                sm.Is_CEO = true;
-                ur.RoleID = (int)URoles.Role.StartupCEO;  // роль керівника стартапу
-                startup.ceoID = user.ID;
-            }
-            else
-            {
-                sm.Is_CEO = false;
-                ur.RoleID = (int)URoles.Role.StartupMember; // роль учасника стартапу
-            }
+                isCEO = chckBx_IsCEO.Checked;
 
-            // Присвоїти учаснику ID стартапу залежно від вибору в полі comboBox
-            sm.StartupID = startup.ID;
-            
-            sm.Address = txt_City.Text;
-            sm.Phone = txt_Phone.Text;
-            sm.Skype = txt_Skype.Text;
-            sm.Twitter = txt_Twitter.Text;
-            sm.About = rchTxtBx_About.Text;
-            vmDB.Startup_Members.InsertOnSubmit(sm);
-            vmDB.User_Roles.InsertOnSubmit(ur);
-            if (isCEO && startup.ceoID != null)
-            {
-                MessageBox.Show("You can\'t be the CEO of the choosen startup.\nThere is a startup CEO!");
-            }
-            else
-            try
-            {
-                vmDB.SubmitChanges();
-                    UserProfile.StartupCEOMmbrProfile scpm = new UserProfile.StartupCEOMmbrProfile(user);
-                    scpm.Show();
+                if (isCEO && startup.ceoID == null)
+                {
+                    sm.Is_CEO = true;
+                    ur.RoleID = (int)URoles.Role.StartupCEO;  // роль керівника стартапу
+                    startup.ceoID = user.ID;
+                }
+                else
+                {
+                    sm.Is_CEO = false;
+                    ur.RoleID = (int)URoles.Role.StartupMember; // роль учасника стартапу
+                }
+
+                // Присвоїти учаснику ID стартапу залежно від вибору в полі comboBox
+                sm.StartupID = startup.ID;
+
+                sm.Address = txt_City.Text;
+                sm.Phone = txt_Phone.Text;
+                sm.Skype = txt_Skype.Text;
+                sm.Twitter = txt_Twitter.Text;
+                sm.About = rchTxtBx_About.Text;
+                vmDB.Startup_Members.InsertOnSubmit(sm);
+                vmDB.User_Roles.InsertOnSubmit(ur);
+                if (isCEO && startup.ceoID != null)
+                {
+                    MessageBox.Show("You can\'t be the CEO of the choosen startup.\nThere is a startup CEO!");
+                }
+                else
+                    try
+                    {
+                        vmDB.SubmitChanges();
+
+                    }
+                    catch (Exception ex)
+                    {
+                        logger.Error(ex.Message);
+                        MessageBox.Show(ex.Message);
+                    }
+                UserProfile.StartupCEOMmbrProfile scpm = new UserProfile.StartupCEOMmbrProfile(user);
+                scpm.Show();
                 this.Hide();
             }
-            catch(Exception ex)
+            else
             {
-                logger.Error(ex.Message);
-                MessageBox.Show(ex.Message);
+                label2.Visible = true;
+                label1.ForeColor = Color.Red;
             }
-        }
-
-        private void Signup_StartupMember_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'venture_MarketDataSet.Users' table. You can move, or remove it, as needed.
-            this.usersTableAdapter.Fill(this.venture_MarketDataSet.Users);
-
         }
     }
 }

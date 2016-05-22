@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using NLog;
+using System.Net;
 
 namespace code
 {
@@ -74,14 +75,36 @@ namespace code
                 user.LName = txt_LName.Text;
                 user.RegDate = DateTime.Now;
                 user.LoggedDate = DateTime.Now;
+                
                 vmDB.Users.InsertOnSubmit(user);
+                try
+                {
+                    vmDB.SubmitChanges();
+                }
+                catch(Exception ex)
+                {
+                    logger.Error(ex.Message);
+                    MessageBox.Show(ex.Message);
+                }
+
+                var newUser = vmDB.Users.Single(u => u.Username.Equals(txt_Username.Text));
+                UserLoginHistory uLogHist = new UserLoginHistory
+                {
+                    UserID = newUser.ID,
+                    OS = (System.Environment.OSVersion.Platform + " " + System.Environment.OSVersion.Version).ToString(),
+                    IP = (Dns.Resolve(Dns.GetHostName()).AddressList[0]).ToString(),
+                    Domain = System.Environment.UserDomainName.ToString(),
+                    LoggedDate = DateTime.Now
+                };
+
+                vmDB.UserLoginHistories.InsertOnSubmit(uLogHist);
                 try
                 {
                     vmDB.SubmitChanges();
                     pnl_Sign_Role.Show();
                     pnl_Sign1.Hide();
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     logger.Error(ex.Message);
                     MessageBox.Show(ex.Message);

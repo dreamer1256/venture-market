@@ -48,6 +48,7 @@
             this.venture_MarketDataSet = new code.Venture_MarketDataSet();
             this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.usersTableAdapter = new code.Venture_MarketDataSetTableAdapters.UsersTableAdapter();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.venture_MarketDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
@@ -58,13 +59,14 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(17, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(92, 17);
+            this.label1.Size = new System.Drawing.Size(98, 17);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Select Startup";
+            this.label1.Text = "*Select Startup";
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.cmbBx_Startups);
             this.panel1.Controls.Add(this.btn_Finish);
             this.panel1.Controls.Add(this.rchTxtBx_About);
@@ -156,7 +158,7 @@
             this.chckBx_IsCEO.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.chckBx_IsCEO.Location = new System.Drawing.Point(410, 32);
             this.chckBx_IsCEO.Name = "chckBx_IsCEO";
-            this.chckBx_IsCEO.Size = new System.Drawing.Size(48, 21);
+            this.chckBx_IsCEO.Size = new System.Drawing.Size(47, 21);
             this.chckBx_IsCEO.TabIndex = 5;
             this.chckBx_IsCEO.Text = "Yes";
             this.chckBx_IsCEO.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -185,7 +187,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(268, 131);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(50, 17);
+            this.label6.Size = new System.Drawing.Size(49, 17);
             this.label6.TabIndex = 6;
             this.label6.Text = "Twitter";
             // 
@@ -230,6 +232,17 @@
             // 
             this.usersTableAdapter.ClearBeforeFill = true;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.ForeColor = System.Drawing.Color.Red;
+            this.label2.Location = new System.Drawing.Point(17, 4);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(172, 13);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "*Please complete required fields";
+            // 
             // Signup_StartupMember
             // 
             this.AcceptButton = this.btn_Finish;
@@ -245,7 +258,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Startup Member Sign Up - Venture Market";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.Signup_StartupMember_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.venture_MarketDataSet)).EndInit();
@@ -275,5 +287,6 @@
         private Venture_MarketDataSet venture_MarketDataSet;
         private System.Windows.Forms.BindingSource usersBindingSource;
         private Venture_MarketDataSetTableAdapters.UsersTableAdapter usersTableAdapter;
+        private System.Windows.Forms.Label label2;
     }
 }
