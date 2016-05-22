@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StartupCEOMmbrProfile));
             this.pnl_Profile = new System.Windows.Forms.Panel();
             this.pnl_News = new System.Windows.Forms.Panel();
@@ -384,7 +383,7 @@
             this.btn_LinkToApplications.Name = "btn_LinkToApplications";
             this.btn_LinkToApplications.Size = new System.Drawing.Size(180, 40);
             this.btn_LinkToApplications.TabIndex = 4;
-            this.btn_LinkToApplications.Text = "Application";
+            this.btn_LinkToApplications.Text = "Applications for finances";
             this.btn_LinkToApplications.UseVisualStyleBackColor = false;
             this.btn_LinkToApplications.Click += new System.EventHandler(this.btn_LinkToApplications_Click);
             // 
@@ -653,7 +652,7 @@
             this.label5.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.label5.Location = new System.Drawing.Point(51, 86);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(54, 21);
+            this.label5.Size = new System.Drawing.Size(52, 21);
             this.label5.TabIndex = 3;
             this.label5.Text = "Team:";
             // 
@@ -801,9 +800,9 @@
             this.label6.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.label6.Location = new System.Drawing.Point(50, 45);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(131, 30);
+            this.label6.Size = new System.Drawing.Size(248, 30);
             this.label6.TabIndex = 2;
-            this.label6.Text = "Applications";
+            this.label6.Text = "Applications for finances";
             // 
             // StartupCEOMmbrProfile
             // 
@@ -815,10 +814,10 @@
             this.ClientSize = new System.Drawing.Size(1084, 588);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnl_Applications);
             this.Controls.Add(this.pnl_Profile);
             this.Controls.Add(this.pnl_MyStartup);
             this.Controls.Add(this.pnl_Incubators);
-            this.Controls.Add(this.pnl_Applications);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "StartupCEOMmbrProfile";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -854,7 +853,7 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.ResumeLayout(false);
-            
+
         }
 
         #endregion

@@ -183,6 +183,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Venture_MarketDataSet.xsd</DependentUpon>
     </Compile>
+    <None Include="Resources\lineLong3.png" />
+    <None Include="Resources\lineLong2.png" />
+    <None Include="Resources\lineLong1.png" />
+    <None Include="Resources\lineLong.png" />
     <None Include="Resources\img_NewsCompany.png" />
     <None Include="Resources\img_NewsIncubator.png" />
     <None Include="Resources\money-icon.png" />
@@ -236,7 +240,7 @@
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
