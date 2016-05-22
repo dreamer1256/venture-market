@@ -29,19 +29,20 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series11 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series12 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.btn_logout = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -73,6 +74,7 @@
             this.State = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Application_round = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.pnl_startup = new System.Windows.Forms.Panel();
             this.lbl_Competitors = new System.Windows.Forms.Label();
             this.lbl_Foundation_Date = new System.Windows.Forms.Label();
@@ -92,9 +94,7 @@
             this.pnl_charts = new System.Windows.Forms.Panel();
             this.button7 = new System.Windows.Forms.Button();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.label1 = new System.Windows.Forms.Label();
             this.pnl_menu = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.ventureMarketDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.venture_MarketDataSet = new code.Venture_MarketDataSet();
             this.tableAdapterManager1 = new code.Venture_MarketDataSetTableAdapters.TableAdapterManager();
@@ -204,6 +204,20 @@
             this.panel1.Size = new System.Drawing.Size(296, 364);
             this.panel1.TabIndex = 7;
             // 
+            // textBox2
+            // 
+            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox2.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.textBox2.Location = new System.Drawing.Point(18, 203);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(256, 138);
+            this.textBox2.TabIndex = 26;
+            this.textBox2.Text = "This graph shows the total investment in the company. Different colors of the sam" +
+    "e value means that several startups with investments is same.";
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -218,49 +232,49 @@
             // chart2
             // 
             this.chart2.BackColor = System.Drawing.Color.Transparent;
-            chartArea1.AxisX.InterlacedColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            chartArea1.AxisX.LineColor = System.Drawing.Color.Silver;
-            chartArea1.AxisX.TitleForeColor = System.Drawing.Color.Silver;
-            chartArea1.AxisX2.InterlacedColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            chartArea1.AxisX2.LineColor = System.Drawing.Color.Silver;
-            chartArea1.AxisX2.TitleForeColor = System.Drawing.Color.Silver;
-            chartArea1.AxisY.InterlacedColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            chartArea1.AxisY.LineColor = System.Drawing.Color.Silver;
-            chartArea1.AxisY.TitleForeColor = System.Drawing.Color.Silver;
-            chartArea1.AxisY2.InterlacedColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            chartArea1.AxisY2.LineColor = System.Drawing.Color.Silver;
-            chartArea1.AxisY2.TitleForeColor = System.Drawing.Color.Silver;
-            chartArea1.BackColor = System.Drawing.Color.Transparent;
-            chartArea1.BackImageTransparentColor = System.Drawing.Color.Transparent;
-            chartArea1.BackSecondaryColor = System.Drawing.Color.Transparent;
-            chartArea1.BorderColor = System.Drawing.Color.Transparent;
-            chartArea1.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea1);
-            legend1.BackColor = System.Drawing.Color.Transparent;
-            legend1.BackImageTransparentColor = System.Drawing.Color.Transparent;
-            legend1.BackSecondaryColor = System.Drawing.Color.Transparent;
-            legend1.BorderColor = System.Drawing.Color.Transparent;
-            legend1.ForeColor = System.Drawing.Color.Silver;
-            legend1.HeaderSeparatorColor = System.Drawing.Color.White;
-            legend1.InterlacedRowsColor = System.Drawing.Color.Transparent;
-            legend1.ItemColumnSeparatorColor = System.Drawing.Color.Maroon;
-            legend1.Name = "Legend1";
-            legend1.TitleBackColor = System.Drawing.Color.Transparent;
-            this.chart2.Legends.Add(legend1);
+            chartArea7.AxisX.InterlacedColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            chartArea7.AxisX.LineColor = System.Drawing.Color.Silver;
+            chartArea7.AxisX.TitleForeColor = System.Drawing.Color.Silver;
+            chartArea7.AxisX2.InterlacedColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            chartArea7.AxisX2.LineColor = System.Drawing.Color.Silver;
+            chartArea7.AxisX2.TitleForeColor = System.Drawing.Color.Silver;
+            chartArea7.AxisY.InterlacedColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            chartArea7.AxisY.LineColor = System.Drawing.Color.Silver;
+            chartArea7.AxisY.TitleForeColor = System.Drawing.Color.Silver;
+            chartArea7.AxisY2.InterlacedColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            chartArea7.AxisY2.LineColor = System.Drawing.Color.Silver;
+            chartArea7.AxisY2.TitleForeColor = System.Drawing.Color.Silver;
+            chartArea7.BackColor = System.Drawing.Color.Transparent;
+            chartArea7.BackImageTransparentColor = System.Drawing.Color.Transparent;
+            chartArea7.BackSecondaryColor = System.Drawing.Color.Transparent;
+            chartArea7.BorderColor = System.Drawing.Color.Transparent;
+            chartArea7.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea7);
+            legend7.BackColor = System.Drawing.Color.Transparent;
+            legend7.BackImageTransparentColor = System.Drawing.Color.Transparent;
+            legend7.BackSecondaryColor = System.Drawing.Color.Transparent;
+            legend7.BorderColor = System.Drawing.Color.Transparent;
+            legend7.ForeColor = System.Drawing.Color.Silver;
+            legend7.HeaderSeparatorColor = System.Drawing.Color.White;
+            legend7.InterlacedRowsColor = System.Drawing.Color.Transparent;
+            legend7.ItemColumnSeparatorColor = System.Drawing.Color.Maroon;
+            legend7.Name = "Legend1";
+            legend7.TitleBackColor = System.Drawing.Color.Transparent;
+            this.chart2.Legends.Add(legend7);
             this.chart2.Location = new System.Drawing.Point(30, 31);
             this.chart2.Name = "chart2";
             this.chart2.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
-            series1.BackImageTransparentColor = System.Drawing.Color.Red;
-            series1.BackSecondaryColor = System.Drawing.Color.Maroon;
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series1.Color = System.Drawing.Color.White;
-            series1.LabelBackColor = System.Drawing.Color.Transparent;
-            series1.LabelBorderColor = System.Drawing.Color.Transparent;
-            series1.LabelForeColor = System.Drawing.Color.Transparent;
-            series1.Legend = "Legend1";
-            series1.Name = "Age";
-            this.chart2.Series.Add(series1);
+            series10.BackImageTransparentColor = System.Drawing.Color.Red;
+            series10.BackSecondaryColor = System.Drawing.Color.Maroon;
+            series10.ChartArea = "ChartArea1";
+            series10.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series10.Color = System.Drawing.Color.White;
+            series10.LabelBackColor = System.Drawing.Color.Transparent;
+            series10.LabelBorderColor = System.Drawing.Color.Transparent;
+            series10.LabelForeColor = System.Drawing.Color.Transparent;
+            series10.Legend = "Legend1";
+            series10.Name = "Age";
+            this.chart2.Series.Add(series10);
             this.chart2.Size = new System.Drawing.Size(227, 174);
             this.chart2.TabIndex = 24;
             this.chart2.Text = "chart2";
@@ -464,7 +478,7 @@
             this.pnl_aplication.Controls.Add(this.txt_box_search);
             this.pnl_aplication.Controls.Add(this.lbl_application);
             this.pnl_aplication.Controls.Add(this.listView2);
-            this.pnl_aplication.Location = new System.Drawing.Point(195, 49);
+            this.pnl_aplication.Location = new System.Drawing.Point(194, 51);
             this.pnl_aplication.Name = "pnl_aplication";
             this.pnl_aplication.Size = new System.Drawing.Size(805, 563);
             this.pnl_aplication.TabIndex = 9;
@@ -574,6 +588,17 @@
             this.panel3.Size = new System.Drawing.Size(1002, 40);
             this.panel3.TabIndex = 9;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.label1.Location = new System.Drawing.Point(12, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(108, 18);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Venture Market";
+            // 
             // pnl_startup
             // 
             this.pnl_startup.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -593,7 +618,7 @@
             this.pnl_startup.Controls.Add(this.lbl_startap_strategy);
             this.pnl_startup.Controls.Add(this.lbl_startap_model);
             this.pnl_startup.Controls.Add(this.lbl_startap_title);
-            this.pnl_startup.Location = new System.Drawing.Point(194, 49);
+            this.pnl_startup.Location = new System.Drawing.Point(194, 51);
             this.pnl_startup.Name = "pnl_startup";
             this.pnl_startup.Size = new System.Drawing.Size(805, 560);
             this.pnl_startup.TabIndex = 11;
@@ -614,7 +639,7 @@
             this.lbl_Foundation_Date.AutoSize = true;
             this.lbl_Foundation_Date.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lbl_Foundation_Date.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.lbl_Foundation_Date.Location = new System.Drawing.Point(617, 379);
+            this.lbl_Foundation_Date.Location = new System.Drawing.Point(402, 374);
             this.lbl_Foundation_Date.Name = "lbl_Foundation_Date";
             this.lbl_Foundation_Date.Size = new System.Drawing.Size(132, 16);
             this.lbl_Foundation_Date.TabIndex = 15;
@@ -768,7 +793,7 @@
             this.pnl_charts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
             this.pnl_charts.Controls.Add(this.button7);
             this.pnl_charts.Controls.Add(this.chart1);
-            this.pnl_charts.Location = new System.Drawing.Point(194, 49);
+            this.pnl_charts.Location = new System.Drawing.Point(194, 51);
             this.pnl_charts.Name = "pnl_charts";
             this.pnl_charts.Size = new System.Drawing.Size(805, 560);
             this.pnl_charts.TabIndex = 10;
@@ -796,98 +821,87 @@
             this.chart1.BorderlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
             this.chart1.BorderSkin.BackColor = System.Drawing.Color.Black;
             this.chart1.BorderSkin.PageColor = System.Drawing.Color.GreenYellow;
-            chartArea2.AxisX.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.Triangle;
-            chartArea2.AxisX.InterlacedColor = System.Drawing.Color.Gray;
-            chartArea2.AxisX.LineColor = System.Drawing.Color.DimGray;
-            chartArea2.AxisX.MajorGrid.IntervalOffsetType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Auto;
-            chartArea2.AxisX.MajorGrid.LineColor = System.Drawing.Color.DimGray;
-            chartArea2.AxisX.MajorTickMark.LineColor = System.Drawing.Color.DimGray;
-            chartArea2.AxisX.MinorGrid.LineColor = System.Drawing.Color.DimGray;
-            chartArea2.AxisX.MinorTickMark.LineColor = System.Drawing.Color.DimGray;
-            chartArea2.AxisX.TitleForeColor = System.Drawing.Color.DarkGray;
-            chartArea2.AxisX2.LineColor = System.Drawing.Color.DimGray;
-            chartArea2.AxisX2.MajorGrid.IntervalOffsetType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Auto;
-            chartArea2.AxisX2.MajorGrid.LineColor = System.Drawing.Color.DimGray;
-            chartArea2.AxisX2.MajorTickMark.LineColor = System.Drawing.Color.DimGray;
-            chartArea2.AxisX2.MinorGrid.LineColor = System.Drawing.Color.DimGray;
-            chartArea2.AxisX2.MinorTickMark.LineColor = System.Drawing.Color.DimGray;
-            chartArea2.AxisX2.TitleForeColor = System.Drawing.Color.DarkGray;
-            chartArea2.AxisY.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.Triangle;
-            chartArea2.AxisY.LineColor = System.Drawing.Color.DimGray;
-            chartArea2.AxisY.MajorGrid.IntervalOffsetType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Auto;
-            chartArea2.AxisY.MajorGrid.LineColor = System.Drawing.Color.DimGray;
-            chartArea2.AxisY.MajorTickMark.LineColor = System.Drawing.Color.DimGray;
-            chartArea2.AxisY.MinorGrid.LineColor = System.Drawing.Color.DimGray;
-            chartArea2.AxisY.MinorTickMark.LineColor = System.Drawing.Color.DimGray;
-            chartArea2.AxisY.TitleForeColor = System.Drawing.Color.DarkGray;
-            chartArea2.AxisY2.LineColor = System.Drawing.Color.DimGray;
-            chartArea2.AxisY2.MajorGrid.IntervalOffsetType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Auto;
-            chartArea2.AxisY2.MajorGrid.LineColor = System.Drawing.Color.DimGray;
-            chartArea2.AxisY2.MajorTickMark.LineColor = System.Drawing.Color.DimGray;
-            chartArea2.AxisY2.MinorGrid.LineColor = System.Drawing.Color.DimGray;
-            chartArea2.AxisY2.MinorTickMark.LineColor = System.Drawing.Color.DimGray;
-            chartArea2.AxisY2.TitleForeColor = System.Drawing.Color.DarkGray;
-            chartArea2.BackColor = System.Drawing.Color.Transparent;
-            chartArea2.BorderColor = System.Drawing.Color.SaddleBrown;
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
+            chartArea8.AxisX.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.Triangle;
+            chartArea8.AxisX.InterlacedColor = System.Drawing.Color.Gray;
+            chartArea8.AxisX.LineColor = System.Drawing.Color.DimGray;
+            chartArea8.AxisX.MajorGrid.IntervalOffsetType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Auto;
+            chartArea8.AxisX.MajorGrid.LineColor = System.Drawing.Color.DimGray;
+            chartArea8.AxisX.MajorTickMark.LineColor = System.Drawing.Color.DimGray;
+            chartArea8.AxisX.MinorGrid.LineColor = System.Drawing.Color.DimGray;
+            chartArea8.AxisX.MinorTickMark.LineColor = System.Drawing.Color.DimGray;
+            chartArea8.AxisX.TitleForeColor = System.Drawing.Color.DarkGray;
+            chartArea8.AxisX2.LineColor = System.Drawing.Color.DimGray;
+            chartArea8.AxisX2.MajorGrid.IntervalOffsetType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Auto;
+            chartArea8.AxisX2.MajorGrid.LineColor = System.Drawing.Color.DimGray;
+            chartArea8.AxisX2.MajorTickMark.LineColor = System.Drawing.Color.DimGray;
+            chartArea8.AxisX2.MinorGrid.LineColor = System.Drawing.Color.DimGray;
+            chartArea8.AxisX2.MinorTickMark.LineColor = System.Drawing.Color.DimGray;
+            chartArea8.AxisX2.TitleForeColor = System.Drawing.Color.DarkGray;
+            chartArea8.AxisY.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.Triangle;
+            chartArea8.AxisY.LineColor = System.Drawing.Color.DimGray;
+            chartArea8.AxisY.MajorGrid.IntervalOffsetType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Auto;
+            chartArea8.AxisY.MajorGrid.LineColor = System.Drawing.Color.DimGray;
+            chartArea8.AxisY.MajorTickMark.LineColor = System.Drawing.Color.DimGray;
+            chartArea8.AxisY.MinorGrid.LineColor = System.Drawing.Color.DimGray;
+            chartArea8.AxisY.MinorTickMark.LineColor = System.Drawing.Color.DimGray;
+            chartArea8.AxisY.TitleForeColor = System.Drawing.Color.DarkGray;
+            chartArea8.AxisY2.LineColor = System.Drawing.Color.DimGray;
+            chartArea8.AxisY2.MajorGrid.IntervalOffsetType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Auto;
+            chartArea8.AxisY2.MajorGrid.LineColor = System.Drawing.Color.DimGray;
+            chartArea8.AxisY2.MajorTickMark.LineColor = System.Drawing.Color.DimGray;
+            chartArea8.AxisY2.MinorGrid.LineColor = System.Drawing.Color.DimGray;
+            chartArea8.AxisY2.MinorTickMark.LineColor = System.Drawing.Color.DimGray;
+            chartArea8.AxisY2.TitleForeColor = System.Drawing.Color.DarkGray;
+            chartArea8.BackColor = System.Drawing.Color.Transparent;
+            chartArea8.BorderColor = System.Drawing.Color.SaddleBrown;
+            chartArea8.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea8);
             this.chart1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.chart1.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
-            legend2.HeaderSeparatorColor = System.Drawing.Color.Maroon;
-            legend2.ItemColumnSeparatorColor = System.Drawing.Color.Maroon;
-            legend2.Name = "Legend1";
-            legend2.TitleForeColor = System.Drawing.Color.Maroon;
-            legend2.TitleSeparatorColor = System.Drawing.Color.Maroon;
-            this.chart1.Legends.Add(legend2);
+            legend8.HeaderSeparatorColor = System.Drawing.Color.Maroon;
+            legend8.ItemColumnSeparatorColor = System.Drawing.Color.Maroon;
+            legend8.Name = "Legend1";
+            legend8.TitleForeColor = System.Drawing.Color.Maroon;
+            legend8.TitleSeparatorColor = System.Drawing.Color.Maroon;
+            this.chart1.Legends.Add(legend8);
             this.chart1.Location = new System.Drawing.Point(26, 34);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
             this.chart1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            series2.BackHatchStyle = System.Windows.Forms.DataVisualization.Charting.ChartHatchStyle.BackwardDiagonal;
-            series2.BackImageTransparentColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            series2.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            series2.BorderColor = System.Drawing.Color.Transparent;
-            series2.BorderWidth = 7;
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series2.Color = System.Drawing.Color.DarkCyan;
-            series2.LabelBackColor = System.Drawing.Color.Transparent;
-            series2.LabelBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            series2.LabelForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            series2.Legend = "Legend1";
-            series2.MarkerBorderColor = System.Drawing.Color.Red;
-            series2.MarkerColor = System.Drawing.Color.Red;
-            series2.MarkerImageTransparentColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            series2.Name = "Day";
-            series2.ShadowColor = System.Drawing.Color.Red;
-            series3.BackHatchStyle = System.Windows.Forms.DataVisualization.Charting.ChartHatchStyle.BackwardDiagonal;
-            series3.BackImageTransparentColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            series3.BackSecondaryColor = System.Drawing.Color.Navy;
-            series3.BorderWidth = 7;
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series3.Color = System.Drawing.Color.LightCoral;
-            series3.LabelBackColor = System.Drawing.Color.Black;
-            series3.Legend = "Legend1";
-            series3.Name = "Score";
-            series3.YValuesPerPoint = 3;
-            this.chart1.Series.Add(series2);
-            this.chart1.Series.Add(series3);
+            series11.BackHatchStyle = System.Windows.Forms.DataVisualization.Charting.ChartHatchStyle.BackwardDiagonal;
+            series11.BackImageTransparentColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            series11.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            series11.BorderColor = System.Drawing.Color.Transparent;
+            series11.BorderWidth = 7;
+            series11.ChartArea = "ChartArea1";
+            series11.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series11.Color = System.Drawing.Color.DarkCyan;
+            series11.LabelBackColor = System.Drawing.Color.Transparent;
+            series11.LabelBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            series11.LabelForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            series11.Legend = "Legend1";
+            series11.MarkerBorderColor = System.Drawing.Color.Red;
+            series11.MarkerColor = System.Drawing.Color.Red;
+            series11.MarkerImageTransparentColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            series11.Name = "Day";
+            series11.ShadowColor = System.Drawing.Color.Red;
+            series12.BackHatchStyle = System.Windows.Forms.DataVisualization.Charting.ChartHatchStyle.BackwardDiagonal;
+            series12.BackImageTransparentColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            series12.BackSecondaryColor = System.Drawing.Color.Navy;
+            series12.BorderWidth = 7;
+            series12.ChartArea = "ChartArea1";
+            series12.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series12.Color = System.Drawing.Color.LightCoral;
+            series12.LabelBackColor = System.Drawing.Color.Black;
+            series12.Legend = "Legend1";
+            series12.Name = "Score";
+            series12.YValuesPerPoint = 3;
+            this.chart1.Series.Add(series11);
+            this.chart1.Series.Add(series12);
             this.chart1.Size = new System.Drawing.Size(766, 485);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
             this.chart1.Click += new System.EventHandler(this.chart1_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.label1.Location = new System.Drawing.Point(12, 10);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(108, 18);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Venture Market";
             // 
             // pnl_menu
             // 
@@ -903,18 +917,6 @@
             this.pnl_menu.Name = "pnl_menu";
             this.pnl_menu.Size = new System.Drawing.Size(186, 560);
             this.pnl_menu.TabIndex = 9;
-            // 
-            // textBox2
-            // 
-            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox2.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.textBox2.Location = new System.Drawing.Point(18, 203);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(256, 138);
-            this.textBox2.TabIndex = 26;
-            this.textBox2.Text = "This graph shows the total investment in the company.";
             // 
             // ventureMarketDataSetBindingSource
             // 
