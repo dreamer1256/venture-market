@@ -30,6 +30,37 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPg_Detailed = new System.Windows.Forms.TabPage();
+            this.pnl_main = new System.Windows.Forms.Panel();
+            this.btm_Invest_Company = new System.Windows.Forms.Button();
+            this.btm_show_user = new System.Windows.Forms.Button();
+            this.btm_show_startup = new System.Windows.Forms.Button();
+            this.pnl_startup = new System.Windows.Forms.Panel();
+            this.listView2 = new System.Windows.Forms.ListView();
+            this.Startup = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Manager = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.State = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Application_round = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Marketing_Strategy = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Competitors = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Business_Model = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Total_Investment = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Foundation_Date = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.pnl_inv_company = new System.Windows.Forms.Panel();
+            this.listView3 = new System.Windows.Forms.ListView();
+            this.Title = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Description = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Website = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Found_Date = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Office_Address = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.CEO = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.pnl_User = new System.Windows.Forms.Panel();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.Username = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Email = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Password = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.RegDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.LoggedDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btm_Back = new System.Windows.Forms.Button();
             this.tabPg_Actions = new System.Windows.Forms.TabPage();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
@@ -47,49 +78,19 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btn_Logout = new System.Windows.Forms.Button();
-            this.listView2 = new System.Windows.Forms.ListView();
-            this.Startup = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Manager = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.State = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Application_round = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Foundation_Date = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Total_Investment = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Marketing_Strategy = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Competitors = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Business_Model = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.pnl_startup = new System.Windows.Forms.Panel();
-            this.btm_Back = new System.Windows.Forms.Button();
-            this.pnl_User = new System.Windows.Forms.Panel();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.Username = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Email = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Password = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.RegDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.LoggedDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.pnl_main = new System.Windows.Forms.Panel();
-            this.btm_show_startup = new System.Windows.Forms.Button();
-            this.btm_show_user = new System.Windows.Forms.Button();
-            this.btm_Invest_Company = new System.Windows.Forms.Button();
-            this.pnl_inv_company = new System.Windows.Forms.Panel();
-            this.listView3 = new System.Windows.Forms.ListView();
-            this.Title = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Description = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Website = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Found_Date = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Office_Address = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.CEO = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.label5 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPg_Detailed.SuspendLayout();
+            this.pnl_main.SuspendLayout();
+            this.pnl_startup.SuspendLayout();
+            this.pnl_inv_company.SuspendLayout();
+            this.pnl_User.SuspendLayout();
             this.tabPg_Actions.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
-            this.pnl_startup.SuspendLayout();
-            this.pnl_User.SuspendLayout();
-            this.pnl_main.SuspendLayout();
-            this.pnl_inv_company.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -122,6 +123,253 @@
             this.tabPg_Detailed.Size = new System.Drawing.Size(1036, 518);
             this.tabPg_Detailed.TabIndex = 0;
             this.tabPg_Detailed.Text = "Detailed Info";
+            // 
+            // pnl_main
+            // 
+            this.pnl_main.BackColor = System.Drawing.Color.Transparent;
+            this.pnl_main.Controls.Add(this.btm_Invest_Company);
+            this.pnl_main.Controls.Add(this.btm_show_user);
+            this.pnl_main.Controls.Add(this.btm_show_startup);
+            this.pnl_main.Location = new System.Drawing.Point(3, 17);
+            this.pnl_main.Name = "pnl_main";
+            this.pnl_main.Size = new System.Drawing.Size(1020, 447);
+            this.pnl_main.TabIndex = 8;
+            // 
+            // btm_Invest_Company
+            // 
+            this.btm_Invest_Company.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btm_Invest_Company.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btm_Invest_Company.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.btm_Invest_Company.Location = new System.Drawing.Point(54, 121);
+            this.btm_Invest_Company.Name = "btm_Invest_Company";
+            this.btm_Invest_Company.Size = new System.Drawing.Size(155, 25);
+            this.btm_Invest_Company.TabIndex = 8;
+            this.btm_Invest_Company.Text = "Show Invest Company";
+            this.btm_Invest_Company.UseVisualStyleBackColor = true;
+            this.btm_Invest_Company.Click += new System.EventHandler(this.btm_Invest_Company_Click);
+            // 
+            // btm_show_user
+            // 
+            this.btm_show_user.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btm_show_user.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btm_show_user.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.btm_show_user.Location = new System.Drawing.Point(54, 81);
+            this.btm_show_user.Name = "btm_show_user";
+            this.btm_show_user.Size = new System.Drawing.Size(155, 25);
+            this.btm_show_user.TabIndex = 7;
+            this.btm_show_user.Text = "Show User";
+            this.btm_show_user.UseVisualStyleBackColor = true;
+            this.btm_show_user.Click += new System.EventHandler(this.btm_show_user_Click);
+            // 
+            // btm_show_startup
+            // 
+            this.btm_show_startup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btm_show_startup.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btm_show_startup.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.btm_show_startup.Location = new System.Drawing.Point(54, 39);
+            this.btm_show_startup.Name = "btm_show_startup";
+            this.btm_show_startup.Size = new System.Drawing.Size(155, 25);
+            this.btm_show_startup.TabIndex = 6;
+            this.btm_show_startup.Text = "Show Startup";
+            this.btm_show_startup.UseVisualStyleBackColor = true;
+            this.btm_show_startup.Click += new System.EventHandler(this.btm_show_startup_Click);
+            // 
+            // pnl_startup
+            // 
+            this.pnl_startup.BackColor = System.Drawing.Color.Transparent;
+            this.pnl_startup.Controls.Add(this.listView2);
+            this.pnl_startup.Location = new System.Drawing.Point(0, 25);
+            this.pnl_startup.Name = "pnl_startup";
+            this.pnl_startup.Size = new System.Drawing.Size(1020, 429);
+            this.pnl_startup.TabIndex = 4;
+            // 
+            // listView2
+            // 
+            this.listView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.Startup,
+            this.Manager,
+            this.State,
+            this.Application_round,
+            this.Marketing_Strategy,
+            this.Competitors,
+            this.Business_Model,
+            this.Total_Investment,
+            this.Foundation_Date});
+            this.listView2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.listView2.GridLines = true;
+            this.listView2.Location = new System.Drawing.Point(14, 11);
+            this.listView2.Name = "listView2";
+            this.listView2.Size = new System.Drawing.Size(992, 405);
+            this.listView2.TabIndex = 3;
+            this.listView2.UseCompatibleStateImageBehavior = false;
+            this.listView2.View = System.Windows.Forms.View.Details;
+            // 
+            // Startup
+            // 
+            this.Startup.Text = "Startup";
+            this.Startup.Width = 102;
+            // 
+            // Manager
+            // 
+            this.Manager.Text = "Manager";
+            this.Manager.Width = 96;
+            // 
+            // State
+            // 
+            this.State.Text = "State";
+            this.State.Width = 104;
+            // 
+            // Application_round
+            // 
+            this.Application_round.Text = "Application round";
+            this.Application_round.Width = 117;
+            // 
+            // Marketing_Strategy
+            // 
+            this.Marketing_Strategy.Text = "Marketing Strategy";
+            this.Marketing_Strategy.Width = 126;
+            // 
+            // Competitors
+            // 
+            this.Competitors.Text = "Competitors";
+            this.Competitors.Width = 85;
+            // 
+            // Business_Model
+            // 
+            this.Business_Model.Text = "Business Model";
+            this.Business_Model.Width = 109;
+            // 
+            // Total_Investment
+            // 
+            this.Total_Investment.Text = "Total Investment";
+            this.Total_Investment.Width = 113;
+            // 
+            // Foundation_Date
+            // 
+            this.Foundation_Date.Text = "Foundation Date";
+            this.Foundation_Date.Width = 134;
+            // 
+            // pnl_inv_company
+            // 
+            this.pnl_inv_company.BackColor = System.Drawing.Color.Transparent;
+            this.pnl_inv_company.Controls.Add(this.listView3);
+            this.pnl_inv_company.Location = new System.Drawing.Point(0, 26);
+            this.pnl_inv_company.Name = "pnl_inv_company";
+            this.pnl_inv_company.Size = new System.Drawing.Size(1020, 431);
+            this.pnl_inv_company.TabIndex = 8;
+            // 
+            // listView3
+            // 
+            this.listView3.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.Title,
+            this.Description,
+            this.Website,
+            this.Found_Date,
+            this.Office_Address,
+            this.CEO});
+            this.listView3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.listView3.GridLines = true;
+            this.listView3.Location = new System.Drawing.Point(14, 13);
+            this.listView3.Name = "listView3";
+            this.listView3.Size = new System.Drawing.Size(992, 405);
+            this.listView3.TabIndex = 4;
+            this.listView3.UseCompatibleStateImageBehavior = false;
+            this.listView3.View = System.Windows.Forms.View.Details;
+            // 
+            // Title
+            // 
+            this.Title.Text = "Title";
+            this.Title.Width = 102;
+            // 
+            // Description
+            // 
+            this.Description.Text = "Description";
+            this.Description.Width = 326;
+            // 
+            // Website
+            // 
+            this.Website.Text = "Website";
+            this.Website.Width = 104;
+            // 
+            // Found_Date
+            // 
+            this.Found_Date.Text = "Foundation Date";
+            this.Found_Date.Width = 163;
+            // 
+            // Office_Address
+            // 
+            this.Office_Address.Text = "Office Address";
+            this.Office_Address.Width = 135;
+            // 
+            // CEO
+            // 
+            this.CEO.Text = "CEO";
+            this.CEO.Width = 389;
+            // 
+            // pnl_User
+            // 
+            this.pnl_User.BackColor = System.Drawing.Color.Transparent;
+            this.pnl_User.Controls.Add(this.listView1);
+            this.pnl_User.Location = new System.Drawing.Point(3, 30);
+            this.pnl_User.Name = "pnl_User";
+            this.pnl_User.Size = new System.Drawing.Size(1030, 434);
+            this.pnl_User.TabIndex = 7;
+            // 
+            // listView1
+            // 
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.Username,
+            this.Email,
+            this.Password,
+            this.RegDate,
+            this.LoggedDate});
+            this.listView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.listView1.GridLines = true;
+            this.listView1.Location = new System.Drawing.Point(14, 13);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(992, 405);
+            this.listView1.TabIndex = 4;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            // 
+            // Username
+            // 
+            this.Username.Text = "Username";
+            this.Username.Width = 102;
+            // 
+            // Email
+            // 
+            this.Email.Text = "Email";
+            this.Email.Width = 96;
+            // 
+            // Password
+            // 
+            this.Password.Text = "Password";
+            this.Password.Width = 104;
+            // 
+            // RegDate
+            // 
+            this.RegDate.Text = "RegDate";
+            this.RegDate.Width = 117;
+            // 
+            // LoggedDate
+            // 
+            this.LoggedDate.Text = "LoggedDate";
+            this.LoggedDate.Width = 126;
+            // 
+            // btm_Back
+            // 
+            this.btm_Back.BackColor = System.Drawing.Color.Transparent;
+            this.btm_Back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btm_Back.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btm_Back.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.btm_Back.Location = new System.Drawing.Point(861, 479);
+            this.btm_Back.Name = "btm_Back";
+            this.btm_Back.Size = new System.Drawing.Size(155, 25);
+            this.btm_Back.TabIndex = 6;
+            this.btm_Back.Text = "Back";
+            this.btm_Back.UseVisualStyleBackColor = false;
+            this.btm_Back.Click += new System.EventHandler(this.btm_Back_Click);
             // 
             // tabPg_Actions
             // 
@@ -302,6 +550,7 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
+            this.panel5.Controls.Add(this.label5);
             this.panel5.Controls.Add(this.btn_Logout);
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Name = "panel5";
@@ -321,252 +570,16 @@
             this.btn_Logout.UseVisualStyleBackColor = true;
             this.btn_Logout.Click += new System.EventHandler(this.btn_Logout_Click);
             // 
-            // listView2
+            // label5
             // 
-            this.listView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.Startup,
-            this.Manager,
-            this.State,
-            this.Application_round,
-            this.Marketing_Strategy,
-            this.Competitors,
-            this.Business_Model,
-            this.Total_Investment,
-            this.Foundation_Date});
-            this.listView2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.listView2.GridLines = true;
-            this.listView2.Location = new System.Drawing.Point(14, 11);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(992, 405);
-            this.listView2.TabIndex = 3;
-            this.listView2.UseCompatibleStateImageBehavior = false;
-            this.listView2.View = System.Windows.Forms.View.Details;
-            // 
-            // Startup
-            // 
-            this.Startup.Text = "Startup";
-            this.Startup.Width = 102;
-            // 
-            // Manager
-            // 
-            this.Manager.Text = "Manager";
-            this.Manager.Width = 96;
-            // 
-            // State
-            // 
-            this.State.Text = "State";
-            this.State.Width = 104;
-            // 
-            // Application_round
-            // 
-            this.Application_round.Text = "Application round";
-            this.Application_round.Width = 117;
-            // 
-            // Foundation_Date
-            // 
-            this.Foundation_Date.Text = "Foundation Date";
-            this.Foundation_Date.Width = 134;
-            // 
-            // Total_Investment
-            // 
-            this.Total_Investment.Text = "Total Investment";
-            this.Total_Investment.Width = 113;
-            // 
-            // Marketing_Strategy
-            // 
-            this.Marketing_Strategy.Text = "Marketing Strategy";
-            this.Marketing_Strategy.Width = 126;
-            // 
-            // Competitors
-            // 
-            this.Competitors.Text = "Competitors";
-            this.Competitors.Width = 85;
-            // 
-            // Business_Model
-            // 
-            this.Business_Model.Text = "Business Model";
-            this.Business_Model.Width = 109;
-            // 
-            // pnl_startup
-            // 
-            this.pnl_startup.BackColor = System.Drawing.Color.Transparent;
-            this.pnl_startup.Controls.Add(this.listView2);
-            this.pnl_startup.Location = new System.Drawing.Point(0, 25);
-            this.pnl_startup.Name = "pnl_startup";
-            this.pnl_startup.Size = new System.Drawing.Size(1020, 429);
-            this.pnl_startup.TabIndex = 4;
-            // 
-            // btm_Back
-            // 
-            this.btm_Back.BackColor = System.Drawing.Color.Transparent;
-            this.btm_Back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btm_Back.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btm_Back.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.btm_Back.Location = new System.Drawing.Point(861, 479);
-            this.btm_Back.Name = "btm_Back";
-            this.btm_Back.Size = new System.Drawing.Size(155, 25);
-            this.btm_Back.TabIndex = 6;
-            this.btm_Back.Text = "Back";
-            this.btm_Back.UseVisualStyleBackColor = false;
-            this.btm_Back.Click += new System.EventHandler(this.btm_Back_Click);
-            // 
-            // pnl_User
-            // 
-            this.pnl_User.BackColor = System.Drawing.Color.Transparent;
-            this.pnl_User.Controls.Add(this.listView1);
-            this.pnl_User.Location = new System.Drawing.Point(3, 30);
-            this.pnl_User.Name = "pnl_User";
-            this.pnl_User.Size = new System.Drawing.Size(1030, 434);
-            this.pnl_User.TabIndex = 7;
-            // 
-            // listView1
-            // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.Username,
-            this.Email,
-            this.Password,
-            this.RegDate,
-            this.LoggedDate});
-            this.listView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.listView1.GridLines = true;
-            this.listView1.Location = new System.Drawing.Point(14, 13);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(992, 405);
-            this.listView1.TabIndex = 4;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
-            // 
-            // Username
-            // 
-            this.Username.Text = "Username";
-            this.Username.Width = 102;
-            // 
-            // Email
-            // 
-            this.Email.Text = "Email";
-            this.Email.Width = 96;
-            // 
-            // Password
-            // 
-            this.Password.Text = "Password";
-            this.Password.Width = 104;
-            // 
-            // RegDate
-            // 
-            this.RegDate.Text = "RegDate";
-            this.RegDate.Width = 117;
-            // 
-            // LoggedDate
-            // 
-            this.LoggedDate.Text = "LoggedDate";
-            this.LoggedDate.Width = 126;
-            // 
-            // pnl_main
-            // 
-            this.pnl_main.BackColor = System.Drawing.Color.Transparent;
-            this.pnl_main.Controls.Add(this.btm_Invest_Company);
-            this.pnl_main.Controls.Add(this.btm_show_user);
-            this.pnl_main.Controls.Add(this.btm_show_startup);
-            this.pnl_main.Location = new System.Drawing.Point(3, 17);
-            this.pnl_main.Name = "pnl_main";
-            this.pnl_main.Size = new System.Drawing.Size(1020, 447);
-            this.pnl_main.TabIndex = 8;
-            // 
-            // btm_show_startup
-            // 
-            this.btm_show_startup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btm_show_startup.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btm_show_startup.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.btm_show_startup.Location = new System.Drawing.Point(54, 39);
-            this.btm_show_startup.Name = "btm_show_startup";
-            this.btm_show_startup.Size = new System.Drawing.Size(155, 25);
-            this.btm_show_startup.TabIndex = 6;
-            this.btm_show_startup.Text = "Show Startup";
-            this.btm_show_startup.UseVisualStyleBackColor = true;
-            this.btm_show_startup.Click += new System.EventHandler(this.btm_show_startup_Click);
-            // 
-            // btm_show_user
-            // 
-            this.btm_show_user.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btm_show_user.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btm_show_user.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.btm_show_user.Location = new System.Drawing.Point(54, 81);
-            this.btm_show_user.Name = "btm_show_user";
-            this.btm_show_user.Size = new System.Drawing.Size(155, 25);
-            this.btm_show_user.TabIndex = 7;
-            this.btm_show_user.Text = "Show User";
-            this.btm_show_user.UseVisualStyleBackColor = true;
-            this.btm_show_user.Click += new System.EventHandler(this.btm_show_user_Click);
-            // 
-            // btm_Invest_Company
-            // 
-            this.btm_Invest_Company.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btm_Invest_Company.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btm_Invest_Company.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.btm_Invest_Company.Location = new System.Drawing.Point(54, 121);
-            this.btm_Invest_Company.Name = "btm_Invest_Company";
-            this.btm_Invest_Company.Size = new System.Drawing.Size(155, 25);
-            this.btm_Invest_Company.TabIndex = 8;
-            this.btm_Invest_Company.Text = "Show Invest Company";
-            this.btm_Invest_Company.UseVisualStyleBackColor = true;
-            this.btm_Invest_Company.Click += new System.EventHandler(this.btm_Invest_Company_Click);
-            // 
-            // pnl_inv_company
-            // 
-            this.pnl_inv_company.BackColor = System.Drawing.Color.Transparent;
-            this.pnl_inv_company.Controls.Add(this.listView3);
-            this.pnl_inv_company.Location = new System.Drawing.Point(0, 26);
-            this.pnl_inv_company.Name = "pnl_inv_company";
-            this.pnl_inv_company.Size = new System.Drawing.Size(1020, 431);
-            this.pnl_inv_company.TabIndex = 8;
-            // 
-            // listView3
-            // 
-            this.listView3.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.Title,
-            this.Description,
-            this.Website,
-            this.Found_Date,
-            this.Office_Address,
-            this.CEO});
-            this.listView3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.listView3.GridLines = true;
-            this.listView3.Location = new System.Drawing.Point(14, 13);
-            this.listView3.Name = "listView3";
-            this.listView3.Size = new System.Drawing.Size(992, 405);
-            this.listView3.TabIndex = 4;
-            this.listView3.UseCompatibleStateImageBehavior = false;
-            this.listView3.View = System.Windows.Forms.View.Details;
-            // 
-            // Title
-            // 
-            this.Title.Text = "Title";
-            this.Title.Width = 102;
-            // 
-            // Description
-            // 
-            this.Description.Text = "Description";
-            this.Description.Width = 326;
-            // 
-            // Website
-            // 
-            this.Website.Text = "Website";
-            this.Website.Width = 104;
-            // 
-            // Found_Date
-            // 
-            this.Found_Date.Text = "Foundation Date";
-            this.Found_Date.Width = 163;
-            // 
-            // Office_Address
-            // 
-            this.Office_Address.Text = "Office Address";
-            this.Office_Address.Width = 135;
-            // 
-            // CEO
-            // 
-            this.CEO.Text = "CEO";
-            this.CEO.Width = 389;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.label5.Location = new System.Drawing.Point(18, 10);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(108, 18);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Venture Market";
             // 
             // AdminProfile
             // 
@@ -584,6 +597,10 @@
             this.Text = "Admin Profile - Venture Market";
             this.tabControl1.ResumeLayout(false);
             this.tabPg_Detailed.ResumeLayout(false);
+            this.pnl_main.ResumeLayout(false);
+            this.pnl_startup.ResumeLayout(false);
+            this.pnl_inv_company.ResumeLayout(false);
+            this.pnl_User.ResumeLayout(false);
             this.tabPg_Actions.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
@@ -594,10 +611,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel5.ResumeLayout(false);
-            this.pnl_startup.ResumeLayout(false);
-            this.pnl_User.ResumeLayout(false);
-            this.pnl_main.ResumeLayout(false);
-            this.pnl_inv_company.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -654,5 +668,6 @@
         private System.Windows.Forms.ColumnHeader Office_Address;
         private System.Windows.Forms.ColumnHeader CEO;
         private System.Windows.Forms.Button btm_Invest_Company;
+        private System.Windows.Forms.Label label5;
     }
 }

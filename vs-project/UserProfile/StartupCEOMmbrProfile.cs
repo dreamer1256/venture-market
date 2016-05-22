@@ -365,5 +365,25 @@ namespace code.UserProfile
                 cmbred.Show();
             }
         }
+
+        private void pnl_GeneralInfo_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pnl_Visitors_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pnl_Chart_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pnl_About_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

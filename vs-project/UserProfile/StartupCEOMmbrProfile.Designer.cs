@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StartupCEOMmbrProfile));
             this.pnl_Profile = new System.Windows.Forms.Panel();
             this.pnl_News = new System.Windows.Forms.Panel();
@@ -59,6 +60,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbl_Name = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
             this.btn_EditProfile = new System.Windows.Forms.Button();
             this.btn_Logout = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -111,44 +113,47 @@
             this.pnl_Profile.Controls.Add(this.pnl_Visitors);
             this.pnl_Profile.Controls.Add(this.pnl_Chart);
             this.pnl_Profile.Controls.Add(this.pnl_GeneralInfo);
-            this.pnl_Profile.Location = new System.Drawing.Point(165, 34);
+            this.pnl_Profile.Location = new System.Drawing.Point(186, 47);
             this.pnl_Profile.Name = "pnl_Profile";
-            this.pnl_Profile.Size = new System.Drawing.Size(919, 526);
+            this.pnl_Profile.Size = new System.Drawing.Size(898, 526);
             this.pnl_Profile.TabIndex = 6;
             // 
             // pnl_News
             // 
             this.pnl_News.AutoScroll = true;
             this.pnl_News.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
+            this.pnl_News.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.pnl_News.Location = new System.Drawing.Point(380, 226);
             this.pnl_News.Name = "pnl_News";
-            this.pnl_News.Size = new System.Drawing.Size(536, 300);
+            this.pnl_News.Size = new System.Drawing.Size(518, 300);
             this.pnl_News.TabIndex = 13;
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
+            this.panel4.BackgroundImage = global::code.Properties.Resources.lineLong2;
             this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panel4.Controls.Add(this.label8);
             this.panel4.Location = new System.Drawing.Point(380, 178);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(536, 50);
+            this.panel4.Size = new System.Drawing.Size(518, 50);
             this.panel4.TabIndex = 14;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label8.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.label8.Location = new System.Drawing.Point(26, 12);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(50, 21);
+            this.label8.Size = new System.Drawing.Size(48, 20);
             this.label8.TabIndex = 1;
             this.label8.Text = "News";
             // 
             // pnl_About
             // 
             this.pnl_About.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
+            this.pnl_About.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnl_About.BackgroundImage")));
             this.pnl_About.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pnl_About.Controls.Add(this.rchTxtBx_About);
             this.pnl_About.Controls.Add(this.label3);
@@ -156,6 +161,7 @@
             this.pnl_About.Name = "pnl_About";
             this.pnl_About.Size = new System.Drawing.Size(374, 348);
             this.pnl_About.TabIndex = 11;
+            this.pnl_About.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_About_Paint);
             // 
             // rchTxtBx_About
             // 
@@ -163,7 +169,7 @@
             this.rchTxtBx_About.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rchTxtBx_About.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.rchTxtBx_About.DetectUrls = false;
-            this.rchTxtBx_About.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.rchTxtBx_About.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.rchTxtBx_About.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.rchTxtBx_About.Location = new System.Drawing.Point(20, 67);
             this.rchTxtBx_About.Name = "rchTxtBx_About";
@@ -178,17 +184,18 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label3.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.label3.Location = new System.Drawing.Point(20, 12);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(108, 21);
+            this.label3.Size = new System.Drawing.Size(101, 20);
             this.label3.TabIndex = 1;
             this.label3.Text = "About myself";
             // 
             // pnl_Visitors
             // 
             this.pnl_Visitors.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
+            this.pnl_Visitors.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnl_Visitors.BackgroundImage")));
             this.pnl_Visitors.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pnl_Visitors.Controls.Add(this.lbl_lastLogin);
             this.pnl_Visitors.Controls.Add(this.lbl_joinedDate);
@@ -196,15 +203,16 @@
             this.pnl_Visitors.Name = "pnl_Visitors";
             this.pnl_Visitors.Size = new System.Drawing.Size(264, 172);
             this.pnl_Visitors.TabIndex = 10;
+            this.pnl_Visitors.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_Visitors_Paint);
             // 
             // lbl_lastLogin
             // 
             this.lbl_lastLogin.AutoSize = true;
-            this.lbl_lastLogin.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lbl_lastLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.lbl_lastLogin.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.lbl_lastLogin.Location = new System.Drawing.Point(26, 46);
             this.lbl_lastLogin.Name = "lbl_lastLogin";
-            this.lbl_lastLogin.Size = new System.Drawing.Size(76, 20);
+            this.lbl_lastLogin.Size = new System.Drawing.Size(83, 20);
             this.lbl_lastLogin.TabIndex = 1;
             this.lbl_lastLogin.Text = "Last Login";
             this.lbl_lastLogin.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -212,30 +220,32 @@
             // lbl_joinedDate
             // 
             this.lbl_joinedDate.AutoSize = true;
-            this.lbl_joinedDate.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_joinedDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.lbl_joinedDate.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.lbl_joinedDate.Location = new System.Drawing.Point(26, 13);
             this.lbl_joinedDate.Name = "lbl_joinedDate";
-            this.lbl_joinedDate.Size = new System.Drawing.Size(83, 21);
+            this.lbl_joinedDate.Size = new System.Drawing.Size(81, 20);
             this.lbl_joinedDate.TabIndex = 1;
             this.lbl_joinedDate.Text = "Joined On";
             // 
             // pnl_Chart
             // 
             this.pnl_Chart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
+            this.pnl_Chart.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnl_Chart.BackgroundImage")));
             this.pnl_Chart.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pnl_Chart.Controls.Add(this.lbl_LogHist);
             this.pnl_Chart.Controls.Add(this.label2);
             this.pnl_Chart.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.pnl_Chart.Location = new System.Drawing.Point(650, 1);
             this.pnl_Chart.Name = "pnl_Chart";
-            this.pnl_Chart.Size = new System.Drawing.Size(266, 172);
+            this.pnl_Chart.Size = new System.Drawing.Size(248, 172);
             this.pnl_Chart.TabIndex = 12;
+            this.pnl_Chart.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_Chart_Paint);
             // 
             // lbl_LogHist
             // 
             this.lbl_LogHist.AutoSize = true;
-            this.lbl_LogHist.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lbl_LogHist.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.lbl_LogHist.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.lbl_LogHist.Location = new System.Drawing.Point(18, 46);
             this.lbl_LogHist.Name = "lbl_LogHist";
@@ -245,17 +255,18 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label2.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.label2.Location = new System.Drawing.Point(18, 13);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(126, 21);
+            this.label2.Size = new System.Drawing.Size(116, 20);
             this.label2.TabIndex = 0;
             this.label2.Text = "Logging history";
             // 
             // pnl_GeneralInfo
             // 
             this.pnl_GeneralInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
+            this.pnl_GeneralInfo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnl_GeneralInfo.BackgroundImage")));
             this.pnl_GeneralInfo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pnl_GeneralInfo.Controls.Add(this.lbl_Twitter);
             this.pnl_GeneralInfo.Controls.Add(this.lbl_Skype);
@@ -268,183 +279,183 @@
             this.pnl_GeneralInfo.Name = "pnl_GeneralInfo";
             this.pnl_GeneralInfo.Size = new System.Drawing.Size(374, 171);
             this.pnl_GeneralInfo.TabIndex = 9;
+            this.pnl_GeneralInfo.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_GeneralInfo_Paint);
             // 
             // lbl_Twitter
             // 
             this.lbl_Twitter.AutoSize = true;
-            this.lbl_Twitter.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lbl_Twitter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.lbl_Twitter.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.lbl_Twitter.Location = new System.Drawing.Point(232, 73);
             this.lbl_Twitter.Name = "lbl_Twitter";
-            this.lbl_Twitter.Size = new System.Drawing.Size(61, 20);
+            this.lbl_Twitter.Size = new System.Drawing.Size(64, 20);
             this.lbl_Twitter.TabIndex = 6;
             this.lbl_Twitter.Text = "Twitter: ";
             // 
             // lbl_Skype
             // 
             this.lbl_Skype.AutoSize = true;
-            this.lbl_Skype.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lbl_Skype.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.lbl_Skype.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.lbl_Skype.Location = new System.Drawing.Point(232, 42);
             this.lbl_Skype.Name = "lbl_Skype";
-            this.lbl_Skype.Size = new System.Drawing.Size(55, 20);
+            this.lbl_Skype.Size = new System.Drawing.Size(61, 20);
             this.lbl_Skype.TabIndex = 5;
             this.lbl_Skype.Text = "Skype: ";
             // 
             // lbl_Phone
             // 
             this.lbl_Phone.AutoSize = true;
-            this.lbl_Phone.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lbl_Phone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.lbl_Phone.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.lbl_Phone.Location = new System.Drawing.Point(16, 108);
             this.lbl_Phone.Name = "lbl_Phone";
-            this.lbl_Phone.Size = new System.Drawing.Size(50, 20);
+            this.lbl_Phone.Size = new System.Drawing.Size(55, 20);
             this.lbl_Phone.TabIndex = 4;
             this.lbl_Phone.Text = "Phone";
             // 
             // lbl_Email
             // 
             this.lbl_Email.AutoSize = true;
-            this.lbl_Email.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lbl_Email.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.lbl_Email.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.lbl_Email.Location = new System.Drawing.Point(16, 77);
             this.lbl_Email.Name = "lbl_Email";
-            this.lbl_Email.Size = new System.Drawing.Size(53, 20);
+            this.lbl_Email.Size = new System.Drawing.Size(56, 20);
             this.lbl_Email.TabIndex = 3;
             this.lbl_Email.Text = "Email: ";
             // 
             // lbl_City
             // 
             this.lbl_City.AutoSize = true;
-            this.lbl_City.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lbl_City.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.lbl_City.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.lbl_City.Location = new System.Drawing.Point(16, 46);
             this.lbl_City.Name = "lbl_City";
-            this.lbl_City.Size = new System.Drawing.Size(69, 20);
+            this.lbl_City.Size = new System.Drawing.Size(74, 20);
             this.lbl_City.TabIndex = 2;
             this.lbl_City.Text = "Location:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.label1.Location = new System.Drawing.Point(16, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(157, 21);
+            this.label1.Size = new System.Drawing.Size(148, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Contact information";
             // 
             // panel1
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
             this.panel1.Controls.Add(this.pnl_Navigation);
             this.panel1.Controls.Add(this.pnl_Logo);
-            this.panel1.Location = new System.Drawing.Point(0, 35);
+            this.panel1.Location = new System.Drawing.Point(0, 48);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(159, 516);
+            this.panel1.Size = new System.Drawing.Size(181, 525);
             this.panel1.TabIndex = 7;
             // 
             // pnl_Navigation
             // 
-            this.pnl_Navigation.BackColor = System.Drawing.Color.Transparent;
+            this.pnl_Navigation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
             this.pnl_Navigation.Controls.Add(this.btn_LinkToApplications);
             this.pnl_Navigation.Controls.Add(this.btn_LinkToMyStartup);
             this.pnl_Navigation.Controls.Add(this.btn_LinkToIncubators);
             this.pnl_Navigation.Controls.Add(this.btn_LinkToProfile);
             this.pnl_Navigation.Location = new System.Drawing.Point(0, 178);
             this.pnl_Navigation.Name = "pnl_Navigation";
-            this.pnl_Navigation.Size = new System.Drawing.Size(159, 348);
+            this.pnl_Navigation.Size = new System.Drawing.Size(181, 318);
             this.pnl_Navigation.TabIndex = 7;
             // 
             // btn_LinkToApplications
             // 
-            this.btn_LinkToApplications.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
+            this.btn_LinkToApplications.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(34)))), ((int)(((byte)(40)))));
+            this.btn_LinkToApplications.BackgroundImage = global::code.Properties.Resources.lineLong2;
             this.btn_LinkToApplications.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btn_LinkToApplications.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_LinkToApplications.FlatAppearance.BorderSize = 0;
             this.btn_LinkToApplications.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_LinkToApplications.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btn_LinkToApplications.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_LinkToApplications.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_LinkToApplications.Location = new System.Drawing.Point(0, 184);
+            this.btn_LinkToApplications.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.btn_LinkToApplications.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.btn_LinkToApplications.Location = new System.Drawing.Point(1, 139);
             this.btn_LinkToApplications.Name = "btn_LinkToApplications";
-            this.btn_LinkToApplications.Size = new System.Drawing.Size(158, 67);
+            this.btn_LinkToApplications.Size = new System.Drawing.Size(180, 40);
             this.btn_LinkToApplications.TabIndex = 4;
-            this.btn_LinkToApplications.Text = "Application for finance";
-            this.btn_LinkToApplications.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_LinkToApplications.Text = "Application";
             this.btn_LinkToApplications.UseVisualStyleBackColor = false;
             this.btn_LinkToApplications.Click += new System.EventHandler(this.btn_LinkToApplications_Click);
             // 
             // btn_LinkToMyStartup
             // 
-            this.btn_LinkToMyStartup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
+            this.btn_LinkToMyStartup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(34)))), ((int)(((byte)(40)))));
+            this.btn_LinkToMyStartup.BackgroundImage = global::code.Properties.Resources.lineLong3;
             this.btn_LinkToMyStartup.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btn_LinkToMyStartup.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_LinkToMyStartup.FlatAppearance.BorderSize = 0;
             this.btn_LinkToMyStartup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_LinkToMyStartup.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btn_LinkToMyStartup.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_LinkToMyStartup.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_LinkToMyStartup.Location = new System.Drawing.Point(0, 55);
+            this.btn_LinkToMyStartup.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.btn_LinkToMyStartup.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.btn_LinkToMyStartup.Location = new System.Drawing.Point(1, 47);
             this.btn_LinkToMyStartup.Name = "btn_LinkToMyStartup";
-            this.btn_LinkToMyStartup.Size = new System.Drawing.Size(159, 49);
+            this.btn_LinkToMyStartup.Size = new System.Drawing.Size(180, 40);
             this.btn_LinkToMyStartup.TabIndex = 3;
             this.btn_LinkToMyStartup.Text = "My Startup";
-            this.btn_LinkToMyStartup.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_LinkToMyStartup.UseVisualStyleBackColor = false;
             this.btn_LinkToMyStartup.Click += new System.EventHandler(this.btn_LinkToMyStartup_Click);
             // 
             // btn_LinkToIncubators
             // 
-            this.btn_LinkToIncubators.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
+            this.btn_LinkToIncubators.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(34)))), ((int)(((byte)(40)))));
+            this.btn_LinkToIncubators.BackgroundImage = global::code.Properties.Resources.lineLong1;
             this.btn_LinkToIncubators.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btn_LinkToIncubators.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_LinkToIncubators.FlatAppearance.BorderSize = 0;
             this.btn_LinkToIncubators.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_LinkToIncubators.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btn_LinkToIncubators.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_LinkToIncubators.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_LinkToIncubators.Location = new System.Drawing.Point(0, 110);
+            this.btn_LinkToIncubators.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.btn_LinkToIncubators.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.btn_LinkToIncubators.Location = new System.Drawing.Point(0, 93);
             this.btn_LinkToIncubators.Name = "btn_LinkToIncubators";
-            this.btn_LinkToIncubators.Size = new System.Drawing.Size(159, 68);
+            this.btn_LinkToIncubators.Size = new System.Drawing.Size(180, 40);
             this.btn_LinkToIncubators.TabIndex = 2;
             this.btn_LinkToIncubators.Text = "Business Incubators";
-            this.btn_LinkToIncubators.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_LinkToIncubators.UseVisualStyleBackColor = false;
             this.btn_LinkToIncubators.Click += new System.EventHandler(this.btn_LinkToIncubators_Click);
             // 
             // btn_LinkToProfile
             // 
-            this.btn_LinkToProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
+            this.btn_LinkToProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(34)))), ((int)(((byte)(40)))));
+            this.btn_LinkToProfile.BackgroundImage = global::code.Properties.Resources.lineLong2;
             this.btn_LinkToProfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btn_LinkToProfile.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_LinkToProfile.FlatAppearance.BorderSize = 0;
             this.btn_LinkToProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_LinkToProfile.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btn_LinkToProfile.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_LinkToProfile.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_LinkToProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.btn_LinkToProfile.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.btn_LinkToProfile.Location = new System.Drawing.Point(1, 0);
             this.btn_LinkToProfile.Name = "btn_LinkToProfile";
-            this.btn_LinkToProfile.Size = new System.Drawing.Size(158, 49);
+            this.btn_LinkToProfile.Size = new System.Drawing.Size(180, 40);
             this.btn_LinkToProfile.TabIndex = 1;
             this.btn_LinkToProfile.Text = "My Profile";
-            this.btn_LinkToProfile.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_LinkToProfile.UseVisualStyleBackColor = false;
             this.btn_LinkToProfile.Click += new System.EventHandler(this.btn_LinkToProfile_Click);
             // 
             // pnl_Logo
             // 
             this.pnl_Logo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
-            this.pnl_Logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pnl_Logo.Controls.Add(this.pictureBox1);
             this.pnl_Logo.Controls.Add(this.lbl_Name);
             this.pnl_Logo.Location = new System.Drawing.Point(1, 0);
             this.pnl_Logo.Name = "pnl_Logo";
-            this.pnl_Logo.Size = new System.Drawing.Size(158, 172);
+            this.pnl_Logo.Size = new System.Drawing.Size(180, 170);
             this.pnl_Logo.TabIndex = 6;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(13, 11);
+            this.pictureBox1.Location = new System.Drawing.Point(24, 11);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(134, 131);
             this.pictureBox1.TabIndex = 1;
@@ -457,7 +468,7 @@
             this.lbl_Name.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lbl_Name.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lbl_Name.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lbl_Name.Location = new System.Drawing.Point(9, 145);
+            this.lbl_Name.Location = new System.Drawing.Point(26, 145);
             this.lbl_Name.Name = "lbl_Name";
             this.lbl_Name.Size = new System.Drawing.Size(53, 21);
             this.lbl_Name.TabIndex = 0;
@@ -467,31 +478,42 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.btn_EditProfile);
             this.panel2.Controls.Add(this.btn_Logout);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1084, 28);
+            this.panel2.Size = new System.Drawing.Size(1084, 40);
             this.panel2.TabIndex = 8;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label9.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.label9.Location = new System.Drawing.Point(12, 10);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(108, 18);
+            this.label9.TabIndex = 8;
+            this.label9.Text = "Venture Market";
             // 
             // btn_EditProfile
             // 
-            this.btn_EditProfile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_EditProfile.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btn_EditProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(48)))));
             this.btn_EditProfile.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_EditProfile.FlatAppearance.BorderSize = 0;
             this.btn_EditProfile.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(48)))));
             this.btn_EditProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_EditProfile.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btn_EditProfile.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_EditProfile.Location = new System.Drawing.Point(904, 0);
+            this.btn_EditProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btn_EditProfile.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.btn_EditProfile.Location = new System.Drawing.Point(891, 7);
             this.btn_EditProfile.Name = "btn_EditProfile";
             this.btn_EditProfile.Size = new System.Drawing.Size(87, 25);
             this.btn_EditProfile.TabIndex = 1;
             this.btn_EditProfile.Text = "Edit profile";
-            this.btn_EditProfile.UseVisualStyleBackColor = false;
+            this.btn_EditProfile.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_EditProfile.UseVisualStyleBackColor = true;
             this.btn_EditProfile.Click += new System.EventHandler(this.btn_EditProfile_Click);
             // 
             // btn_Logout
@@ -499,12 +521,11 @@
             this.btn_Logout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_Logout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(48)))));
             this.btn_Logout.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Logout.FlatAppearance.BorderSize = 0;
             this.btn_Logout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(48)))));
             this.btn_Logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Logout.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btn_Logout.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_Logout.Location = new System.Drawing.Point(997, 0);
+            this.btn_Logout.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btn_Logout.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.btn_Logout.Location = new System.Drawing.Point(987, 7);
             this.btn_Logout.Name = "btn_Logout";
             this.btn_Logout.Size = new System.Drawing.Size(87, 25);
             this.btn_Logout.TabIndex = 0;
@@ -597,28 +618,32 @@
             // 
             this.pnl_Incubators.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnl_Incubators.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
+            this.pnl_Incubators.BackgroundImage = global::code.Properties.Resources.lineLong3;
+            this.pnl_Incubators.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pnl_Incubators.Controls.Add(this.lbl_JoinError);
             this.pnl_Incubators.Controls.Add(this.btn_Join);
             this.pnl_Incubators.Controls.Add(this.lbl_StartupsInIncubList);
             this.pnl_Incubators.Controls.Add(this.lbl_StartupsInIncubator);
             this.pnl_Incubators.Controls.Add(this.listView1);
             this.pnl_Incubators.Controls.Add(this.label4);
-            this.pnl_Incubators.Location = new System.Drawing.Point(165, 34);
+            this.pnl_Incubators.Location = new System.Drawing.Point(187, 47);
             this.pnl_Incubators.Name = "pnl_Incubators";
-            this.pnl_Incubators.Size = new System.Drawing.Size(919, 526);
+            this.pnl_Incubators.Size = new System.Drawing.Size(897, 526);
             this.pnl_Incubators.TabIndex = 3;
             // 
             // pnl_MyStartup
             // 
             this.pnl_MyStartup.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnl_MyStartup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
+            this.pnl_MyStartup.BackgroundImage = global::code.Properties.Resources.lineLong3;
+            this.pnl_MyStartup.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pnl_MyStartup.Controls.Add(this.label5);
             this.pnl_MyStartup.Controls.Add(this.lstBx_StartupTeam);
             this.pnl_MyStartup.Controls.Add(this.lbl_MyStartupTitle);
             this.pnl_MyStartup.Controls.Add(this.rchTxtBox);
-            this.pnl_MyStartup.Location = new System.Drawing.Point(165, 34);
+            this.pnl_MyStartup.Location = new System.Drawing.Point(187, 47);
             this.pnl_MyStartup.Name = "pnl_MyStartup";
-            this.pnl_MyStartup.Size = new System.Drawing.Size(919, 526);
+            this.pnl_MyStartup.Size = new System.Drawing.Size(897, 526);
             this.pnl_MyStartup.TabIndex = 5;
             // 
             // label5
@@ -628,7 +653,7 @@
             this.label5.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.label5.Location = new System.Drawing.Point(51, 86);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(52, 21);
+            this.label5.Size = new System.Drawing.Size(54, 21);
             this.label5.TabIndex = 3;
             this.label5.Text = "Team:";
             // 
@@ -676,12 +701,14 @@
             // 
             this.pnl_Applications.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnl_Applications.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
+            this.pnl_Applications.BackgroundImage = global::code.Properties.Resources.lineLong2;
+            this.pnl_Applications.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pnl_Applications.Controls.Add(this.groupBox2);
             this.pnl_Applications.Controls.Add(this.groupBox1);
             this.pnl_Applications.Controls.Add(this.label6);
-            this.pnl_Applications.Location = new System.Drawing.Point(165, 35);
+            this.pnl_Applications.Location = new System.Drawing.Point(187, 48);
             this.pnl_Applications.Name = "pnl_Applications";
-            this.pnl_Applications.Size = new System.Drawing.Size(919, 526);
+            this.pnl_Applications.Size = new System.Drawing.Size(897, 526);
             this.pnl_Applications.TabIndex = 4;
             // 
             // groupBox2
@@ -782,9 +809,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DarkCyan;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(30)))));
             this.BackgroundImage = global::code.Properties.Resources.background3;
-            this.ClientSize = new System.Drawing.Size(1084, 562);
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ClientSize = new System.Drawing.Size(1084, 588);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnl_Profile);
@@ -814,6 +842,7 @@
             this.pnl_Logo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.pnl_Incubators.ResumeLayout(false);
             this.pnl_Incubators.PerformLayout();
             this.pnl_MyStartup.ResumeLayout(false);
@@ -825,7 +854,7 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.ResumeLayout(false);
-
+            
         }
 
         #endregion
@@ -883,5 +912,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button btn_EditProfile;
+        private System.Windows.Forms.Label label9;
     }
 }

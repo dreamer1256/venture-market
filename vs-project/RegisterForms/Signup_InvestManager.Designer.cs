@@ -35,6 +35,7 @@
             // 
             // btn_Finish
             // 
+            this.btn_Finish.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btn_Finish.BackColor = System.Drawing.Color.Transparent;
             this.btn_Finish.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Finish.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
@@ -49,6 +50,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
@@ -60,6 +62,7 @@
             // 
             // cmbBx_Company
             // 
+            this.cmbBx_Company.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cmbBx_Company.FormattingEnabled = true;
             this.cmbBx_Company.Location = new System.Drawing.Point(413, 281);
             this.cmbBx_Company.Name = "cmbBx_Company";

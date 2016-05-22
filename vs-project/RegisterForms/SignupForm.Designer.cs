@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+
             this.pnl_Sign1 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
             this.lbl_isvalid_email = new System.Windows.Forms.Label();
             this.btn_NextToURoles = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
@@ -64,8 +64,8 @@
             // 
             // pnl_Sign1
             // 
+            this.pnl_Sign1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnl_Sign1.BackColor = System.Drawing.Color.Transparent;
-            this.pnl_Sign1.Controls.Add(this.label5);
             this.pnl_Sign1.Controls.Add(this.lbl_isvalid_email);
             this.pnl_Sign1.Controls.Add(this.btn_NextToURoles);
             this.pnl_Sign1.Controls.Add(this.label8);
@@ -85,17 +85,6 @@
             this.pnl_Sign1.Name = "pnl_Sign1";
             this.pnl_Sign1.Size = new System.Drawing.Size(520, 313);
             this.pnl_Sign1.TabIndex = 1;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.ForeColor = System.Drawing.Color.DarkGray;
-            this.label5.Location = new System.Drawing.Point(33, 20);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(123, 15);
-            this.label5.TabIndex = 16;
-            this.label5.Text = "*All fields are required";
             // 
             // lbl_isvalid_email
             // 
@@ -225,6 +214,7 @@
             // 
             // pnl_Sign_Role
             // 
+            this.pnl_Sign_Role.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnl_Sign_Role.BackColor = System.Drawing.Color.Transparent;
             this.pnl_Sign_Role.Controls.Add(this.pnl_RoleChooser);
             this.pnl_Sign_Role.Controls.Add(this.btn_NextToSpec);
@@ -282,6 +272,7 @@
             // rdBttn_CompanyMemeber
             // 
             this.rdBttn_CompanyMemeber.AutoSize = true;
+            this.rdBttn_CompanyMemeber.Enabled = false;
             this.rdBttn_CompanyMemeber.Location = new System.Drawing.Point(20, 91);
             this.rdBttn_CompanyMemeber.Name = "rdBttn_CompanyMemeber";
             this.rdBttn_CompanyMemeber.Size = new System.Drawing.Size(110, 17);
@@ -350,7 +341,7 @@
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tableLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -370,10 +361,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(30)))));
             this.BackgroundImage = global::code.Properties.Resources.LOGIN;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(999, 602);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.pnl_Sign1);
             this.Controls.Add(this.pnl_Sign_Role);
+            this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.Name = "SignInForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -387,7 +380,7 @@
             this.pnl_RoleChooser.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
-
+            
         }
 
         #endregion
