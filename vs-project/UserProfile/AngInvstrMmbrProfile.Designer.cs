@@ -28,11 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AngInvstrMmbrProfile));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label19 = new System.Windows.Forms.Label();
             this.btn_logout = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btn_my_inv = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.showprofile = new System.Windows.Forms.Button();
+            this.btn_my_inv = new System.Windows.Forms.Button();
             this.startupslist = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbl_name = new System.Windows.Forms.Label();
@@ -82,7 +85,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.stname = new System.Windows.Forms.Label();
-            this.showprofile = new System.Windows.Forms.Button();
             this.pnl_my_investitions = new System.Windows.Forms.Panel();
             this.label15 = new System.Windows.Forms.Label();
             this.pnl_myst_info = new System.Windows.Forms.Panel();
@@ -93,7 +95,6 @@
             this.lbl_myinv_stinfo = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.lv_my_investitions = new System.Windows.Forms.ListView();
-            this.label19 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -118,10 +119,22 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
             this.panel1.Controls.Add(this.label19);
             this.panel1.Controls.Add(this.btn_logout);
+            this.panel1.Controls.Add(this.button2);
             this.panel1.Location = new System.Drawing.Point(5, 4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1005, 40);
             this.panel1.TabIndex = 0;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label19.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.label19.Location = new System.Drawing.Point(13, 10);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(108, 18);
+            this.label19.TabIndex = 8;
+            this.label19.Text = "Venture Market";
             // 
             // btn_logout
             // 
@@ -138,13 +151,29 @@
             this.btn_logout.UseVisualStyleBackColor = false;
             this.btn_logout.Click += new System.EventHandler(this.button1_Click);
             // 
+            // button2
+            // 
+            this.button2.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(34)))), ((int)(((byte)(40)))));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button2.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.button2.Location = new System.Drawing.Point(822, 8);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(98, 25);
+            this.button2.TabIndex = 0;
+            this.button2.Text = "Edit profile";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
             // panel2
             // 
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
+            this.panel2.BackgroundImage = global::code.Properties.Resources.lineLong1;
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panel2.Controls.Add(this.showprofile);
             this.panel2.Controls.Add(this.btn_my_inv);
-            this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.startupslist);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.lbl_name);
@@ -154,9 +183,29 @@
             this.panel2.Size = new System.Drawing.Size(186, 560);
             this.panel2.TabIndex = 1;
             // 
+            // showprofile
+            // 
+            this.showprofile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(34)))), ((int)(((byte)(40)))));
+            this.showprofile.BackgroundImage = global::code.Properties.Resources.lineLong2;
+            this.showprofile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.showprofile.FlatAppearance.BorderSize = 0;
+            this.showprofile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.showprofile.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.showprofile.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.showprofile.Location = new System.Drawing.Point(0, 205);
+            this.showprofile.Name = "showprofile";
+            this.showprofile.Size = new System.Drawing.Size(186, 40);
+            this.showprofile.TabIndex = 0;
+            this.showprofile.Text = "My Profile";
+            this.showprofile.UseVisualStyleBackColor = false;
+            this.showprofile.Click += new System.EventHandler(this.showprofile_Click);
+            // 
             // btn_my_inv
             // 
             this.btn_my_inv.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(34)))), ((int)(((byte)(40)))));
+            this.btn_my_inv.BackgroundImage = global::code.Properties.Resources.lineLong1;
+            this.btn_my_inv.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btn_my_inv.FlatAppearance.BorderSize = 0;
             this.btn_my_inv.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_my_inv.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.btn_my_inv.Location = new System.Drawing.Point(0, 301);
@@ -167,22 +216,12 @@
             this.btn_my_inv.UseVisualStyleBackColor = false;
             this.btn_my_inv.Click += new System.EventHandler(this.btn_my_inv_Click);
             // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(34)))), ((int)(((byte)(40)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.button2.Location = new System.Drawing.Point(0, 347);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(186, 40);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "Edit profile";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
-            // 
             // startupslist
             // 
             this.startupslist.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(34)))), ((int)(((byte)(40)))));
+            this.startupslist.BackgroundImage = global::code.Properties.Resources.lineLong3;
+            this.startupslist.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.startupslist.FlatAppearance.BorderSize = 0;
             this.startupslist.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.startupslist.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.startupslist.Location = new System.Drawing.Point(0, 254);
@@ -216,6 +255,8 @@
             // panel_prof1
             // 
             this.panel_prof1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
+            this.panel_prof1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel_prof1.BackgroundImage")));
+            this.panel_prof1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panel_prof1.Controls.Add(this.label13);
             this.panel_prof1.Controls.Add(this.lbl_iexperience);
             this.panel_prof1.Controls.Add(this.lbl_angel_info);
@@ -322,12 +363,14 @@
             // 
             this.pnl_startups.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnl_startups.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
+            this.pnl_startups.BackgroundImage = global::code.Properties.Resources.lineLong3;
+            this.pnl_startups.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pnl_startups.Controls.Add(this.appic_view);
             this.pnl_startups.Controls.Add(this.listView1);
             this.pnl_startups.Controls.Add(this.label5);
             this.pnl_startups.Controls.Add(this.label2);
             this.pnl_startups.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.pnl_startups.Location = new System.Drawing.Point(198, 50);
+            this.pnl_startups.Location = new System.Drawing.Point(200, 51);
             this.pnl_startups.Name = "pnl_startups";
             this.pnl_startups.Size = new System.Drawing.Size(810, 560);
             this.pnl_startups.TabIndex = 7;
@@ -382,10 +425,12 @@
             // panel_prof2
             // 
             this.panel_prof2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
+            this.panel_prof2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel_prof2.BackgroundImage")));
+            this.panel_prof2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panel_prof2.Controls.Add(this.chlist_angel);
             this.panel_prof2.Location = new System.Drawing.Point(4, 197);
             this.panel_prof2.Name = "panel_prof2";
-            this.panel_prof2.Size = new System.Drawing.Size(799, 83);
+            this.panel_prof2.Size = new System.Drawing.Size(488, 83);
             this.panel_prof2.TabIndex = 3;
             // 
             // chlist_angel
@@ -398,7 +443,7 @@
             this.chlist_angel.MultiColumn = true;
             this.chlist_angel.Name = "chlist_angel";
             this.chlist_angel.SelectionMode = System.Windows.Forms.SelectionMode.None;
-            this.chlist_angel.Size = new System.Drawing.Size(781, 68);
+            this.chlist_angel.Size = new System.Drawing.Size(480, 68);
             this.chlist_angel.TabIndex = 0;
             // 
             // pnl_profile
@@ -413,18 +458,20 @@
             this.pnl_profile.Controls.Add(this.panel_prof1);
             this.pnl_profile.Controls.Add(this.panel_prof2);
             this.pnl_profile.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.pnl_profile.Location = new System.Drawing.Point(198, 48);
+            this.pnl_profile.Location = new System.Drawing.Point(197, 50);
             this.pnl_profile.Name = "pnl_profile";
-            this.pnl_profile.Size = new System.Drawing.Size(810, 560);
+            this.pnl_profile.Size = new System.Drawing.Size(813, 560);
             this.pnl_profile.TabIndex = 4;
             // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
+            this.panel5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel5.BackgroundImage")));
+            this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panel5.Controls.Add(this.label14);
             this.panel5.Location = new System.Drawing.Point(499, 285);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(303, 41);
+            this.panel5.Size = new System.Drawing.Size(314, 41);
             this.panel5.TabIndex = 8;
             // 
             // label14
@@ -449,6 +496,8 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
+            this.panel4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel4.BackgroundImage")));
+            this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panel4.Controls.Add(this.label9);
             this.panel4.Location = new System.Drawing.Point(5, 285);
             this.panel4.Name = "panel4";
@@ -472,7 +521,7 @@
             this.panel3.Controls.Add(this.lbl_LogHist);
             this.panel3.Location = new System.Drawing.Point(499, 320);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(303, 243);
+            this.panel3.Size = new System.Drawing.Size(314, 243);
             this.panel3.TabIndex = 5;
             // 
             // lbl_LogHist
@@ -488,11 +537,13 @@
             // panel_prof3
             // 
             this.panel_prof3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
+            this.panel_prof3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel_prof3.BackgroundImage")));
+            this.panel_prof3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panel_prof3.Controls.Add(this.lbl_lastlog);
             this.panel_prof3.Controls.Add(this.lbl_joined);
             this.panel_prof3.Location = new System.Drawing.Point(500, 5);
             this.panel_prof3.Name = "panel_prof3";
-            this.panel_prof3.Size = new System.Drawing.Size(303, 187);
+            this.panel_prof3.Size = new System.Drawing.Size(310, 274);
             this.panel_prof3.TabIndex = 4;
             // 
             // lbl_lastlog
@@ -521,6 +572,8 @@
             // 
             this.st_view.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.st_view.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
+            this.st_view.BackgroundImage = global::code.Properties.Resources.lineLong3;
+            this.st_view.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.st_view.Controls.Add(this.label12);
             this.st_view.Controls.Add(this.lbl_businc);
             this.st_view.Controls.Add(this.angel_invest);
@@ -535,7 +588,7 @@
             this.st_view.Controls.Add(this.textBox1);
             this.st_view.Controls.Add(this.stname);
             this.st_view.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.st_view.Location = new System.Drawing.Point(197, 53);
+            this.st_view.Location = new System.Drawing.Point(200, 50);
             this.st_view.Name = "st_view";
             this.st_view.Size = new System.Drawing.Size(810, 560);
             this.st_view.TabIndex = 10;
@@ -723,24 +776,12 @@
             this.stname.TabIndex = 0;
             this.stname.Text = "Startup name";
             // 
-            // showprofile
-            // 
-            this.showprofile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(34)))), ((int)(((byte)(40)))));
-            this.showprofile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.showprofile.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.showprofile.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.showprofile.Location = new System.Drawing.Point(0, 205);
-            this.showprofile.Name = "showprofile";
-            this.showprofile.Size = new System.Drawing.Size(186, 40);
-            this.showprofile.TabIndex = 0;
-            this.showprofile.Text = "My Profile";
-            this.showprofile.UseVisualStyleBackColor = false;
-            this.showprofile.Click += new System.EventHandler(this.showprofile_Click);
-            // 
             // pnl_my_investitions
             // 
             this.pnl_my_investitions.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnl_my_investitions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
+            this.pnl_my_investitions.BackgroundImage = global::code.Properties.Resources.lineLong1;
+            this.pnl_my_investitions.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pnl_my_investitions.Controls.Add(this.label15);
             this.pnl_my_investitions.Controls.Add(this.pnl_myst_info);
             this.pnl_my_investitions.Controls.Add(this.lv_my_investitions);
@@ -849,17 +890,6 @@
             this.lv_my_investitions.UseCompatibleStateImageBehavior = false;
             this.lv_my_investitions.View = System.Windows.Forms.View.Details;
             this.lv_my_investitions.SelectedIndexChanged += new System.EventHandler(this.lv_my_investitions_SelectedIndexChanged);
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label19.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.label19.Location = new System.Drawing.Point(13, 10);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(108, 18);
-            this.label19.TabIndex = 8;
-            this.label19.Text = "Venture Market";
             // 
             // AngInvstrMmbrProfile
             // 
