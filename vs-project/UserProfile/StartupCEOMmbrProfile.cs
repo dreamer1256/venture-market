@@ -357,8 +357,12 @@ namespace code.UserProfile
 
         private void btn_EditProfile_Click(object sender, EventArgs e)
         {
-            user_profile_edit cmbred = new user_profile_edit(user);
-            cmbred.Show();
+            int ifwasopened = code.user_profile_edit.getstate();
+            if (ifwasopened != 1)
+            {
+                user_profile_edit cmbred = new user_profile_edit(user);
+                cmbred.Show();
+            }
         }
     }
 }

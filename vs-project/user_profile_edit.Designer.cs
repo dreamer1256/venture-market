@@ -94,6 +94,7 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.lbl_email_isv = new System.Windows.Forms.Label();
             this.pnl_general.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tb_pg_general.SuspendLayout();
@@ -107,6 +108,7 @@
             // pnl_general
             // 
             this.pnl_general.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
+            this.pnl_general.Controls.Add(this.lbl_email_isv);
             this.pnl_general.Controls.Add(this.button1);
             this.pnl_general.Controls.Add(this.txt_lname_ch);
             this.pnl_general.Controls.Add(this.txt_fname_ch);
@@ -265,6 +267,7 @@
             this.txt_new_email.Name = "txt_new_email";
             this.txt_new_email.Size = new System.Drawing.Size(116, 20);
             this.txt_new_email.TabIndex = 7;
+            this.txt_new_email.Leave += new System.EventHandler(this.txt_new_email_Leave);
             // 
             // label6
             // 
@@ -800,6 +803,14 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Investment experience:";
             // 
+            // lbl_email_isv
+            // 
+            this.lbl_email_isv.AutoSize = true;
+            this.lbl_email_isv.Location = new System.Drawing.Point(152, 83);
+            this.lbl_email_isv.Name = "lbl_email_isv";
+            this.lbl_email_isv.Size = new System.Drawing.Size(0, 13);
+            this.lbl_email_isv.TabIndex = 22;
+            // 
             // user_profile_edit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -810,6 +821,7 @@
             this.Name = "user_profile_edit";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "user_profile_edit";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.user_profile_edit_FormClosed);
             this.pnl_general.ResumeLayout(false);
             this.pnl_general.PerformLayout();
             this.tabControl1.ResumeLayout(false);
@@ -895,5 +907,6 @@
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label lbl_email_isv;
     }
 }

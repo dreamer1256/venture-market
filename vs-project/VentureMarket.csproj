@@ -122,6 +122,7 @@
     <Compile Include="user_profile_edit.Designer.cs">
       <DependentUpon>user_profile_edit.cs</DependentUpon>
     </Compile>
+    <Compile Include="ValidateEmail.cs" />
     <Compile Include="VMDataClasses.cs">
       <DependentUpon>VMDataClasses.dbml</DependentUpon>
     </Compile>

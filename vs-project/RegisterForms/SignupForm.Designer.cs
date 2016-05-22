@@ -54,6 +54,7 @@
             this.btnTop_Signup = new System.Windows.Forms.Button();
             this.btnTop_Login = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.lbl_isvalid_email = new System.Windows.Forms.Label();
             this.pnl_Sign1.SuspendLayout();
             this.pnl_Sign_Role.SuspendLayout();
             this.pnl_RoleChooser.SuspendLayout();
@@ -63,6 +64,7 @@
             // pnl_Sign1
             // 
             this.pnl_Sign1.BackColor = System.Drawing.Color.Transparent;
+            this.pnl_Sign1.Controls.Add(this.lbl_isvalid_email);
             this.pnl_Sign1.Controls.Add(this.btn_NextToURoles);
             this.pnl_Sign1.Controls.Add(this.label8);
             this.pnl_Sign1.Controls.Add(this.label7);
@@ -138,6 +140,7 @@
             this.txt_Email.Name = "txt_Email";
             this.txt_Email.Size = new System.Drawing.Size(136, 25);
             this.txt_Email.TabIndex = 9;
+            this.txt_Email.Leave += new System.EventHandler(this.txt_Email_Leave);
             // 
             // label6
             // 
@@ -341,6 +344,14 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(164, 33);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
+            // lbl_isvalid_email
+            // 
+            this.lbl_isvalid_email.AutoSize = true;
+            this.lbl_isvalid_email.Location = new System.Drawing.Point(353, 80);
+            this.lbl_isvalid_email.Name = "lbl_isvalid_email";
+            this.lbl_isvalid_email.Size = new System.Drawing.Size(0, 17);
+            this.lbl_isvalid_email.TabIndex = 15;
+            // 
             // SignInForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -395,5 +406,6 @@
         private System.Windows.Forms.Button btnTop_Signup;
         private System.Windows.Forms.Button btnTop_Login;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Label lbl_isvalid_email;
     }
 }
