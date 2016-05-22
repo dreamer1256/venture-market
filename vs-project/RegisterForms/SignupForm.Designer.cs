@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.pnl_Sign1 = new System.Windows.Forms.Panel();
+            this.lbl_isvalid_email = new System.Windows.Forms.Label();
             this.btn_NextToURoles = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -54,7 +55,6 @@
             this.btnTop_Signup = new System.Windows.Forms.Button();
             this.btnTop_Login = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.lbl_isvalid_email = new System.Windows.Forms.Label();
             this.pnl_Sign1.SuspendLayout();
             this.pnl_Sign_Role.SuspendLayout();
             this.pnl_RoleChooser.SuspendLayout();
@@ -63,6 +63,7 @@
             // 
             // pnl_Sign1
             // 
+            this.pnl_Sign1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnl_Sign1.BackColor = System.Drawing.Color.Transparent;
             this.pnl_Sign1.Controls.Add(this.lbl_isvalid_email);
             this.pnl_Sign1.Controls.Add(this.btn_NextToURoles);
@@ -83,6 +84,14 @@
             this.pnl_Sign1.Name = "pnl_Sign1";
             this.pnl_Sign1.Size = new System.Drawing.Size(520, 313);
             this.pnl_Sign1.TabIndex = 1;
+            // 
+            // lbl_isvalid_email
+            // 
+            this.lbl_isvalid_email.AutoSize = true;
+            this.lbl_isvalid_email.Location = new System.Drawing.Point(353, 80);
+            this.lbl_isvalid_email.Name = "lbl_isvalid_email";
+            this.lbl_isvalid_email.Size = new System.Drawing.Size(0, 17);
+            this.lbl_isvalid_email.TabIndex = 15;
             // 
             // btn_NextToURoles
             // 
@@ -204,6 +213,7 @@
             // 
             // pnl_Sign_Role
             // 
+            this.pnl_Sign_Role.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnl_Sign_Role.BackColor = System.Drawing.Color.Transparent;
             this.pnl_Sign_Role.Controls.Add(this.pnl_RoleChooser);
             this.pnl_Sign_Role.Controls.Add(this.btn_NextToSpec);
@@ -330,7 +340,7 @@
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tableLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -344,24 +354,18 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(164, 33);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
-            // lbl_isvalid_email
-            // 
-            this.lbl_isvalid_email.AutoSize = true;
-            this.lbl_isvalid_email.Location = new System.Drawing.Point(353, 80);
-            this.lbl_isvalid_email.Name = "lbl_isvalid_email";
-            this.lbl_isvalid_email.Size = new System.Drawing.Size(0, 17);
-            this.lbl_isvalid_email.TabIndex = 15;
-            // 
             // SignInForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(30)))));
             this.BackgroundImage = global::code.Properties.Resources.LOGIN;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(999, 602);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.pnl_Sign1);
             this.Controls.Add(this.pnl_Sign_Role);
+            this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.Name = "SignInForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
