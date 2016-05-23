@@ -15,6 +15,7 @@ namespace code.RegisterForms
     {
         private User user;
         private static Logger logger = LogManager.GetCurrentClassLogger();
+        DataClasses1DataContext vmDB = new DataClasses1DataContext();
 
         public Signup_AngelInv(User user)
         {
@@ -72,6 +73,20 @@ namespace code.RegisterForms
             }
         }
 
-
+        private void Signup_AngelInv_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            User deleteuser4 = vmDB.Users.Single(u => u.ID == user.ID);
+            vmDB.Users.DeleteOnSubmit(deleteuser4);
+            try
+            {
+                vmDB.SubmitChanges();
+                logger.Info("User " + user.Username + " was deleted from system");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                logger.Error(ex.Message);
+            }
+        }
     }
 }

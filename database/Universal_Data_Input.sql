@@ -124,16 +124,17 @@ INSERT Development_Stage (ID, Stage) VALUES
 SET IDENTITY_INSERT Development_Stage OFF
 GO
 SET IDENTITY_INSERT Startup ON
-INSERT Startup(ID,Title,Description,Business_Model,Competitors,Marketing_Strategy,Total_Investment,Website,Foundation_Date,Twitter,ceoID,IncubID,DevStageID) VALUES
-(1,N'Cardiomo',N'Startup description should be here.',N'Fee in',8,N'Product',4000,N'Cardiomo.com','2016-03-02',N'@Cardiomo',43,2,1),
-(2,N'VoltyCO',N'Startup description should be here.',N'Free in',3,N'Product',3000,N'Volty.com','2016-04-05',N'@VoltyCO',17,1,1),
-(3,N'Green Wheels',N'Startup description should be here.',N'Franchise',7,N'pricing',1000,N'WheelsG.com','2016-04-08',N'@Green Wheels',18,1,1),
-(4,N'intubus',N'Startup description should be here.',N'Free in',5,N'Product',2000,N'intubus.com','2016-04-04',N'@intubus',19,3,1),
-(5,N'mymobstr',N'Startup description should be here.',N'Free in',4,N'Product',4000,N'mymo.com','2016-04-04',N'@mymobstr',20,1,1),
-(6,N'Infinity',N'Startup description should be here.',N'Free in',5,N'Product',0,N'Infinity-W.com','2016-04-04',N'@Infinity',21,NULL,1),
-(7,N'NoName',N'Startup description should be here.',N'Free in',1,N'Franchise',0,N'NoName-club.com','2016-04-04',N'@NoName',22,NULL,1),
-(8,N'Ark',N'Startup description should be here.',N'Free in',3,N'Product',0,N'ark.com','2016-04-04',N'@Ark',23,NULL,1),
-(9,N'Arpen',N'Startup description should be here.',N'Free in',2,N'Franchise',0,N'Arpen.com','2016-04-04',N'@Arpen',24,NULL,1)
+INSERT Startup(ID,Title,Description,Business_Model,Competitors,Marketing_Strategy,Total_Investment,Website,Foundation_Date,Twitter,IncubID,DevStageID) VALUES
+(1,N'Cardiomo',N'Startup description should be here.',N'Fee in',8,N'Product',4000,N'Cardiomo.com','2016-03-02',N'@Cardiomo',2,1),
+(2,N'VoltyCO',N'Startup description should be here.',N'Free in',3,N'Product',3000,N'Volty.com','2016-04-05',N'@VoltyCO',1,1),
+(3,N'Green Wheels',N'Startup description should be here.',N'Franchise',7,N'pricing',1000,N'WheelsG.com','2016-04-08',N'@Green Wheels',1,1),
+(4,N'intubus',N'Startup description should be here.',N'Free in',5,N'Product',2000,N'intubus.com','2016-04-04',N'@intubus',3,1),
+(5,N'mymobstr',N'Startup description should be here.',N'Free in',4,N'Product',4000,N'mymo.com','2016-04-04',N'@mymobstr',1,1),
+(6,N'Infinity',N'Startup description should be here.',N'Free in',5,N'Product',0,N'Infinity-W.com','2016-04-04',N'@Infinity',NULL,1),
+(7,N'NoName',N'Startup description should be here.',N'Free in',1,N'Franchise',0,N'NoName-club.com','2016-04-04',N'@NoName',NULL,1),
+(8,N'Ark',N'Startup description should be here.',N'Free in',3,N'Product',0,N'ark.com','2016-04-04',N'@Ark',NULL,1),
+(9,N'Arpen',N'Startup description should be here.',N'Free in',2,N'Franchise',0,N'Arpen.com','2016-04-04',N'@Arpen',NULL,1),
+(10,N'New Life',N'Starftup description should be here.',N'Fee in',8,N'Product',0,N'Cardiomo.com','2016-03-02',N'@Cardiomo',NULL,1)
 SET IDENTITY_INSERT Startup OFF
 GO
 SET IDENTITY_INSERT Investment_Company ON
@@ -158,16 +159,16 @@ INSERT Investment_Manager(ID,Investment_CompanyID,UserID,Geo_Inerests) VALUES
 SET IDENTITY_INSERT Investment_Manager OFF
 GO
 SET IDENTITY_INSERT Application ON
-INSERT Application (ID,ManagerID,Angel_ID,StartupID,State,Application_Round,CreationDate) VALUES
-(1,10,NULL,5,N'considered',0, '2016-04-04 03:14:00.000'),
-(2,1,NULL,4,N'accepted',0, '2016-04-04 03:14:00.000'),
-(3,4,NULL,3,N'rejected',0, '2016-04-04 03:14:00.000'),
-(4,3,NULL,2,N'rejected',0, '2016-04-04 03:14:00.000'),
-(5,9,NULL,1,N'accepted',0, '2016-04-04 03:14:00.000'),
-(6,NULL,NULL,6,N'no state',0, '2016-04-04 03:14:00.000'),
-(7,NULL,NULL,7,N'no state',0, '2016-04-04 03:14:00.000'),
-(8,NULL,NULL,8,N'no state',0, '2016-04-04 03:14:00.000'),
-(9,NULL,NULL,9,N'no state',0, '2016-04-04 03:14:00.000')
+INSERT Application (ID,ManagerID,StartupID,State,Application_Round,CreationDate) VALUES
+(1,10,5,N'considered',0, '2016-04-04 03:14:00.000'),
+(2,1,4,N'accepted',0, '2016-04-04 03:14:00.000'),
+(3,4,3,N'rejected',0, '2016-04-04 03:14:00.000'),
+(4,3,2,N'rejected',0, '2016-04-04 03:14:00.000'),
+(5,9,1,N'accepted',0, '2016-04-04 03:14:00.000'),
+(6,NULL,6,N'no state',0, '2016-04-04 03:14:00.000'),
+(7,NULL,7,N'no state',0, '2016-04-04 03:14:00.000'),
+(8,NULL,8,N'no state',0, '2016-04-04 03:14:00.000'),
+(9,NULL,9,N'no state',0, '2016-04-04 03:14:00.000')
 SET IDENTITY_INSERT Application OFF
 GO
 SET IDENTITY_INSERT Round_Of_Funding ON

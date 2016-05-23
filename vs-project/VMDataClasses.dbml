@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Venture_Market" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=(local);Initial Catalog=Venture_Market;Integrated Security=True" SettingsObjectName="code.Properties.Settings" SettingsPropertyName="Venture_MarketConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=ERGOPROXY;Initial Catalog=Venture_Market;Integrated Security=True" SettingsObjectName="code.Properties.Settings" SettingsPropertyName="Venture_MarketConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Angel_Interests" Member="Angel_Interests">
     <Type Name="Angel_Interest">
       <Column Name="InterestID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -20,6 +20,7 @@
       <Column Name="Twitter" Type="System.String" DbType="NVarChar(45)" CanBeNull="true" />
       <Association Name="AngelInvestor_Angel_Interest" Member="Angel_Interests" ThisKey="ID" OtherKey="AngelID" Type="Angel_Interest" />
       <Association Name="AngelInvestor_Round_Investor" Member="Round_Investors" ThisKey="ID" OtherKey="AngelID" Type="Round_Investor" />
+      <Association Name="AngelInvestor_AgelsAcceptedStartups" Member="AgelsAcceptedStartups" ThisKey="ID" OtherKey="AppAngelID" Type="AgelsAcceptedStartups" />
       <Association Name="User_AngelInvestor" Member="User" ThisKey="UserID" OtherKey="ID" Type="User" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
   </Table>
@@ -31,7 +32,6 @@
       <Column Name="State" Type="System.String" DbType="NVarChar(45) NOT NULL" CanBeNull="true" />
       <Column Name="Application_Round" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="CreationDate" Type="System.DateTime" DbType="DateTime" CanBeNull="false" />
-      <Column Name="Angel_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="Investment_Manager_Application" Member="Investment_Manager" ThisKey="ManagerID" OtherKey="ID" Type="Investment_Manager" IsForeignKey="true" DeleteRule="SET NULL" />
       <Association Name="Startup_Application" Member="Startup" ThisKey="StartupID" OtherKey="ID" Type="Startup" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
@@ -128,13 +128,13 @@
       <Column Name="Website" Type="System.String" DbType="NVarChar(63)" CanBeNull="true" />
       <Column Name="Foundation_Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="Twitter" Type="System.String" DbType="NVarChar(63)" CanBeNull="true" />
-      <Column Name="ceoID" Storage="_CEO" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="IncubID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="DevStageID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="Startup_Application" Member="Applications" ThisKey="ID" OtherKey="StartupID" Type="Application" />
       <Association Name="Startup_Round_Of_Funding" Member="Round_Of_Fundings" ThisKey="ID" OtherKey="StartupID" Type="Round_Of_Funding" />
       <Association Name="Startup_Startup" Member="Startups" ThisKey="ID" OtherKey="Competitors" Type="Startup" />
       <Association Name="Startup_Startup_Member" Member="Startup_Members" ThisKey="ID" OtherKey="StartupID" Type="Startup_Member" />
+      <Association Name="Startup_AgelsAcceptedStartups" Member="AgelsAcceptedStartups" ThisKey="ID" OtherKey="AppStartupID" Type="AgelsAcceptedStartups" />
       <Association Name="Startup_Startup" Member="Startup1" ThisKey="Competitors" OtherKey="ID" Type="Startup" IsForeignKey="true" />
       <Association Name="Development_Stage_Startup" Member="Development_Stage1" ThisKey="DevStageID" OtherKey="ID" Type="Development_Stage" IsForeignKey="true" />
       <Association Name="Business_Incubator_Startup" Member="Business_Incubator" ThisKey="IncubID" OtherKey="ID" Type="Business_Incubator" IsForeignKey="true" />
@@ -211,6 +211,16 @@
       <Column Name="Twitter" Type="System.String" DbType="NVarChar(45)" CanBeNull="true" />
       <Association Name="Investment_Company_CompanyMember" Member="Investment_Company" ThisKey="CompID" OtherKey="ID" Type="Investment_Company" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
       <Association Name="User_CompanyMember" Member="User" ThisKey="UserID" OtherKey="ID" Type="User" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AgelsAcceptedStartups" Member="AgelsAcceptedStartups">
+    <Type Name="AgelsAcceptedStartups">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AppAngelID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AppStartupID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AppAcceptDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="Startup_AgelsAcceptedStartups" Member="Startup" ThisKey="AppStartupID" OtherKey="ID" Type="Startup" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="AngelInvestor_AgelsAcceptedStartups" Member="AngelInvestor" ThisKey="AppAngelID" OtherKey="ID" Type="AngelInvestor" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
   </Table>
 </Database>

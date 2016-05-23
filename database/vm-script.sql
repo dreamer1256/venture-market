@@ -201,7 +201,6 @@ CREATE TABLE dbo.Startup(
 	Website nvarchar(63) NULL,
 	Foundation_Date date NULL,
 	Twitter nvarchar(63) NULL,
-	ceoID int NULL,
 	IncubID int NULL,
 	DevStageID int NOT NULL,
  	CONSTRAINT PK_Startup PRIMARY KEY(ID) ,
@@ -211,8 +210,6 @@ CREATE TABLE dbo.Startup(
  		ON UPDATE CASCADE ON DELETE CASCADE,
  	CONSTRAINT FK_Startup_Startup FOREIGN KEY(Competitors) REFERENCES dbo.Startup(ID),
  		--ON UPDATE SET NULL ON DELETE NO ACTION,
- 	CONSTRAINT	FK_Startup_ceoID FOREIGN KEY(ceoID) REFERENCES dbo.Users(ID)
- 		ON UPDATE NO ACTION ON DELETE NO ACTION,
  	CONSTRAINT UQ_Startap_Title UNIQUE (Title) 
 ) 
 GO
@@ -258,7 +255,6 @@ GO
 CREATE TABLE dbo.Application(
 	ID int IDENTITY(1,1) NOT NULL,
 	ManagerID int NULL,
-	Angel_ID int NULL,
 	StartupID int NOT NULL,
 	State nvarchar(45) NULL,
 	Application_Round int NOT NULL,
@@ -268,8 +264,6 @@ CREATE TABLE dbo.Application(
  		ON UPDATE CASCADE ON DELETE SET NULL,
  	CONSTRAINT FK_Application_Startup FOREIGN KEY(StartupID) REFERENCES dbo.Startup(ID)
  		ON UPDATE CASCADE ON DELETE CASCADE,
-	CONSTRAINT FK_Angel FOREIGN KEY(Angel_ID) REFERENCES dbo.AngelInvestor(ID)
-		ON UPDATE NO ACTION
 )
 GO
 /****** Object:  Table dbo.Round_Of_Funding ******/
@@ -344,6 +338,7 @@ CREATE TABLE dbo.UserLoginHistory(
 	LoggedDate datetime,
  	CONSTRAINT PK_UserLoginHistory PRIMARY KEY(ID),
  	CONSTRAINT FK_UserLoginHistory_Users FOREIGN KEY(UserID) REFERENCES dbo.Users(ID)
+	ON UPDATE CASCADE ON DELETE CASCADE
 ) 
 GO
 
@@ -369,6 +364,19 @@ CREATE TABLE dbo.CompanyMember(
 	CONSTRAINT FK_CompanyMember_Investment_company FOREIGN KEY(CompID) REFERENCES dbo.Investment_Company(ID)
         ON UPDATE CASCADE ON DELETE CASCADE
 )
+GO
+CREATE TABLE dbo.AgelsAcceptedStartups(
+	ID int IDENTITY(1,1) NOT NULL,
+	AppAngelID int NOT NULL,
+	AppStartupID int NOT NULL,
+	AppAcceptDate datetime NOT NULL,
+ 	CONSTRAINT PK_AgelsAcceptedStartups PRIMARY KEY(ID),
+ 	CONSTRAINT FK_AgelsAcceptedStartups_Startup FOREIGN KEY(AppStartupID) REFERENCES dbo.Startup(ID)
+ 		ON UPDATE CASCADE ON DELETE CASCADE,
+	CONSTRAINT FK_Angel FOREIGN KEY(AppAngelID) REFERENCES dbo.AngelInvestor(ID)
+		ON UPDATE CASCADE ON DELETE CASCADE
+)
+GO
 GO
 ALTER DATABASE Venture_Market SET  READ_WRITE 
 GO

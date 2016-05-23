@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-
             this.pnl_Sign1 = new System.Windows.Forms.Panel();
             this.lbl_isvalid_email = new System.Windows.Forms.Label();
             this.btn_NextToURoles = new System.Windows.Forms.Button();
@@ -272,7 +271,6 @@
             // rdBttn_CompanyMemeber
             // 
             this.rdBttn_CompanyMemeber.AutoSize = true;
-            this.rdBttn_CompanyMemeber.Enabled = false;
             this.rdBttn_CompanyMemeber.Location = new System.Drawing.Point(20, 91);
             this.rdBttn_CompanyMemeber.Name = "rdBttn_CompanyMemeber";
             this.rdBttn_CompanyMemeber.Size = new System.Drawing.Size(110, 17);
@@ -380,7 +378,7 @@
             this.pnl_RoleChooser.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
-            
+
         }
 
         #endregion

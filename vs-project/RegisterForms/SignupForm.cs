@@ -67,48 +67,8 @@ namespace code
             }
             else
             {
-                user = new User();
-                user.Username = txt_Username.Text;
-                user.Password = txt_Password.Text;
-                user.Email = txt_Email.Text;
-                user.FName = txt_FName.Text;
-                user.LName = txt_LName.Text;
-                user.RegDate = DateTime.Now;
-                user.LoggedDate = DateTime.Now;
-                
-                vmDB.Users.InsertOnSubmit(user);
-                try
-                {
-                    vmDB.SubmitChanges();
-                }
-                catch(Exception ex)
-                {
-                    logger.Error(ex.Message);
-                    MessageBox.Show(ex.Message);
-                }
-
-                var newUser = vmDB.Users.Single(u => u.Username.Equals(txt_Username.Text));
-                UserLoginHistory uLogHist = new UserLoginHistory
-                {
-                    UserID = newUser.ID,
-                    OS = (System.Environment.OSVersion.Platform + " " + System.Environment.OSVersion.Version).ToString(),
-                    IP = (Dns.Resolve(Dns.GetHostName()).AddressList[0]).ToString(),
-                    Domain = System.Environment.UserDomainName.ToString(),
-                    LoggedDate = DateTime.Now
-                };
-
-                vmDB.UserLoginHistories.InsertOnSubmit(uLogHist);
-                try
-                {
-                    vmDB.SubmitChanges();
-                    pnl_Sign_Role.Show();
-                    pnl_Sign1.Hide();
-                }
-                catch (Exception ex)
-                {
-                    logger.Error(ex.Message);
-                    MessageBox.Show(ex.Message);
-                }
+                pnl_Sign_Role.Show();
+                pnl_Sign1.Hide();
             }
         }
 
@@ -120,6 +80,46 @@ namespace code
         
         private void btn_NextToSpec_Click(object sender, EventArgs e)
         {
+            user = new User();
+            user.Username = txt_Username.Text;
+            user.Password = txt_Password.Text;
+            user.Email = txt_Email.Text;
+            user.FName = txt_FName.Text;
+            user.LName = txt_LName.Text;
+            user.RegDate = DateTime.Now;
+            user.LoggedDate = DateTime.Now;
+
+            vmDB.Users.InsertOnSubmit(user);
+            try
+            {
+                vmDB.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex.Message);
+                MessageBox.Show(ex.Message);
+            }
+
+            var newUser = vmDB.Users.Single(u => u.Username.Equals(txt_Username.Text));
+            UserLoginHistory uLogHist = new UserLoginHistory
+            {
+                UserID = newUser.ID,
+                OS = (System.Environment.OSVersion.Platform + " " + System.Environment.OSVersion.Version).ToString(),
+                IP = (Dns.Resolve(Dns.GetHostName()).AddressList[0]).ToString(),
+                Domain = System.Environment.UserDomainName.ToString(),
+                LoggedDate = DateTime.Now
+            };
+
+            vmDB.UserLoginHistories.InsertOnSubmit(uLogHist);
+            try
+            {
+                vmDB.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex.Message);
+                MessageBox.Show(ex.Message);
+            }
             if (rdBttn_AngelInvestor.Checked == true)
             {
                 vmDB = new DataClasses1DataContext();

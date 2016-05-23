@@ -60,5 +60,21 @@ namespace code.RegisterForms
                 label1.ForeColor = Color.Red;
             }
         }
+
+        private void Signup_InvestManager_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            User deleteuser2 = vmDB.Users.Single(u => u.ID == user.ID);
+            vmDB.Users.DeleteOnSubmit(deleteuser2);
+            try
+            {
+                vmDB.SubmitChanges();
+                logger.Info("User " + user.Username + " was deleted from system");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                logger.Error(ex.Message);
+            }
+        }
     }
 }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NLog;
 
 namespace code.UserProfile
 {
@@ -17,6 +18,9 @@ namespace code.UserProfile
         /// </summary>
         User user;
         DataClasses1DataContext vmDB = new DataClasses1DataContext();
+        User selecteduser;
+        
+        private static Logger logger = LogManager.GetCurrentClassLogger();
         public AdminProfile(User user)
         {
            // pnl_startup.Hide();
@@ -35,12 +39,6 @@ namespace code.UserProfile
         {
             AdminPanels.RemoveIncubator removeInc = new AdminPanels.RemoveIncubator();
             removeInc.Show();
-        }
-
-        private void btn_AddAngelIv_Click(object sender, EventArgs e)
-        {
-            AdminPanels.AddAngelInvestor addAngelInvestor = new AdminPanels.AddAngelInvestor();
-            addAngelInvestor.Show();
         }
 
         private void btn_AddStartup_Click(object sender, EventArgs e)
@@ -112,23 +110,8 @@ namespace code.UserProfile
             pnl_startup.Hide();
             pnl_inv_company.Hide();
             pnl_User.Show();
-           // InitializeComponent();
-            
-            listView1.Items.Clear();
-            ListViewItem itm;
-            string[] arr = new string[5];
-            var snm = from s in vmDB.Users
-                      select s;
-            foreach (var s in snm)
-            {
-                arr[0] = s.Username;
-                arr[1] = s.Email;
-                arr[2] = s.Password;
-                arr[3] = Convert.ToString(s.RegDate);
-                arr[4] = Convert.ToString(s.LoggedDate);
-                itm = new ListViewItem(arr);
-                listView1.Items.Add(itm);
-            }
+            rb_all.Checked = true;
+            ShowUsers("all");
         }
 
         private void btm_Invest_Company_Click(object sender, EventArgs e)
@@ -154,6 +137,147 @@ namespace code.UserProfile
                 arr[5] = Convert.ToString(s.CEO);
                 itm = new ListViewItem(arr);
                 listView3.Items.Add(itm);
+            }
+        }
+        private void ShowUsers(string role)
+        {
+            btn_delete_user.Enabled = false;
+            var snm = from s in vmDB.Users
+                      select s;
+            if(role == "all")
+            {
+                listView1.Items.Clear();
+                ListViewItem itm;
+                string[] arr = new string[5];
+                foreach (var s in snm)
+                {
+                    arr[0] = s.Username;
+                    arr[1] = s.Email;
+                    arr[2] = s.Password;
+                    arr[3] = Convert.ToString(s.RegDate);
+                    arr[4] = Convert.ToString(s.LoggedDate);
+                    itm = new ListViewItem(arr);
+                    listView1.Items.Add(itm);
+                }
+            }
+            else
+            {
+                   var svn = (from userM in vmDB.Users
+                   join roleM in vmDB.User_Roles on userM.ID equals roleM.UserId
+                   where roleM.Role.Role_Title == role
+                   select new
+                       {
+                           username = userM.Username,
+                           email = userM.Email,
+                           userpass = userM.Password,
+                           userlog = userM.LoggedDate,
+                           userred = userM.RegDate,
+                           role = roleM.Role.Role_Title
+                       });
+                listView1.Items.Clear();
+                ListViewItem itm;
+                string[] arr = new string[5];
+                foreach (var s in svn)
+                {
+                    arr[0] = s.username;
+                    arr[1] = s.email;
+                    arr[2] = s.userpass;
+                    arr[3] = Convert.ToString(s.userred);
+                    arr[4] = Convert.ToString(s.userlog);
+                    itm = new ListViewItem(arr);
+                    listView1.Items.Add(itm);
+                }
+            }
+        }
+
+        private void rb_all_CheckedChanged(object sender, EventArgs e)
+        {
+            ShowUsers("all");
+        }
+
+        private void rb_angel_CheckedChanged(object sender, EventArgs e)
+        {
+            ShowUsers("Angel_Investor");
+        }
+
+        private void rb_commbr_CheckedChanged(object sender, EventArgs e)
+        {
+            ShowUsers("IC_Member"); 
+        }
+
+        private void rb_invmngr_CheckedChanged(object sender, EventArgs e)
+        {
+            ShowUsers("Invest_Manager");
+        }
+
+        private void rb_stceo_CheckedChanged(object sender, EventArgs e)
+        {
+            ShowUsers("StartupCEO");
+        }
+
+        private void rb_stmbr_CheckedChanged(object sender, EventArgs e)
+        {
+            ShowUsers("Startup_Member"); 
+        }
+
+        private void btn_delete_user_Click(object sender, EventArgs e)
+        {
+            var deleteuser = selecteduser;
+            DialogResult result = MessageBox.Show("Delete user " + deleteuser.Username + " ?", "Confirmation", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                
+                vmDB.Users.DeleteOnSubmit(deleteuser);
+                try
+                {
+                    vmDB.SubmitChanges();
+                    logger.Info("User " + deleteuser.Username + " was deleted from system");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    logger.Error(ex.Message);
+                }
+                if (rb_all.Checked)
+                {
+                    ShowUsers("all");
+                }
+                else if (rb_angel.Checked)
+                {
+                    ShowUsers("Angel_Investor");
+                }
+                else if (rb_commbr.Checked)
+                {
+                    ShowUsers("IC_Member");
+                }
+                else if (rb_invmngr.Checked)
+                {
+                    ShowUsers("Invest_Manager");
+                }
+                else if (rb_stceo.Checked)
+                {
+                    ShowUsers("StartupCEO");
+                }
+                else if (rb_stmbr.Checked)
+                {
+                    ShowUsers("Startup_Member");
+                }
+                btn_delete_user.Enabled = false;
+                deleteuser = null;
+                selecteduser = null;
+            }
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (listView1.SelectedIndices.Count <= 0)
+            {
+                return;
+            }
+            if (listView1.SelectedIndices.Count >= 0)
+            {
+                btn_delete_user.Enabled = true;
+                selecteduser = vmDB.Users.Single(u => u.Username == listView1.FocusedItem.SubItems[0].Text);
             }
         }
     }

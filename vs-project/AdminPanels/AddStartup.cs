@@ -49,7 +49,6 @@ namespace code.AdminPanels
                     Competitors = null,
                     Total_Investment = 0,
                     Foundation_Date =  dateTimePicker.Value,
-                    ceoID = null,
                     IncubID = null,
                     DevStageID = 1
                 };

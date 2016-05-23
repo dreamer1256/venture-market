@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.cmbBx_Startups = new System.Windows.Forms.ComboBox();
             this.btn_Finish = new System.Windows.Forms.Button();
             this.rchTxtBx_About = new System.Windows.Forms.RichTextBox();
@@ -48,7 +49,7 @@
             this.venture_MarketDataSet = new code.Venture_MarketDataSet();
             this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.usersTableAdapter = new code.Venture_MarketDataSetTableAdapters.UsersTableAdapter();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lbl_chbx_is = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.venture_MarketDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
@@ -66,6 +67,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.lbl_chbx_is);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.cmbBx_Startups);
             this.panel1.Controls.Add(this.btn_Finish);
@@ -89,6 +91,17 @@
             this.panel1.Size = new System.Drawing.Size(482, 306);
             this.panel1.TabIndex = 2;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.ForeColor = System.Drawing.Color.Red;
+            this.label2.Location = new System.Drawing.Point(17, 4);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(172, 13);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "*Please complete required fields";
+            // 
             // cmbBx_Startups
             // 
             this.cmbBx_Startups.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -98,6 +111,7 @@
             this.cmbBx_Startups.Name = "cmbBx_Startups";
             this.cmbBx_Startups.Size = new System.Drawing.Size(134, 25);
             this.cmbBx_Startups.TabIndex = 1;
+            this.cmbBx_Startups.SelectedIndexChanged += new System.EventHandler(this.cmbBx_Startups_SelectedIndexChanged);
             // 
             // btn_Finish
             // 
@@ -156,13 +170,14 @@
             this.chckBx_IsCEO.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chckBx_IsCEO.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.chckBx_IsCEO.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.chckBx_IsCEO.Location = new System.Drawing.Point(410, 32);
+            this.chckBx_IsCEO.Location = new System.Drawing.Point(365, 29);
             this.chckBx_IsCEO.Name = "chckBx_IsCEO";
             this.chckBx_IsCEO.Size = new System.Drawing.Size(47, 21);
             this.chckBx_IsCEO.TabIndex = 5;
             this.chckBx_IsCEO.Text = "Yes";
             this.chckBx_IsCEO.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.chckBx_IsCEO.UseVisualStyleBackColor = false;
+            this.chckBx_IsCEO.CheckedChanged += new System.EventHandler(this.chckBx_IsCEO_CheckedChanged);
             // 
             // label8
             // 
@@ -232,16 +247,13 @@
             // 
             this.usersTableAdapter.ClearBeforeFill = true;
             // 
-            // label2
+            // lbl_chbx_is
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(17, 4);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(172, 13);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "*Please complete required fields";
+            this.lbl_chbx_is.AutoSize = true;
+            this.lbl_chbx_is.Location = new System.Drawing.Point(269, 47);
+            this.lbl_chbx_is.Name = "lbl_chbx_is";
+            this.lbl_chbx_is.Size = new System.Drawing.Size(0, 17);
+            this.lbl_chbx_is.TabIndex = 11;
             // 
             // Signup_StartupMember
             // 
@@ -258,6 +270,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Startup Member Sign Up - Venture Market";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Signup_StartupMember_FormClosed);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.venture_MarketDataSet)).EndInit();
@@ -288,5 +301,6 @@
         private System.Windows.Forms.BindingSource usersBindingSource;
         private Venture_MarketDataSetTableAdapters.UsersTableAdapter usersTableAdapter;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbl_chbx_is;
     }
 }

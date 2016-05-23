@@ -61,5 +61,21 @@ namespace code.RegisterForms
             }
 
         }
+
+        private void Signup_CompanyMember_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            User deleteuser3 = vmDB.Users.Single(u => u.ID == user.ID);
+            vmDB.Users.DeleteOnSubmit(deleteuser3);
+            try
+            {
+                vmDB.SubmitChanges();
+                logger.Info("User " + user.Username + " was deleted from system");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                logger.Error(ex.Message);
+            }
+        }
     }
 }

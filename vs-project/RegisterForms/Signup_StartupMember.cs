@@ -17,6 +17,7 @@ namespace code.RegisterForms
         private User user;
         private static Logger logger = LogManager.GetCurrentClassLogger();
         bool isCEO = false;
+        bool startuphaveceo = false;
 
         public Signup_StartupMember(User user)
         {
@@ -46,18 +47,15 @@ namespace code.RegisterForms
                 sm.UserID = user.ID;
                 Startup startup = vmDB.Startups.Single(u => u.Title == cmbBx_Startups.Text);
 
-                isCEO = chckBx_IsCEO.Checked;
-
-                if (isCEO && startup.ceoID == null)
+                if (startuphaveceo == false && chckBx_IsCEO.Checked == true)
                 {
-                    sm.Is_CEO = true;
                     ur.RoleID = (int)URoles.Role.StartupCEO;  // роль керівника стартапу
-                    startup.ceoID = user.ID;
+                    sm.Is_CEO = true;
                 }
                 else
                 {
-                    sm.Is_CEO = false;
                     ur.RoleID = (int)URoles.Role.StartupMember; // роль учасника стартапу
+                    sm.Is_CEO = false;
                 }
 
                 // Присвоїти учаснику ID стартапу залежно від вибору в полі comboBox
@@ -70,7 +68,7 @@ namespace code.RegisterForms
                 sm.About = rchTxtBx_About.Text;
                 vmDB.Startup_Members.InsertOnSubmit(sm);
                 vmDB.User_Roles.InsertOnSubmit(ur);
-                if (isCEO && startup.ceoID != null)
+                if (startuphaveceo == true)
                 {
                     MessageBox.Show("You can\'t be the CEO of the choosen startup.\nThere is a startup CEO!");
                 }
@@ -94,6 +92,61 @@ namespace code.RegisterForms
                 label2.Visible = true;
                 label1.ForeColor = Color.Red;
             }
+        }
+
+        private void Signup_StartupMember_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            User deleteuser = vmDB.Users.Single(u => u.ID == user.ID);
+            vmDB.Users.DeleteOnSubmit(deleteuser);
+            try
+            {
+                vmDB.SubmitChanges();
+                logger.Info("User " + user.Username + " was deleted from system");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                logger.Error(ex.Message);
+            }
+        }
+
+        private void chckBx_IsCEO_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cmbBx_Startups.Text == "")
+            {
+                lbl_chbx_is.ForeColor = System.Drawing.Color.Red;
+                lbl_chbx_is.Text = "first select a startup";
+                chckBx_IsCEO.Checked = false;
+            }
+            else if (cmbBx_Startups.Text != "")
+            {
+                Startup ISstartup = vmDB.Startups.Single(u => u.Title == cmbBx_Startups.Text);
+                var haveceo = from s in vmDB.Startup_Members
+                              where s.StartupID == ISstartup.ID
+                              select s;
+                foreach (var k in haveceo)
+                {
+                    if (k.Is_CEO == true)
+                    {
+                        bool startuphaveceo = true;
+                        lbl_chbx_is.ForeColor = System.Drawing.Color.Red;
+                        lbl_chbx_is.Text = "startup already has CEO";
+                        chckBx_IsCEO.Checked = false;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                bool startuphaveceo = false;
+                lbl_chbx_is.ForeColor = System.Drawing.Color.Green;
+                lbl_chbx_is.Text = "All OK";
+            }
+        }
+
+        private void cmbBx_Startups_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lbl_chbx_is.Text = "";
         }
     }
 }

@@ -48,9 +48,9 @@ namespace code.UserProfile
             lbl_name.Text = string.Format("{0} {1}", user.FName, user.LName);
             lbl_iexperience.Text = string.Format("Investment experience: {0}", angel.Investment_Experience);
             lbl_imax.Text = angel.Min_Amount + "\n" + angel.Max_amount;
-            lbl_angel_info.Text = user.Email + "\n" 
-                                  + angel.Skype + "\n" 
-                                  + angel.Phone + "\n" 
+            lbl_angel_info.Text = user.Email + "\n"
+                                  + angel.Skype + "\n"
+                                  + angel.Phone + "\n"
                                   + angel.Twitter;
             lbl_joined.Text = "Joined on   " + user.RegDate.ToShortDateString();
             lbl_lastlog.Text = "Last seen   " + user.LoggedDate.ToString() +
@@ -193,7 +193,7 @@ namespace code.UserProfile
                 pnl_my_investitions.Hide();
                 st_view.Show();
                 Startup st = vmDB.Startups.Single(u => u.Title.Equals(appic_view.SelectedItems[0].Text));
-                angel_startup_investment(st,1);
+                angel_startup_investment(st, 1);
             }
         }
         //реакція на вибір елемента у таблиці стартапів
@@ -217,6 +217,9 @@ namespace code.UserProfile
         //функція яка забечує перегляд інформації і інвестування у стартап
         private void angel_startup_investment(Startup st, int noIncubator)
         {
+            string CEOfname;
+            string CEOlname;
+
             pnl_profile.Hide();
             pnl_startups.Hide();
             angel_invest.Hide();
@@ -226,26 +229,41 @@ namespace code.UserProfile
                 btn_make_invest.Enabled = true;
                 string stage = "seed stage";
                 lbl_invest_info.Text = stage + "\n" + st.Total_Investment;
-            } else {
-                     btn_make_invest.Enabled = false;
-                     lbl_invest_info.Text = st.Development_Stage1.Stage + "\n" + st.Total_Investment;
+            }
+            else {
+                btn_make_invest.Enabled = false;
+                lbl_invest_info.Text = st.Development_Stage1.Stage + "\n" + st.Total_Investment;
             }
             stname.Text = st.Title;
-            User seoname = vmDB.Users.Single(u => u.ID.Equals(st.ceoID)); 
-            lbl_startup_inf.Text = seoname.FName + " " + seoname.LName + "\n" + 
-                                   st.Foundation_Date + "\n" + 
+            var seoname = vmDB.Startup_Members.SingleOrDefault(u => u.StartupID == st.ID && u.Is_CEO == true);
+            if (seoname == null)
+            {
+                CEOfname = "";
+                CEOlname = "";
+            }
+            else
+            {
+                CEOfname = seoname.User.FName;
+                CEOlname = seoname.User.LName;
+            }
+            lbl_startup_inf.Text = CEOfname + " " + CEOlname + "\n" +
+                                   st.Foundation_Date + "\n" +
                                    st.Business_Model + "\n" +
                                    st.Marketing_Strategy;
-            lbl_st_inf_con.Text =  st.Website + "\n" + st.Twitter;
+            lbl_st_inf_con.Text = st.Website + "\n" + st.Twitter;
             if (st.IncubID != null)
             {
                 lbl_businc.Text = st.Business_Incubator.Title;
-            } else { lbl_businc.Text = " "; }
+            }
+            else { lbl_businc.Text = " "; }
             global_starup = null;
         }
 
         private void btn_make_invest_Click(object sender, EventArgs e)
         {
+            txt_inv.Text = null;
+            txt_inv_description.Text = null;
+            txt_inv_title.Text = null;
             angel_invest.Show();
         }
 
@@ -259,15 +277,20 @@ namespace code.UserProfile
             if (txt_inv.Text == "" && txt_inv_title.Text == "" && txt_inv_description.Text == "")
             {
                 MessageBox.Show("Fill in a fields!", "", MessageBoxButtons.OK);
-            } else {
+            }
+            else {
+
                 Startup star = vmDB.Startups.Single(u => u.Title == stname.Text);
                 var angel = vmDB.AngelInvestors.Single(u => u.UserID == user.ID);
                 Application app = vmDB.Applications.Single(u => u.StartupID == star.ID);
-                app.State = "accepted";
-                app.Angel_ID = angel.ID;
-                app.Application_Round += 1;
-                Round_Investor newRI= new Round_Investor();
+                Round_Investor newRI = new Round_Investor();
                 Round_Of_Funding newRF = new Round_Of_Funding();
+                AgelsAcceptedStartups newAS = new AgelsAcceptedStartups();
+                newAS.AppAngelID = angel.ID;
+                newAS.AppStartupID = star.ID;
+                newAS.AppAcceptDate = DateTime.Now;
+                app.State = "accepted";
+                app.Application_Round += 1;
                 decimal invamount = Decimal.Parse(txt_inv.Text);
                 decimal old_amount = Decimal.Parse(star.Total_Investment.ToString());
                 newRI.AngelID = angel.ID;
@@ -295,7 +318,7 @@ namespace code.UserProfile
                     logger.Info("Angel investor has allocated money for the " + star.Title + " startup\n"
                          + "\t[UserID: " + user.ID + ", UserName: " + user.Username + ", Startup: ]" + star.Title);
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     logger.Info("An error occured when Angel investor tried to allocate money for the " + star.Title + " startup\n"
                          + "\t[UserID: " + user.ID + ", UserName: " + user.Username + ", Startup: ]" + star.Title);
@@ -321,8 +344,8 @@ namespace code.UserProfile
             ListViewItem item;
 
             string[] additm = new string[2];
-            var myinv = from s in vmDB.Applications
-                      select s;
+            var myinv = from s in vmDB.AgelsAcceptedStartups
+                        select s;
             lv_my_investitions.FullRowSelect = true;
             lv_my_investitions.GridLines = false;
 
@@ -330,10 +353,10 @@ namespace code.UserProfile
             lv_my_investitions.Columns.Add("Application round", 96);
             foreach (var s in myinv)
             {
-                if (s.State == "accepted" && s.Angel_ID == global_angel.ID)
+                if (s.AppAngelID == global_angel.ID)
                 {
                     additm[0] = s.Startup.Title;
-                    additm[1] = s.Application_Round.ToString();
+                    additm[1] = s.AppAcceptDate.ToShortDateString();
                     item = new ListViewItem(additm);
                     lv_my_investitions.Items.Add(item);
                 }
@@ -372,7 +395,7 @@ namespace code.UserProfile
 
             var history = (from ARF in vmDB.Round_Of_Fundings
                            join ARI in vmDB.Round_Investors on ARF.ID equals ARI.ID
-                           select new {startupid = ARF.StartupID, title = ARF.Title, total_inv = ARF.Total_Investment, description = ARF.Description, angelid = ARI.AngelID, date = ARF.invest_date});
+                           select new { startupid = ARF.StartupID, title = ARF.Title, total_inv = ARF.Total_Investment, description = ARF.Description, angelid = ARI.AngelID, date = ARF.invest_date });
 
             foreach (var kk in history)
             {
@@ -396,6 +419,11 @@ namespace code.UserProfile
             pnl_my_investitions.Hide();
             st_view.Show();
             angel_startup_investment(global_starup, 1);
+        }
+
+        private void pnl_profile_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

@@ -231,14 +231,14 @@ namespace code.UserProfile
             pnl_MyStartup.Show();
 
             var startup = vmDB.Startups.Single(s => s.Title.Equals(startupCEO.Startup.Title));
-            var stceo = vmDB.Users.SingleOrDefault(u => u.ID == startup.ceoID);
+            var stceo = vmDB.Startup_Members.SingleOrDefault(u => u.StartupID == startup.ID && u.Is_CEO == true);
             var devstage = vmDB.Development_Stages.Single(s => s.ID == startup.DevStageID);
             var icub = vmDB.Business_Incubators.SingleOrDefault(i => i.ID == startup.IncubID);
 
             lbl_MyStartupTitle.Text = startup.Title;
             rchTxtBox.Clear();
-            if(stceo != null)
-                rchTxtBox.Text = "CEO:\t\t\t\t " + stceo.FName + " " + stceo.LName;
+            if (stceo != null)
+                rchTxtBox.Text = "CEO:\t\t\t\t " + stceo.User.FName + " " + stceo.User.LName;
             rchTxtBox.Text += "\nWebsite:\t\t\t " + startup.Website
                     + "\nDevelopment stage:\t " + devstage.Stage;
             if (icub != null)
@@ -248,7 +248,7 @@ namespace code.UserProfile
                     + "\nMarketing strategy:\t\t " + startup.Marketing_Strategy
                     + "\nTotal investment:\t\t " + startup.Total_Investment
                     + "\nFoundation date:\t\t " + startup.Foundation_Date.ToString().Remove(11);
-         
+
             // Вивід у ListBox учасників команди даного стартапу
             List<string> startupTeam = new List<string>();
             var teamMember = vmDB.Startup_Members.Where(u => u.StartupID == startup.ID)
