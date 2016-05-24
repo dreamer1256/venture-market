@@ -30,10 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InvCompanyMmbrProfile));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.btn_logout_combr = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lbl_fl_name = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
+            this.picbx_combr = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lbl_combr_info = new System.Windows.Forms.Label();
             this.lbl_cmbr_company = new System.Windows.Forms.Label();
@@ -50,17 +52,15 @@
             this.pnl_last_log_combr = new System.Windows.Forms.Panel();
             this.lbl_lastlog_combr = new System.Windows.Forms.Label();
             this.lbl_joined_combr = new System.Windows.Forms.Label();
-            this.picbx_combr = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picbx_combr)).BeginInit();
             this.panel3.SuspendLayout();
             this.pnl_combr_user_info.SuspendLayout();
             this.panel4_combr.SuspendLayout();
             this.pnl_combr.SuspendLayout();
             this.pnl_combr_news.SuspendLayout();
             this.pnl_last_log_combr.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picbx_combr)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -73,6 +73,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(993, 36);
             this.panel1.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.label2.Location = new System.Drawing.Point(11, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(108, 18);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Venture Market";
             // 
             // btn_logout_combr
             // 
@@ -126,6 +137,16 @@
             this.button2.Text = "Edit profile";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // picbx_combr
+            // 
+            this.picbx_combr.Image = global::code.Properties.Resources.male_circle_512;
+            this.picbx_combr.Location = new System.Drawing.Point(6, 8);
+            this.picbx_combr.Name = "picbx_combr";
+            this.picbx_combr.Size = new System.Drawing.Size(150, 150);
+            this.picbx_combr.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picbx_combr.TabIndex = 0;
+            this.picbx_combr.TabStop = false;
             // 
             // panel3
             // 
@@ -304,25 +325,6 @@
             this.lbl_joined_combr.TabIndex = 0;
             this.lbl_joined_combr.Text = "Joined";
             // 
-            // picbx_combr
-            // 
-            this.picbx_combr.Location = new System.Drawing.Point(6, 8);
-            this.picbx_combr.Name = "picbx_combr";
-            this.picbx_combr.Size = new System.Drawing.Size(150, 150);
-            this.picbx_combr.TabIndex = 0;
-            this.picbx_combr.TabStop = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.label2.Location = new System.Drawing.Point(11, 9);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(108, 18);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Venture Market";
-            // 
             // InvCompanyMmbrProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -342,6 +344,7 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picbx_combr)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.pnl_combr_user_info.ResumeLayout(false);
@@ -353,7 +356,6 @@
             this.pnl_combr_news.PerformLayout();
             this.pnl_last_log_combr.ResumeLayout(false);
             this.pnl_last_log_combr.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picbx_combr)).EndInit();
             this.ResumeLayout(false);
 
         }

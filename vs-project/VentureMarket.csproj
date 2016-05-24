@@ -177,6 +177,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Venture_MarketDataSet.xsd</DependentUpon>
     </Compile>
+    <None Include="Resources\male-circle-512.png" />
     <None Include="Resources\lineLong3.png" />
     <None Include="Resources\lineLong2.png" />
     <None Include="Resources\lineLong1.png" />

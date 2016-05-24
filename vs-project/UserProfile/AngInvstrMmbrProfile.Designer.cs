@@ -235,6 +235,8 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Image = global::code.Properties.Resources.male_circle_512;
+            this.pictureBox1.InitialImage = null;
             this.pictureBox1.Location = new System.Drawing.Point(16, 17);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(152, 152);
