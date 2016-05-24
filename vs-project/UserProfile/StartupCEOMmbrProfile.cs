@@ -25,6 +25,7 @@ namespace code.UserProfile
         DataClasses1DataContext vmDB;
         string incubatorTitle = null;
         ListViewItem lvi;
+        
         /// <summary>
         /// Витягується основна інформація про користувача
         /// </summary>
@@ -66,7 +67,8 @@ namespace code.UserProfile
             
             code.LoginHistory.LoadUserLoginHistory(user.ID, lbl_LogHist);   // Завантажити історію логувань користувача
             code.SystemNews.LoadNews(pnl_News); // Завантажити стрічку новин
-            
+            label10.Hide();
+
             pnl_Incubators.Hide();
             pnl_MyStartup.Hide();
             lbl_StartupsInIncubator.Hide();
@@ -170,36 +172,59 @@ namespace code.UserProfile
         /// </summary>
         private void btn_Join_Click(object sender, EventArgs e)
         {
+            label10.Hide();
             startupCEO = vmDB.Startup_Members.Single(u => u.UserID == user.ID);
 
-            int incubatorID = vmDB.Business_Incubators.Single(i => i.Title.Equals(incubatorTitle)).ID;
+            var incubator = vmDB.Business_Incubators.Single(i => i.Title.Equals(incubatorTitle));
             var startup = vmDB.Startups.Single(s => s.Title.Equals(startupCEO.Startup.Title));
-            var incubID_Before = startup.IncubID;
-            startup.IncubID = incubatorID;
-            News news = new News    // Додаємо нову подію у список новин
+
+            //
+            var stUsers = vmDB.Startup_Members.Where(u => u.StartupID == startup.ID).Count();
+
+            var stInIncub = vmDB.Startups.Where(s => s.Business_Incubator.Title.Equals(incubatorTitle));
+            int allUsersInIncub = 0;
+            foreach(var s in stInIncub)
             {
-                Information = "Startup " + startup.Title + " joined the "
-                    + startup.Business_Incubator.Title + " business incubator",
-                Date = DateTime.Now,
-                Type = "Startup"
-            };
-            vmDB.News.InsertOnSubmit(news);
-            try
-            {
-                vmDB.SubmitChanges();
-                logger.Info("Startup " + startup.Title + " joined the "
-                    + startup.Business_Incubator.Title + " business incubator");
+                allUsersInIncub += s.Startup_Members.Count;
             }
-            catch(Exception ex)
+            // Показувати повідомлення про помилку,
+            // якщо у вибраному нкубаторі немає достатньо вільних місць
+            if(incubator.Number_Of_Seats >= allUsersInIncub)
             {
-                logger.Error("Startup {0} is failed to join the {2} business incubator\n{3}",
-                    startup.Title, startup.Business_Incubator.Title, ex.Message);
-                MessageBox.Show("Oops! An error occurred.\nYour startup is failed to join to the business incubator",
-                    "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                var incubID_Before = startup.IncubID;
+                startup.IncubID = incubator.ID;
+                News news = new News    // Додаємо нову подію у список новин
+                {
+                    Information = "Startup " + startup.Title + " joined the "
+                        + startup.Business_Incubator.Title + " business incubator",
+                    Date = DateTime.Now,
+                    Type = "Startup"
+                };
+                vmDB.News.InsertOnSubmit(news);
+                try
+                {
+                    vmDB.SubmitChanges();
+                    logger.Info("Startup " + startup.Title + " joined the "
+                        + startup.Business_Incubator.Title + " business incubator");
+                }
+                catch (Exception ex)
+                {
+                    logger.Error("Startup {0} is failed to join the {2} business incubator\n{3}",
+                        startup.Title, startup.Business_Incubator.Title, ex.Message);
+                    MessageBox.Show("Oops! An error occurred.\nYour startup is failed to join to the business incubator",
+                        "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                btn_Join.Hide();
+                ShowJoinErrorMessage();
             }
+            else
+            {
+                label10.Show();
+            }
+
+            //
             
-            btn_Join.Hide();
-            ShowJoinErrorMessage();
         }
 
         /// <summary>
@@ -384,6 +409,11 @@ namespace code.UserProfile
         private void pnl_About_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

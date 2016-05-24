@@ -83,6 +83,7 @@
             this.btn_CreateApplication = new System.Windows.Forms.Button();
             this.txtBx_RoundOfFunding = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.pnl_Profile.SuspendLayout();
             this.panel4.SuspendLayout();
             this.pnl_About.SuspendLayout();
@@ -619,6 +620,7 @@
             this.pnl_Incubators.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
             this.pnl_Incubators.BackgroundImage = global::code.Properties.Resources.lineLong3;
             this.pnl_Incubators.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pnl_Incubators.Controls.Add(this.label10);
             this.pnl_Incubators.Controls.Add(this.lbl_JoinError);
             this.pnl_Incubators.Controls.Add(this.btn_Join);
             this.pnl_Incubators.Controls.Add(this.lbl_StartupsInIncubList);
@@ -804,6 +806,17 @@
             this.label6.TabIndex = 2;
             this.label6.Text = "Applications for finances";
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label10.ForeColor = System.Drawing.Color.Red;
+            this.label10.Location = new System.Drawing.Point(637, 384);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(129, 21);
+            this.label10.TabIndex = 5;
+            this.label10.Text = "No vacans places";
+            // 
             // StartupCEOMmbrProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -814,10 +827,10 @@
             this.ClientSize = new System.Drawing.Size(1084, 588);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnl_Incubators);
             this.Controls.Add(this.pnl_Applications);
             this.Controls.Add(this.pnl_Profile);
             this.Controls.Add(this.pnl_MyStartup);
-            this.Controls.Add(this.pnl_Incubators);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "StartupCEOMmbrProfile";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -912,5 +925,6 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button btn_EditProfile;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
     }
 }
