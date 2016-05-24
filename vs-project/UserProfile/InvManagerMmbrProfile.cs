@@ -162,6 +162,10 @@ namespace code.UserProfile
         //The function that fills charts
         private void button7_Click(object sender, EventArgs e)
         {
+            foreach (var series in chart1.Series)
+            {
+                series.Points.Clear();
+            }
             var snm = from s in vmDB.Applications
                       select s;
             foreach (var s in snm)
@@ -277,6 +281,11 @@ namespace code.UserProfile
         private void InvManagerMmbrProfile_FormClosing(object sender, FormClosingEventArgs e)
         {
             UserExit.SaveUserStoryOnExit(user.ID);
+        }
+
+        private void InvManagerMmbrProfile_Load(object sender, EventArgs e)
+        {
+
         }
     } }
 
