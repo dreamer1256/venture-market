@@ -66,6 +66,9 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.lbl_chbx_is);
             this.panel1.Controls.Add(this.label2);
@@ -180,7 +183,7 @@
             this.chckBx_IsCEO.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.chckBx_IsCEO.Location = new System.Drawing.Point(365, 29);
             this.chckBx_IsCEO.Name = "chckBx_IsCEO";
-            this.chckBx_IsCEO.Size = new System.Drawing.Size(48, 21);
+            this.chckBx_IsCEO.Size = new System.Drawing.Size(47, 21);
             this.chckBx_IsCEO.TabIndex = 5;
             this.chckBx_IsCEO.Text = "Yes";
             this.chckBx_IsCEO.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -210,7 +213,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(268, 131);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(50, 17);
+            this.label6.Size = new System.Drawing.Size(49, 17);
             this.label6.TabIndex = 6;
             this.label6.Text = "Twitter";
             // 

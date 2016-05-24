@@ -88,6 +88,7 @@
             this.pnl_my_investitions = new System.Windows.Forms.Panel();
             this.label15 = new System.Windows.Forms.Label();
             this.pnl_myst_info = new System.Windows.Forms.Panel();
+            this.lbl_myst_inf = new System.Windows.Forms.Label();
             this.list_history_inv = new System.Windows.Forms.ListView();
             this.btn_view_st_home = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
@@ -607,7 +608,7 @@
             // 
             this.lbl_businc.AutoSize = true;
             this.lbl_businc.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.lbl_businc.Location = new System.Drawing.Point(416, 191);
+            this.lbl_businc.Location = new System.Drawing.Point(438, 191);
             this.lbl_businc.Name = "lbl_businc";
             this.lbl_businc.Size = new System.Drawing.Size(52, 16);
             this.lbl_businc.TabIndex = 11;
@@ -685,7 +686,7 @@
             // 
             this.lbl_invest_info.AutoSize = true;
             this.lbl_invest_info.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.lbl_invest_info.Location = new System.Drawing.Point(417, 253);
+            this.lbl_invest_info.Location = new System.Drawing.Point(438, 253);
             this.lbl_invest_info.Name = "lbl_invest_info";
             this.lbl_invest_info.Size = new System.Drawing.Size(92, 16);
             this.lbl_invest_info.TabIndex = 9;
@@ -695,7 +696,7 @@
             // 
             this.lbl_st_inf_con.AutoSize = true;
             this.lbl_st_inf_con.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.lbl_st_inf_con.Location = new System.Drawing.Point(414, 158);
+            this.lbl_st_inf_con.Location = new System.Drawing.Point(438, 160);
             this.lbl_st_inf_con.Name = "lbl_st_inf_con";
             this.lbl_st_inf_con.Size = new System.Drawing.Size(45, 16);
             this.lbl_st_inf_con.TabIndex = 8;
@@ -716,7 +717,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label10.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label10.Location = new System.Drawing.Point(309, 221);
+            this.label10.Location = new System.Drawing.Point(292, 226);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(92, 20);
             this.label10.TabIndex = 5;
@@ -726,7 +727,7 @@
             // 
             this.lbl_startup_inf.AutoSize = true;
             this.lbl_startup_inf.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.lbl_startup_inf.Location = new System.Drawing.Point(414, 80);
+            this.lbl_startup_inf.Location = new System.Drawing.Point(438, 80);
             this.lbl_startup_inf.Name = "lbl_startup_inf";
             this.lbl_startup_inf.Size = new System.Drawing.Size(89, 16);
             this.lbl_startup_inf.TabIndex = 4;
@@ -762,7 +763,7 @@
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(228, 431);
+            this.textBox1.Size = new System.Drawing.Size(228, 232);
             this.textBox1.TabIndex = 1;
             // 
             // stname
@@ -804,20 +805,31 @@
             // 
             // pnl_myst_info
             // 
+            this.pnl_myst_info.Controls.Add(this.lbl_myst_inf);
             this.pnl_myst_info.Controls.Add(this.list_history_inv);
             this.pnl_myst_info.Controls.Add(this.btn_view_st_home);
             this.pnl_myst_info.Controls.Add(this.label17);
             this.pnl_myst_info.Controls.Add(this.label18);
             this.pnl_myst_info.Controls.Add(this.lbl_myinv_stinfo);
             this.pnl_myst_info.Controls.Add(this.label16);
-            this.pnl_myst_info.Location = new System.Drawing.Point(313, 17);
+            this.pnl_myst_info.Location = new System.Drawing.Point(257, 17);
             this.pnl_myst_info.Name = "pnl_myst_info";
-            this.pnl_myst_info.Size = new System.Drawing.Size(489, 526);
+            this.pnl_myst_info.Size = new System.Drawing.Size(546, 534);
             this.pnl_myst_info.TabIndex = 1;
+            // 
+            // lbl_myst_inf
+            // 
+            this.lbl_myst_inf.AutoSize = true;
+            this.lbl_myst_inf.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lbl_myst_inf.Location = new System.Drawing.Point(144, 36);
+            this.lbl_myst_inf.Name = "lbl_myst_inf";
+            this.lbl_myst_inf.Size = new System.Drawing.Size(29, 16);
+            this.lbl_myst_inf.TabIndex = 8;
+            this.lbl_myst_inf.Text = "info";
             // 
             // list_history_inv
             // 
-            this.list_history_inv.Location = new System.Drawing.Point(209, 38);
+            this.list_history_inv.Location = new System.Drawing.Point(263, 38);
             this.list_history_inv.Name = "list_history_inv";
             this.list_history_inv.Size = new System.Drawing.Size(269, 478);
             this.list_history_inv.TabIndex = 7;
@@ -830,7 +842,7 @@
             this.btn_view_st_home.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_view_st_home.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btn_view_st_home.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.btn_view_st_home.Location = new System.Drawing.Point(21, 106);
+            this.btn_view_st_home.Location = new System.Drawing.Point(16, 106);
             this.btn_view_st_home.Name = "btn_view_st_home";
             this.btn_view_st_home.Size = new System.Drawing.Size(155, 46);
             this.btn_view_st_home.TabIndex = 5;
@@ -843,7 +855,7 @@
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label17.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label17.Location = new System.Drawing.Point(205, 6);
+            this.label17.Location = new System.Drawing.Point(259, 6);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(131, 20);
             this.label17.TabIndex = 4;
@@ -854,7 +866,7 @@
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label18.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label18.Location = new System.Drawing.Point(18, 36);
+            this.label18.Location = new System.Drawing.Point(13, 36);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(126, 48);
             this.label18.TabIndex = 2;
@@ -875,7 +887,7 @@
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label16.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label16.Location = new System.Drawing.Point(17, 6);
+            this.label16.Location = new System.Drawing.Point(12, 5);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(94, 20);
             this.label16.TabIndex = 0;
@@ -883,9 +895,9 @@
             // 
             // lv_my_investitions
             // 
-            this.lv_my_investitions.Location = new System.Drawing.Point(19, 55);
+            this.lv_my_investitions.Location = new System.Drawing.Point(9, 55);
             this.lv_my_investitions.Name = "lv_my_investitions";
-            this.lv_my_investitions.Size = new System.Drawing.Size(288, 478);
+            this.lv_my_investitions.Size = new System.Drawing.Size(239, 486);
             this.lv_my_investitions.TabIndex = 0;
             this.lv_my_investitions.UseCompatibleStateImageBehavior = false;
             this.lv_my_investitions.View = System.Windows.Forms.View.Details;
@@ -900,11 +912,11 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(1015, 615);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.pnl_profile);
-            this.Controls.Add(this.st_view);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.st_view);
             this.Controls.Add(this.pnl_startups);
             this.Controls.Add(this.pnl_my_investitions);
+            this.Controls.Add(this.pnl_profile);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MaximizeBox = false;
             this.Name = "AngInvstrMmbrProfile";
@@ -1011,5 +1023,6 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.ListView list_history_inv;
         private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label lbl_myst_inf;
     }
 }

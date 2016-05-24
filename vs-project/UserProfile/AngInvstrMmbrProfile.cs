@@ -301,6 +301,7 @@ namespace code.UserProfile
                 newRI.RoundID = 1;
                 newRF.invest_date = DateTime.Now;
                 star.Total_Investment = invamount + old_amount;
+                vmDB.AgelsAcceptedStartups.InsertOnSubmit(newAS);
                 vmDB.Round_Investors.InsertOnSubmit(newRI);
                 vmDB.Round_Of_Fundings.InsertOnSubmit(newRF);
 
@@ -333,6 +334,7 @@ namespace code.UserProfile
         //перегляд прийнятих заявок
         private void btn_my_inv_Click(object sender, EventArgs e)
         {
+            DataClasses1DataContext vmDB = new DataClasses1DataContext();
             pnl_profile.Hide();
             pnl_startups.Hide();
             st_view.Hide();
@@ -349,8 +351,8 @@ namespace code.UserProfile
             lv_my_investitions.FullRowSelect = true;
             lv_my_investitions.GridLines = false;
 
-            lv_my_investitions.Columns.Add("Startup name", 94);
-            lv_my_investitions.Columns.Add("Application round", 96);
+            lv_my_investitions.Columns.Add("Startup name", 118);
+            lv_my_investitions.Columns.Add("Investition date", 120);
             foreach (var s in myinv)
             {
                 if (s.AppAngelID == global_angel.ID)
@@ -365,7 +367,8 @@ namespace code.UserProfile
         //реакція на вибір елемента в списку прийнятих заявок
         private void lv_my_investitions_SelectedIndexChanged(object sender, EventArgs e)
         {
-            lbl_myinv_stinfo.Text = "";
+            lbl_myst_inf.Text = "";
+            lbl_startup_inf.Text = "";
             list_history_inv.Clear();
             if (lv_my_investitions.SelectedIndices.Count <= 0)
             {
@@ -376,6 +379,7 @@ namespace code.UserProfile
                 btn_view_st_home.Enabled = true;
                 global_starup = vmDB.Startups.Single(u => u.Title.Equals(lv_my_investitions.SelectedItems[0].Text));
                 my_investitions_startup_info(global_starup);
+                lbl_myst_inf.Text = global_starup.Title + "\n" + global_starup.Total_Investment.ToString() + "\n" + global_starup.Development_Stage1.Stage;
             }
         }
 
@@ -390,7 +394,7 @@ namespace code.UserProfile
             string[] history_list = new string[2];
             list_history_inv.FullRowSelect = true;
             list_history_inv.GridLines = false;
-            list_history_inv.Columns.Add("Total investments", 102);
+            list_history_inv.Columns.Add("Investition amount", 124);
             list_history_inv.Columns.Add("Date", 162);
 
             var history = (from ARF in vmDB.Round_Of_Fundings
@@ -419,11 +423,6 @@ namespace code.UserProfile
             pnl_my_investitions.Hide();
             st_view.Show();
             angel_startup_investment(global_starup, 1);
-        }
-
-        private void pnl_profile_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }
