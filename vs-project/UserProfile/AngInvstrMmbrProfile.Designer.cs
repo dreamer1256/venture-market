@@ -479,7 +479,7 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label14.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label14.Location = new System.Drawing.Point(22, 12);
+            this.label14.Location = new System.Drawing.Point(21, 20);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(76, 16);
             this.label14.TabIndex = 0;
@@ -509,7 +509,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label9.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label9.Location = new System.Drawing.Point(17, 17);
+            this.label9.Location = new System.Drawing.Point(16, 20);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(42, 16);
             this.label9.TabIndex = 0;
@@ -527,11 +527,11 @@
             // lbl_LogHist
             // 
             this.lbl_LogHist.AutoSize = true;
-            this.lbl_LogHist.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lbl_LogHist.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.lbl_LogHist.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lbl_LogHist.Location = new System.Drawing.Point(13, 12);
+            this.lbl_LogHist.Location = new System.Drawing.Point(29, 15);
             this.lbl_LogHist.Name = "lbl_LogHist";
-            this.lbl_LogHist.Size = new System.Drawing.Size(0, 20);
+            this.lbl_LogHist.Size = new System.Drawing.Size(0, 16);
             this.lbl_LogHist.TabIndex = 0;
             // 
             // panel_prof3
@@ -551,7 +551,7 @@
             this.lbl_lastlog.AutoSize = true;
             this.lbl_lastlog.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lbl_lastlog.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.lbl_lastlog.Location = new System.Drawing.Point(23, 42);
+            this.lbl_lastlog.Location = new System.Drawing.Point(24, 42);
             this.lbl_lastlog.Name = "lbl_lastlog";
             this.lbl_lastlog.Size = new System.Drawing.Size(65, 16);
             this.lbl_lastlog.TabIndex = 1;
