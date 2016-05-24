@@ -129,6 +129,8 @@ namespace code.UserProfile
         /// </summary>
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            label10.Hide();
+
             incubatorTitle = null;
             startupCEO = vmDB.Startup_Members.Single(u => u.UserID == user.ID);
 
