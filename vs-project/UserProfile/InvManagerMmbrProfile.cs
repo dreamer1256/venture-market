@@ -166,8 +166,8 @@ namespace code.UserProfile
                       select s;
             foreach (var s in snm)
             {
-                this.chart1.Series["Day"].Points.AddXY("manth", s.ManagerID.ToString());
-                this.chart1.Series["Score"].Points.AddXY("Cash", s.Application_Round.ToString());
+                this.chart1.Series["Total Investment"].Points.AddXY("", s.ManagerID.ToString());
+                this.chart1.Series["Changes in investments"].Points.AddXY("", s.Application_Round.ToString());
             }
         }
         //Button that implements the search data
@@ -274,6 +274,9 @@ namespace code.UserProfile
             }
         }
 
-
+        private void InvManagerMmbrProfile_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            UserExit.SaveUserStoryOnExit(user.ID);
+        }
     } }
 
