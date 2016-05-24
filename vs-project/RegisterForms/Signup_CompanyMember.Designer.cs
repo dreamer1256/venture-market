@@ -151,8 +151,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(30)))));
             this.BackgroundImage = global::code.Properties.Resources.LOGIN;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(999, 602);
             this.Controls.Add(this.panel1);
+            this.DoubleBuffered = true;
             this.Name = "Signup_CompanyMember";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Company Member Sigin - Venture Market";

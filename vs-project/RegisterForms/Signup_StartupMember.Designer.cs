@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbl_chbx_is = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.cmbBx_Startups = new System.Windows.Forms.ComboBox();
             this.btn_Finish = new System.Windows.Forms.Button();
@@ -49,7 +50,6 @@
             this.venture_MarketDataSet = new code.Venture_MarketDataSet();
             this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.usersTableAdapter = new code.Venture_MarketDataSetTableAdapters.UsersTableAdapter();
-            this.lbl_chbx_is = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.venture_MarketDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
@@ -90,6 +90,14 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(482, 306);
             this.panel1.TabIndex = 2;
+            // 
+            // lbl_chbx_is
+            // 
+            this.lbl_chbx_is.AutoSize = true;
+            this.lbl_chbx_is.Location = new System.Drawing.Point(269, 47);
+            this.lbl_chbx_is.Name = "lbl_chbx_is";
+            this.lbl_chbx_is.Size = new System.Drawing.Size(0, 17);
+            this.lbl_chbx_is.TabIndex = 11;
             // 
             // label2
             // 
@@ -172,7 +180,7 @@
             this.chckBx_IsCEO.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.chckBx_IsCEO.Location = new System.Drawing.Point(365, 29);
             this.chckBx_IsCEO.Name = "chckBx_IsCEO";
-            this.chckBx_IsCEO.Size = new System.Drawing.Size(47, 21);
+            this.chckBx_IsCEO.Size = new System.Drawing.Size(48, 21);
             this.chckBx_IsCEO.TabIndex = 5;
             this.chckBx_IsCEO.Text = "Yes";
             this.chckBx_IsCEO.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -202,7 +210,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(268, 131);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(49, 17);
+            this.label6.Size = new System.Drawing.Size(50, 17);
             this.label6.TabIndex = 6;
             this.label6.Text = "Twitter";
             // 
@@ -247,14 +255,6 @@
             // 
             this.usersTableAdapter.ClearBeforeFill = true;
             // 
-            // lbl_chbx_is
-            // 
-            this.lbl_chbx_is.AutoSize = true;
-            this.lbl_chbx_is.Location = new System.Drawing.Point(269, 47);
-            this.lbl_chbx_is.Name = "lbl_chbx_is";
-            this.lbl_chbx_is.Size = new System.Drawing.Size(0, 17);
-            this.lbl_chbx_is.TabIndex = 11;
-            // 
             // Signup_StartupMember
             // 
             this.AcceptButton = this.btn_Finish;
@@ -262,8 +262,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(30)))));
             this.BackgroundImage = global::code.Properties.Resources.LOGIN;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(999, 602);
             this.Controls.Add(this.panel1);
+            this.DoubleBuffered = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Signup_StartupMember";

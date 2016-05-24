@@ -80,7 +80,7 @@
             this.pnl_Sign1.Controls.Add(this.label2);
             this.pnl_Sign1.Controls.Add(this.label1);
             this.pnl_Sign1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.pnl_Sign1.Location = new System.Drawing.Point(244, 156);
+            this.pnl_Sign1.Location = new System.Drawing.Point(241, 162);
             this.pnl_Sign1.Name = "pnl_Sign1";
             this.pnl_Sign1.Size = new System.Drawing.Size(520, 313);
             this.pnl_Sign1.TabIndex = 1;
@@ -282,6 +282,8 @@
             // btn_NextToSpec
             // 
             this.btn_NextToSpec.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_NextToSpec.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btn_NextToSpec.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.btn_NextToSpec.Location = new System.Drawing.Point(275, 256);
             this.btn_NextToSpec.Name = "btn_NextToSpec";
             this.btn_NextToSpec.Size = new System.Drawing.Size(75, 36);
@@ -293,6 +295,8 @@
             // btn_BackToSign1
             // 
             this.btn_BackToSign1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_BackToSign1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btn_BackToSign1.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.btn_BackToSign1.Location = new System.Drawing.Point(173, 256);
             this.btn_BackToSign1.Name = "btn_BackToSign1";
             this.btn_BackToSign1.Size = new System.Drawing.Size(75, 36);
