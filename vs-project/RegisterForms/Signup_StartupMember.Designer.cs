@@ -281,7 +281,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.venture_MarketDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).EndInit();
             this.ResumeLayout(false);
-
         }
 
         #endregion
